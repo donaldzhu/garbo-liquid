@@ -36,7 +36,7 @@ ul {
 a {
   text-decoration: none;
 }
-a:visited {
+a, a:-webkit-any-link, a:visited {
   color: inherit;
 }
 

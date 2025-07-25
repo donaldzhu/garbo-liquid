@@ -11,6 +11,8 @@ ul {
 a {
   text-decoration: none;
 
+  &,
+  &:-webkit-any-link,
   &:visited {
     color: inherit;
   }
