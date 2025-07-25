@@ -1,5 +1,9 @@
 {
   "sections": {
+    "tinkiu_homepage_landing": {
+      "type": "tinkiu-homepage-landing",
+      "settings": []
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -200,6 +204,7 @@
     }
   },
   "order": [
+    "tinkiu_homepage_landing",
     "image_banner",
     "rich_text",
     "featured_collection",

@@ -1,0 +1,35 @@
+@use '../tinkiu-colors' as *;
+@use '../tinkiu-laytouts' as *;
+@use '../tinkiu-typography' as *;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-m $spacing-l;
+  background-color: $ash;
+  position: sticky;
+  top: 0;
+  text-transform: uppercase;
+
+  ul {
+    gap: $spacing-m;
+    font-size: $font-size-m;
+  }
+}
+
+.tinkiu-logo {
+  height: 30px;
+
+  &-text {
+    fill: black;
+  }
+
+  &-seal-negative {
+    fill: none;
+  }
+
+  &-seal {
+    fill: $red;
+  }
+}

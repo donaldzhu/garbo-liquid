@@ -1,0 +1,35 @@
+@use 'scss/tinkiu-entry' as *;
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+body {
+  background-color: $ash;
+}
+
+
+body {
+  font-family: 'Dazzed', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fenul', serif;
+}

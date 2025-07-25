@@ -1,0 +1,58 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.25rem 3rem;
+  background-color: #FAFAFA;
+  position: sticky;
+  top: 0;
+  text-transform: uppercase;
+}
+header ul {
+  gap: 2.25rem;
+  font-size: 1.5rem;
+}
+
+.tinkiu-logo {
+  height: 30px;
+}
+.tinkiu-logo-text {
+  fill: black;
+}
+.tinkiu-logo-seal-negative {
+  fill: none;
+}
+.tinkiu-logo-seal {
+  fill: #DF2726;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
+
+body {
+  background-color: #FAFAFA;
+}
+
+body {
+  font-family: "Dazzed", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fenul", serif;
+}
