@@ -8,18 +8,29 @@ header {
   align-items: center;
   padding: $spacing-m $spacing-l;
   background-color: $ash;
-  position: sticky;
+  position: fixed;
+  width: 100vw;
   top: 0;
   text-transform: uppercase;
+  z-index: 999;
+
+
+  div {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
 
   ul {
     gap: $spacing-m;
-    font-size: $font-size-m;
+    font-size: $font-size-s;
   }
 }
 
 .tinkiu-logo {
   height: 30px;
+
 
   &-text {
     fill: black;

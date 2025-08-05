@@ -1,0 +1,22 @@
+{% liquid
+  assign header = data.header
+  assign text = data.text
+  assign linkButton = data.linkButton
+
+%}
+
+<div class="tinkiu-homepage__blurb {{ class }}">
+  {% if header and renderHeader != false %}
+    <h2>
+      {{ header }}
+    </h2>
+  {% endif %}
+  {% if text and renderText != false %}
+    <p>
+      {{ text | newline_to_br }}
+    </p>
+  {% endif %}
+  {% if linkButton and renderButton != false %}
+    {% render 'tinkiu-cta-button', linkButton: linkButton %}
+  {% endif %}
+</div>

@@ -1,2 +1,41 @@
+$spacing-xxxl: 15rem;
+$spacing-xxl: 7.5rem;
+$spacing-xl: 3.6rem;
 $spacing-l: 3rem;
 $spacing-m: 2.25rem;
+$gap: $spacing-m;
+$spacing-s: 1.8rem;
+$spacing-xs: 1.5rem;
+$spacing-xxs: 1.2rem;
+$spacing-xxxs: 0.8rem;
+
+$max-width-long: 825px;
+$max-width-short: 625px;
+
+$border-radius: 3rem;
+$total-columns: 12;
+
+$full-width: calc(100vw - $spacing-m * 2);
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin flex($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: row;
+}
+
+@mixin flex-column($align: center, $justify: center) {
+  @include flex($align, $justify);
+  flex-direction: column;
+}
+
+$single-column-width: calc(((100vw - $spacing-m * 2) - ($total-columns - 1) * $gap) / $total-columns);
+
+@function column-width($column-count) {
+  @return calc($single-column-width * $column-count + $gap * ($column-count - 1));
+}

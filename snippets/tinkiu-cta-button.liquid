@@ -1,0 +1,10 @@
+{% liquid
+  assign link = linkButton.link._ref
+  assign label = linkButton.buttonLabel
+%}
+
+<button class="tinkiu-cta-button">
+  <a href="/{{ link }}">
+    {{ label }}
+  </a>
+</button>

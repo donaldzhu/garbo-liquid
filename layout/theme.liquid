@@ -50,7 +50,7 @@
     {% style %}
       @font-face {
         font-family: 'Dazzed';
-        src: url("{{ 'Dazzed-Regular.otf' | file_url }}") format('otf');
+        src: url("{{ 'Dazzed-Regular.otf' | asset_url }}") format('opentype');
         font-weight: 400;
         font-style: normal;
         font-display: swap;
@@ -58,7 +58,7 @@
 
       @font-face {
         font-family: 'Dazzed';
-        src: url("{{ 'Dazzed-Bold.otf' | file_url }}") format('otf');
+        src: url("{{ 'Dazzed-Bold.otf' | asset_url }}") format('opentype');
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -66,11 +66,11 @@
 
       @font-face {
         font-family: 'Fenul';
-        src: url("{{ 'FenulStandard-Regular.otf' | file_url }}") format('otf');
+        src: url("{{ 'FenulStandard-Regular.otf' | asset_url }}") format('opentype');
         font-weight: 400;
         font-style: normal;
-        font-display: swap;
       }
+
     {% endstyle %}
 
     {% style %}
@@ -340,13 +340,13 @@
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
-
+{% comment %}     {% sections 'footer-group' %} {% endcomment %}
+{% comment %}
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
-    </ul>
-
+    </ul> {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {

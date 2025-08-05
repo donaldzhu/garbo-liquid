@@ -1,0 +1,74 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const intro = document.querySelector('.tinkiu-homepage__intro');
+      const INSET_WIDTH = getComputedStyle(intro).getPropertyValue('--width');
+      const INSET_HEIGHT = getComputedStyle(intro).getPropertyValue('--height');
+      const INSET_BORDER_RADIUS = getComputedStyle(intro).getPropertyValue('--border-radius');
+      const INSET_HEADER_COLOR = getComputedStyle(intro).getPropertyValue('--header-color');
+
+      const DELAY = 0.6;
+      const INTRO_DURATION = 1.4;
+      const MAIN_DELAY = INTRO_DURATION + DELAY + 0.1;
+      const MAIN_DURATION = 0.2;
+
+      const FADE_DURATION = 0.2;
+      const SLIDE_DURATION = 0.2;
+
+      document.body.style.overflow = 'hidden';
+      history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+      const timeline = gsap.timeline();
+      const toNextSlide = (currentSlideNumber) => {
+      timeline
+          .to(`.tinkiu-homepage__intro-image img:nth-child(${currentSlideNumber})`, { opacity: 0, duration: 0 }, `+=${SLIDE_DURATION * (currentSlideNumber === 5 ? 1.5 : 1)}`)
+          .to(`.tinkiu-homepage__intro-image img:nth-child(${currentSlideNumber + 1})`, { opacity: 1, duration: 0 }, '+=0')
+      }
+
+        Array(5).fill(0).forEach((_, index) => {
+          toNextSlide(index + 1)
+        })
+
+        timeline
+        .to('header.tinkiu-homepage-header', { duration: FADE_DURATION, color: 'black' }, `+=${DELAY}`)
+        .to('.tinkiu-homepage__intro .tinkiu-logo', { duration: FADE_DURATION, opacity: 0 }, `-=${FADE_DURATION}`)
+        .to('.tinkiu-homepage__intro-image', {
+          duration: INTRO_DURATION,
+          width: getComputedStyle(intro).getPropertyValue('--width'),
+          height: getComputedStyle(intro).getPropertyValue('--height'),
+          borderRadius: getComputedStyle(intro).getPropertyValue('--border-radius'),
+        }, `-=${FADE_DURATION}`)
+        .to('.tinkiu-homepage__intro-image-container', {
+          duration: INTRO_DURATION,
+          top: '40vh',
+          right: '50%',
+          transform: 'translate(50%, -50%)',
+        }, `-=${INTRO_DURATION}`)
+        .to('body', { overflow: 'auto', duration: 0 }, "+=0")
+        .to(['.tinkiu-homepage-header .tinkiu-logo','.tinkiu-homepage__intro-image-container .tinkiu-dot','.tinkiu-homepage__intro .tinkiu-homepage__blurb'], {
+          duration: MAIN_DURATION,
+          opacity: 1,
+        }, `+=0.1`)
+        .to('header.tinkiu-homepage-header', { backgroundColor: getComputedStyle(intro).getPropertyValue('--header-color'), duration: 0 }, "+=0")
+
+    })
+
+
+</script>
+
+<div class="tinkiu-homepage__intro">
+  {% render 'tinkiu-logo' %}
+  {% render 'tinkiu-homepage-blurb'
+    , data: intro %}
+  <div class="tinkiu-homepage__intro-image-container">
+    {% render 'tinkiu-dot'
+      , withSpace: false %}
+    <div class="tinkiu-homepage__intro-image">
+      {% for slide in intro.slides %}
+        {% render 'tinkiu-media'
+          , data: slide.image %}
+      {% endfor %}
+    </div>
+    {% render 'tinkiu-dot'
+      , withSpace: false %}
+  </div>
+</div>

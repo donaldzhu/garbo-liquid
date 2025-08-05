@@ -1,0 +1,61 @@
+
+
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-home'].values %}
+
+<div class="tinkiu-homepage">
+  {% for o in metaobj -%}
+    {% render 'tinkiu-homepage-intro-slides', intro: o.intro.value  %}
+    <div class="tinkiu-homepage__feature">
+      {% assign feature = o.feature.value %}
+      {% render 'tinkiu-media', data: feature.media %}
+      {% render 'tinkiu-dot' %}
+      {% render 'tinkiu-homepage-blurb', data: feature %}
+    </div>
+    <div class="tinkiu-homepage__products">
+      {% assign products = o.products.value %}
+      {% render 'tinkiu-dot' %}
+      <div class="tinkiu-homepage__products-container">
+        {% for data in products.product %}
+          {% render 'tinkiu-homepage-product', category: data.category, product: data.product, isLast: forloop.last %}
+        {% endfor %}
+      </div>
+      {% render 'tinkiu-cta-button', linkButton: products.link %}
+    </div>
+    {% render 'tinkiu-homepage-stories', data: o.stories.value %}
+    <div class="tinkiu-homepage__founder">
+      {% assign founder = o.founder.value %}
+      {% render 'tinkiu-dot' %}
+      <h2>{{ founder.header }}</h2>
+      <img src="{{ founder.portrait.url }}" alt="{{ founder.portrait.alt }}">
+      <p><b>Garbo Zhu</b></p>
+      {% render 'tinkiu-homepage-blurb', data: founder, renderHeader: false %}
+    </div>
+    <div class="tinkiu-homepage__ethos">
+      {% assign ethos = o.ethos.value %}
+      {% render 'tinkiu-dot' %}
+      {% render 'tinkiu-homepage-blurb', data: ethos, renderButton: false %}
+      <p>{{ ethos.paragraph1 }}</p>
+      <div class="tinkiu-homepage__ethos__images">
+        {% for data in ethos.images %}
+          {% render 'tinkiu-homepage-ethos-image', data: data, isLast: forloop.last %}
+        {% endfor %}
+      </div>
+      <p>{{ ethos.paragraph2 }}</p>
+      {% render 'tinkiu-homepage-blurb', data: ethos, renderHeader: false %}
+    </div>
+    <div class="tinkiu-homepage__newsletter">
+      {% assign newsletter = o.newsletter.value %}
+      <img src="{{ newsletter.image.url }}" alt="{{ newsletter.image.alt }}">
+      {% render 'tinkiu-dot' %}
+      <h2>{{ newsletter.header }}</h2>
+      {% render 'tinkiu-homepage-newsletter', data: newsletter, section: section %}
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Tinkiu Homepage",
+    "settings": []
+  }
+{% endschema %}

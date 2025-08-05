@@ -11,10 +11,7 @@
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-
-
-
-<header>
+<header class="{% if request.path == '/' %}tinkiu-homepage-header{% endif %}">
   <ul class="left-menu">
     <li>
       <a href="{{ routes.root_url }}">

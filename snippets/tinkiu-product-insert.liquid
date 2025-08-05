@@ -1,0 +1,23 @@
+{% liquid
+  assign textBefore = textBefore | default: false
+  assign size = size | default: 'medium'
+  assign imageCount = imageCount | default: 1 | minus: 1
+%}
+
+<product-info class="tinkiu-product-insert {% if textBefore %}tinkiu-product-insert--text-before{% endif %} tinkiu-product-insert--{{ size }}" data-product-id="{{ product.id }}" data-url="{{ product.url }}">
+  {% for product in collections.all.products %}
+    {% if product.id == id %}
+      {% if textBefore %}
+        {% render 'tinkiu-product-insert-details', product: product %}
+      {% endif %}
+      <div class="tinkiu-product-insert__images">
+        {% for i in (0..imageCount) %}
+          <img src="{{ product.images[i] | img_url: 'large' }}" alt="{{ product.title }}">
+        {% endfor %}
+      </div>
+      {% if textBefore != true %}
+        {% render 'tinkiu-product-insert-details', product: product %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </product-info>

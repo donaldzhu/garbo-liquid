@@ -1,0 +1,14 @@
+{% liquid
+  assign type = data.type
+  assign url = data.url
+  assign filename = data.filename
+  assign id = data.id
+  assign meta = data.meta
+  assign preview = data.preview
+%}
+
+{% if type == 'image' %}
+  <img src="{{ url }}" alt="{{ meta.alt }}" />
+{% elsif type == 'video' %}
+  <video src="{{ url }}" autoplay muted loop></video>
+{% endif %}
