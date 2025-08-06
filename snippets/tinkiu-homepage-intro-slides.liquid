@@ -1,4 +1,6 @@
 <script>
+    /* document.body.style.overflow = 'hidden';
+    history.scrollRestoration = "manual"; */
     document.addEventListener('DOMContentLoaded', function() {
       const intro = document.querySelector('.tinkiu-homepage__intro');
       const INSET_WIDTH = getComputedStyle(intro).getPropertyValue('--width');
@@ -7,16 +9,15 @@
       const INSET_HEADER_COLOR = getComputedStyle(intro).getPropertyValue('--header-color');
 
       const DELAY = 0.6;
-      const INTRO_DURATION = 1.4;
+      const INTRO_DURATION = 1.2;
       const MAIN_DELAY = INTRO_DURATION + DELAY + 0.1;
       const MAIN_DURATION = 0.2;
 
       const FADE_DURATION = 0.2;
       const SLIDE_DURATION = 0.2;
 
-      document.body.style.overflow = 'hidden';
-      history.scrollRestoration = "manual";
-      window.scrollTo(0, 0);
+      console.log(getComputedStyle(intro).getPropertyValue('--header-color'))
+      /* window.scrollTo(0, 0); */
       const timeline = gsap.timeline();
       const toNextSlide = (currentSlideNumber) => {
       timeline
@@ -24,30 +25,51 @@
           .to(`.tinkiu-homepage__intro-image img:nth-child(${currentSlideNumber + 1})`, { opacity: 1, duration: 0 }, '+=0')
       }
 
-        Array(5).fill(0).forEach((_, index) => {
+        /* Array(5).fill(0).forEach((_, index) => {
           toNextSlide(index + 1)
-        })
+        }) */
+
+        const pillWidth = getComputedStyle(intro).getPropertyValue('--width');
+        const pillHeight = getComputedStyle(intro).getPropertyValue('--height');
+        const pillMaxWidth = getComputedStyle(intro).getPropertyValue('--max-width');
+        const pillMaxHeight = getComputedStyle(intro).getPropertyValue('--max-height');
+
+        const width = Math.min(parseFloat(pillWidth), parseFloat(pillMaxWidth) * window.innerWidth / 100);
+        const height = Math.min(parseFloat(pillHeight), parseFloat(pillMaxHeight) * window.innerWidth / 100);
+
+        const introImage = document.querySelector('.tinkiu-homepage__intro-image');
+        const pillAspectRatio = parseFloat(pillWidth) / parseFloat(pillHeight);
 
         timeline
         .to('header.tinkiu-homepage-header', { duration: FADE_DURATION, color: 'black' }, `+=${DELAY}`)
         .to('.tinkiu-homepage__intro .tinkiu-logo', { duration: FADE_DURATION, opacity: 0 }, `-=${FADE_DURATION}`)
-        .to('.tinkiu-homepage__intro-image', {
+        .to(introImage, {
           duration: INTRO_DURATION,
-          width: getComputedStyle(intro).getPropertyValue('--width'),
-          height: getComputedStyle(intro).getPropertyValue('--height'),
+          width,
+          height,
           borderRadius: getComputedStyle(intro).getPropertyValue('--border-radius'),
+          ease: 'power2.inOut'
         }, `-=${FADE_DURATION}`)
         .to('.tinkiu-homepage__intro-image-container', {
           duration: INTRO_DURATION,
-          top: '40vh',
+          top: getComputedStyle(intro).getPropertyValue('--top'),
           right: '50%',
-          transform: 'translate(50%, -50%)',
+          xPercent: 50,
+          yPercent: -50,
+          ease: 'power2.inOut'
         }, `-=${INTRO_DURATION}`)
-        .to('body', { overflow: 'auto', duration: 0 }, "+=0")
+        .to(introImage, {
+          duration: 0,
+          width: pillWidth,
+          height: pillHeight,
+          maxWidth: pillMaxWidth,
+          maxHeight: pillMaxHeight,
+        }, '+=0')
+        .to('body', { overflow: 'auto', duration: 0 }, '+=0')
         .to(['.tinkiu-homepage-header .tinkiu-logo','.tinkiu-homepage__intro-image-container .tinkiu-dot','.tinkiu-homepage__intro .tinkiu-homepage__blurb'], {
           duration: MAIN_DURATION,
           opacity: 1,
-        }, `+=0.1`)
+        }, '+=0.1')
         .to('header.tinkiu-homepage-header', { backgroundColor: getComputedStyle(intro).getPropertyValue('--header-color'), duration: 0 }, "+=0")
 
     })

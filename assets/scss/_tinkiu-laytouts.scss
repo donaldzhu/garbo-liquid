@@ -1,5 +1,8 @@
-$spacing-xxxl: 15rem;
-$spacing-xxl: 7.5rem;
+$large-spacing-l: 15rem;
+$large-spacing-m: 12rem;
+$large-spacing-s: 7.5rem;
+
+$spacing-xxl: 4.5rem;
 $spacing-xl: 3.6rem;
 $spacing-l: 3rem;
 $spacing-m: 2.25rem;
@@ -8,16 +11,34 @@ $spacing-s: 1.8rem;
 $spacing-xs: 1.5rem;
 $spacing-xxs: 1.2rem;
 $spacing-xxxs: 0.8rem;
+$spacing-xxxxs: 0.5rem;
 
 $max-width-long: 825px;
 $max-width-short: 625px;
+$max-width-long-laptop: 750px;
+$max-width-short-laptop: 550px;
+
+$intro-image-width: 625px;
+$intro-image-height: 450px;
+$intro-image-width-laptop: 500px;
+$intro-image-height-laptop: 375px;
+
+$intro-image-max-width: 70vw;
+$intro-image-max-height: calc($intro-image-max-width / ($intro-image-width / $intro-image-height));
+$intro-image-top: 40vh;
+
 
 $border-radius: 3rem;
 $total-columns: 12;
+$header-logo-width: 30px;
+$header-height: calc(#{$header-logo-width} + #{$spacing-m} * 2);
 
 $full-width: calc(100vw - $spacing-m * 2);
 
-@mixin square($size) {
+
+$large-screen: 1280px;
+
+@mixin square($size: 100%) {
   width: $size;
   height: $size;
 }
@@ -32,6 +53,31 @@ $full-width: calc(100vw - $spacing-m * 2);
 @mixin flex-column($align: center, $justify: center) {
   @include flex($align, $justify);
   flex-direction: column;
+}
+
+@mixin fullscreen($flex-direction: column, $align: center, $justify: center) {
+  width: 100vw;
+  height: 100vh;
+  flex-direction: $flex-direction;
+}
+
+@mixin shift-to-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin top-left($top: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin top-right($top: 0, $right: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
 }
 
 $single-column-width: calc(((100vw - $spacing-m * 2) - ($total-columns - 1) * $gap) / $total-columns);

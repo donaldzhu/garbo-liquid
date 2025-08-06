@@ -2,7 +2,6 @@
   assign header = data.header
   assign text = data.text
   assign linkButton = data.linkButton
-
 %}
 
 <div class="tinkiu-homepage__blurb {{ class }}">
@@ -17,6 +16,7 @@
     </p>
   {% endif %}
   {% if linkButton and renderButton != false %}
-    {% render 'tinkiu-cta-button', linkButton: linkButton %}
+    {% render 'tinkiu-cta-button'
+      , linkButton: linkButton %}
   {% endif %}
 </div>
