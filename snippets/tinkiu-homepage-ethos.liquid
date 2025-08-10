@@ -1,0 +1,19 @@
+<div class="tinkiu-homepage__ethos">
+
+  {% render 'tinkiu-dot' %}
+  {% render 'tinkiu-homepage-blurb'
+    , data: data
+    , renderButton: false %}
+  <p>{{ data.paragraph1 }}</p>
+  <div class="tinkiu-homepage__ethos__images">
+    {% for data in data.images %}
+      {% render 'tinkiu-homepage-ethos-image'
+        , data: data
+        , isLast: forloop.last %}
+    {% endfor %}
+  </div>
+  <p>{{ data.paragraph2 }}</p>
+  {% render 'tinkiu-homepage-blurb'
+    , data: data
+    , renderHeader: false %}
+</div>

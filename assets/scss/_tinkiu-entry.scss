@@ -1,6 +1,9 @@
 @forward 'tinkiu-colors';
-@forward 'tinkiu-laytouts';
+@forward 'tinkiu-sizes';
+@forward 'tinkiu-size-maps';
 @forward 'tinkiu-typography';
+@forward 'tinkiu-layouts';
 
+@forward 'custom/tinkiu-custom';
 @forward 'custom/tinkiu-header';
-@forward 'custom/tinkiu-homepage';
+@forward 'custom/homepage/tinkiu-homepage';

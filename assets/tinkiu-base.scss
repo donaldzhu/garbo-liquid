@@ -7,7 +7,6 @@ ul {
   display: flex;
 }
 
-
 a {
   text-decoration: none;
 
@@ -18,62 +17,7 @@ a {
   }
 }
 
-:root {
-  @media (min-width: #{$large-screen + 1px}) {
-    --spacing-xxxs: #{$spacing-xxs};
-    --spacing-xxs: #{$spacing-xs};
-    --spacing-xs: #{$spacing-s};
-    --spacing-s: #{$spacing-m};
-    --spacing-m: #{$spacing-l};
-    --spacing-l: #{$spacing-xl};
-    --spacing-xl: #{$spacing-xxl};
-    --spacing-xxl: #{$large-spacing-s};
-    --large-spacing-s: #{$large-spacing-m};
-    --large-spacing-m: #{$large-spacing-l};
-    --font-size-m: #{$font-size-l};
-    --font-size-l: #{$font-size-xl};
-    --font-size-xl: #{$font-size-xxl};
-    --font-size-xxl: #{$font-size-xxxl};
-    --max-width-long: #{$max-width-long};
-    --max-width-short: #{$max-width-short};
-    --homepage-list-gap: #{$spacing-m};
-    --homepage-stories-content-height: 1600px;
-    --homepage-founder-image-height: #{$intro-image-width};
-    --homepage-founder-image-width: #{$intro-image-height};
-    --homepage-founder-image-height-laptop: #{$intro-image-width-laptop};
-    --homepage-founder-image-width-laptop: #{$intro-image-height-laptop};
-    --homepage-newsletter-image-height: 240px;
-    --homepage-footer-logo-width: 800px;
-
-  }
-
-  @media (max-width: $large-screen) {
-    --spacing-xxxs: #{$spacing-xxxs};
-    --spacing-xxs: #{$spacing-xxs};
-    --spacing-xs: #{$spacing-xs};
-    --spacing-s: #{$spacing-s};
-    --spacing-m: #{$spacing-m};
-    --spacing-l: #{$spacing-l};
-    --spacing-xl: #{$spacing-xl};
-    --spacing-xxl: #{$spacing-xxl};
-    --large-spacing-s: #{$large-spacing-s};
-    --large-spacing-m: #{$large-spacing-m};
-    --font-size-m: #{$font-size-m};
-    --font-size-l: #{$font-size-l};
-    --font-size-xl: #{$font-size-xl};
-    --font-size-xxl: #{$font-size-xxl};
-    --max-width-long: #{$max-width-long-laptop};
-    --max-width-short: #{$max-width-short-laptop};
-    --homepage-list-gap: #{$spacing-xs};
-    --homepage-stories-content-height: 1000px;
-    --homepage-founder-image-height: #{$intro-image-width-laptop};
-    --homepage-founder-image-width: #{$intro-image-height-laptop};
-    --homepage-founder-image-height-laptop: #{$intro-image-width-laptop};
-    --homepage-founder-image-width-laptop: #{$intro-image-height-laptop};
-    --homepage-newsletter-image-height: 160px;
-    --homepage-footer-logo-width: 550px;
-  }
-}
+@include responsive-vars-map($size-maps);
 
 body {
   text-wrap: pretty;
@@ -100,13 +44,12 @@ p {
 button {
   appearance: none;
   font-weight: bold;
-  border: $red 1px solid;
+  border: border();
   background-color: transparent;
-  padding: 1rem 2rem;
-  border-radius: 0;
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
   cursor: pointer;
   transition: all 0.1s ease-in-out;
-  border-radius: 1rem;
   color: $red;
 
   &:hover {
@@ -129,8 +72,8 @@ body {
   }
 
   p {
-    font-family: 'Dazzed', sans-serif;
-    font-size: $font-size-m;
+    font-family: $font-family-body;
+    font-size: var(--large-copy);
     line-height: 1.15;
   }
 
@@ -144,7 +87,7 @@ body {
       outline: none;
       box-shadow: none;
       background-color: transparent;
-      border-bottom: 1px solid black;
+      border-bottom: border(black);
     }
 
     &::before,
@@ -156,29 +99,63 @@ body {
     &:not(:placeholder-shown)~label {
       display: none;
     }
-
-    &,
-    label.field__label {
-      font-size: $font-size-s;
-      font-family: 'Dazzed';
-      letter-spacing: 0;
-    }
   }
 
   label.field__label {
     opacity: 0.5;
     left: 0;
+    font-size: var(--small-copy-label);
+    font-family: $font-family-body;
+    letter-spacing: 0;
   }
 }
 
 .tinkiu-cta-button {
-  font-size: $font-size-xs;
-  padding: $spacing-xs $spacing-m;
-  border-radius: $spacing-xs * 2;
-  margin-top: $spacing-xxs;
+  font-size: var(--button-text);
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  margin-top: var(--blurb-button-margin-top);
   text-transform: uppercase;
 }
 
 #shop-hcaptcha-badge-container {
   display: none !important;
+}
+
+video {
+  border-radius: var(--media-border-radius);
+  background-color: $ash-dark;
+}
+
+.tinkiu-logo {
+  .tinkiu-logo-seal {
+    fill: red;
+
+    &-negative {
+      fill: none;
+    }
+  }
+
+
+  &--all-white {
+
+    .tinkiu-logo-text,
+    .tinkiu-logo-seal {
+      fill: white;
+    }
+  }
+
+  &--all-black {
+
+    .tinkiu-logo-text,
+    .tinkiu-logo-seal {
+      fill: black;
+    }
+  }
+
+  &--white {
+    .tinkiu-logo-text {
+      fill: white;
+    }
+  }
 }

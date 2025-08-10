@@ -1,0 +1,13 @@
+<div class="tinkiu-homepage__products">
+  {% render 'tinkiu-dot' %}
+  <div class="tinkiu-homepage__products-container">
+    {% for data in data.product %}
+      {% render 'tinkiu-homepage-product'
+        , category: data.category
+        , product: data.product
+        , isLast: forloop.last %}
+    {% endfor %}
+  </div>
+  {% render 'tinkiu-cta-button'
+    , linkButton: data.link %}
+</div>

@@ -9,7 +9,7 @@
       const INSET_HEADER_COLOR = getComputedStyle(intro).getPropertyValue('--header-color');
 
       const DELAY = 0.6;
-      const INTRO_DURATION = 1.2;
+      const INTRO_DURATION = 1.5;
       const MAIN_DELAY = INTRO_DURATION + DELAY + 0.1;
       const MAIN_DURATION = 0.2;
 
@@ -37,48 +37,75 @@
         const width = Math.min(parseFloat(pillWidth), parseFloat(pillMaxWidth) * window.innerWidth / 100);
         const height = Math.min(parseFloat(pillHeight), parseFloat(pillMaxHeight) * window.innerWidth / 100);
 
+        const introImageContainer = document.querySelector('.tinkiu-homepage__intro-image-container');
         const introImage = document.querySelector('.tinkiu-homepage__intro-image');
         const pillAspectRatio = parseFloat(pillWidth) / parseFloat(pillHeight);
 
         timeline
         .to('header.tinkiu-homepage-header', { duration: FADE_DURATION, color: 'black' }, `+=${DELAY}`)
-        .to('.tinkiu-homepage__intro .tinkiu-logo', { duration: FADE_DURATION, opacity: 0 }, `-=${FADE_DURATION}`)
+        .to('.tinkiu-homepage__intro .tinkiu-logo', { duration: FADE_DURATION, opacity: 0 }, `-=0`)
+
         .to(introImage, {
-          duration: INTRO_DURATION,
-          width,
-          height,
+          duration: 10,
+          width: pillWidth,
+          height: pillHeight,
           borderRadius: getComputedStyle(intro).getPropertyValue('--border-radius'),
+          ease: 'power2.inOut',
+          onComplete: () => {
+
+            requestAnimationFrame(() => {
+              introImageContainer.style.boxSizing = 'border-box';
+              introImageContainer.style.height = '80vh';
+              introImageContainer.style.minHeight = 'max(35vw, 350px)';
+              introImageContainer.style.maxHeight = 'min(110vw, 1500px)';
+              introImageContainer.style.marginBottom = '20vh'
+            })
+          }
+        }, `-=0`)
+
+  /*         .to(introImageContainer, {
+          duration: 0.5,
+
+
+          marginBottom: '20%',
           ease: 'power2.inOut'
-        }, `-=${FADE_DURATION}`)
-        .to('.tinkiu-homepage__intro-image-container', {
-          duration: INTRO_DURATION,
-          top: getComputedStyle(intro).getPropertyValue('--top'),
-          right: '50%',
-          xPercent: 50,
-          yPercent: -50,
+        }, `-=0.1`) */
+
+       /*  .to('.tinkiu-dot', {
+          duration: 0.5,
+          y: (_, target) => -target.getBoundingClientRect().height * 0.2,
           ease: 'power2.inOut'
-        }, `-=${INTRO_DURATION}`)
+        }, `-=0.1`)
+        .to(introImage, {
+          duration: 0.5,
+          y: (_, target) => target.getBoundingClientRect().height * 0.3,
+          ease: 'power2.inOut'
+        }, `-=0`) */
+
+
+        /*
         .to(introImage, {
           duration: 0,
           width: pillWidth,
           height: pillHeight,
-          maxWidth: pillMaxWidth,
-          maxHeight: pillMaxHeight,
-        }, '+=0')
-        .to('body', { overflow: 'auto', duration: 0 }, '+=0')
+          transformOrigin: 'center center',
+          ease: 'linear'
+
+        }, '+=0') */
+      /* .to('body', { overflow: 'auto', duration: 0 }, '+=0')
         .to(['.tinkiu-homepage-header .tinkiu-logo','.tinkiu-homepage__intro-image-container .tinkiu-dot','.tinkiu-homepage__intro .tinkiu-homepage__blurb'], {
           duration: MAIN_DURATION,
           opacity: 1,
         }, '+=0.1')
-        .to('header.tinkiu-homepage-header', { backgroundColor: getComputedStyle(intro).getPropertyValue('--header-color'), duration: 0 }, "+=0")
-
+        .to('header.tinkiu-homepage-header', { backgroundColor: getComputedStyle(intro).getPropertyValue('--header-color'), duration: 0 }, "+=0") */
     })
 
 
 </script>
 
 <div class="tinkiu-homepage__intro">
-  {% render 'tinkiu-logo' %}
+  {% render 'tinkiu-logo'
+    , color: 'white' %}
   {% render 'tinkiu-homepage-blurb'
     , data: intro %}
   <div class="tinkiu-homepage__intro-image-container">

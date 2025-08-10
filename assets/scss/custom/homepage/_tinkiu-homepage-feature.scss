@@ -1,0 +1,17 @@
+@use '../../tinkiu-sizes' as *;
+@use '../../tinkiu-layouts' as *;
+@use '../../tinkiu-typography' as *;
+
+.tinkiu-homepage__feature {
+  @include flex-column;
+  margin-top: var(--section-media-spacing);
+
+  img,
+  video {
+    width: var(--full-width);
+  }
+
+  .tinkiu-dot {
+    margin-top: calc(var(--dot-margin-bottom) + var(--section-header) * (($header-line-height - 1) / 2));
+  }
+}

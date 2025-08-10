@@ -11,120 +11,29 @@
       // console.log(stickyContainer.style.top);
       requestAnimationFrame(animate);
     }
-
-
     animate();
   })
 </script>
 
 <div class="tinkiu-homepage">
-  <div class="tinkiu-homepage__sticky-container">
   {% for o in metaobj -%}
-    {% render 'tinkiu-homepage-intro-slides'
-      , intro: o.intro.value %}
-    <div class="tinkiu-homepage__feature">
-      {% assign feature = o.feature.value %}
-      {% render 'tinkiu-media'
-        , data: feature.media %}
-      {% render 'tinkiu-dot' %}
-      {% render 'tinkiu-homepage-blurb'
-        , data: feature %}
-    </div>
-    <div class="tinkiu-homepage__products">
-      {% assign products = o.products.value %}
-      {% render 'tinkiu-dot' %}
-      <div class="tinkiu-homepage__products-container">
-        {% for data in products.product %}
-          {% render 'tinkiu-homepage-product'
-            , category: data.category
-            , product: data.product
-            , isLast: forloop.last %}
-        {% endfor %}
-      </div>
-      {% render 'tinkiu-cta-button'
-        , linkButton: products.link %}
-    </div>
-    {% render 'tinkiu-homepage-stories'
-      , data: o.stories.value %}
-    <div class="tinkiu-homepage__founder">
-      {% assign founder = o.founder.value %}
-      {% render 'tinkiu-dot' %}
-      <h2>{{ founder.header }}</h2>
-      <img src="{{ founder.portrait.url }}" alt="{{ founder.portrait.alt }}">
-      <p>
-        <b>Garbo Zhu</b>
-      </p>
-      {% render 'tinkiu-homepage-blurb'
-        , data: founder
-        , renderHeader: false %}
-    </div>
-
-    <div class="tinkiu-homepage__ethos">
-      {% assign ethos = o.ethos.value %}
-      {% render 'tinkiu-dot' %}
-      {% render 'tinkiu-homepage-blurb'
-        , data: ethos
-        , renderButton: false %}
-      <p>{{ ethos.paragraph1 }}</p>
-      <div class="tinkiu-homepage__ethos__images">
-        {% for data in ethos.images %}
-          {% render 'tinkiu-homepage-ethos-image'
-            , data: data
-            , isLast: forloop.last %}
-        {% endfor %}
-      </div>
-      <p>{{ ethos.paragraph2 }}</p>
-      {% render 'tinkiu-homepage-blurb'
-        , data: ethos
-        , renderHeader: false %}
-    </div>
-    <div class="tinkiu-homepage__newsletter">
-      {% assign newsletter = o.newsletter.value %}
-      <img src="{{ newsletter.image.url }}" alt="{{ newsletter.image.alt }}">
-      <div class="tinkiu-homepage__newsletter__content">
-      {% render 'tinkiu-dot' %}
-      <h2>{{ newsletter.header }}</h2>
+    <div class="tinkiu-homepage__sticky-container">
+      {% render 'tinkiu-homepage-intro-slides'
+        , intro: o.intro.value %}
+      {% render 'tinkiu-homepage-feature'
+        , data: o.feature.value %}
+      {% render 'tinkiu-homepage-products'
+        , data: o.products.value %}
+      {% render 'tinkiu-homepage-stories'
+        , data: o.stories.value %}
+      {% render 'tinkiu-homepage-founder'
+        , data: o.founder.value %}
+      {% render 'tinkiu-homepage-ethos'
+        , data: o.ethos.value %}
       {% render 'tinkiu-homepage-newsletter'
-        , data: newsletter
-        , section: section %}
-      </div>
+        , data: o.newsletter.value %}
     </div>
-  </div>
-
-    <div class="tinkiu-homepage__footer">
-      <div class="tinkiu-homepage__footer__content">
-        {% render 'tinkiu-logo' %}
-        <h2>More, Love.</h2>
-      </div>
-      <div class="tinkiu-homepage__footer__links">
-        <div class="tinkiu-homepage__footer__links__column">
-          Tinkiu, LLC. © {{ 'now' | date: '%Y' }}
-        </div>
-        <div class="tinkiu-homepage__footer__links__column">
-          <a href="/">
-            {% render 'tinkiu-icon-instagram' %}
-          </a>
-          <a href="/">
-            {% render 'tinkiu-icon-youtube' %}
-          </a>
-          <a href="/">
-            {% render 'tinkiu-icon-tiktok' %}
-          </a>
-          <a href="/">
-            {% render 'tinkiu-icon-xhs' %}
-          </a>
-        </div>
-        <div class="tinkiu-homepage__footer__links__column">
-          <a href="/">PRODUCTS</a>
-          <a href="/">SERVICES</a>
-          <a href="/">BLOG</a>
-        </div>
-        <div class="tinkiu-homepage__footer__links__column">
-          <a href="/">ABOUT</a>
-          <a href="/">CONTACT</a>
-        </div>
-      </div>
-    </div>
+    {% render 'tinkiu-homepage-footer' %}
   {%- endfor -%}
 </div>
 

@@ -1,0 +1,16 @@
+@use '../../tinkiu-sizes' as *;
+
+.tinkiu-homepage__founder {
+  img {
+    width: var(--homepage-image-size-short);
+    height: var(--homepage-image-size-long);
+    object-fit: cover;
+    border-radius: var(--homepage-image-size-short);
+    margin: var(--founder-image-margin) 0;
+  }
+
+  p.tinkiu-homepage__founder__name {
+    margin-bottom: 0;
+    margin-top: var(--small-space-y);
+  }
+}

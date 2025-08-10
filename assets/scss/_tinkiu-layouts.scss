@@ -1,0 +1,56 @@
+@use 'tinkiu-sizes' as *;
+@use 'tinkiu-colors' as *;
+
+@mixin square($size: 100%) {
+  width: $size;
+  height: $size;
+}
+
+@mixin flex($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: row;
+}
+
+@mixin flex-column($align: center, $justify: center) {
+  @include flex($align, $justify);
+  flex-direction: column;
+}
+
+@mixin fullscreen($flex-direction: column, $align: center, $justify: center) {
+  width: 100vw;
+  height: 100vh;
+  min-height: max(35vw, 350px);
+  max-height: min(110vw, 1500px);
+  flex-direction: $flex-direction;
+}
+
+@mixin shift-to-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin top-left($top: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin top-right($top: 0, $right: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+}
+
+
+@function column-width($column-count, $full-width: var(--full-width)) {
+  $single-column-width: calc((#{$full-width} - (#{$total-columns} - 1) * var(--column-gap)) / #{$total-columns});
+  @return calc(#{$single-column-width} * #{$column-count} + var(--column-gap) * (#{$column-count} - 1));
+}
+
+@function border($color: $red) {
+  @return $color 1px solid;
+}

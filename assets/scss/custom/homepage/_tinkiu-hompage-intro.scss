@@ -1,0 +1,77 @@
+@use '../../tinkiu-sizes' as *;
+@use '../../tinkiu-layouts' as *;
+@use '../../tinkiu-colors' as *;
+
+.tinkiu-homepage__intro-image-container {
+  @include flex;
+  @include top-right;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  transition: all 0.5s ease-in-out;
+
+  gap: min(var(--dot-with-space-margin-top), 7vw);
+
+  .tinkiu-dot {
+    opacity: 0;
+    margin: 0;
+  }
+}
+
+.tinkiu-homepage__intro-image {
+  @include fullscreen(row);
+  max-height: auto;
+  min-height: auto;
+  flex: none;
+  overflow: hidden;
+  transform-origin: center center;
+
+  img {
+    user-select: none;
+    @include square;
+    @include top-left;
+    object-fit: cover;
+    opacity: 0;
+
+    &:last-child {
+      opacity: 1;
+    }
+
+    &:last-child {
+      position: relative;
+    }
+  }
+}
+
+// TODO
+.tinkiu-homepage__intro {
+  --top: #{$intro-image-top};
+  --width: var(--homepage-image-size-long);
+  --height: var(--homepage-image-size-short);
+  /*   --max-width: #{$intro-image-max-width};
+  --max-height: #{$intro-image-max-height}; */
+
+  --border-radius: #{$intro-image-width};
+  --header-color: #{$ash};
+
+  @include fullscreen;
+  max-height: auto;
+  min-height: auto;
+  flex: none;
+  position: relative;
+
+  .tinkiu-homepage__blurb {
+    position: absolute;
+    $top: calc(#{$intro-image-top} + #{$intro-image-height} / 2);
+    top: $top;
+    height: calc(100vh - #{$top});
+    opacity: 0;
+  }
+
+  .tinkiu-logo {
+    @include shift-to-center;
+    z-index: 999;
+    width: max(var(--homepage-logo-width), var(--homepage-intro-logo-vw));
+    height: auto;
+  }
+}

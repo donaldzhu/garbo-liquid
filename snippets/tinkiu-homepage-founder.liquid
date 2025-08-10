@@ -1,0 +1,11 @@
+<div class="tinkiu-homepage__founder">
+  {% render 'tinkiu-dot' %}
+  <h2>{{ data.header }}</h2>
+  <img src="{{ data.portrait.url }}" alt="{{ data.portrait.alt }}">
+  <p class="tinkiu-homepage__founder__name">
+    <b>Garbo Zhu</b>
+  </p>
+  {% render 'tinkiu-homepage-blurb'
+    , data: data
+    , renderHeader: false %}
+</div>

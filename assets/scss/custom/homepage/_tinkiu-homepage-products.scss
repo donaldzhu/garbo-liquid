@@ -1,0 +1,16 @@
+@use '../../tinkiu-sizes' as *;
+@use '../../tinkiu-layouts' as *;
+@use '../../tinkiu-size-maps' as *;
+
+.tinkiu-homepage__products-container {
+  @include flex(flex-start, center);
+  width: var(--full-width);
+  gap: var(--column-gap);
+  margin-bottom: var(--products-margin-bottom);
+
+  @media (max-width: map-get($breakpoints, xl)) {
+    >:nth-child(3) {
+      display: none;
+    }
+  }
+}

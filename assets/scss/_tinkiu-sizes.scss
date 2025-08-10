@@ -1,0 +1,28 @@
+$large-spacing-l: 15rem;
+$large-spacing-m: 12rem;
+$large-spacing-s: 7.5rem;
+$large-spacing-xs: 6rem;
+$spacing-xxl: 4.5rem;
+$spacing-xl: 3.6rem;
+$spacing-l: 3rem;
+$spacing-m: 2.25rem;
+$spacing-s: 1.8rem;
+
+$small-space-l: 1.5rem;
+$small-space-m: 1.2rem;
+$small-space-s: 0.8rem;
+$small-space-xs: 0.5rem;
+$small-space-xxs: 0.3rem;
+
+$intro-image-width: 625px;
+$intro-image-height: 450px;
+$intro-image-width-laptop: 500px;
+$intro-image-height-laptop: 375px;
+
+$intro-image-max-width: 70vw;
+$intro-image-max-height: calc($intro-image-max-width / ($intro-image-width / $intro-image-height));
+$intro-image-top: 40vh;
+
+
+$total-columns: 12;
+$header-height: calc(var(--header-logo-height) + var(--header-margin-y) * 2);

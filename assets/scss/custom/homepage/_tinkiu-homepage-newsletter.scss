@@ -1,0 +1,44 @@
+@use '../../tinkiu-sizes' as *;
+@use '../../tinkiu-layouts' as *;
+
+.tinkiu-homepage__newsletter {
+  @include fullscreen;
+  flex: none;
+  gap: var(--inner-section-spacing);
+
+  img {
+    height: var(--homepage-newsletter-image-height);
+  }
+
+  .tinkiu-homepage__newsletter__content {
+    @include flex-column;
+  }
+
+  .tinkiu-dot {
+    margin-top: 0;
+  }
+
+  .tinkiu-homepage__newsletter__form {
+    @include flex-column;
+    position: relative;
+  }
+
+  // TODO: success
+  input {
+
+    &,
+    &:focus,
+    &:not(:placeholder-shown) {
+      width: var(--newsletter-max-width);
+      padding: var(--input-padding) 0;
+    }
+  }
+
+  label {
+    bottom: var(--input-padding);
+  }
+
+  .tinkiu-cta-button {
+    margin-top: var(--form-button-margin-top);
+  }
+}

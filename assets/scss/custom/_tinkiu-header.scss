@@ -1,15 +1,16 @@
 @use '../tinkiu-colors' as *;
-@use '../tinkiu-laytouts' as *;
+@use '../tinkiu-sizes' as *;
 @use '../tinkiu-typography' as *;
+@use '../tinkiu-layouts' as *;
 
 header {
   @include flex(center, space-between);
-  padding: $spacing-m $spacing-l;
-  background-color: $ash;
-  position: fixed;
   width: 100vw;
+  padding: var(--header-margin-y) var(--page-margin-x);
+  position: fixed;
   top: 0;
   text-transform: uppercase;
+  background-color: $ash;
   z-index: 999;
 
   div {
@@ -19,24 +20,15 @@ header {
   }
 
   ul {
-    gap: $spacing-m;
-    font-size: $font-size-s;
+    gap: var(--header-gap);
+    font-size: var(--header-font-size);
+  }
+
+  .tinkiu-logo-container {
+    @include flex;
   }
 }
 
 .tinkiu-logo {
-  height: $header-logo-width;
-
-
-  &-text {
-    fill: black;
-  }
-
-  &-seal-negative {
-    fill: none;
-  }
-
-  &-seal {
-    fill: $red;
-  }
+  height: var(--header-logo-height);
 }

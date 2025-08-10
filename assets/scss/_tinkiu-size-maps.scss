@@ -1,0 +1,427 @@
+@use 'tinkiu-sizes' as *;
+@use 'tinkiu-typography' as *;
+@use 'tinkiu-layouts' as *;
+
+$breakpoints: (
+  l: 1024px,
+  xl: 1280px,
+  xxl: 1536px,
+);
+
+
+
+// TYPOGRAPHY
+
+$section-header: (
+  l: $header-xl,
+  xl: $header-xxl,
+  xxl: $header-xxl,
+);
+
+$subsection-header: (
+  l: $subheader-l,
+  xl: $subheader-xxl,
+  xxl: $subheader-xxl,
+);
+
+$large-copy: (
+  l: $large-copy-l,
+  xl: $large-copy-xl,
+  xxl: $large-copy-xl,
+);
+
+$medium-copy: (
+  l: $large-copy-s,
+  xl: $large-copy-m,
+  xxl: $large-copy-m,
+);
+
+$small-copy: (
+  l: $copy-s,
+  xl: $copy,
+  xxl: $copy,
+);
+
+$header-font-size: (
+  l: $copy-s,
+  xl: $copy,
+  xxl: $copy,
+);
+
+$product-caption: (
+  l: $copy,
+  xl: $copy,
+  xxl: $copy,
+);
+
+$button-text: (
+  l: $copy-s,
+  xl: $copy-s,
+  xxl: $copy-s,
+);
+
+$small-copy-label: (
+  l: $copy,
+  xl: $copy,
+  xxl: $copy,
+);
+
+
+// SPACING
+$page-margin-x: (
+  l: $spacing-m,
+  xl: $spacing-m,
+  xxl: $spacing-m,
+);
+
+$header-margin-y: (
+  l: $spacing-s,
+  xl: $spacing-m,
+  xxl: $spacing-m,
+);
+
+$section-media-spacing: (
+  l: $spacing-l,
+  xl: $spacing-xl,
+  xxl: $spacing-xl,
+);
+
+$homepage-stories-header-margin-top: (
+  l: $large-spacing-s,
+  xl: $large-spacing-m,
+  xxl: $large-spacing-m,
+);
+
+$homepage-stories-details-margin-top: (
+  l: $large-spacing-s,
+  xl: $large-spacing-m,
+  xxl: $large-spacing-m,
+);
+
+$homepage-stories-description-margin-top: (
+  l: $spacing-l,
+  xl: $spacing-xl,
+  xxl: $spacing-xl,
+);
+
+$paragraph-spacing: (
+  l: $small-space-l,
+  xl: $spacing-s,
+  xxl: $spacing-s,
+);
+
+$inner-section-spacing: (
+  l: $large-spacing-xs,
+  xl: $large-spacing-s,
+  xxl: $large-spacing-s,
+);
+
+$products-margin-bottom: (
+  l: $spacing-xxl,
+  xl: $large-spacing-xs,
+  xxl: $large-spacing-xs,
+);
+
+$product-insert-price-margin: (
+  l: $small-space-xxs,
+  xl: $small-space-xs,
+  xxl: $small-space-xs,
+);
+
+$products-gap: (
+  l: $small-space-m,
+  xl: $small-space-l,
+  xxl: $small-space-l,
+);
+
+$button-padding: (
+  l: $small-space-l $spacing-m,
+  xl: $small-space-l $spacing-m,
+  xxl: $small-space-l $spacing-m,
+);
+
+$button-radius: (
+  l: $small-space-l * 2,
+  xl: $small-space-l * 2,
+  xxl: $small-space-l * 2,
+);
+
+$blurb-button-margin-top: (
+  l: $small-space-m,
+  xl: $small-space-m,
+  xxl: $small-space-m,
+);
+
+$form-button-margin-top: (
+  l: $spacing-l,
+  xl: $spacing-xl,
+  xxl: $spacing-xl,
+);
+
+$list-margin: (
+  l: $small-space-l,
+  xl: $spacing-s,
+  xxl: $spacing-s,
+);
+
+$column-gap: (
+  l: $spacing-s,
+  xl: $spacing-m,
+  xxl: $spacing-m,
+);
+
+$header-gap: (
+  l: $spacing-s,
+  xl: $spacing-m,
+  xxl: $spacing-m,
+);
+
+$dot-with-space-margin-top: (
+  l: $large-spacing-m,
+  xl: $large-spacing-l,
+  xxl: $large-spacing-l,
+);
+
+$dot-margin-bottom: (
+  l: $spacing-m,
+  xl: $spacing-l,
+  xxl: $spacing-xl,
+);
+
+$founder-image-margin: (
+  l: $spacing-l,
+  xl: $spacing-xl,
+  xxl: $spacing-xl,
+);
+
+$small-space-y: (
+  l: $small-space-s,
+  xl: $small-space-m,
+  xxl: $small-space-m,
+);
+
+$footer-icon-spacing: (
+  l: $spacing-s,
+  xl: $spacing-m,
+  xxl: $spacing-m,
+);
+
+$input-padding: (
+  l: $spacing-s,
+  xl: $spacing-m,
+  xxl: $spacing-m,
+);
+
+
+// SIZING
+
+$full-width: (
+  l: calc(100vw - var(--page-margin-x) * 2),
+  xl: calc(100vw - var(--page-margin-x) * 2),
+  xxl: calc(#{map-get($breakpoints, xxl)} - var(--page-margin-x) * 2),
+);
+
+$list-width: (
+  l: column-width(4, calc(map-get($breakpoints, l) - var(--page-margin-x) * 2)),
+  xl: column-width(3),
+  xxl: column-width(3),
+);
+
+
+$homepage-stories-image-height: (
+  l: 1000px,
+  xl: 1000px,
+  xxl: 1200px,
+);
+
+$text-max-width: (
+  l: 650px,
+  xl: 725px,
+  xxl: 725px,
+);
+
+$homepage-stories-header-width: (
+  l: column-width(5, calc(map-get($breakpoints, l) - var(--page-margin-x) * 2)),
+  xl: column-width(4),
+  xxl: column-width(4),
+);
+
+$newsletter-max-width: (
+  l: 575px,
+  xl: 675px,
+  xxl: 675px,
+);
+
+$homepage-logo-width: (
+  l: 550px,
+  xl: 600px,
+  xxl: 800px,
+);
+
+$homepage-image-size-short: (
+  l: 375px,
+  xl: 450px,
+  xxl: 540px,
+);
+
+$homepage-image-size-long: (
+  l: 500px,
+  xl: 625px,
+  xxl: 750px,
+);
+
+
+$header-logo-height: (
+  l: 24px,
+  xl: 30px,
+  xxl: 30px,
+);
+
+$homepage-intro-logo-vw: (
+  l: 70vw,
+  xl: 60vw,
+  xxl: 60vw,
+);
+
+
+$homepage-newsletter-image-height: (
+  l: 150px,
+  xl: 200px,
+  xxl: 200px,
+);
+
+$dot-size: (
+  l: 20px,
+  xl: 24px,
+  xxl: 24px,
+);
+
+$media-border-radius: (
+  l: 2.5rem,
+  xl: 3rem,
+  xxl: 3rem,
+);
+
+$size-maps: (
+  section-header: $section-header,
+  subsection-header: $subsection-header,
+  large-copy: $large-copy,
+  medium-copy: $medium-copy,
+  small-copy: $small-copy,
+  header-font-size: $header-font-size,
+  product-caption: $product-caption,
+
+  page-margin-x: $page-margin-x,
+  header-margin-y: $header-margin-y,
+  section-media-spacing: $section-media-spacing,
+  homepage-stories-header-margin-top: $homepage-stories-header-margin-top,
+  homepage-stories-details-margin-top: $homepage-stories-details-margin-top,
+  homepage-stories-description-margin-top: $homepage-stories-description-margin-top,
+  paragraph-spacing: $paragraph-spacing,
+  inner-section-spacing: $inner-section-spacing,
+  products-margin-bottom: $products-margin-bottom,
+  products-gap: $products-gap,
+  product-insert-price-margin: $product-insert-price-margin,
+  small-copy-label: $small-copy-label,
+  button-text: $button-text,
+  button-padding: $button-padding,
+  button-radius: $button-radius,
+  blurb-button-margin-top: $blurb-button-margin-top,
+  form-button-margin-top: $form-button-margin-top,
+  list-margin: $list-margin,
+  column-gap: $column-gap,
+  header-gap: $header-gap,
+  dot-margin-bottom: $dot-margin-bottom,
+  dot-with-space-margin-top: $dot-with-space-margin-top,
+
+  full-width: $full-width,
+  text-max-width: $text-max-width,
+  homepage-stories-header-width: $homepage-stories-header-width,
+  homepage-logo-width: $homepage-logo-width,
+  header-logo-height: $header-logo-height,
+  homepage-intro-logo-vw: $homepage-intro-logo-vw,
+  list-width: $list-width,
+  homepage-stories-image-height: $homepage-stories-image-height,
+  founder-image-margin: $founder-image-margin,
+  small-space-y: $small-space-y,
+  homepage-image-size-short: $homepage-image-size-short,
+  homepage-image-size-long: $homepage-image-size-long,
+  homepage-newsletter-image-height: $homepage-newsletter-image-height,
+  newsletter-max-width: $newsletter-max-width,
+  input-padding: $input-padding,
+  dot-size: $dot-size,
+  media-border-radius: $media-border-radius,
+  footer-icon-spacing: $footer-icon-spacing,
+);
+
+@mixin responsive-var($map, $var-name) {
+
+  // Optional base value (no media query)
+  @if map-has-key($map, base) {
+    #{$selector} {
+      --#{$var-name}: #{map-get($map, base)};
+    }
+  }
+
+  // Build ordered list of breakpoints that appear in $map,
+  // following the order defined in $breakpoints.
+  $ordered: (
+  );
+
+@each $bp, $size in $breakpoints {
+  @if map-has-key($map, $bp) {
+    $ordered: append($ordered, $bp);
+  }
+}
+
+$len: length($ordered);
+
+@for $i from 1 through $len {
+  $bp: nth($ordered, $i);
+  $min: map-get($breakpoints, $bp);
+  $value: map-get($map, $bp);
+
+  @if $i < $len {
+    // Closed range: [min, next-min)
+    $next-bp: nth($ordered, $i + 1);
+    $next-min: map-get($breakpoints, $next-bp);
+    $max: $next-min - 1px;
+
+    @media (min-width: #{$min}) and (max-width: #{$max}) {
+      :root {
+        --#{$var-name}: #{$value};
+      }
+    }
+  }
+
+  @else {
+
+    // Final range: [min, ∞)
+    @media (min-width: #{$min}) {
+      :root {
+        --#{$var-name}: #{$value};
+      }
+    }
+  }
+}
+}
+
+@mixin responsive-vars-map($maps) {
+  @each $var-name, $val in $maps {
+    $val-type: type-of($val);
+
+    @if $val-type =='list' and length($val)==2 {
+      $map: nth($val, 1);
+      $selector: nth($val, 2);
+      @include responsive-var($map, $var-name, $selector);
+    }
+
+    @else if $val-type =='map' {
+      @include responsive-var($val, $var-name);
+    }
+
+    @else {
+      @warn "For `#{$var-name}`, expected map or (map, selector). Got `#{$val-type}`.";
+    }
+  }
+}
