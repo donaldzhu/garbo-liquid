@@ -19,9 +19,12 @@ $intro-image-height: 450px;
 $intro-image-width-laptop: 500px;
 $intro-image-height-laptop: 375px;
 
-$intro-image-max-width: 70vw;
-$intro-image-max-height: calc($intro-image-max-width / ($intro-image-width / $intro-image-height));
-$intro-image-top: 40vh;
+$fullscreen-height-min-vw: 40vw;
+$fullscreen-height-max-vw: 110vw;
+$fullscreen-height-min-px: 500px;
+$fullscreen-height-max-px: 1500px;
+$intro-image-height: calc(max(min(100vh, #{$fullscreen-height-max-px}, #{$fullscreen-height-max-vw}), #{$fullscreen-height-min-vw}, #{$fullscreen-height-min-px}));
+$intro-image-padding-bottom: calc(#{$intro-image-height} * var(--homepage-intro-image-padding-bottom));
 
 
 $total-columns: 12;

@@ -13,8 +13,8 @@ $breakpoints: (
 // TYPOGRAPHY
 
 $section-header: (
-  l: $header-xl,
-  xl: $header-xxl,
+  l: $header-l,
+  xl: $header-xl,
   xxl: $header-xxl,
 );
 
@@ -25,8 +25,8 @@ $subsection-header: (
 );
 
 $large-copy: (
-  l: $large-copy-l,
-  xl: $large-copy-xl,
+  l: $large-copy-m,
+  xl: $large-copy-l,
   xxl: $large-copy-xl,
 );
 
@@ -227,7 +227,6 @@ $list-width: (
   xxl: column-width(3),
 );
 
-
 $homepage-stories-image-height: (
   l: 1000px,
   xl: 1000px,
@@ -235,7 +234,7 @@ $homepage-stories-image-height: (
 );
 
 $text-max-width: (
-  l: 650px,
+  l: 600px,
   xl: 725px,
   xxl: 725px,
 );
@@ -258,16 +257,17 @@ $homepage-logo-width: (
   xxl: 800px,
 );
 
+$homepage-image-size-aspect-ratio: 1.4;
 $homepage-image-size-short: (
-  l: 375px,
-  xl: 450px,
-  xxl: 540px,
+  l: 200px,
+  xl: 325px,
+  xxl: 400px,
 );
 
 $homepage-image-size-long: (
-  l: 500px,
-  xl: 625px,
-  xxl: 750px,
+  l: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
+  xl: map-get($homepage-image-size-short, xl) * $homepage-image-size-aspect-ratio,
+  xxl: map-get($homepage-image-size-short, xxl) * $homepage-image-size-aspect-ratio,
 );
 
 
@@ -281,6 +281,12 @@ $homepage-intro-logo-vw: (
   l: 70vw,
   xl: 60vw,
   xxl: 60vw,
+);
+
+$homepage-intro-image-padding-bottom: (
+  l: 0.4,
+  xl: 0.3,
+  xxl: 0.25,
 );
 
 
@@ -352,6 +358,7 @@ $size-maps: (
   dot-size: $dot-size,
   media-border-radius: $media-border-radius,
   footer-icon-spacing: $footer-icon-spacing,
+  homepage-intro-image-padding-bottom: $homepage-intro-image-padding-bottom,
 );
 
 @mixin responsive-var($map, $var-name) {
