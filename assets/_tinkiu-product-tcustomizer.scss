@@ -29,8 +29,12 @@
     border: border($gray);
   }
 
-  .tcustomizer-text-field {
+  .tcustomizer__text-field {
     padding: 0.75em 0;
+
+    &:focus {
+      border: border($gray);
+    }
   }
 
   .tcustomizer__text-field--subinfo {

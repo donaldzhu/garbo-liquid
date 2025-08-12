@@ -30,7 +30,7 @@
     }
   }
 
-  button.tcustomizer-add,
+  button#tcustomizer-add,
   button.shopify-payment-button__button {
     @include cta-button;
     margin: 0;
