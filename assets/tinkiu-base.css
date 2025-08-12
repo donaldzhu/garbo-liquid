@@ -818,6 +818,12 @@ product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-field__heading
 product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-field__heading ~ p {
   margin-bottom: var(--detail-label-margin-bottom);
 }
+product-info.tinkiu-product .tinkiu-product-app .tcustomizer-field {
+  margin-bottom: var(--product-details-gap);
+}
+product-info.tinkiu-product .tinkiu-product-app .tcustomizer-photo {
+  margin-bottom: 0;
+}
 product-info.tinkiu-product .tinkiu-product-app .tcustomizer-photo-action {
   display: flex;
   align-items: flex-start;

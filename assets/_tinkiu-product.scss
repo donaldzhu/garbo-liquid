@@ -91,6 +91,14 @@ product-info.tinkiu-product {
       @include detail-label;
     }
 
+    .tcustomizer-field {
+      margin-bottom: var(--product-details-gap);
+    }
+
+    .tcustomizer-photo {
+      margin-bottom: 0;
+    }
+
     .tcustomizer-photo-action {
       @include flex-column(flex-start, flex-start);
       gap: var(--small-space-y);
