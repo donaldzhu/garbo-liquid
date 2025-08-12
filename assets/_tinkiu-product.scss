@@ -91,13 +91,19 @@ product-info.tinkiu-product {
       @include detail-label;
     }
 
+    .tcustomizer-photo-action {
+      @include flex-column;
+      gap: var(--product-details-gap);
+    }
+
     label.tcustomizer-btn {
       @include cta-button;
       width: column-width(2);
-      border: border($gray);
-      border-radius: 50%;
+      border: border(black);
       padding: var(--button-padding) !important;
       margin: 0;
+      margin-top: var(--product-details-gap);
+      height: auto;
 
       &,
       &:hover {
