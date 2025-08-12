@@ -34,6 +34,8 @@
 
     &:focus {
       border: border($gray);
+      background-color: $ash;
+      box-shadow: none;
     }
   }
 
