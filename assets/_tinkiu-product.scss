@@ -92,8 +92,8 @@ product-info.tinkiu-product {
     }
 
     .tcustomizer-photo-action {
-      @include flex-column;
-      gap: var(--product-details-gap);
+      @include flex-column(flex-start, flex-start);
+      gap: var(--small-space-y);
     }
 
     label.tcustomizer-btn {
@@ -112,11 +112,13 @@ product-info.tinkiu-product {
       }
     }
 
-    .tcustomizer-photo-placeholder {
+    .tcustomizer-photo-placeholder,
+    .tcustomizer-photo-uploaded {
       width: column-width(2);
       border-color: $gray;
       aspect-ratio: 1/1;
       margin: 0;
+      object-fit: cover;
     }
 
     .tcustomizer-watermark {
