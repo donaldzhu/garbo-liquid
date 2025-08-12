@@ -96,7 +96,8 @@ product-info.tinkiu-product {
       gap: var(--small-space-y);
     }
 
-    label.tcustomizer-btn {
+    label.tcustomizer-btn,
+    button.tcustomizer-btn {
       @include cta-button;
       width: column-width(2);
       border: border(black);
@@ -118,7 +119,13 @@ product-info.tinkiu-product {
       border-color: $gray;
       aspect-ratio: 1/1;
       margin: 0;
-      object-fit: cover;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
     }
 
     .tcustomizer-watermark {
