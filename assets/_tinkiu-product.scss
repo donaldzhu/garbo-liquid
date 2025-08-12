@@ -91,6 +91,10 @@ product-info.tinkiu-product {
       @include detail-label;
     }
 
+    .tcustomizer-asterisk {
+      color: $red;
+    }
+
     .tcustomizer-field {
       margin-bottom: var(--product-details-gap);
     }
@@ -126,7 +130,7 @@ product-info.tinkiu-product {
 
     .tcustomizer-photo-placeholder,
     .tcustomizer-photo-uploaded {
-      @include square(column-width(2));
+      @include square(column-width(1));
       border-color: $gray;
 
       margin: 0;

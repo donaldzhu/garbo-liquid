@@ -37,12 +37,10 @@
 
   }
 
-  shopify-buy-it-now-button:not(:disabled) {
-
+  shopify-buy-it-now-button:not(shopify-buy-it-now-button:disabled) {
     button.shopify-payment-button__button {
       background-color: $red;
       color: $ash;
     }
-
   }
 }
