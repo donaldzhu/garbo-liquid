@@ -14,7 +14,7 @@
 <header class="{% if request.path == '/' %}tinkiu-homepage-header{% endif %}">
   <ul class="left-menu">
     <li>
-      <a href="{{ routes.root_url }}">
+      <a href="{{ collections.all.url }}">
         PRODUCTS
       </a>
     </li>
@@ -30,7 +30,9 @@
     </li>
   </ul>
   <div class="tinkiu-logo-container">
-    {% render 'tinkiu-logo' %}
+    <a href="{{ routes.root_url }}">
+      {% render 'tinkiu-logo' %}
+    </a>
   </div>
   <ul class="right-menu">
     <li>

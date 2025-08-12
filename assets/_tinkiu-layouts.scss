@@ -1,5 +1,6 @@
 @use 'tinkiu-sizes' as *;
 @use 'tinkiu-colors' as *;
+@use 'tinkiu-typography' as *;
 
 @mixin square($size: 100%) {
   width: $size;
@@ -53,4 +54,67 @@
 
 @function border($color: $red) {
   @return $color 1px solid;
+}
+
+@mixin details {
+  @include flex(flex-start, flex-start);
+  flex-wrap: wrap;
+  width: var(--side-info-width);
+  gap: var(--column-gap);
+  margin-top: var(--homepage-stories-details-margin-top);
+
+  p {
+    margin: 0;
+    @include detail-caption;
+  }
+
+  >div {
+    @include flex-column(flex-start, flex-start);
+    width: column-width(2);
+
+    p:first-child {
+      @include detail-label;
+    }
+  }
+}
+
+@mixin button {
+  appearance: none;
+  font-weight: bold;
+  border: border();
+  background-color: transparent;
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  color: $red;
+
+  &:hover {
+    background-color: $red;
+    color: $ash;
+  }
+}
+
+@mixin cta-button {
+  @include button;
+
+  font-family: $font-family-body;
+  font-size: var(--button-text);
+  letter-spacing: 0;
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  margin-top: var(--blurb-button-margin-top);
+  text-transform: uppercase;
+}
+
+@mixin description {
+  width: var(--side-info-width);
+  max-width: var(--text-max-width);
+  margin-top: var(--inner-section-spacing);
+
+  &,
+  & p {
+    font-size: var(--small-copy);
+    line-height: 1.4;
+  }
 }

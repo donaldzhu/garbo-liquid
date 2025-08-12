@@ -8,9 +8,9 @@ $breakpoints: (
   xxl: 1536px,
 );
 
-
-
+// ============================================================================
 // TYPOGRAPHY
+// ============================================================================
 
 $section-header: (
   l: $header-l,
@@ -38,8 +38,8 @@ $medium-copy: (
 
 $small-copy: (
   l: $copy-s,
-  xl: $copy,
-  xxl: $copy,
+  xl: $copy-m,
+  xxl: $copy-m,
 );
 
 $header-font-size: (
@@ -66,9 +66,23 @@ $small-copy-label: (
   xxl: $copy,
 );
 
+$variant-pill: (
+  l: $copy-s,
+  xl: $copy-m,
+  xxl: $copy-m,
+);
 
-// SPACING
+// ============================================================================
+// SPACING & MARGINS
+// ============================================================================
+
 $page-margin-x: (
+  l: $spacing-m,
+  xl: $spacing-m,
+  xxl: $spacing-m,
+);
+
+$page-margin-y: (
   l: $spacing-m,
   xl: $spacing-m,
   xxl: $spacing-m,
@@ -134,18 +148,6 @@ $products-gap: (
   xxl: $small-space-l,
 );
 
-$button-padding: (
-  l: $small-space-l $spacing-m,
-  xl: $small-space-l $spacing-m,
-  xxl: $small-space-l $spacing-m,
-);
-
-$button-radius: (
-  l: $small-space-l * 2,
-  xl: $small-space-l * 2,
-  xxl: $small-space-l * 2,
-);
-
 $blurb-button-margin-top: (
   l: $small-space-m,
   xl: $small-space-m,
@@ -176,7 +178,13 @@ $header-gap: (
   xxl: $spacing-m,
 );
 
-$dot-with-space-margin-top: (
+$product-details-gap: (
+  l: $spacing-m,
+  xl: $spacing-l,
+  xxl: $spacing-l,
+);
+
+$large-section-gap: (
   l: $large-spacing-m,
   xl: $large-spacing-l,
   xxl: $large-spacing-l,
@@ -200,20 +208,33 @@ $small-space-y: (
   xxl: $small-space-m,
 );
 
+$detail-label-margin-bottom: (
+  l: $small-space-xs,
+  xl: $small-space-s,
+  xxl: $small-space-s,
+);
+
+$detail-pill-label-margin-bottom: (
+  l: $small-space-xxs,
+  xl: $small-space-xs,
+  xxl: $small-space-xs,
+);
+
 $footer-icon-spacing: (
   l: $spacing-s,
   xl: $spacing-m,
   xxl: $spacing-m,
 );
 
-$input-padding: (
-  l: $spacing-s,
-  xl: $spacing-m,
-  xxl: $spacing-m,
+$radio-input-gap: (
+  l: $small-space-xs,
+  xl: $small-space-s,
+  xxl: $small-space-s,
 );
 
-
-// SIZING
+// ============================================================================
+// LAYOUT & SIZING
+// ============================================================================
 
 $full-width: (
   l: calc(100vw - var(--page-margin-x) * 2),
@@ -239,7 +260,7 @@ $text-max-width: (
   xxl: 725px,
 );
 
-$homepage-stories-header-width: (
+$side-info-width: (
   l: column-width(5, calc(map-get($breakpoints, l) - var(--page-margin-x) * 2)),
   xl: column-width(4),
   xxl: column-width(4),
@@ -270,7 +291,6 @@ $homepage-image-size-long: (
   xxl: map-get($homepage-image-size-short, xxl) * $homepage-image-size-aspect-ratio,
 );
 
-
 $header-logo-height: (
   l: 24px,
   xl: 30px,
@@ -288,7 +308,6 @@ $homepage-intro-image-padding-bottom: (
   xl: 0.3,
   xxl: 0.25,
 );
-
 
 $homepage-newsletter-image-height: (
   l: 150px,
@@ -308,7 +327,34 @@ $media-border-radius: (
   xxl: 3rem,
 );
 
+// ============================================================================
+// COMPONENTS
+// ============================================================================
+
+$button-padding: (
+  l: $small-space-l $spacing-m,
+  xl: $small-space-l $spacing-m,
+  xxl: $small-space-l $spacing-m,
+);
+
+$button-radius: (
+  l: $small-space-l * 2,
+  xl: $small-space-l * 2,
+  xxl: $small-space-l * 2,
+);
+
+$input-padding: (
+  l: $spacing-s,
+  xl: $spacing-m,
+  xxl: $spacing-m,
+);
+
+// ============================================================================
+// SIZE MAPS OBJECT (organized by category)
+// ============================================================================
+
 $size-maps: (
+  // Typography
   section-header: $section-header,
   subsection-header: $subsection-header,
   large-copy: $large-copy,
@@ -316,8 +362,12 @@ $size-maps: (
   small-copy: $small-copy,
   header-font-size: $header-font-size,
   product-caption: $product-caption,
-
+  button-text: $button-text,
+  small-copy-label: $small-copy-label,
+  variant-pill: $variant-pill,
+  // Spacing & Margins
   page-margin-x: $page-margin-x,
+  page-margin-y: $page-margin-y,
   header-margin-y: $header-margin-y,
   section-media-spacing: $section-media-spacing,
   homepage-stories-header-margin-top: $homepage-stories-header-margin-top,
@@ -326,39 +376,43 @@ $size-maps: (
   paragraph-spacing: $paragraph-spacing,
   inner-section-spacing: $inner-section-spacing,
   products-margin-bottom: $products-margin-bottom,
-  products-gap: $products-gap,
   product-insert-price-margin: $product-insert-price-margin,
-  small-copy-label: $small-copy-label,
-  button-text: $button-text,
-  button-padding: $button-padding,
-  button-radius: $button-radius,
+  products-gap: $products-gap,
   blurb-button-margin-top: $blurb-button-margin-top,
   form-button-margin-top: $form-button-margin-top,
   list-margin: $list-margin,
   column-gap: $column-gap,
   header-gap: $header-gap,
+  large-section-gap: $large-section-gap,
   dot-margin-bottom: $dot-margin-bottom,
-  dot-with-space-margin-top: $dot-with-space-margin-top,
-
+  founder-image-margin: $founder-image-margin,
+  small-space-y: $small-space-y,
+  footer-icon-spacing: $footer-icon-spacing,
+  radio-input-gap: $radio-input-gap,
+  detail-label-margin-bottom: $detail-label-margin-bottom,
+  detail-pill-label-margin-bottom: $detail-pill-label-margin-bottom,
+  product-details-gap: $product-details-gap,
+  // Layout & Sizing
   full-width: $full-width,
+  list-width: $list-width,
+  homepage-stories-image-height: $homepage-stories-image-height,
   text-max-width: $text-max-width,
-  homepage-stories-header-width: $homepage-stories-header-width,
+  side-info-width: $side-info-width,
+  newsletter-max-width: $newsletter-max-width,
   homepage-logo-width: $homepage-logo-width,
   header-logo-height: $header-logo-height,
   homepage-intro-logo-vw: $homepage-intro-logo-vw,
-  list-width: $list-width,
-  homepage-stories-image-height: $homepage-stories-image-height,
-  founder-image-margin: $founder-image-margin,
-  small-space-y: $small-space-y,
+  homepage-intro-image-padding-bottom: $homepage-intro-image-padding-bottom,
   homepage-image-size-short: $homepage-image-size-short,
   homepage-image-size-long: $homepage-image-size-long,
   homepage-newsletter-image-height: $homepage-newsletter-image-height,
-  newsletter-max-width: $newsletter-max-width,
-  input-padding: $input-padding,
   dot-size: $dot-size,
   media-border-radius: $media-border-radius,
-  footer-icon-spacing: $footer-icon-spacing,
-  homepage-intro-image-padding-bottom: $homepage-intro-image-padding-bottom,
+
+  // Components
+  button-padding: $button-padding,
+  button-radius: $button-radius,
+  input-padding: $input-padding,
 );
 
 @mixin responsive-var($map, $var-name) {

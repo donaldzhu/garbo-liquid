@@ -1,0 +1,92 @@
+@use 'tinkiu-sizes' as *;
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-colors' as *;
+@use 'tinkiu-typography' as *;
+
+@forward 'tinkiu-price';
+@forward 'tinkiu-product-variant-picker';
+@forward 'tinkiu-product-details';
+@forward 'tinkiu-buy-buttons';
+
+product-info.tinkiu-product {
+  @include flex-column;
+  padding-top: calc(#{$header-height} + var(--large-section-gap));
+  background-color: $ash;
+
+  .page-width {
+    width: var(--full-width);
+    max-width: initial;
+    padding: 0;
+    margin: 0;
+  }
+
+  .product {
+    @include flex(flex-start, flex-start);
+    gap: var(--column-gap);
+  }
+
+  .product__info-wrapper {
+    padding: 0;
+    width: var(--side-info-width);
+  }
+
+  .product__info-container>div:first-child {
+    margin: 0;
+  }
+
+  .product__title {
+    margin-bottom: var(--homepage-stories-description-margin-top);
+  }
+
+  .product__title>h1 {
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.1;
+    font-size: var(--subsection-header);
+    max-width: var(--side-info-width);
+  }
+
+  .tinkiu-price-container {
+    margin: 0;
+  }
+
+  .tinkiu-quantity-input.product-form__input {
+    margin: 0;
+
+    quantity-input {
+      width: var(--side-info-width);
+
+      background-color: $ash;
+      border: 1px solid black;
+      color: black;
+      border-radius: 50px;
+
+      margin-top: var(--inner-section-spacing);
+
+      &::after {
+        box-shadow: none;
+      }
+
+      button,
+      input {
+        font-size: var(--small-copy);
+        font-family: $font-family-body;
+      }
+
+      button:hover {
+        color: black;
+      }
+
+      input:focus,
+      input:focus-visible {
+        outline: none;
+        box-shadow: none;
+        background-color: $ash;
+      }
+    }
+  }
+
+  .tinkiu-product-description {
+    @include description;
+  }
+}

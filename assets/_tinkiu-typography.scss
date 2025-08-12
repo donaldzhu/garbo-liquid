@@ -1,0 +1,38 @@
+$header-xxl: 5.6rem;
+$header-xl: 5rem;
+$header-l: 4.2rem;
+$header-line-height: 1.3;
+
+$subheader-xxl: 3.6rem;
+$subheader-xl: 3.2rem;
+$subheader-l: 3rem;
+
+$large-copy-xl: 2.4rem;
+$large-copy-l: 2.2rem;
+$large-copy-m: 2rem;
+$large-copy-s: 1.8rem;
+
+$copy: 1.5rem;
+$copy-m: 1.4rem;
+$copy-s: 1.25rem;
+
+$font-family-heading: 'Fenul', serif;
+$font-family-body: 'Dazzed', sans-serif;
+
+
+@mixin detail-caption() {
+  font-family: $font-family-body;
+  font-size: var(--small-copy);
+  line-height: 1.1;
+  color: black;
+}
+
+@mixin detail-label() {
+  @include detail-caption;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &~p {
+    margin-bottom: var(--detail-label-margin-bottom);
+  }
+}

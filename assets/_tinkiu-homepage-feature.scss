@@ -1,6 +1,6 @@
-@use '../../tinkiu-sizes' as *;
-@use '../../tinkiu-layouts' as *;
-@use '../../tinkiu-typography' as *;
+@use 'tinkiu-sizes' as *;
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-typography' as *;
 
 .tinkiu-homepage__feature {
   @include flex-column;

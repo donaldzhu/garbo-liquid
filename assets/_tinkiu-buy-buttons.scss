@@ -1,0 +1,48 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-colors' as *;
+
+
+
+
+.product__info-wrapper div.tinkiu-buy-buttons {
+
+  &,
+  & product-form {
+    margin: 0;
+  }
+
+  product-form {
+    margin-top: var(--product-details-gap);
+  }
+
+  &,
+  & div.product-form__buttons {
+    width: var(--side-info-width);
+    max-width: 100%;
+  }
+
+  div.product-form__buttons {
+    display: flex;
+    gap: var(--column-gap);
+
+    >* {
+      width: calc(50% - var(--column-gap) / 2);
+    }
+  }
+
+  button[type='submit'],
+  button.shopify-payment-button__button {
+    @include cta-button;
+    margin: 0;
+
+  }
+
+  shopify-buy-it-now-button:not(:disabled) {
+
+    button.shopify-payment-button__button {
+      background-color: $red;
+      color: $ash;
+    }
+
+  }
+}

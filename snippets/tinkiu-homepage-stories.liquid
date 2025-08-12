@@ -1,5 +1,3 @@
-
-
 {% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-story'].values %}
 
 {% for story in metaobj %}
@@ -8,42 +6,49 @@
   {% endif %}
 {% endfor %}
 {% comment %}
-{{ metaobj | json }} {% endcomment %}
+  {{ metaobj | json }}
+{% endcomment %}
 
 {% if matchedStory %}
-<div class="tinkiu-homepage__stories">
+  <div class="tinkiu-homepage__stories">
 
-  {% render 'tinkiu-dot' %}
-  <h2>Stories & Interviews</h2>
+    {% render 'tinkiu-dot' %}
+    <h2>Stories & Interviews</h2>
 
-  <div class="tinkiu-homepage__stories__content">
-    <div class="tinkiu-homepage__stories__image">
-      <img src="{{ matchedStory.heroMedia | image_url }}" alt="{{ matchedStory.heroMedia.alt }}">
-    </div>
-    <div class="tinkiu-homepage__stories__content__info">
-      <div>
-      <h3>{{ matchedStory.title }}</h3>
-      <p class="tinkiu-homepage__stories__category">{{ matchedStory.category }}</p>
-      <div class="tinkiu-homepage__stories__details">
-        {% for credit in matchedStory.secondaryCredits.value %}
-          <div class="tinkiu-homepage__stories__detail">
-            <p>{{ credit.role }}</p>
-            <p>{{ credit.name }}</p>
+    <div class="tinkiu-homepage__stories__content">
+      <div class="tinkiu-homepage__stories__image">
+        <img src="{{ matchedStory.heroMedia | image_url }}" alt="{{ matchedStory.heroMedia.alt }}">
+      </div>
+      <div class="tinkiu-homepage__stories__content__info">
+        <div>
+          <h3>{{ matchedStory.title }}</h3>
+          <p class="tinkiu-homepage__stories__category">{{ matchedStory.category }}</p>
+          <div class="tinkiu-homepage__stories__details">
+            {% for credit in matchedStory.secondaryCredits.value %}
+              <div class="tinkiu-homepage__stories__detail">
+                <p>{{ credit.role }}</p>
+                <p>{{ credit.name }}</p>
+              </div>
+            {% endfor %}
+            <div class="tinkiu-homepage__stories__detail">
+              <p>Date</p>
+              <p>{{ matchedStory.date | date: '%B %d, %Y' }}</p>
+            </div>
           </div>
-        {% endfor %}
-        <div class="tinkiu-homepage__stories__detail">
-          <p>Date</p>
-          <p>{{ matchedStory.date | date: '%B %d, %Y' }}</p>
+          <p class="tinkiu-homepage__stories__description">{{ matchedStory.description }}</p>
+          <button class="tinkiu-cta-button">
+            <a href="/{{ matchedStory.slug }}">Read More</a>
+          </button>
         </div>
+        {% if data.showProduct and matchedStory.associated %}
+          {% assign id = matchedStory.associated | remove: "gid://shopify/Product/" | times: 1 %}
+          {% render 'tinkiu-product-insert'
+            , id: id
+            , textBefore: true
+            , size: 'small'
+            , imageCount: 2 %}
+        {% endif %}
       </div>
-      <p class="tinkiu-homepage__stories__description">{{ matchedStory.description }}</p>
-      <button class="tinkiu-cta-button"><a href="/{{ matchedStory.slug }}">Read More</a></button>
-      </div>
-      {% if data.showProduct and matchedStory.associated %}
-        {% assign id = matchedStory.associated | remove: "gid://shopify/Product/" | times: 1 %}
-        {% render 'tinkiu-product-insert', id: id, textBefore: true, size: 'small', imageCount: 2 %}
-      {% endif %}
     </div>
   </div>
-</div>
 {% endif %}

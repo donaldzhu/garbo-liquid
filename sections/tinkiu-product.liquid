@@ -1,6 +1,6 @@
 <product-info
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="section-{{ section.id }}-padding gradient tinkiu-product"
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
   data-update-url="true"
@@ -89,13 +89,6 @@
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
-              {%- when 'text' -%}
-                <p
-                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
-                  {{ block.shopify_attributes }}
-                >
-                  {{- block.settings.text -}}
-                </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
@@ -106,7 +99,7 @@
                   </a>
                 </div>
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                <div class="tinkiu-price-container" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
                     product: product,
                     use_variant: true,
@@ -193,10 +186,12 @@
                 </p>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  <div class="tinkiu-product-description product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
                   </div>
                 {%- endif -%}
+              {%- when 'details' -%}
+                {% render 'tinkiu-product-details' %}
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -230,7 +225,7 @@
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
-                  class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+                  class="tinkiu-quantity-input product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
@@ -239,17 +234,7 @@
                     | item_count_for_variant: product.selected_or_first_available_variant.id
                   -%}
                   {% # theme-check-enable %}
-                  <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
-                    {{ 'products.product.quantity.label' | t }}
-                    <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}">
-                      {%- render 'loading-spinner' -%}
-                      <span
-                        >(
-                        {{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}}
-                        )</span
-                      >
-                    </span>
-                  </label>
+
                   <div class="price-per-item__container">
                     <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                       <button class="quantity__button" name="minus" type="button">
@@ -464,7 +449,7 @@
               {%- when 'variant_picker' -%}
                 {% render 'tinkiu-product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
-                {%- render 'buy-buttons',
+                {%- render 'tinkiu-buy-buttons',
                   block: block,
                   product: product,
                   product_form_id: product_form_id,
@@ -733,38 +718,7 @@
     {
       "type": "@app"
     },
-    {
-      "type": "text",
-      "name": "t:sections.main-product.blocks.text.name",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "text",
-          "default": "t:sections.main-product.blocks.text.settings.text.default",
-          "label": "t:sections.main-product.blocks.text.settings.text.label"
-        },
-        {
-          "type": "select",
-          "id": "text_style",
-          "options": [
-            {
-              "value": "body",
-              "label": "t:sections.main-product.blocks.text.settings.text_style.options__1.label"
-            },
-            {
-              "value": "subtitle",
-              "label": "t:sections.main-product.blocks.text.settings.text_style.options__2.label"
-            },
-            {
-              "value": "uppercase",
-              "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
-            }
-          ],
-          "default": "body",
-          "label": "t:sections.main-product.blocks.text.settings.text_style.label"
-        }
-      ]
-    },
+
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
@@ -917,6 +871,11 @@
     {
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
+      "limit": 1
+    },
+    {
+      "type": "details",
+      "name": "tinkiu-product-details",
       "limit": 1
     },
     {
@@ -2072,182 +2031,6 @@
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
         }
       ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "enable_sticky_info",
-      "default": true,
-      "label": "t:sections.main-product.settings.enable_sticky_info.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-product.settings.header.content"
-    },
-    {
-      "type": "select",
-      "id": "media_size",
-      "options": [
-        {
-          "value": "small",
-          "label": "t:sections.main-product.settings.media_size.options__1.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.main-product.settings.media_size.options__2.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.main-product.settings.media_size.options__3.label"
-        }
-      ],
-      "default": "large",
-      "label": "t:sections.main-product.settings.media_size.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "constrain_to_viewport",
-      "default": true,
-      "label": "t:sections.main-product.settings.constrain_to_viewport.label"
-    },
-    {
-      "type": "select",
-      "id": "media_fit",
-      "options": [
-        {
-          "value": "contain",
-          "label": "t:sections.main-product.settings.media_fit.options__1.label"
-        },
-        {
-          "value": "cover",
-          "label": "t:sections.main-product.settings.media_fit.options__2.label"
-        }
-      ],
-      "default": "contain",
-      "label": "t:sections.main-product.settings.media_fit.label"
-    },
-    {
-      "type": "select",
-      "id": "gallery_layout",
-      "options": [
-        {
-          "value": "stacked",
-          "label": "t:sections.main-product.settings.gallery_layout.options__1.label"
-        },
-        {
-          "value": "columns",
-          "label": "t:sections.main-product.settings.gallery_layout.options__2.label"
-        },
-        {
-          "value": "thumbnail",
-          "label": "t:sections.main-product.settings.gallery_layout.options__3.label"
-        },
-        {
-          "value": "thumbnail_slider",
-          "label": "t:sections.main-product.settings.gallery_layout.options__4.label"
-        }
-      ],
-      "default": "stacked",
-      "label": "t:sections.main-product.settings.gallery_layout.label"
-    },
-    {
-      "type": "select",
-      "id": "mobile_thumbnails",
-      "options": [
-        {
-          "value": "columns",
-          "label": "t:sections.main-product.settings.mobile_thumbnails.options__1.label"
-        },
-        {
-          "value": "show",
-          "label": "t:sections.main-product.settings.mobile_thumbnails.options__2.label"
-        },
-        {
-          "value": "hide",
-          "label": "t:sections.main-product.settings.mobile_thumbnails.options__3.label"
-        }
-      ],
-      "default": "hide",
-      "label": "t:sections.main-product.settings.mobile_thumbnails.label"
-    },
-    {
-      "type": "select",
-      "id": "media_position",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.main-product.settings.media_position.options__1.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.main-product.settings.media_position.options__2.label"
-        }
-      ],
-      "default": "left",
-      "label": "t:sections.main-product.settings.media_position.label"
-    },
-    {
-      "type": "select",
-      "id": "image_zoom",
-      "options": [
-        {
-          "value": "lightbox",
-          "label": "t:sections.main-product.settings.image_zoom.options__1.label"
-        },
-        {
-          "value": "hover",
-          "label": "t:sections.main-product.settings.image_zoom.options__2.label"
-        },
-        {
-          "value": "none",
-          "label": "t:sections.main-product.settings.image_zoom.options__3.label"
-        }
-      ],
-      "default": "lightbox",
-      "label": "t:sections.main-product.settings.image_zoom.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "hide_variants",
-      "default": false,
-      "label": "t:sections.main-product.settings.hide_variants.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_video_looping",
-      "default": false,
-      "label": "t:sections.main-product.settings.enable_video_looping.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
     }
   ]
 }

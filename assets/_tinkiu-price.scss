@@ -1,0 +1,27 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-colors' as *;
+
+.tinkiu-price {
+
+
+  .price__regular,
+  .price__sale {
+    @include flex(flex-start, flex-start);
+    gap: var(--column-gap);
+
+    span {
+      font-size: var(--product-caption);
+      letter-spacing: 0.03em;
+    }
+  }
+
+  .price__sale {
+    s {
+      color: $gray;
+    }
+  }
+
+  .price__regular {
+    color: black;
+  }
+}

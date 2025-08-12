@@ -1,7 +1,7 @@
-@use '../../tinkiu-sizes' as *;
-@use '../../tinkiu-layouts' as *;
-@use '../../tinkiu-typography' as *;
-@use '../../tinkiu-colors' as *;
+@use 'tinkiu-sizes' as *;
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-typography' as *;
+@use 'tinkiu-colors' as *;
 
 .tinkiu-homepage__footer {
   @include fullscreen;

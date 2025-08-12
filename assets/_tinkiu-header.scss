@@ -1,7 +1,7 @@
-@use '../tinkiu-colors' as *;
-@use '../tinkiu-sizes' as *;
-@use '../tinkiu-typography' as *;
-@use '../tinkiu-layouts' as *;
+@use 'tinkiu-colors' as *;
+@use 'tinkiu-sizes' as *;
+@use 'tinkiu-typography' as *;
+@use 'tinkiu-layouts' as *;
 
 header {
   @include flex(center, space-between);
@@ -26,6 +26,10 @@ header {
 
   .tinkiu-logo-container {
     @include flex;
+
+    a {
+      display: flex;
+    }
   }
 }
 

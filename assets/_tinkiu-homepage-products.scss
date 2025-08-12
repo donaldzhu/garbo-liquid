@@ -1,6 +1,6 @@
-@use '../../tinkiu-sizes' as *;
-@use '../../tinkiu-layouts' as *;
-@use '../../tinkiu-size-maps' as *;
+@use 'tinkiu-sizes' as *;
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-size-maps' as *;
 
 .tinkiu-homepage__products-container {
   @include flex(flex-start, center);

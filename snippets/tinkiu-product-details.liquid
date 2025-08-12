@@ -1,0 +1,25 @@
+{% assign genders = '' %}
+{% for item in product.metafields.shopify.target-gender.value %}
+  {% assign genders = genders | append: item.label %}
+  {% unless forloop.last %}
+    {% assign genders = genders | append: ', ' %}
+  {% endunless %}
+{% endfor %}
+
+
+<div class="tinkiu-product-details">
+
+
+  <div class="tinkiu-product-detail">
+    <p>CATEGORY</p>
+    <p>{{ product.category }}</p>
+  </div>
+  {% if genders != '' %}
+    <div class="tinkiu-product-detail">
+      <p>GENDER</p>
+      <p>{{ genders }}</p>
+    </div>
+  {% endif %}
+
+
+</div>

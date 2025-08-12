@@ -4,23 +4,15 @@
     document.addEventListener('DOMContentLoaded', function() {
       const DELAY = 0.6;
       const INTRO_DURATION = 1.25;
+      const MOVE_DURATION = 0.5;
 
       const FADE_DURATION = 0.2;
-      const SLIDE_DURATION = 0.2;
 
       const timeline = gsap.timeline();
-      const toNextSlide = (currentSlideNumber) => {
-      timeline
-          .to(`.tinkiu-homepage__intro-image img:nth-child(${currentSlideNumber})`, { opacity: 0, duration: 0 }, `+=${SLIDE_DURATION * (currentSlideNumber === 5 ? 1.5 : 1)}`)
-          .to(`.tinkiu-homepage__intro-image img:nth-child(${currentSlideNumber + 1})`, { opacity: 1, duration: 0 }, '+=0')
-      }
 
-        /* Array(5).fill(0).forEach((_, index) => {
-          toNextSlide(index + 1)
-        }) */
-
-       const introImageContainer = document.querySelector('.tinkiu-homepage__intro-image-container');
-       const introImage = document.querySelector('.tinkiu-homepage__intro-image');
+       const introImageContainer = document.querySelector('.tinkiu-homepage__intro-image-container--static');
+       const introImageAnimated= document.querySelector('.tinkiu-homepage__intro-image--animated');
+       const introImageStatic = document.querySelector('.tinkiu-homepage__intro-image--static');
        const INSET_WIDTH = getComputedStyle(introImageContainer).getPropertyValue('--homepage-image-size-long');
        const INSET_HEIGHT = getComputedStyle(introImageContainer).getPropertyValue('--homepage-image-size-short');
 
@@ -29,27 +21,27 @@
         timeline
         .to('header.tinkiu-homepage-header', { duration: FADE_DURATION, color: 'black' }, `+=${DELAY}`)
         .to('.tinkiu-homepage__intro .tinkiu-logo', { duration: FADE_DURATION, opacity: 0 }, `-=0`)
-        .to(introImage, {
+        .to(introImageAnimated, {
           duration: INTRO_DURATION,
           width: INSET_WIDTH,
           height: INSET_HEIGHT,
           borderRadius: INSET_WIDTH,
           ease: 'power2.inOut',
-          onComplete: () => {
-            introImageContainer.classList.add('animation-finished');
-            introImage.style.width = 'var(--homepage-image-size-long)';
-            introImage.style.height = 'var(--homepage-image-size-short)';
-          }
         }, `-=0`)
-        .to('.tinkiu-dot', {
+        .to(introImageAnimated, {
+           duration: MOVE_DURATION,
+           x:(_,target) => introImageStatic.getBoundingClientRect().x - target.getBoundingClientRect().x,
+           y:(_,target) => introImageStatic.getBoundingClientRect().y - target.getBoundingClientRect().y,
+           onComplete: () => {
+            introImageAnimated.style.opacity = 0;
+            introImageStatic.style.opacity = 1;
+            /* document.body.style.overflow = 'auto'; */
+           }
+        }, '+=0')
+        .to(['.tinkiu-homepage-header .tinkiu-logo','.tinkiu-homepage__intro-image-container--static .tinkiu-dot','.tinkiu-homepage__intro-image-container--static .tinkiu-homepage__blurb'], {
           duration: FADE_DURATION,
           opacity: 1,
-          ease: 'power2.inOut'
-        }, `+=0`)
-        .to(['.tinkiu-homepage-header .tinkiu-logo','.tinkiu-homepage__intro-image-container .tinkiu-dot','.tinkiu-homepage__intro .tinkiu-homepage__blurb'], {
-          duration: FADE_DURATION,
-          opacity: 1,
-        }, '+=0.1')
+        }, '+=0')
         .to('header.tinkiu-homepage-header', { backgroundColor: INSET_HEADER_COLOR, duration: 0 }, "+=0")
     })
 
@@ -59,18 +51,25 @@
 <div class="tinkiu-homepage__intro">
   {% render 'tinkiu-logo'
     , color: 'white' %}
-  {% render 'tinkiu-homepage-blurb'
-    , data: intro %}
-  <div class="tinkiu-homepage__intro-image-container">
-    {% render 'tinkiu-dot'
-      , withSpace: false %}
-    <div class="tinkiu-homepage__intro-image">
-      {% for slide in intro.slides %}
-        {% render 'tinkiu-media'
-          , data: slide.image %}
-      {% endfor %}
+  <div class="tinkiu-homepage__intro-image-container--animated">
+    <div class="tinkiu-homepage__intro-image--animated">
+      {% render 'tinkiu-media'
+        , data: intro.slides[5].image %}
     </div>
-    {% render 'tinkiu-dot'
-      , withSpace: false %}
+  </div>
+
+  <div class="tinkiu-homepage__intro-image-container--static">
+    <div class="tinkiu-homepage__intro-image-container-inner--static">
+      {% render 'tinkiu-dot'
+        , withSpace: false %}
+      <div class="tinkiu-homepage__intro-image--static">
+        {% render 'tinkiu-media'
+          , data: intro.slides[5].image %}
+      </div>
+      {% render 'tinkiu-dot'
+        , withSpace: false %}
+    </div>
+    {% render 'tinkiu-homepage-blurb'
+      , data: intro %}
   </div>
 </div>

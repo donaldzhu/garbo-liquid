@@ -1,4 +1,4 @@
-@use 'scss/tinkiu-entry' as *;
+@use 'tinkiu-entry' as *;
 
 ul {
   list-style: none;
@@ -42,20 +42,7 @@ p {
 }
 
 button {
-  appearance: none;
-  font-weight: bold;
-  border: border();
-  background-color: transparent;
-  padding: var(--button-padding);
-  border-radius: var(--button-radius);
-  cursor: pointer;
-  transition: all 0.1s ease-in-out;
-  color: $red;
-
-  &:hover {
-    background-color: $red;
-    color: $ash;
-  }
+  @include button;
 }
 
 body {
@@ -110,14 +97,6 @@ body {
   }
 }
 
-.tinkiu-cta-button {
-  font-size: var(--button-text);
-  padding: var(--button-padding);
-  border-radius: var(--button-radius);
-  margin-top: var(--blurb-button-margin-top);
-  text-transform: uppercase;
-}
-
 #shop-hcaptcha-badge-container {
   display: none !important;
 }
@@ -129,7 +108,7 @@ video {
 
 .tinkiu-logo {
   .tinkiu-logo-seal {
-    fill: red;
+    fill: $red;
 
     &-negative {
       fill: none;

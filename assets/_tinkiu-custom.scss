@@ -1,7 +1,7 @@
-@use '../tinkiu-sizes' as *;
-@use '../tinkiu-layouts' as *;
-@use '../tinkiu-typography' as *;
-@use '../tinkiu-colors' as *;
+@use 'tinkiu-sizes' as *;
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-typography' as *;
+@use 'tinkiu-colors' as *;
 
 .tinkiu-product-insert {
   @include flex-column (flex-start, flex-start);
@@ -53,6 +53,11 @@
       flex: none;
     }
   }
+
+  img {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
 }
 
 .tinkiu-dot {
@@ -65,7 +70,11 @@
   }
 
   &--with-space {
-    margin-top: var(--dot-with-space-margin-top);
+    margin-top: var(--large-section-gap);
     margin-bottom: var(--dot-margin-bottom);
   }
+}
+
+.tinkiu-cta-button {
+  @include cta-button;
 }
