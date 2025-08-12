@@ -103,7 +103,6 @@ product-info.tinkiu-product {
       border: border(black);
       padding: var(--button-padding) !important;
       margin: 0;
-      margin-top: var(--product-details-gap);
       height: auto;
 
       &,
@@ -111,6 +110,10 @@ product-info.tinkiu-product {
         color: black;
         background-color: transparent;
       }
+    }
+
+    label.tcustomizer-btn {
+      margin-top: var(--product-details-gap);
     }
 
     .tcustomizer-photo-placeholder,

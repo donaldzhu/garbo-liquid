@@ -848,7 +848,6 @@ product-info.tinkiu-product .tinkiu-product-app button.tcustomizer-btn {
   border: black 1px solid;
   padding: var(--button-padding) !important;
   margin: 0;
-  margin-top: var(--product-details-gap);
   height: auto;
 }
 product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-btn:hover,
@@ -861,6 +860,9 @@ product-info.tinkiu-product .tinkiu-product-app button.tcustomizer-btn,
 product-info.tinkiu-product .tinkiu-product-app button.tcustomizer-btn:hover {
   color: black;
   background-color: transparent;
+}
+product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-btn {
+  margin-top: var(--product-details-gap);
 }
 product-info.tinkiu-product .tinkiu-product-app .tcustomizer-photo-placeholder,
 product-info.tinkiu-product .tinkiu-product-app .tcustomizer-photo-uploaded {
