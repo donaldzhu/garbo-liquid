@@ -775,11 +775,12 @@ div.tinkiu-product-details p:first-child ~ p {
 }
 .tinkiu-product-app .tcustomizer__text-field {
   padding: 0.75em 0;
+  background-color: #FAFAFA;
 }
 .tinkiu-product-app .tcustomizer__text-field:focus {
-  border: #c9c9c9 1px solid;
-  background-color: #FAFAFA;
-  box-shadow: none;
+  border: #c9c9c9 1px solid !important;
+  background-color: #FAFAFA !important;
+  box-shadow: none !important;
 }
 .tinkiu-product-app .tcustomizer__text-field--subinfo {
   display: none;

@@ -31,11 +31,12 @@
 
   .tcustomizer__text-field {
     padding: 0.75em 0;
+    background-color: $ash;
 
     &:focus {
-      border: border($gray);
-      background-color: $ash;
-      box-shadow: none;
+      border: border($gray) !important;
+      background-color: $ash !important;
+      box-shadow: none !important;
     }
   }
 
