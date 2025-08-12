@@ -26,7 +26,7 @@
     gap: var(--column-gap);
 
     >* {
-      width: calc(50% - var(--column-gap) / 2);
+      width: column-width(2);
     }
   }
 

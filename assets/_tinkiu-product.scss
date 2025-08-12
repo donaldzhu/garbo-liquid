@@ -57,7 +57,7 @@ product-info.tinkiu-product {
       width: var(--side-info-width);
 
       background-color: $ash;
-      border: 1px solid black;
+      border: border($gray);
       color: black;
       border-radius: 50px;
 
@@ -89,6 +89,19 @@ product-info.tinkiu-product {
   .tinkiu-product-app {
     label.tcustomizer-field__heading {
       @include detail-label;
+    }
+
+    label.tcustomizer-btn {
+      width: column-width(2);
+      border: border($gray);
+      background-color: transparent;
+      border-radius: 50%;
+      @include cta-button;
+    }
+
+    .tcustomizer-photo-placeholder {
+      width: column-width(2);
+      border-color: $gray;
     }
 
     .tcustomizer-watermark {
