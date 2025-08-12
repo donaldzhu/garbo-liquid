@@ -113,14 +113,14 @@ product-info.tinkiu-product {
     }
 
     label.tcustomizer-btn {
-      margin-top: var(--product-details-gap);
+      margin-top: var(--small-space-y);
     }
 
     .tcustomizer-photo-placeholder,
     .tcustomizer-photo-uploaded {
-      width: column-width(2);
+      @include square(column-width(2));
       border-color: $gray;
-      aspect-ratio: 1/1;
+
       margin: 0;
 
 

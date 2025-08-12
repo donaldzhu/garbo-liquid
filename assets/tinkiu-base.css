@@ -862,13 +862,13 @@ product-info.tinkiu-product .tinkiu-product-app button.tcustomizer-btn:hover {
   background-color: transparent;
 }
 product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-btn {
-  margin-top: var(--product-details-gap);
+  margin-top: var(--small-space-y);
 }
 product-info.tinkiu-product .tinkiu-product-app .tcustomizer-photo-placeholder,
 product-info.tinkiu-product .tinkiu-product-app .tcustomizer-photo-uploaded {
   width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
+  height: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
   border-color: #c9c9c9;
-  aspect-ratio: 1/1;
   margin: 0;
 }
 product-info.tinkiu-product .tinkiu-product-app .tcustomizer-photo-placeholder img,
