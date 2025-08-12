@@ -86,6 +86,17 @@ product-info.tinkiu-product {
     }
   }
 
+  .tinkiu-product-app {
+    label.tcustomizer-field__heading {
+      @include detail-label;
+    }
+
+    .tcustomizer-watermark {
+      display: none !important;
+    }
+  }
+
+
   .tinkiu-product-description {
     @include description;
   }

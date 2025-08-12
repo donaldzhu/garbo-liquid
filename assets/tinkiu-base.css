@@ -807,6 +807,20 @@ product-info.tinkiu-product .tinkiu-quantity-input.product-form__input quantity-
   box-shadow: none;
   background-color: #FAFAFA;
 }
+product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-field__heading {
+  font-family: "Dazzed", sans-serif;
+  font-size: var(--small-copy);
+  line-height: 1.1;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-field__heading ~ p {
+  margin-bottom: var(--detail-label-margin-bottom);
+}
+product-info.tinkiu-product .tinkiu-product-app .tcustomizer-watermark {
+  display: none !important;
+}
 product-info.tinkiu-product .tinkiu-product-description {
   width: var(--side-info-width);
   max-width: var(--text-max-width);
