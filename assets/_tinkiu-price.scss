@@ -5,7 +5,7 @@
 
 
   .price__regular,
-  .price__sale {
+  .price--on-sale.price__sale {
     @include flex(flex-start, flex-start);
     gap: var(--column-gap);
 
@@ -14,6 +14,8 @@
       letter-spacing: 0.03em;
     }
   }
+
+
 
   .price__sale {
     s {

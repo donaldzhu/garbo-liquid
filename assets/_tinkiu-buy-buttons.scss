@@ -30,17 +30,21 @@
     }
   }
 
-  button[type='submit'],
+  button.tcustomizer-add,
   button.shopify-payment-button__button {
     @include cta-button;
     margin: 0;
-
   }
 
-  shopify-buy-it-now-button:not(shopify-buy-it-now-button:disabled) {
+  button.shopify-payment-button__button {
+    background-color: $red;
+    color: $ash;
+  }
+
+  shopify-buy-it-now-button:disabled {
     button.shopify-payment-button__button {
-      background-color: $red;
-      color: $ash;
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   }
 }

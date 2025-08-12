@@ -1,0 +1,92 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-colors' as *;
+@use 'tinkiu-typography' as *;
+
+.tinkiu-product-app {
+  label.tcustomizer-field__heading {
+    @include detail-label;
+  }
+
+  .tcustomizer-asterisk {
+    color: $red;
+  }
+
+  .tcustomizer-field {
+    margin-bottom: var(--product-details-gap);
+  }
+
+  .tcustomizer-photo {
+    margin-bottom: 0;
+  }
+
+  .tcustomizer-photo-action {
+    @include flex-column(flex-start, flex-start);
+    gap: var(--small-space-y);
+  }
+
+  .tcustomizer__text-field-wrapper {
+    background-color: $ash;
+    border: border($gray);
+  }
+
+  .tcustomizer-text-field {
+    padding: 0.75em 0;
+  }
+
+  .tcustomizer__text-field--subinfo {
+    display: none;
+  }
+
+  label.tcustomizer-btn,
+  button.tcustomizer-btn {
+    @include cta-button;
+    width: column-width(2);
+    border: border(black);
+    padding: var(--button-padding) !important;
+    margin: 0;
+    height: auto;
+
+    &,
+    &:hover {
+      color: black;
+      background-color: transparent;
+    }
+  }
+
+  label.tcustomizer-btn {
+    margin-top: var(--small-space-y);
+  }
+
+  .tcustomizer-photo-placeholder {
+    @include square(column-width(2));
+  }
+
+  .tcustomizer-photo-uploaded {
+    @include square(column-width(1));
+  }
+
+  .tcustomizer-field__input {
+    width: var(--side-info-width);
+  }
+
+  .tcustomizer-photo-placeholder,
+  .tcustomizer-photo-uploaded {
+    border-color: $gray;
+
+    margin: 0;
+
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .tcustomizer-watermark {
+    display: none !important;
+  }
+}
