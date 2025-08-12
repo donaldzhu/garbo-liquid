@@ -92,16 +92,25 @@ product-info.tinkiu-product {
     }
 
     label.tcustomizer-btn {
+      @include cta-button;
       width: column-width(2);
       border: border($gray);
-      background-color: transparent;
       border-radius: 50%;
-      @include cta-button;
+      padding: var(--button-padding) !important;
+      margin: 0;
+
+      &,
+      &:hover {
+        color: black;
+        background-color: transparent;
+      }
     }
 
     .tcustomizer-photo-placeholder {
       width: column-width(2);
       border-color: $gray;
+      aspect-ratio: 1/1;
+      margin: 0;
     }
 
     .tcustomizer-watermark {

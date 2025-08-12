@@ -819,10 +819,6 @@ product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-field__heading
   margin-bottom: var(--detail-label-margin-bottom);
 }
 product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-btn {
-  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
-  border: #c9c9c9 1px solid;
-  background-color: transparent;
-  border-radius: 50%;
   appearance: none;
   font-weight: bold;
   border: #DF2726 1px solid;
@@ -839,14 +835,25 @@ product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-btn {
   border-radius: var(--button-radius);
   margin-top: var(--blurb-button-margin-top);
   text-transform: uppercase;
+  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
+  border: #c9c9c9 1px solid;
+  border-radius: 50%;
+  padding: var(--button-padding) !important;
+  margin: 0;
 }
 product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-btn:hover {
   background-color: #DF2726;
   color: #FAFAFA;
 }
+product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-btn, product-info.tinkiu-product .tinkiu-product-app label.tcustomizer-btn:hover {
+  color: black;
+  background-color: transparent;
+}
 product-info.tinkiu-product .tinkiu-product-app .tcustomizer-photo-placeholder {
   width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
   border-color: #c9c9c9;
+  aspect-ratio: 1/1;
+  margin: 0;
 }
 product-info.tinkiu-product .tinkiu-product-app .tcustomizer-watermark {
   display: none !important;
