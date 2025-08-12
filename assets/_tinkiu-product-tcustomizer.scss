@@ -39,9 +39,12 @@
 
   .tcustomizer__text-field-wrapper:focus-within,
   .tcustomizer__text-field:focus {
-    border: border($gray) !important;
     background-color: $ash !important;
     box-shadow: none !important;
+  }
+
+  .tcustomizer__text-field-wrapper:focus-within {
+    border: border($gray) !important;
   }
 
 
