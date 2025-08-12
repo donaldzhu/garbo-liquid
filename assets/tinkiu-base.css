@@ -778,7 +778,8 @@ div.tinkiu-product-details p:first-child ~ p {
   background-color: #FAFAFA;
   color: black;
 }
-.tinkiu-product-app .tcustomizer__text-field-wrapper:focus-within, .tinkiu-product-app .tcustomizer__text-field-wrapper:focus-within.tcustomizer__text-field:focus {
+.tinkiu-product-app .tcustomizer__text-field-wrapper:focus-within,
+.tinkiu-product-app .tcustomizer__text-field-wrapper:focus-within .tcustomizer__text-field:focus {
   border: #c9c9c9 1px solid !important;
   background-color: #FAFAFA !important;
   box-shadow: none !important;
