@@ -2008,10 +2008,6 @@ body label.field__label {
   display: none !important;
 }
 
-img {
-  background-color: #E2E2E2;
-}
-
 video {
   border-radius: var(--media-border-radius);
   background-color: #E2E2E2;
