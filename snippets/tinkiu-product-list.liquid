@@ -1,3 +1,5 @@
+{{ products | json }}
+
 {% for product in products %}
   {{ product | json }}
   {% assign id = product._ref | remove: "shopifyProduct-" | times: 1 %}
