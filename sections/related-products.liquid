@@ -20,6 +20,9 @@
   }
 {%- endstyle -%}
 
+<script>
+  console.log('recommendations',{{ recommendations.performed }}, {{ recommendations.products_count }});
+</script>
 {% if recommendations.products_count > 0 %}
   <div class="color-{{ section.settings.color_scheme }} gradient">
     <product-recommendations
