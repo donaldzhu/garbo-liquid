@@ -1,6 +1,6 @@
 {% liquid
-  assign link = linkButton.link._ref | link
-  assign label = linkButton.buttonLabel | label
+  assign link = linkButton.link._ref | default: link
+  assign label = linkButton.buttonLabel | default: label
 %}
 
 <button class="tinkiu-cta-button">
