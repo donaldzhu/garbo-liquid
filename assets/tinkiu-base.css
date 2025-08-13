@@ -309,6 +309,7 @@
 }
 .tinkiu-homepage__footer .tinkiu-footer__links {
   margin-top: auto;
+  margin-bottom: var(--header-margin-y);
 }
 
 .tinkiu-homepage {
@@ -445,7 +446,7 @@ header .tinkiu-logo-container a {
   flex-direction: row;
   width: var(--full-width);
   padding-top: var(--footer-padding);
-  padding-bottom: var(--header-margin-y);
+  padding-bottom: var(--page-margin-y);
   font-size: var(--copy);
   gap: var(--column-gap);
   color: white;
@@ -911,9 +912,6 @@ slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.
   max-width: 100% !important;
   max-height: 100% !important;
   overflow: hidden;
-}
-slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide img.product__media.media {
-  background-color: #c9c9c9;
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide:not(:first-child) {
   width: calc((var(--split-image-width) - var(--inner-column-gap) * 2) / 3);
@@ -2008,6 +2006,10 @@ body label.field__label {
 
 #shop-hcaptcha-badge-container {
   display: none !important;
+}
+
+img {
+  background-color: #E2E2E2;
 }
 
 video {

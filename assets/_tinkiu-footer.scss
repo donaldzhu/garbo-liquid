@@ -11,7 +11,7 @@
     @include flex(flex-start, space-between);
     width: var(--full-width);
     padding-top: var(--footer-padding); // auto
-    padding-bottom: var(--header-margin-y);
+    padding-bottom: var(--page-margin-y);
     font-size: var(--copy);
     gap: var(--column-gap);
     color: white;
