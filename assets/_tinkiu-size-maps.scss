@@ -182,6 +182,18 @@ $header-gap: (
   xxl: $spacing-m,
 );
 
+$footer-padding: (
+  l: $large-spacing-xs,
+  xl: $large-spacing-s,
+  xxl: $large-spacing-s,
+);
+
+$footer-margin-top: (
+  l: $large-spacing-l,
+  xl: $large-spacing-xl,
+  xxl: $large-spacing-xl,
+);
+
 $product-details-gap: (
   l: $spacing-m,
   xl: $spacing-l,
@@ -415,6 +427,8 @@ $size-maps: (
   detail-label-margin-bottom: $detail-label-margin-bottom,
   detail-pill-label-margin-bottom: $detail-pill-label-margin-bottom,
   product-details-gap: $product-details-gap,
+  footer-padding: $footer-padding,
+  footer-margin-top: $footer-margin-top,
   // Layout & Sizing
   full-width: $full-width,
   list-width: $list-width,

@@ -78,3 +78,9 @@
 .tinkiu-cta-button {
   @include cta-button;
 }
+
+main {
+  section:last-child {
+    margin-bottom: var(--footer-margin-top);
+  }
+}

@@ -17,8 +17,10 @@
 
 .tinkiu-homepage__intro-image-container {
 
+
   &--animated,
   &--static {
+    --header-color: #{$ash};
     @include flex;
     @include fullscreen(row);
     @include top-right;

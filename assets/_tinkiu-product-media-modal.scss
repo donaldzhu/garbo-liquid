@@ -7,10 +7,10 @@
       display: none;
     }
 
-    img {
+    img.active {
       border: none;
       max-height: 100vh;
-      object-fit: cover;
+      object-fit: contain;
       margin: 0;
     }
 

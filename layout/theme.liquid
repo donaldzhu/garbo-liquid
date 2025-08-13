@@ -398,7 +398,9 @@ body {
       {{ content_for_layout }}
     </main>
 
-    {% comment %}     {% sections 'footer-group' %} {% endcomment %}
+    {% if template != 'index' %}
+      {% sections 'footer-group' %}
+    {% endif %}
     {% comment %}
       <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
