@@ -1,0 +1,10 @@
+{% for product in products %}
+  {% assign id = product._ref | remove: "shopifyProduct-" | times: 1 %}
+  <div class="tinkiu-homepage__product tinkiu-homepage__list">
+    {% render 'tinkiu-homepage-large-list'
+      , text: category
+      , isLast: isLast %}
+    {% render 'tinkiu-product-insert'
+      , id: id %}
+  </div>
+{% endfor %}
