@@ -26,11 +26,12 @@
     gap: var(--column-gap);
 
     >* {
-      width: column-width(2);
+      width: calc((var(--side-info-width) - var(--column-gap)) / 2);
     }
   }
 
   button#tcustomizer-add,
+  button[type='submit'],
   button.shopify-payment-button__button {
     @include cta-button;
     margin: 0;

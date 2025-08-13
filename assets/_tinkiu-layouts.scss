@@ -19,6 +19,10 @@
   flex-direction: column;
 }
 
+@function full-width($vw: 100vw) {
+  @return calc(#{$vw} - var(--page-margin-x) * 2);
+}
+
 @mixin fullscreen($flex-direction: column, $align: center, $justify: center) {
   width: 100vw;
   height: 100vh;
@@ -45,7 +49,6 @@
   top: $top;
   right: $right;
 }
-
 
 @function column-width($column-count, $full-width: var(--full-width)) {
   $single-column-width: calc((#{$full-width} - (#{$total-columns} - 1) * var(--column-gap)) / #{$total-columns});

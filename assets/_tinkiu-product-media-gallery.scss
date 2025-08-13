@@ -1,0 +1,43 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-colors' as *;
+@use 'tinkiu-size-maps' as *;
+
+@mixin and-children() {
+
+  .product-media-container,
+  .product__modal-opener.product__modal-opener--image,
+  .product__media.media {
+    @content;
+  }
+}
+
+slider-component.tinkiu-product-media-gallery {
+  width: var(--split-image-width);
+
+  li.product__media-item.grid__item.slider__slide {
+    aspect-ratio: 1;
+
+    .product__media-icon.motion-reduce {
+      display: none;
+    }
+
+    @include and-children {
+      aspect-ratio: 1;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      overflow: hidden;
+    }
+
+    img.product__media.media {
+      background-color: $gray;
+    }
+  }
+
+  li.product__media-item.grid__item.slider__slide:not(:first-child) {
+    $column-width: calc((var(--split-image-width) - var(--column-gap) * 2) / 3);
+    width: $column-width;
+  }
+}

@@ -8,6 +8,8 @@
 @forward 'tinkiu-product-details';
 @forward 'tinkiu-buy-buttons';
 @forward 'tinkiu-product-tcustomizer';
+@forward 'tinkiu-product-media-gallery';
+@forward 'tinkiu-product-media-modal';
 
 product-info.tinkiu-product {
   @include flex-column;
@@ -15,6 +17,7 @@ product-info.tinkiu-product {
   background-color: $ash;
 
   .page-width {
+    display: flex;
     width: var(--full-width);
     max-width: initial;
     padding: 0;
@@ -24,6 +27,10 @@ product-info.tinkiu-product {
   .product {
     @include flex(flex-start, flex-start);
     gap: var(--column-gap);
+  }
+
+  .grid__item.product__media-wrapper {
+    width: var(--split-image-width);
   }
 
   .product__info-wrapper {

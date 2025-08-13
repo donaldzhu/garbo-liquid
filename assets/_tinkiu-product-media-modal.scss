@@ -1,0 +1,25 @@
+@use 'tinkiu-colors' as *;
+
+.tinkiu-product-media-modal {
+  .product-media-modal__content {
+
+    img:not(.active) {
+      display: none;
+    }
+
+    img {
+      border: none;
+      max-height: 100vh;
+      object-fit: cover;
+      margin: 0;
+    }
+
+  }
+
+  .product-media-modal__dialog,
+  .product-media-modal__content {
+    background: $ash;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

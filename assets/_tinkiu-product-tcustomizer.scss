@@ -33,9 +33,11 @@
     padding: 0.75em 0;
     background-color: $ash;
     color: black;
+
+    &::placeholder {
+      color: $ash-dark;
+    }
   }
-
-
 
   .tcustomizer__text-field-wrapper:focus-within,
   .tcustomizer__text-field:focus {

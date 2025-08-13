@@ -2,10 +2,14 @@
 @use 'tinkiu-typography' as *;
 @use 'tinkiu-layouts' as *;
 
+$l: 1024px;
+$xl: 1280px;
+$xxl: 1536px;
+
 $breakpoints: (
-  l: 1024px,
-  xl: 1280px,
-  xxl: 1536px,
+  l: $l,
+  xl: $xl,
+  xxl: $xxl,
 );
 
 // ============================================================================
@@ -78,8 +82,8 @@ $variant-pill: (
 
 $page-margin-x: (
   l: $spacing-m,
-  xl: $spacing-m,
-  xxl: $spacing-m,
+  xl: $spacing-l,
+  xxl: $spacing-l,
 );
 
 $page-margin-y: (
@@ -237,13 +241,13 @@ $radio-input-gap: (
 // ============================================================================
 
 $full-width: (
-  l: calc(100vw - var(--page-margin-x) * 2),
-  xl: calc(100vw - var(--page-margin-x) * 2),
-  xxl: calc(#{map-get($breakpoints, xxl)} - var(--page-margin-x) * 2),
+  l: full-width(),
+  xl: full-width(),
+  xxl: full-width($xxl),
 );
 
 $list-width: (
-  l: column-width(4, calc(map-get($breakpoints, l) - var(--page-margin-x) * 2)),
+  l: column-width(4, full-width($l)),
   xl: column-width(3),
   xxl: column-width(3),
 );
@@ -261,9 +265,15 @@ $text-max-width: (
 );
 
 $side-info-width: (
-  l: column-width(5, calc(map-get($breakpoints, l) - var(--page-margin-x) * 2)),
-  xl: column-width(4),
-  xxl: column-width(4),
+  l: column-width(4, full-width($xl)),
+  xl: column-width(5),
+  xxl: column-width(5),
+);
+
+$split-image-width: (
+  l: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
+  xl: column-width(7),
+  xxl: column-width(7),
 );
 
 $newsletter-max-width: (
@@ -285,11 +295,24 @@ $homepage-image-size-short: (
   xxl: 400px,
 );
 
+$homepage-ethos-image-size-short: (
+  l: 300px,
+  xl: 475px,
+  xxl: 550px,
+);
+
 $homepage-image-size-long: (
   l: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
   xl: map-get($homepage-image-size-short, xl) * $homepage-image-size-aspect-ratio,
   xxl: map-get($homepage-image-size-short, xxl) * $homepage-image-size-aspect-ratio,
 );
+
+$homepage-ethos-image-size-long: (
+  l: map-get($homepage-ethos-image-size-short, l) * $homepage-image-size-aspect-ratio,
+  xl: map-get($homepage-ethos-image-size-short, xl) * $homepage-image-size-aspect-ratio,
+  xxl: map-get($homepage-ethos-image-size-short, xxl) * $homepage-image-size-aspect-ratio,
+);
+
 
 $header-logo-height: (
   l: 24px,
@@ -398,6 +421,7 @@ $size-maps: (
   homepage-stories-image-height: $homepage-stories-image-height,
   text-max-width: $text-max-width,
   side-info-width: $side-info-width,
+  split-image-width: $split-image-width,
   newsletter-max-width: $newsletter-max-width,
   homepage-logo-width: $homepage-logo-width,
   header-logo-height: $header-logo-height,
@@ -405,6 +429,8 @@ $size-maps: (
   homepage-intro-image-padding-bottom: $homepage-intro-image-padding-bottom,
   homepage-image-size-short: $homepage-image-size-short,
   homepage-image-size-long: $homepage-image-size-long,
+  homepage-ethos-image-size-short: $homepage-ethos-image-size-short,
+  homepage-ethos-image-size-long: $homepage-ethos-image-size-long,
   homepage-newsletter-image-height: $homepage-newsletter-image-height,
   dot-size: $dot-size,
   media-border-radius: $media-border-radius,

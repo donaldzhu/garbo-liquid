@@ -8,7 +8,7 @@
   gap: var(--column-gap);
   margin-bottom: var(--products-margin-bottom);
 
-  @media (max-width: map-get($breakpoints, xl)) {
+  @media (max-width: $xl) {
     >:nth-child(3) {
       display: none;
     }

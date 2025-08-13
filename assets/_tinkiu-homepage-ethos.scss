@@ -3,7 +3,7 @@
 
 
 .tinkiu-homepage__ethos__images {
-  @include flex(flex-start, flex-start);
+  display: flex;
   gap: var(--column-gap);
   margin: var(--paragraph-spacing) 0;
 }
