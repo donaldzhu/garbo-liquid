@@ -1,26 +1,3 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'section-related-products.css' | asset_url | stylesheet_tag }}
-
-{% if section.settings.image_shape == 'blob' %}
-  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
-{%- endif -%}
-
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -28,13 +5,11 @@
     data-section-id="{{ section.id }}"
     data-product-id="{{ product.id }}">
     {% if recommendations.performed and recommendations.products_count > 0 %}
-      {% render 'tinkiu-dot' %}
-      <h2>You May Also Like</h2>
-      {% render 'tinkiu-product-list'
-        , products: recommendations.products %}
-      {% render 'tinkiu-cta-button'
+      {% render 'tinkiu-product-section'
+        , products: recommendations.products
+        , header: 'You May Also Like'
         , link: '/collections/all'
-        , buttonLabel: 'View All' %}
+        , label: 'View All' %}
     {% endif %}
   </product-recommendations>
 

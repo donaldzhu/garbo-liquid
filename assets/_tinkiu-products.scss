@@ -1,0 +1,4 @@
+.tinkiu-product-list {
+  @include flex;
+  gap: var(--column-gap);
+}

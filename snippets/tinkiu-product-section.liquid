@@ -1,0 +1,11 @@
+{% if products.size > 0 %}
+  <div class="tinkiu-product-section">
+    {% render 'tinkiu-dot' %}
+    <h2>{{ header }}</h2>
+    {% render 'tinkiu-product-list'
+      , products: products %}
+    {% render 'tinkiu-cta-button'
+      , link: link
+      , label: label %}
+  </div>
+{% endif %}
