@@ -7,11 +7,11 @@
   .price__regular,
   .price--on-sale.price__sale {
     @include flex(flex-start, flex-start);
-    gap: var(--column-gap);
+    gap: var(--inner-column-gap);
 
     span {
       font-size: var(--product-caption);
-      letter-spacing: 0.03em;
+      letter-spacing: -0.01em;
     }
   }
 

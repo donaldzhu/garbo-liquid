@@ -16,10 +16,14 @@ slider-component.tinkiu-product-media-gallery {
 
   ul.product__media-list {
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--inner-column-gap);
   }
 
   li.product__media-item.grid__item.slider__slide {
     aspect-ratio: 1;
+    flex: none;
 
     .product__media-icon.motion-reduce {
       display: none;
@@ -41,7 +45,7 @@ slider-component.tinkiu-product-media-gallery {
   }
 
   li.product__media-item.grid__item.slider__slide:not(:first-child) {
-    $column-width: calc((var(--split-image-width) - var(--column-gap) * 2) / 3);
+    $column-width: calc((var(--split-image-width) - var(--inner-column-gap) * 2) / 3);
     width: $column-width;
   }
 }

@@ -3,12 +3,9 @@
 
 
 .tinkiu-footer {
+  @include flex-column;
   background-color: $red;
   position: relative;
-  @include flex;
-  /*   width: var(--full-width); */
-
-
 
   .tinkiu-footer__links {
     @include flex(flex-start, space-between);
@@ -42,5 +39,18 @@
     svg {
       @include square(26px);
     }
+  }
+
+  .tinkiu-footer__bottom-underlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 500px;
+    background: $red;
+    pointer-events: none;
+    z-index: -1;
+    display: block;
   }
 }

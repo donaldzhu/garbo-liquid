@@ -55,6 +55,11 @@
   @return calc(#{$single-column-width} * #{$column-count} + var(--column-gap) * (#{$column-count} - 1));
 }
 
+@function side-info-column-width($column-count, $full-width: var(--side-info-width)) {
+  $single-column-width: calc((#{$full-width} - (#{$side-info-columns} - 1) * var(--column-gap)) / #{$side-info-columns});
+  @return calc(#{$single-column-width} * #{$column-count} + var(--column-gap) * (#{$column-count} - 1));
+}
+
 @function border($color: $red) {
   @return $color 1px solid;
 }
@@ -63,7 +68,7 @@
   @include flex(flex-start, flex-start);
   flex-wrap: wrap;
   width: var(--side-info-width);
-  gap: var(--column-gap);
+  gap: var(--inner-column-gap);
   margin-top: var(--homepage-stories-details-margin-top);
 
   p {
@@ -73,7 +78,7 @@
 
   >div {
     @include flex-column(flex-start, flex-start);
-    width: column-width(2);
+    width: side-info-column-width(2);
 
     p:first-child {
       @include detail-label;

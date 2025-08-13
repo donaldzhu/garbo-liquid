@@ -23,7 +23,7 @@
 
   div.product-form__buttons {
     display: flex;
-    gap: var(--column-gap);
+    gap: var(--inner-column-gap);
 
     >* {
       width: calc((var(--side-info-width) - var(--column-gap)) / 2);

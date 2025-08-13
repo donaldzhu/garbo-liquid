@@ -173,7 +173,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: var(--side-info-width);
-  gap: var(--column-gap);
+  gap: var(--inner-column-gap);
   margin-top: var(--homepage-stories-details-margin-top);
 }
 .tinkiu-homepage__stories__content .tinkiu-homepage__stories__details p {
@@ -189,7 +189,7 @@
   justify-content: flex-start;
   flex-direction: row;
   flex-direction: column;
-  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
+  width: calc(calc((var(--side-info-width) - (5 - 1) * var(--column-gap)) / 5) * 2 + var(--column-gap) * (2 - 1));
 }
 .tinkiu-homepage__stories__content .tinkiu-homepage__stories__details > div p:first-child {
   font-family: "Dazzed", sans-serif;
@@ -341,7 +341,6 @@
   flex-direction: column;
 }
 .tinkiu-homepage,
-.tinkiu-homepage > div:not(.tinkiu-footer),
 .tinkiu-homepage > .tinkiu-homepage__sticky-container > div {
   background-color: #FAFAFA;
 }
@@ -431,13 +430,13 @@ header .tinkiu-logo-container a {
 }
 
 .tinkiu-footer {
-  background-color: #DF2726;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  /*   width: var(--full-width); */
+  flex-direction: column;
+  background-color: #DF2726;
+  position: relative;
 }
 .tinkiu-footer .tinkiu-footer__links {
   display: flex;
@@ -472,6 +471,18 @@ header .tinkiu-logo-container a {
   width: 26px;
   height: 26px;
 }
+.tinkiu-footer .tinkiu-footer__bottom-underlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 500px;
+  background: #DF2726;
+  pointer-events: none;
+  z-index: -1;
+  display: block;
+}
 
 .tinkiu-product-insert {
   display: flex;
@@ -502,7 +513,7 @@ header .tinkiu-logo-container a {
   margin-bottom: var(--products-gap);
 }
 .tinkiu-product-insert--small .tinkiu-product-insert__images img {
-  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
+  width: calc(calc((var(--side-info-width) - (5 - 1) * var(--column-gap)) / 5) * 2 + var(--column-gap) * (2 - 1));
 }
 .tinkiu-product-insert--medium .tinkiu-product-insert__images img {
   width: var(--list-width);
@@ -569,12 +580,12 @@ main section:last-child {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: row;
-  gap: var(--column-gap);
+  gap: var(--inner-column-gap);
 }
 .tinkiu-price .price__regular span,
 .tinkiu-price .price--on-sale.price__sale span {
   font-size: var(--product-caption);
-  letter-spacing: 0.03em;
+  letter-spacing: -0.01em;
 }
 .tinkiu-price .price__sale s {
   color: #c9c9c9;
@@ -654,7 +665,7 @@ div.tinkiu-product-details {
   flex-direction: row;
   flex-wrap: wrap;
   width: var(--side-info-width);
-  gap: var(--column-gap);
+  gap: var(--inner-column-gap);
   margin-top: var(--homepage-stories-details-margin-top);
   margin-top: var(--inner-section-spacing);
   margin-bottom: var(--product-details-gap);
@@ -672,7 +683,7 @@ div.tinkiu-product-details > div {
   justify-content: flex-start;
   flex-direction: row;
   flex-direction: column;
-  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
+  width: calc(calc((var(--side-info-width) - (5 - 1) * var(--column-gap)) / 5) * 2 + var(--column-gap) * (2 - 1));
 }
 div.tinkiu-product-details > div p:first-child {
   font-family: "Dazzed", sans-serif;
@@ -715,7 +726,7 @@ div.tinkiu-product-details p:first-child ~ p {
 }
 .product__info-wrapper div.tinkiu-buy-buttons div.product-form__buttons {
   display: flex;
-  gap: var(--column-gap);
+  gap: var(--inner-column-gap);
 }
 .product__info-wrapper div.tinkiu-buy-buttons div.product-form__buttons > * {
   width: calc((var(--side-info-width) - var(--column-gap)) / 2);
@@ -825,7 +836,7 @@ div.tinkiu-product-details p:first-child ~ p {
   border-radius: var(--button-radius);
   margin-top: var(--blurb-button-margin-top);
   text-transform: uppercase;
-  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
+  width: calc(calc((var(--side-info-width) - (5 - 1) * var(--column-gap)) / 5) * 2 + var(--column-gap) * (2 - 1));
   border: black 1px solid;
   padding: var(--button-padding) !important;
   margin: 0;
@@ -846,8 +857,8 @@ div.tinkiu-product-details p:first-child ~ p {
   margin-top: var(--small-space-y);
 }
 .tinkiu-product-app .tcustomizer-photo-placeholder {
-  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
-  height: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 2 + var(--column-gap) * (2 - 1));
+  width: calc(calc((var(--side-info-width) - (5 - 1) * var(--column-gap)) / 5) * 2 + var(--column-gap) * (2 - 1));
+  height: calc(calc((var(--side-info-width) - (5 - 1) * var(--column-gap)) / 5) * 2 + var(--column-gap) * (2 - 1));
 }
 .tinkiu-product-app .tcustomizer-photo-uploaded {
   width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 1 + var(--column-gap) * (1 - 1));
@@ -879,9 +890,13 @@ slider-component.tinkiu-product-media-gallery {
 }
 slider-component.tinkiu-product-media-gallery ul.product__media-list {
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--inner-column-gap);
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide {
   aspect-ratio: 1;
+  flex: none;
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide .product__media-icon.motion-reduce {
   display: none;
@@ -901,7 +916,7 @@ slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.
   background-color: #c9c9c9;
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide:not(:first-child) {
-  width: calc((var(--split-image-width) - var(--column-gap) * 2) / 3);
+  width: calc((var(--split-image-width) - var(--inner-column-gap) * 2) / 3);
 }
 
 .tinkiu-product-media-modal .product-media-modal__content img:not(.active) {
@@ -1406,6 +1421,21 @@ a, a:-webkit-any-link, a:visited {
 @media (min-width: 1536px) {
   :root {
     --column-gap: 2.25rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  :root {
+    --inner-column-gap: 1.5rem;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1535px) {
+  :root {
+    --inner-column-gap: 1.8rem;
+  }
+}
+@media (min-width: 1536px) {
+  :root {
+    --inner-column-gap: 1.8rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {

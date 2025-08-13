@@ -57,7 +57,7 @@
   label.tcustomizer-btn,
   button.tcustomizer-btn {
     @include cta-button;
-    width: column-width(2);
+    width: side-info-column-width(2);
     border: border(black);
     padding: var(--button-padding) !important;
     margin: 0;
@@ -75,7 +75,7 @@
   }
 
   .tcustomizer-photo-placeholder {
-    @include square(column-width(2));
+    @include square(side-info-column-width(2));
   }
 
   .tcustomizer-photo-uploaded {

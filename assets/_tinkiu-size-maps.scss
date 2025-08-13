@@ -176,6 +176,12 @@ $column-gap: (
   xxl: $spacing-m,
 );
 
+$inner-column-gap: (
+  l: $small-space-l,
+  xl: $spacing-s,
+  xxl: $spacing-s,
+);
+
 $header-gap: (
   l: $spacing-s,
   xl: $spacing-m,
@@ -277,15 +283,15 @@ $text-max-width: (
 );
 
 $side-info-width: (
-  l: column-width(4, full-width($xl)),
-  xl: column-width(5),
-  xxl: column-width(5),
+  l: column-width($side-info-columns - 1, full-width($xl)),
+  xl: column-width($side-info-columns),
+  xxl: column-width($side-info-columns),
 );
 
 $split-image-width: (
   l: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
-  xl: column-width(7),
-  xxl: column-width(7),
+  xl: column-width($total-columns - $side-info-columns),
+  xxl: column-width($total-columns - $side-info-columns),
 );
 
 $newsletter-max-width: (
@@ -417,6 +423,7 @@ $size-maps: (
   form-button-margin-top: $form-button-margin-top,
   list-margin: $list-margin,
   column-gap: $column-gap,
+  inner-column-gap: $inner-column-gap,
   header-gap: $header-gap,
   large-section-gap: $large-section-gap,
   dot-margin-bottom: $dot-margin-bottom,
