@@ -1,5 +1,4 @@
 {% for product in products %}
-  {{ product | json }}
   <div class="tinkiu-homepage__product tinkiu-homepage__list">
     {% render 'tinkiu-product-insert'
       , id: product.id %}
