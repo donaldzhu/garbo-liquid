@@ -107,7 +107,7 @@
   @include button;
 
   font-family: $font-family-body;
-  font-size: var(--button-text);
+  font-size: var(--ui-small);
   letter-spacing: 0;
   padding: var(--button-padding);
   border-radius: var(--button-radius);

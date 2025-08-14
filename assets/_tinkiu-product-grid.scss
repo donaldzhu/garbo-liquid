@@ -1,0 +1,175 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-size-maps' as *;
+@use 'tinkiu-typography' as *;
+@use 'tinkiu-colors' as *;
+
+div.tinkiu-main-collection-product-grid.gradient {
+  @include flex-column;
+  width: 100vw;
+  padding-top: 0;
+
+  .facets-vertical.page-width {
+    width: var(--full-width);
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    align-items: flex-start;
+  }
+
+  aside.facets-wrapper {
+    width: column-width(3);
+    padding: 0;
+    flex: none;
+  }
+
+}
+
+.tinkiu-facets-container {
+  padding-top: 0;
+
+  facet-filters-form form {
+    width: 100%;
+
+    .active-facets>facet-remove {
+      display: none;
+    }
+
+
+    .active-facets-vertical-filter {
+      color: black;
+      margin-bottom: var(--detail-label-margin);
+
+      &,
+      & * {
+        font-size: var(--ui-small);
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-family: $font-family-body;
+        margin-bottom: 0;
+      }
+
+      facet-remove.active-facets__button-wrapper {
+        color: $gray;
+        margin-bottom: 0;
+
+        a {
+          line-height: 1;
+        }
+      }
+
+
+    }
+  }
+}
+
+details.tinkiu-facet-details,
+details.facets__disclosure-vertical[open] {
+  border-color: $gray;
+
+  .parent-display.facets__display-vertical,
+  .facets__display-vertical {
+    animation: none;
+
+    fieldset {
+      padding: 0;
+
+      ul {
+        @include flex-column(flex-start, flex-start);
+        gap: var(--small-space-y);
+
+        li {
+
+          .facet-checkbox,
+          label {
+            @include flex(center, flex-start);
+
+
+            gap: var(--radio-input-gap);
+            padding: 0;
+            color: black;
+
+            svg {
+              margin-right: 0;
+              background-color: transparent;
+            }
+
+            &,
+            & * {
+              @include detail-caption;
+            }
+
+            &:hover .facet-checkbox__text-label {
+              text-decoration: none;
+            }
+
+            input[type='checkbox']:checked {
+              &~svg {
+                background-color: black;
+              }
+
+              &~.svg-wrapper svg {
+                visibility: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    price-range {
+      padding: 0;
+
+      .tinkiu-price-facet-field {
+
+        &:before,
+        &:after {
+          box-shadow: none;
+        }
+
+        input {
+          padding: 0;
+          border: border($gray);
+        }
+      }
+    }
+  }
+
+  summary {
+    padding: var(--filter-label-margin) 0;
+    @include detail-label;
+    font-weight: normal;
+
+    &:hover {
+      .facets__summary-label {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.tinkiu-product-grid-container {
+  @include flex;
+  width: 100vw;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.tinkiu-product-grid {
+  @include flex(flex-start, center);
+  width: column-width(9, $xxl);
+  flex-wrap: wrap;
+  gap: var(--column-gap);
+
+  .tinkiu-product-insert .tinkiu-product-insert__images img {
+    @include square(column-width(3));
+  }
+}

@@ -1,0 +1,62 @@
+@use 'tinkiu-size-maps' as *;
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-typography' as *;
+
+
+.tinkiu-product-insert {
+  @include flex-column (flex-start, flex-start);
+
+  p.tinkiu-product-insert__description {
+    margin: 0;
+    font-size: var(--small-copy);
+    text-align: left;
+    margin-bottom: 2px; // TODO
+  }
+
+  h4 {
+    font-size: var(--medium-copy);
+    font-family: $font-family-body;
+    margin-top: 0;
+    margin-bottom: calc(var(--products-gap) - 0.5rem); // line-height compensation
+    line-height: 1.1;
+
+    &:not(:first-child) {
+      margin-top: var(--products-gap);
+    }
+  }
+
+
+  /*  p.tinkiu-product-insert__price {
+    margin-top: var(--product-insert-price-margin);
+
+    &:not(:first-child) {
+      margin-bottom: var(--products-gap);
+    }
+  } */
+
+  &--small {
+    .tinkiu-product-insert__images img {
+      width: side-info-column-width(2);
+    }
+  }
+
+  &--medium {
+    .tinkiu-product-insert__images img {
+      @include square(var(--list-width));
+    }
+  }
+
+  .tinkiu-product-insert__images {
+    @include flex;
+    gap: var(--column-gap);
+
+    img {
+      flex: none;
+    }
+  }
+
+  img {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}

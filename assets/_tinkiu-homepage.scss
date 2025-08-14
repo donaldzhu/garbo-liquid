@@ -18,17 +18,12 @@
   background-color: $ash;
 
   h2 {
-    font-size: var(--section-header);
-    line-height: $header-line-height;
+    @include section-header;
   }
 
   p {
     text-align: center;
     margin: var(--paragraph-spacing) 0;
-  }
-
-  h2,
-  p {
     max-width: var(--text-max-width);
   }
 
@@ -37,10 +32,6 @@
     @include flex-column;
   }
 
-  &,
-  >.tinkiu-homepage__sticky-container>div {
-    background-color: $ash;
-  }
 }
 
 .tinkiu-homepage__sticky-container.sticky {
@@ -60,30 +51,11 @@
 }
 
 
-.tinkiu-homepage__list {
-  @include flex-column;
-  width: var(--list-width);
 
-  img {
-    @include square;
-    object-fit: cover;
-    aspect-ratio: 1; // TODO
-  }
-
-  h3 {
-    text-transform: uppercase;
-    font-size: var(--subsection-header);
-
-    &:first-child {
-      margin-bottom: var(--list-margin);
-    }
-
-    &:not(:first-child) {
-      margin-top: var(--list-margin);
-    }
-  }
-}
 
 .tinkiu-homepage__blurb {
   @include flex-column;
+
+
+
 }

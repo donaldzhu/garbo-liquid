@@ -128,13 +128,13 @@
           --color-button: {{ scheme.settings.button.red }}, 
           {{ scheme.settings.button.green }}, 
           {{ scheme.settings.button.blue }};
-          --color-button-text: {{ scheme.settings.button_label.red }}, 
+          --color-ui-small: {{ scheme.settings.button_label.red }}, 
           {{ scheme.settings.button_label.green }}, 
           {{ scheme.settings.button_label.blue }};
           --color-secondary-button: {{ scheme.settings.background.red }}, 
           {{ scheme.settings.background.green }}, 
           {{ scheme.settings.background.blue }};
-          --color-secondary-button-text: {{ scheme.settings.secondary_button_label.red }}, 
+          --color-secondary-ui-small: {{ scheme.settings.secondary_button_label.red }}, 
           {{ scheme.settings.secondary_button_label.green }}, 
           {{ scheme.settings.secondary_button_label.blue }};
           --color-link: {{ scheme.settings.secondary_button_label.red }}, 
@@ -392,7 +392,7 @@ body {
 
     <main
       id="MainContent"
-      class="content-for-layout focus-none"
+      class="content-for-layout focus-none {% if template != 'index' %}tinkiu-main{% endif %}"
       role="main"
       tabindex="-1">
       {{ content_for_layout }}

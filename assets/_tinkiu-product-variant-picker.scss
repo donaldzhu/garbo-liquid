@@ -14,7 +14,7 @@ variant-selects.tinkiu-product-variant-picker {
     legend.form__label {
       @include detail-label;
       margin: 0;
-      margin-bottom: var(--detail-label-margin-bottom);
+      margin-bottom: var(--detail-label-margin);
     }
 
     &.product-form__input {
@@ -62,7 +62,7 @@ variant-selects.tinkiu-product-variant-picker {
         }
 
         legend.form__label {
-          margin-bottom: var(--detail-pill-label-margin-bottom);
+          margin-bottom: var(--hair-space-y);
         }
       }
     }

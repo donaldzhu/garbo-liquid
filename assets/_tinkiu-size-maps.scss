@@ -35,9 +35,9 @@ $large-copy: (
 );
 
 $medium-copy: (
-  l: $large-copy-s,
-  xl: $large-copy-m,
-  xxl: $large-copy-m,
+  l: $large-copy-xs,
+  xl: $large-copy-s,
+  xxl: $large-copy-s,
 );
 
 $small-copy: (
@@ -58,7 +58,7 @@ $product-caption: (
   xxl: $copy,
 );
 
-$button-text: (
+$ui-small: (
   l: $copy-s,
   xl: $copy-s,
   xxl: $copy-s,
@@ -206,6 +206,12 @@ $product-details-gap: (
   xxl: $spacing-l,
 );
 
+$filter-label-margin: (
+  l: $small-space-m,
+  xl: $small-space-l,
+  xxl: $small-space-l,
+);
+
 $large-section-gap: (
   l: $large-spacing-m,
   xl: $large-spacing-l,
@@ -230,13 +236,13 @@ $small-space-y: (
   xxl: $small-space-m,
 );
 
-$detail-label-margin-bottom: (
+$detail-label-margin: (
   l: $small-space-xs,
   xl: $small-space-s,
   xxl: $small-space-s,
 );
 
-$detail-pill-label-margin-bottom: (
+$hair-space-y: (
   l: $small-space-xxs,
   xl: $small-space-xs,
   xxl: $small-space-xs,
@@ -403,7 +409,7 @@ $size-maps: (
   small-copy: $small-copy,
   header-font-size: $header-font-size,
   product-caption: $product-caption,
-  button-text: $button-text,
+  ui-small: $ui-small,
   small-copy-label: $small-copy-label,
   variant-pill: $variant-pill,
   // Spacing & Margins
@@ -431,9 +437,10 @@ $size-maps: (
   small-space-y: $small-space-y,
   footer-icon-spacing: $footer-icon-spacing,
   radio-input-gap: $radio-input-gap,
-  detail-label-margin-bottom: $detail-label-margin-bottom,
-  detail-pill-label-margin-bottom: $detail-pill-label-margin-bottom,
+  detail-label-margin: $detail-label-margin,
+  hair-space-y: $hair-space-y,
   product-details-gap: $product-details-gap,
+  filter-label-margin: $filter-label-margin,
   footer-padding: $footer-padding,
   footer-margin-top: $footer-margin-top,
   // Layout & Sizing

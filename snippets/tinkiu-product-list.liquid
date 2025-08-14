@@ -1,20 +1,36 @@
 <div class="tinkiu-product-list">
-  {% for product in products %}
-    <div class="tinkiu-homepage__product tinkiu-homepage__list">
-      {% render 'tinkiu-product-insert'
-        , id: product.id %}
-    </div>
-    <div class="tinkiu-homepage__product tinkiu-homepage__list">
-      {% render 'tinkiu-product-insert'
-        , id: product.id %}
-    </div>
-    <div class="tinkiu-homepage__product tinkiu-homepage__list">
-      {% render 'tinkiu-product-insert'
-        , id: product.id %}
-    </div>
-    <div class="tinkiu-homepage__product tinkiu-homepage__list">
-      {% render 'tinkiu-product-insert'
-        , id: product.id %}
-    </div>
-  {% endfor %}
+  <div class="tinkiu-homepage__product tinkiu-list-item">
+    {% render 'tinkiu-product-insert'
+      , id: product.id %}
+  </div>
+  <div class="tinkiu-homepage__product tinkiu-list-item">
+    {% render 'tinkiu-product-insert'
+      , id: product.id %}
+  </div>
+  <div class="tinkiu-homepage__product tinkiu-list-item">
+    {% render 'tinkiu-product-insert'
+      , id: product.id %}
+  </div>
+  <div class="tinkiu-homepage__product tinkiu-list-item">
+    {% render 'tinkiu-product-insert'
+      , id: product.id %}
+  </div>
+{% comment %} {% for product in products %}
+              <div class="tinkiu-homepage__product tinkiu-list-item">
+                {% render 'tinkiu-product-insert'
+                  , id: product.id %}
+              </div>
+              <div class="tinkiu-homepage__product tinkiu-list-item">
+                {% render 'tinkiu-product-insert'
+                  , id: product.id %}
+              </div>
+              <div class="tinkiu-homepage__product tinkiu-list-item">
+                {% render 'tinkiu-product-insert'
+                  , id: product.id %}
+              </div>
+              <div class="tinkiu-homepage__product tinkiu-list-item">
+                {% render 'tinkiu-product-insert'
+                  , id: product.id %}
+              </div>
+  {% endfor %} {% endcomment %}
 </div>

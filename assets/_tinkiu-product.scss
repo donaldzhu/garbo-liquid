@@ -10,10 +10,13 @@
 @forward 'tinkiu-product-tcustomizer';
 @forward 'tinkiu-product-media-gallery';
 @forward 'tinkiu-product-media-modal';
+@forward 'tinkiu-product-list';
+@forward 'tinkiu-product-section';
+@forward 'tinkiu-product-grid';
+@forward 'tinkiu-product-insert';
 
 product-info.tinkiu-product {
   @include flex-column;
-  padding-top: calc(#{$header-height} + var(--large-section-gap));
   background-color: $ash;
 
   .page-width {

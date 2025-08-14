@@ -3,62 +3,7 @@
 @use 'tinkiu-typography' as *;
 @use 'tinkiu-colors' as *;
 
-.tinkiu-product-insert {
-  @include flex-column (flex-start, flex-start);
 
-  p.tinkiu-product-insert__description,
-  p.tinkiu-product-insert__price {
-    margin: 0;
-    font-size: var(--small-copy);
-    text-align: left;
-  }
-
-  h4 {
-    font-size: var(--medium-copy);
-    font-family: $font-family-body;
-    margin-top: 0;
-    margin-bottom: calc(var(--products-gap) - 2px); // line-height compensation
-
-    &:not(:first-child) {
-      margin-top: var(--products-gap);
-    }
-  }
-
-
-  p.tinkiu-product-insert__price {
-    margin-top: var(--product-insert-price-margin);
-
-    &:not(:first-child) {
-      margin-bottom: var(--products-gap);
-    }
-  }
-
-  &--small {
-    .tinkiu-product-insert__images img {
-      width: side-info-column-width(2);
-    }
-  }
-
-  &--medium {
-    .tinkiu-product-insert__images img {
-      width: var(--list-width);
-    }
-  }
-
-  .tinkiu-product-insert__images {
-    @include flex;
-    gap: var(--column-gap);
-
-    img {
-      flex: none;
-    }
-  }
-
-  img {
-    aspect-ratio: 1;
-    object-fit: cover;
-  }
-}
 
 .tinkiu-dot {
   @include square(var(--dot-size));
@@ -80,7 +25,55 @@
 }
 
 main {
-  section:last-child {
+  background-color: $ash;
+  min-height: 100vh;
+
+  div.gradient {
+    background-color: $ash;
+
+  }
+
+  section.shopify-section.section {
+
+    &,
+    &>div,
+    & .gradient {
+      background-color: $ash;
+    }
+  }
+
+  section:last-child,
+  >div:last-child {
     margin-bottom: var(--footer-margin-top);
   }
+}
+
+.tinkiu-list-item {
+  @include flex-column(flex-start, center);
+  width: var(--list-width);
+
+  img {
+    @include square;
+    object-fit: cover;
+    aspect-ratio: 1; // TODO
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: var(--subsection-header);
+    text-align: center;
+    width: 100%;
+
+    &:first-child {
+      margin-bottom: var(--list-margin);
+    }
+
+    &:not(:first-child) {
+      margin-top: var(--list-margin);
+    }
+  }
+}
+
+.tinkiu-main {
+  padding-top: calc(#{$header-height} + var(--large-section-gap));
 }

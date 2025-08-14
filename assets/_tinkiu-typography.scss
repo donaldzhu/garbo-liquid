@@ -11,6 +11,7 @@ $large-copy-xl: 2.4rem;
 $large-copy-l: 2.2rem;
 $large-copy-m: 2rem;
 $large-copy-s: 1.8rem;
+$large-copy-xs: 1.65rem;
 
 $copy: 1.5rem;
 $copy-m: 1.4rem;
@@ -33,6 +34,12 @@ $font-family-body: 'Dazzed', sans-serif;
   text-transform: uppercase;
 
   &~p {
-    margin-bottom: var(--detail-label-margin-bottom);
+    margin-bottom: var(--detail-label-margin);
   }
+}
+
+@mixin section-header() {
+  font-size: var(--section-header);
+  line-height: $header-line-height;
+  max-width: var(--text-max-width);
 }

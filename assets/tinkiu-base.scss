@@ -107,6 +107,14 @@ video {
   background-color: $ash-dark;
 }
 
+img {
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -o-user-select: none !important;
+  user-select: none !important;
+}
+
 .tinkiu-logo {
   .tinkiu-logo-seal {
     fill: $red;

@@ -1,3 +1,11 @@
+{% liquid
+  assign disable_description = disable_description | default: false
+%}
+
+
 <h4>{{ product.title }}</h4>
-<p class="tinkiu-product-insert__description">{{ product.metafields['app--6007307--sanity-fields'].shortDescription }}</p>
-<p class="tinkiu-product-insert__price">{{ product.price | money }} {{ cart.currency.iso_code }}</p>
+{% if disable_description != true %}
+  <p class="tinkiu-product-insert__description">{{ product.metafields['app--6007307--sanity-fields'].shortDescription }}</p>
+{% endif %}
+{% render 'price'
+  , product: product %}

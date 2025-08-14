@@ -4,18 +4,20 @@
 .tinkiu-price {
 
 
-  .price__regular,
-  .price--on-sale.price__sale {
+
+  &:not(.price--on-sale) .price__regular,
+  &.price--on-sale .price__sale {
     @include flex(flex-start, flex-start);
+
     gap: var(--inner-column-gap);
 
-    span {
+    span,
+    span s {
       font-size: var(--product-caption);
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
+      margin: 0;
     }
   }
-
-
 
   .price__sale {
     s {
