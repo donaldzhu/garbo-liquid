@@ -1,14 +1,15 @@
 {% liquid
-  assign type = data.type
-  assign url = data.url
-  assign filename = data.filename
-  assign id = data.id
-  assign meta = data.meta
-  assign preview = data.preview
+  assign type = data.type | default: type
+  assign url = data.url | default: url
+  assign alt = data.alt | default: alt
 %}
 
 {% if type == 'image' %}
   <img src="{{ url }}" alt="{{ meta.alt }}" />
 {% elsif type == 'video' %}
-  <video src="{{ url }}" autoplay muted loop></video>
+  <video
+    src="{{ url }}"
+    autoplay
+    muted
+    loop></video>
 {% endif %}

@@ -1,7 +1,7 @@
 {% liquid
-  assign header = data.header
-  assign text = data.text
-  assign linkButton = data.linkButton
+  assign header = data.header | default: header
+  assign text = data.text | default: text
+  assign linkButton = data.linkButton | default: linkButton
 %}
 
 <div class="tinkiu-homepage__blurb {{ class }}">

@@ -20,6 +20,8 @@ $copy-s: 1.25rem;
 $font-family-heading: 'Fenul', serif;
 $font-family-body: 'Dazzed', sans-serif;
 
+$facet-label-line-height: 1.1;
+
 
 @mixin detail-caption() {
   font-family: $font-family-body;

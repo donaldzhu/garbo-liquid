@@ -30,7 +30,7 @@
   }
 
   .tcustomizer__text-field {
-    padding: 0.75em 0;
+    padding: var(--input-padding) 0;
     background-color: $ash;
     color: black;
 
@@ -59,7 +59,7 @@
     @include cta-button;
     width: side-info-column-width(2);
     border: border(black);
-    padding: var(--button-padding) !important;
+    padding: var(--input-padding) !important;
     margin: 0;
     height: auto;
 

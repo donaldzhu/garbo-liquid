@@ -1,0 +1,18 @@
+@use 'tinkiu-layouts' as *;
+
+
+.tinkiu-pagination-wrapper.pagination-wrapper {
+  padding-top: var(--large-inner-section-gap);
+  margin: 0;
+
+  ul li {
+    flex: 1 0 3rem;
+    max-width: 3rem;
+
+    a {
+      @include ui;
+      color: black;
+      opacity: 1;
+    }
+  }
+}

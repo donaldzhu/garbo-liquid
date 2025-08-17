@@ -14,6 +14,7 @@
 @forward 'tinkiu-product-section';
 @forward 'tinkiu-product-grid';
 @forward 'tinkiu-product-insert';
+@forward 'tinkiu-main-collection-banner';
 
 product-info.tinkiu-product {
   @include flex-column;
@@ -65,6 +66,7 @@ product-info.tinkiu-product {
     margin: 0;
 
     quantity-input {
+      @include no-focus-outline;
       width: var(--side-info-width);
 
       background-color: $ash;
@@ -86,13 +88,6 @@ product-info.tinkiu-product {
 
       button:hover {
         color: black;
-      }
-
-      input:focus,
-      input:focus-visible {
-        outline: none;
-        box-shadow: none;
-        background-color: $ash;
       }
     }
   }

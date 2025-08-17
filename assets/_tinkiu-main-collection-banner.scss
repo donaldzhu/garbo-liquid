@@ -1,0 +1,54 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-typography' as *;
+
+.tinkiu-collection-hero {
+  @include flex-column;
+
+  .collection-hero__inner,
+  .collection-hero__text-wrapper {
+    @include flex-column;
+    width: var(--full-width);
+    margin: 0;
+    padding: 0;
+  }
+
+
+  h1.tinkiu-collection-hero__title-with-image {
+    margin-bottom: var(--section-media-spacing);
+  }
+
+
+  h1 {
+    margin: 0;
+    @include section-header;
+  }
+
+  img {
+    border-radius: var(--media-border-radius);
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: var(--section-media-spacing);
+    }
+  }
+
+  .tinkiu-dot {
+    margin-top: 0;
+  }
+
+  .collection-hero__description {
+    @include flex;
+    width: 100%;
+
+    p {
+      text-align: center;
+      margin: var(--section-media-spacing) 0;
+      max-width: var(--text-max-width-long);
+    }
+  }
+
+  .collection-hero__description,
+  .collection-hero__title+.collection-hero__description {
+    margin: 0;
+  }
+}

@@ -76,6 +76,12 @@ $variant-pill: (
   xxl: $copy-m,
 );
 
+$input-padding: (
+  l: $small-space-s,
+  xl: $small-space-m,
+  xxl: $small-space-m,
+);
+
 // ============================================================================
 // SPACING & MARGINS
 // ============================================================================
@@ -104,13 +110,7 @@ $section-media-spacing: (
   xxl: $spacing-xl,
 );
 
-$homepage-stories-header-margin-top: (
-  l: $large-spacing-s,
-  xl: $large-spacing-m,
-  xxl: $large-spacing-m,
-);
-
-$homepage-stories-details-margin-top: (
+$large-inner-section-gap: (
   l: $large-spacing-s,
   xl: $large-spacing-m,
   xxl: $large-spacing-m,
@@ -183,9 +183,9 @@ $inner-column-gap: (
 );
 
 $header-gap: (
-  l: $spacing-s,
-  xl: $spacing-m,
-  xxl: $spacing-m,
+  l: $spacing-m,
+  xl: $spacing-l,
+  xxl: $spacing-l,
 );
 
 $footer-padding: (
@@ -286,6 +286,12 @@ $text-max-width: (
   l: 600px,
   xl: 725px,
   xxl: 725px,
+);
+
+$text-max-width-long: (
+  l: 800px,
+  xl: 900px,
+  xxl: 900px,
 );
 
 $side-info-width: (
@@ -390,12 +396,6 @@ $button-radius: (
   xxl: $small-space-l * 2,
 );
 
-$input-padding: (
-  l: $spacing-s,
-  xl: $spacing-m,
-  xxl: $spacing-m,
-);
-
 // ============================================================================
 // SIZE MAPS OBJECT (organized by category)
 // ============================================================================
@@ -417,8 +417,7 @@ $size-maps: (
   page-margin-y: $page-margin-y,
   header-margin-y: $header-margin-y,
   section-media-spacing: $section-media-spacing,
-  homepage-stories-header-margin-top: $homepage-stories-header-margin-top,
-  homepage-stories-details-margin-top: $homepage-stories-details-margin-top,
+  large-inner-section-gap: $large-inner-section-gap,
   homepage-stories-description-margin-top: $homepage-stories-description-margin-top,
   paragraph-spacing: $paragraph-spacing,
   inner-section-spacing: $inner-section-spacing,
@@ -448,6 +447,7 @@ $size-maps: (
   list-width: $list-width,
   homepage-stories-image-height: $homepage-stories-image-height,
   text-max-width: $text-max-width,
+  text-max-width-long: $text-max-width-long,
   side-info-width: $side-info-width,
   split-image-width: $split-image-width,
   newsletter-max-width: $newsletter-max-width,
@@ -471,15 +471,12 @@ $size-maps: (
 
 @mixin responsive-var($map, $var-name) {
 
-  // Optional base value (no media query)
   @if map-has-key($map, base) {
     #{$selector} {
       --#{$var-name}: #{map-get($map, base)};
     }
   }
 
-  // Build ordered list of breakpoints that appear in $map,
-  // following the order defined in $breakpoints.
   $ordered: (
   );
 
@@ -497,7 +494,6 @@ $len: length($ordered);
   $value: map-get($map, $bp);
 
   @if $i < $len {
-    // Closed range: [min, next-min)
     $next-bp: nth($ordered, $i + 1);
     $next-min: map-get($breakpoints, $next-bp);
     $max: $next-min - 1px;
@@ -510,8 +506,6 @@ $len: length($ordered);
   }
 
   @else {
-
-    // Final range: [min, ∞)
     @media (min-width: #{$min}) {
       :root {
         --#{$var-name}: #{$value};

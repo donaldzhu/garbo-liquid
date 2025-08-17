@@ -69,7 +69,7 @@
   flex-wrap: wrap;
   width: var(--side-info-width);
   gap: var(--inner-column-gap);
-  margin-top: var(--homepage-stories-details-margin-top);
+  margin-top: var(--large-inner-section-gap);
 
   p {
     margin: 0;
@@ -103,16 +103,20 @@
   }
 }
 
-@mixin cta-button {
-  @include button;
-
+@mixin ui {
   font-family: $font-family-body;
   font-size: var(--ui-small);
   letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+@mixin cta-button {
+  @include button;
+  @include ui;
   padding: var(--button-padding);
   border-radius: var(--button-radius);
   margin-top: var(--blurb-button-margin-top);
-  text-transform: uppercase;
+
 }
 
 @mixin description {
@@ -124,5 +128,14 @@
   & p {
     font-size: var(--small-copy);
     line-height: 1.4;
+  }
+}
+
+@mixin no-focus-outline {
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    box-shadow: none;
   }
 }

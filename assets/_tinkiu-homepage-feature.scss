@@ -9,6 +9,7 @@
   img,
   video {
     width: var(--full-width);
+    border-radius: var(--media-border-radius);
   }
 
   .tinkiu-dot {
