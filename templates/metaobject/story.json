@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "tinkiu-story",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
