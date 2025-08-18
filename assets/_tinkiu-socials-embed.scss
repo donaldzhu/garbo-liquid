@@ -1,0 +1,23 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-typography' as *;
+
+.tinkiu-socials-embed {
+  @include flex-column;
+
+  h2 {
+    @include section-header;
+    margin-bottom: var(--section-media-spacing);
+  }
+
+  .tinkiu-socials-embed__content {
+    @include flex(flex-start, flex-start);
+    gap: var(--column-gap);
+
+    iframe,
+    blockquote {
+
+      width: column-width(4) !important;
+      max-width: column-width(4) !important;
+    }
+  }
+}

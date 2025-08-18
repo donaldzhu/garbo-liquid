@@ -147,9 +147,9 @@ $product-insert-price-margin: (
 );
 
 $products-gap: (
-  l: $small-space-m,
-  xl: $small-space-l,
-  xxl: $small-space-l,
+  l: $small-space-s,
+  xl: $small-space-m,
+  xxl: $small-space-m,
 );
 
 $blurb-button-margin-top: (
@@ -240,6 +240,12 @@ $detail-label-margin: (
   l: $small-space-xs,
   xl: $small-space-s,
   xxl: $small-space-s,
+);
+
+$story-list-margin: (
+  l: $spacing-xxl,
+  xl: $large-spacing-xs,
+  xxl: $large-spacing-xs,
 );
 
 $hair-space-y: (
@@ -442,6 +448,7 @@ $size-maps: (
   filter-label-margin: $filter-label-margin,
   footer-padding: $footer-padding,
   footer-margin-top: $footer-margin-top,
+  story-list-margin: $story-list-margin,
   // Layout & Sizing
   full-width: $full-width,
   list-width: $list-width,

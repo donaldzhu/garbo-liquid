@@ -99,3 +99,7 @@ product-info.tinkiu-product {
     @include description;
   }
 }
+
+.tinkiu-product-list {
+  margin-bottom: var(--products-margin-bottom);
+}

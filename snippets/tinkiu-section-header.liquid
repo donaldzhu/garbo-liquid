@@ -1,0 +1,12 @@
+<div class="tinkiu-section-header">
+  {% render 'tinkiu-dot' %}
+
+  <h1>
+    <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}:
+    </span>
+    {{- title | escape -}}
+  </h1>
+  {% if secondaryTitle %}
+    <h4>{{ secondaryTitle }}</h4>
+  {% endif %}
+</div>

@@ -17,7 +17,8 @@
 
     <div class="tinkiu-homepage__stories__content">
       <div class="tinkiu-homepage__stories__image">
-        <img src="{{ matchedStory.heroMedia | image_url }}" alt="{{ matchedStory.heroMedia.alt }}">
+        {% render 'tinkiu-media'
+          , data: matchedStory.content.value.heroMedia %}
       </div>
       <div class="tinkiu-homepage__stories__content__info">
         <div>

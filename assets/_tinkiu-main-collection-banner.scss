@@ -13,27 +13,13 @@
   }
 
 
-  h1.tinkiu-collection-hero__title-with-image {
-    margin-bottom: var(--section-media-spacing);
-  }
-
-
-  h1 {
-    margin: 0;
-    @include section-header;
-  }
-
   img {
     border-radius: var(--media-border-radius);
-    width: 100%;
+    width: column-width(8);
 
     &:last-child {
       margin-bottom: var(--section-media-spacing);
     }
-  }
-
-  .tinkiu-dot {
-    margin-top: 0;
   }
 
   .collection-hero__description {

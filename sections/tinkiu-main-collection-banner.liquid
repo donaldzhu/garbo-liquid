@@ -12,16 +12,10 @@
 
 <div class="tinkiu-collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width">
-    <div class="collection-hero__text-wrapper">
-
-      {% assign hasImage = collection.image %}
-      {% render 'tinkiu-dot' %}
-      <h1 class="collection-hero__title {% if hasImage %}tinkiu-collection-hero__title-with-image{% endif %}">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}:
-        </span>
-        {{- collection.title | escape -}}
-      </h1>
-      {% if hasImage %}
+    <div class="collection-hero__text-wrapper{% if collection.image %} tinkiu-collection-hero__title-with-image{% endif %}">
+      {% render 'tinkiu-section-header'
+        , title: collection.title %}
+      {% if collection.image %}
         {% liquid
           assign mediaUrl = collection.image | image_url: width: 2000 | replace: '//', '' | replace: shop.domain, ''
           assign header = collection.title
@@ -40,24 +34,24 @@
 
 
     {% comment %}  {% if collection.image %}
-                                {% liquid
-                                  assign mediaUrl = collection.image | image_url: width: 2000 | replace: '//', '' | replace: shop.domain, ''
-                                  assign header = collection.title
-                                  assign text = collection.description
-                                %}
-                                <div class="tinkiu-collection-hero__feature">
-                                  {% render 'tinkiu-homepage-feature'
-                                    , mediaUrl: mediaUrl
-                                    , mediaType: 'image'
-                                    , mediaAlt: collection.image.alt
-                                    , header: collection.title %}
-                                  <div class="collection-hero__description">
-                                    {{ collection.description }}
-                                  </div>
-                                </div>
-                              {% else %}
-                                <div class="tinkiu-collection-hero__default"></div>
-                      {% endif %} {% endcomment %}
+                                                              {% liquid
+                                                                assign mediaUrl = collection.image | image_url: width: 2000 | replace: '//', '' | replace: shop.domain, ''
+                                                                assign header = collection.title
+                                                                assign text = collection.description
+                                                              %}
+                                                              <div class="tinkiu-collection-hero__feature">
+                                                                {% render 'tinkiu-homepage-feature'
+                                                                  , mediaUrl: mediaUrl
+                                                                  , mediaType: 'image'
+                                                                  , mediaAlt: collection.image.alt
+                                                                  , header: collection.title %}
+                                                                <div class="collection-hero__description">
+                                                                  {{ collection.description }}
+                                                                </div>
+                                                              </div>
+                                                            {% else %}
+                                                              <div class="tinkiu-collection-hero__default"></div>
+                                          {% endif %} {% endcomment %}
     </div>
 
     {%- if section.settings.show_collection_image and collection.image -%}

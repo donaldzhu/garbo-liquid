@@ -17,22 +17,13 @@
     font-size: var(--medium-copy);
     font-family: $font-family-body;
     margin-top: 0;
-    margin-bottom: calc(var(--products-gap) - 0.5rem); // line-height compensation
+    margin-bottom: calc(var(--products-gap) - 0.25rem); // line-height compensation
     line-height: 1.1;
 
     &:not(:first-child) {
       margin-top: var(--products-gap);
     }
   }
-
-
-  /*  p.tinkiu-product-insert__price {
-    margin-top: var(--product-insert-price-margin);
-
-    &:not(:first-child) {
-      margin-bottom: var(--products-gap);
-    }
-  } */
 
   &--small {
     .tinkiu-product-insert__images img {

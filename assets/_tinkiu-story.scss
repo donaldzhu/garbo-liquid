@@ -1,0 +1,121 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-typography' as *;
+
+.tinkiu-story-container {
+  @include flex-column;
+  width: 100vw;
+  padding: 0;
+}
+
+.tinkiu-story {
+  @include flex-column;
+  width: var(--full-width);
+  padding: 0;
+
+
+
+  .tinkiu-story__hero-media {
+    width: column-width(8);
+
+    img {
+      display: flex;
+      border-radius: var(--media-border-radius);
+      width: 100%;
+    }
+  }
+
+  .tinkiu-story__folio {
+    @include flex (flex-start, center);
+    width: column-width(8);
+    margin-top: var(--section-media-spacing);
+    gap: var(--column-gap);
+  }
+
+  .tinkiu-story__description {
+    @include description;
+    width: column-width(4);
+    margin-top: 0;
+  }
+
+  .tinkiu-story__details {
+
+    @include details;
+    @include flex(flex-start, flex-start);
+    margin-top: 0;
+
+    .tinkiu-story__description {
+      @include description;
+      width: 100%;
+      margin-top: inherit;
+    }
+  }
+
+  .tinkiu-story__folio--with-product {
+    .tinkiu-story__details-container {
+      @include flex-column;
+      gap: var(--paragraph-spacing);
+      width: column-width(4);
+
+    }
+  }
+
+  .tinkiu-story__folio:not(.tinkiu-story__folio--with-product) {
+    .tinkiu-story__details-container {
+      @include flex(flex-start, flex-start);
+      gap: var(--paragraph-spacing);
+      width: column-width(8);
+    }
+  }
+
+  .tinkiu-story__details {
+    width: column-width(4);
+  }
+
+  .tinkiu-story__content {
+    @include flex-column;
+    width: column-width(8);
+
+    p {
+      line-height: 1.2;
+
+      em,
+      code {
+        font-style: normal;
+        font-family: $font-family-body;
+      }
+    }
+
+    ul,
+    ol {
+
+      padding-left: var(--story-list-margin);
+      margin: var(--paragraph-spacing) var(--story-list-margin);
+
+      font-size: var(--large-copy);
+    }
+
+    ul {
+      display: block;
+      list-style: disc;
+    }
+
+    li {
+      line-height: 1.2;
+    }
+
+    img,
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: var(--section-media-spacing);
+      margin-bottom: var(--section-media-spacing);
+    }
+
+    iframe,
+    blockquote {
+      margin: var(--section-media-spacing) 0 !important;
+    }
+  }
+
+}

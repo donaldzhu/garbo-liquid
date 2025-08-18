@@ -20,6 +20,32 @@
   }
 }
 
+.tinkiu-section-header {
+  @include flex-column;
+
+  h1 {
+    @include section-header;
+    text-align: center;
+  }
+
+  &:has(+ img) h1 {
+    margin-bottom: var(--section-media-spacing);
+  }
+
+
+  h4 {
+    font-size: var(--medium-copy);
+    text-align: center;
+    font-family: $font-family-body;
+    margin-bottom: var(--section-media-spacing);
+  }
+
+
+  .tinkiu-dot {
+    margin-top: 0;
+  }
+}
+
 .tinkiu-cta-button {
   @include cta-button;
 }

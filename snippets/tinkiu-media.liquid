@@ -2,12 +2,17 @@
   assign type = data.type | default: type
   assign url = data.url | default: url
   assign alt = data.alt | default: alt
+  assign control = control | default: false
 %}
+
 
 {% if type == 'image' %}
   <img src="{{ url }}" alt="{{ meta.alt }}" />
 {% elsif type == 'video' %}
   <video
+    {% if control %}
+    controls
+    {% endif %}
     src="{{ url }}"
     autoplay
     muted
