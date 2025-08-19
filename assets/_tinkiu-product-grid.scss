@@ -2,6 +2,7 @@
 @use 'tinkiu-size-maps' as *;
 @use 'tinkiu-typography' as *;
 @use 'tinkiu-colors' as *;
+@use 'tinkiu-sizes' as *;
 
 div.tinkiu-main-collection-product-grid.gradient {
   @include flex-column;
@@ -139,7 +140,7 @@ details.facets__disclosure-vertical[open] {
           @include ui;
           padding: var(--input-padding);
           border: border($gray);
-          border-radius: var(--input-radius);
+          border-radius: $input-border-radius;
         }
 
         label {

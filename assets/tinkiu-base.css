@@ -1230,7 +1230,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical price-range 
   text-transform: uppercase;
   padding: var(--input-padding);
   border: #c9c9c9 1px solid;
-  border-radius: var(--input-radius);
+  border-radius: 4px;
 }
 details.tinkiu-facet-details .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field label,
 details.tinkiu-facet-details .facets__display-vertical price-range .tinkiu-price-facet-field label,
