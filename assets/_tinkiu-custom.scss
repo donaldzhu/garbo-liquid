@@ -32,21 +32,30 @@
     margin-bottom: var(--section-media-spacing);
   }
 
+  .tinkiu-dot:has(+ h3) {
+    margin-bottom: var(--header-gap);
+  }
+
+  h3 {
+    @include subsection-header;
+    margin-bottom: var(--header-gap);
+  }
+
 
   h4 {
     font-size: var(--medium-copy);
     text-align: center;
     font-family: $font-family-body;
-    margin-bottom: var(--section-media-spacing);
+    margin: var(--paragraph-spacing) 0 var(--section-media-spacing);
   }
 
-
   .tinkiu-dot {
-    margin-top: 0;
+    margin-bottom: var(--dot-margin-bottom);
   }
 }
 
-.tinkiu-cta-button {
+.tinkiu-cta-button,
+button[type="submit"] {
   @include cta-button;
 }
 
@@ -85,8 +94,7 @@ main {
   }
 
   h3 {
-    text-transform: uppercase;
-    font-size: var(--subsection-header);
+    @include subsection-header;
     text-align: center;
     width: 100%;
 

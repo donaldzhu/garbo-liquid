@@ -1,0 +1,26 @@
+{% assign contact = shop.metaobjects['app--6007307--sanity-documents-contact'].values %}
+{% for item in contact %}
+  {% assign o = item %}
+{% endfor %}
+
+<div class="tinkiu-contact">
+  {% render 'tinkiu-section-header'
+    , title: 'Contact Us'
+    , withSpace: false %}
+  <div class="tinkiu-contact__contact-items">
+    {% for item in o.contactItems.value %}
+      <div class="tinkiu-contact__contact-item">
+        <p>{{ item.contactType }}</p>
+        <p>{{ item.contactInfo }}</p>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="tinkiu-contact__content"></div>
+</div>
+
+{% schema %}
+  {
+    "name": "Tinkiu Contact",
+    "settings": []
+  }
+{% endschema %}

@@ -21,6 +21,7 @@ $font-family-heading: 'Fenul', serif;
 $font-family-body: 'Dazzed', sans-serif;
 
 $facet-label-line-height: 1.1;
+$subsection-header-letter-spacing: 0.02em;
 
 
 @mixin detail-caption() {
@@ -44,4 +45,12 @@ $facet-label-line-height: 1.1;
   font-size: var(--section-header);
   line-height: $header-line-height;
   max-width: var(--text-max-width);
+}
+
+@mixin subsection-header() {
+  font-size: var(--subsection-header);
+  line-height: $header-line-height;
+  max-width: var(--text-max-width);
+  text-transform: uppercase;
+  letter-spacing: $subsection-header-letter-spacing;
 }

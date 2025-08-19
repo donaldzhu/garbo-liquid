@@ -65,7 +65,8 @@ body {
   }
 
 
-  input.field__input {
+  input.field__input,
+  textarea.text-area {
 
     &,
     &:focus,
@@ -76,6 +77,11 @@ body {
       background-color: transparent;
       border-bottom: border(black);
     }
+  }
+
+  .field,
+  input.field__input,
+  textarea.text-area {
 
     &::before,
     &::after {

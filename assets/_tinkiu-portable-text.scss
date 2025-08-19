@@ -1,0 +1,52 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-typography' as *;
+
+.tinkiu-portable-text {
+  @include flex-column;
+  width: column-width(8);
+
+  p {
+    line-height: 1.2;
+
+    em,
+    code {
+      font-style: normal;
+      font-family: $font-family-body;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: var(--story-list-margin);
+    font-size: var(--large-copy);
+    align-self: flex-start;
+  }
+
+  ul {
+    display: block;
+    list-style: disc;
+  }
+
+  li {
+    line-height: 1.2;
+  }
+
+  img,
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  p,
+  img,
+  video,
+  iframe,
+  blockquote,
+  ol,
+  ul {
+    &:not(:first-child) {
+      margin: var(--section-media-spacing) 0 0 !important;
+    }
+  }
+}

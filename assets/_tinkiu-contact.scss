@@ -1,0 +1,77 @@
+@use 'tinkiu-layouts' as *;
+@use 'tinkiu-typography' as *;
+@use 'tinkiu-colors' as *;
+@use 'tinkiu-sizes' as *;
+
+.tinkiu-contact {
+  @include flex-column;
+  width: 100vw;
+  padding: 0;
+
+  .tinkiu-contact__contact-items {
+    @include details;
+    width: fit-content;
+    max-width: column-width(8);
+    margin: var(--large-inner-section-gap) 0;
+  }
+
+}
+
+.tinkiu-contact-form {
+  @include flex-column;
+  width: 100vw;
+
+  .contact {
+    max-width: column-width(8);
+    width: 100%;
+  }
+
+
+  .field {
+    margin: var(--paragraph-spacing) 0 0;
+    font-size: var(--small-copy);
+  }
+
+  .contact__fields {
+    @include flex;
+    gap: var(--column-gap);
+
+    .field {
+      width: column-width(4);
+      margin: 0;
+
+      input {
+        border: border(black);
+      }
+    }
+  }
+
+  textarea.text-area {
+
+    &,
+    &:focus,
+    &:not(:placeholder-shown) {
+      border: border(black);
+      background-color: $ash;
+    }
+
+  }
+
+  input.field__input,
+  textarea.text-area {
+    padding: var(--input-padding);
+    font-size: var(--small-copy);
+    font-family: $font-family-body;
+    color: black;
+    border-radius: $input-border-radius;
+
+    ~label {
+      left: var(--input-padding);
+    }
+  }
+
+  .contact__button {
+    @include flex;
+    margin-top: var(--blurb-button-margin-top);
+  }
+}

@@ -1,5 +1,29 @@
+{% assign services = shop.metaobjects['app--6007307--sanity-documents-services'].values %}
+{% for service in services %}
+  {% assign o = service %}
+{% endfor %}
+
+
 <div class="tinkiu-services">
-  as
+  {% render 'tinkiu-section-header'
+    , title: o.title %}
+  <div class="tinkiu-services__hero-media">
+    {% render 'tinkiu-media'
+      , data: o.content.value.heroMedia %}
+  </div>
+  <div class="tinkiu-services__description">
+    <p>{{ o.description }}</p>
+  </div>
+  <div class="tinkiu-services__content">
+    {% for section in o.content.value.sectionContent %}
+      {% render 'tinkiu-section-header'
+        , smallTitle: section.sectionTitle %}
+      <div class="tinkiu-portable-text">
+        {% render 'portable-text'
+          , portableText: section.sectionContent %}
+      </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% schema %}

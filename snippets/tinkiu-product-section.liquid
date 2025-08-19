@@ -1,6 +1,10 @@
-<div class="tinkiu-product-section">
-  {% render 'tinkiu-dot' %}
-  <h2>{{ header }}</h2>
+<div
+class="tinkiu-product-section">
+  {% comment %} {% render 'tinkiu-dot' %}
+        <h2>{{ header }}</h2> {% endcomment %}
+  {% render 'tinkiu-section-header'
+    , smallTitle: header
+    , withSpace: true %}
   {% render 'tinkiu-product-list'
     , product: product
     , products: products %}

@@ -1,0 +1,30 @@
+@use 'tinkiu-layouts' as *;
+
+.tinkiu-services {
+  @include flex-column(center, flex-start);
+  width: 100vw;
+  gap: var(--section-media-spacing);
+
+  .tinkiu-services__description {
+    width: column-width(8);
+  }
+
+  .tinkiu-services__content {
+    @include flex-column;
+    width: var(--full-width);
+
+    .tinkiu-section-header h1 {
+      margin-bottom: var(--section-media-spacing);
+    }
+  }
+
+  .tinkiu-services__hero-media {
+    width: column-width(8);
+
+    img {
+      display: flex;
+      border-radius: var(--media-border-radius);
+      width: 100%;
+    }
+  }
+}

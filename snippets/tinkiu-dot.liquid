@@ -1,5 +1,6 @@
 {% liquid
-  assign withSpace = withSpace | default: true
+  assign withSpace = withSpace | default: true, allow_false: true
 %}
 
-<div class="tinkiu-dot {{ class }} {% if withSpace %}tinkiu-dot--with-space{% endif %}"></div>
+
+<div class="tinkiu-dot {{ class }} {% if withSpace == true %}tinkiu-dot--with-space{% endif %}"></div>
