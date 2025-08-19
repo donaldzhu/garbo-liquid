@@ -1,0 +1,16 @@
+@use 'tinkiu-layouts' as *;
+
+
+.tinkiu-stories {
+  @include flex-column(center, flex-start);
+  width: 100vw;
+  gap: var(--section-media-spacing);
+
+  .tinkiu-stories__content {
+    width: var(--full-width);
+  }
+
+  .tinkiu-pagination-wrapper {
+    margin-top: var(--section-media-spacing);
+  }
+}

@@ -137,6 +137,10 @@
   width: var(--split-image-width);
   flex-shrink: 0;
 }
+.tinkiu-homepage__stories__content .tinkiu-homepage__stories__image a {
+  display: flex;
+  width: 100%;
+}
 .tinkiu-homepage__stories__content .tinkiu-homepage__stories__image img {
   border-radius: var(--media-border-radius);
   width: 100%;
@@ -156,6 +160,11 @@
   text-transform: uppercase;
   line-height: 1.1;
   max-width: var(--side-info-width);
+}
+.tinkiu-homepage__stories__content h3:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.1em;
 }
 .tinkiu-homepage__stories__content .tinkiu-homepage__stories__category {
   text-align: left;
@@ -214,6 +223,12 @@
 }
 .tinkiu-homepage__stories__content .tinkiu-product-insert {
   justify-self: flex-end;
+}
+.tinkiu-homepage__stories__content--short {
+  height: var(--homepage-stories-image-height-short);
+}
+.tinkiu-homepage__stories__content--short h3 {
+  margin-top: 0;
 }
 
 .tinkiu-homepage__founder img {
@@ -1614,6 +1629,22 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   max-width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 4 + var(--column-gap) * (4 - 1)) !important;
 }
 
+.tinkiu-stories {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-direction: column;
+  width: 100vw;
+  gap: var(--section-media-spacing);
+}
+.tinkiu-stories .tinkiu-stories__content {
+  width: var(--full-width);
+}
+.tinkiu-stories .tinkiu-pagination-wrapper {
+  margin-top: var(--section-media-spacing);
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -2271,6 +2302,21 @@ a, a:-webkit-any-link, a:visited {
 @media (min-width: 1536px) {
   :root {
     --homepage-stories-image-height: 1200px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  :root {
+    --homepage-stories-image-height-short: 500px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1535px) {
+  :root {
+    --homepage-stories-image-height-short: 500px;
+  }
+}
+@media (min-width: 1536px) {
+  :root {
+    --homepage-stories-image-height-short: 650px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {

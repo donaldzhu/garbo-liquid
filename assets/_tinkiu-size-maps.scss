@@ -288,6 +288,12 @@ $homepage-stories-image-height: (
   xxl: 1200px,
 );
 
+$homepage-stories-image-height-short: (
+  l: 500px,
+  xl: 500px,
+  xxl: 650px,
+);
+
 $text-max-width: (
   l: 600px,
   xl: 725px,
@@ -453,6 +459,7 @@ $size-maps: (
   full-width: $full-width,
   list-width: $list-width,
   homepage-stories-image-height: $homepage-stories-image-height,
+  homepage-stories-image-height-short: $homepage-stories-image-height-short,
   text-max-width: $text-max-width,
   text-max-width-long: $text-max-width-long,
   side-info-width: $side-info-width,

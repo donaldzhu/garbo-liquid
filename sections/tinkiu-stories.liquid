@@ -1,5 +1,21 @@
 <div class="tinkiu-stories">
-  <h2>Stories</h2>
+  {% render 'tinkiu-section-header'
+    , title: 'Stories' %}
+  <div class="tinkiu-stories__content">
+    {% assign stories = shop.metaobjects['app--6007307--sanity-documents-story'].values %}
+    {%- paginate shop.metaobjects['app--6007307--sanity-documents-story'].values by 10 -%}
+      {% for story in shop.metaobjects['app--6007307--sanity-documents-story'].values %}
+        {% render 'tinkiu-homepage-stories'
+          , storyData: story
+          , short: true %}
+      {% endfor %}
+      {%- if paginate.pages > 1 -%}
+        {% render 'tinkiu-pagination'
+          , paginate: paginate
+          , anchor: '' %}
+      {%- endif -%}
+    {% endpaginate %}
+  </div>
 </div>
 
 {% schema %}
