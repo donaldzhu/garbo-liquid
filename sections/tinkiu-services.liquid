@@ -17,7 +17,8 @@
   <div class="tinkiu-services__content">
     {% for section in o.content.value.sectionContent %}
       {% render 'tinkiu-section-header'
-        , smallTitle: section.sectionTitle %}
+        , smallTitle: section.sectionTitle
+        , withSpace: true %}
       <div class="tinkiu-portable-text">
         {% render 'portable-text'
           , portableText: section.sectionContent %}
