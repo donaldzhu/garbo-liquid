@@ -710,7 +710,10 @@
     </script>
   </div>
 </product-info>
-{% render 'tinkiu-socials-embed', content: product.metafields['app--6007307--sanity-fields'].socialsEmbed.value.embedCode %}
+{% assign embed_code = product.metafields['app--6007307--sanity-fields'].socialsEmbed.value.embedCode %}
+{% if embed_code != blank %}
+  {% render 'tinkiu-socials-embed', content: embed_code %}
+{% endif %}
 {% schema %}
 {
   "name": "t:sections.main-product.name",

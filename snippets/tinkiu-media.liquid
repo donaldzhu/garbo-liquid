@@ -7,9 +7,13 @@
 
 
 {% if type == 'image' %}
-  <img src="{{ url }}" alt="{{ meta.alt }}" />
+  <img
+    src="{{ url }}"
+    alt="{{ meta.alt }}"
+    class="tinkiu-media" />
 {% elsif type == 'video' %}
   <video
+    class="tinkiu-media"
     {% if control %}
     controls
     {% endif %}

@@ -1,0 +1,30 @@
+@use 'layouts' as *;
+@use 'typography' as *;
+
+.tinkiu-main-list-collections {
+  @include flex($column: true, $full-screen: true, $gapped: true);
+
+  ul.collection-list.grid {
+    padding-top: var(--section-media-spacing);
+    @include split($split-count: 3, $gap: var(--column-gap));
+    @include flex($full-width: true, $justify: flex-start, $gapped: true);
+
+    h3 {
+      padding-top: var(--small-space-y);
+      @include subsection-header;
+      font-size: var(--large-copy);
+    }
+
+    li {
+      &:hover {
+        h3 {
+          @include underline;
+        }
+      }
+    }
+
+    img {
+      aspect-ratio: 1;
+    }
+  }
+}

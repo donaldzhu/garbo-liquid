@@ -60,6 +60,7 @@
   button.tcustomizer-btn {
     @include cta-button;
     width: side-info-column-width(2);
+    min-width: 22.5rem;
     border: border(black);
     padding: var(--input-padding) !important;
     margin: 0;

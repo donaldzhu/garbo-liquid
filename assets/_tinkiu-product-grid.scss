@@ -6,6 +6,7 @@
 
 div.tinkiu-main-collection-product-grid.gradient {
   @include flex($full-screen: true, $column: true, $no-padding: true);
+  margin-top: var(--section-media-spacing);
 
   .facets-vertical.page-width {
     @include flex($flex-start: true, $gapped: true, $full-width: true, $no-space: true);

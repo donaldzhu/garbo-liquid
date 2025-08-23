@@ -526,6 +526,12 @@ main > div:last-child {
   flex-direction: column;
 }
 
+img.tinkiu-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .tinkiu-price:not(.price--on-sale) .price__regular, .tinkiu-price.price--on-sale .price__sale {
   display: flex;
   align-items: center;
@@ -798,6 +804,7 @@ div.tinkiu-product-details p:first-child ~ p {
   border-radius: var(--button-radius);
   margin-top: var(--blurb-button-margin-top);
   width: calc(calc((var(--side-info-width) - (5 - 1) * var(--column-gap)) / 5) * 2 + var(--column-gap) * (2 - 1));
+  min-width: 22.5rem;
   border: black 1px solid;
   padding: var(--input-padding) !important;
   margin: 0;
@@ -927,6 +934,7 @@ div.tinkiu-main-collection-product-grid.gradient {
   flex-direction: column;
   width: 100vw;
   padding: 0;
+  margin-top: var(--section-media-spacing);
 }
 div.tinkiu-main-collection-product-grid.gradient .facets-vertical.page-width {
   display: flex;
@@ -1926,6 +1934,46 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-portable-text ol:not(:first-child),
 .tinkiu-portable-text ul:not(:first-child) {
   margin: var(--section-media-spacing) 0 0 !important;
+}
+
+.tinkiu-main-list-collections {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--column-gap);
+  width: 100vw;
+}
+.tinkiu-main-list-collections ul.collection-list.grid {
+  padding-top: var(--section-media-spacing);
+  display: flex;
+  gap: var(--column-gap);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: var(--column-gap);
+  width: var(--full-width);
+}
+.tinkiu-main-list-collections ul.collection-list.grid > * {
+  width: calc((100% - (3 - 1) * var(--column-gap)) / 3);
+}
+.tinkiu-main-list-collections ul.collection-list.grid h3 {
+  padding-top: var(--small-space-y);
+  font-size: var(--subsection-header);
+  line-height: 1.15;
+  max-width: var(--text-max-width);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: var(--large-copy);
+}
+.tinkiu-main-list-collections ul.collection-list.grid li:hover h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.1em;
+}
+.tinkiu-main-list-collections ul.collection-list.grid img {
+  aspect-ratio: 1;
 }
 
 ul {
