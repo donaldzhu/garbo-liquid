@@ -432,6 +432,10 @@
   margin: var(--paragraph-spacing) 0;
   max-width: var(--text-max-width);
 }
+.tinkiu-homepage h2 + button,
+.tinkiu-homepage__blurb h2 + button {
+  margin-top: var(--section-media-spacing);
+}
 
 header {
   display: flex;
@@ -647,6 +651,33 @@ main > div:last-child {
 
 .tinkiu-main {
   padding-top: calc(calc(var(--header-logo-height) + var(--header-margin-y) * 2) + var(--large-section-gap));
+}
+
+.tinkiu-quantity-input {
+  margin: 0;
+}
+.tinkiu-quantity-input quantity-input.quantity {
+  width: var(--side-info-width);
+  background-color: #FAFAFA;
+  border: #c9c9c9 1px solid;
+  color: black;
+  border-radius: 50px;
+  background-color: #FAFAFA;
+}
+.tinkiu-quantity-input quantity-input.quantity:focus, .tinkiu-quantity-input quantity-input.quantity:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.tinkiu-quantity-input quantity-input.quantity::after {
+  box-shadow: none;
+}
+.tinkiu-quantity-input quantity-input.quantity button,
+.tinkiu-quantity-input quantity-input.quantity input {
+  font-size: var(--small-copy);
+  font-family: "Dazzed", sans-serif;
+}
+.tinkiu-quantity-input quantity-input.quantity button:hover {
+  color: black;
 }
 
 .tinkiu-price:not(.price--on-sale) .price__regular, .tinkiu-price.price--on-sale .price__sale {
@@ -1447,32 +1478,6 @@ product-info.tinkiu-product .product__title > h1 {
 product-info.tinkiu-product .tinkiu-price-container {
   margin: 0;
 }
-product-info.tinkiu-product .tinkiu-quantity-input.product-form__input {
-  margin: 0;
-}
-product-info.tinkiu-product .tinkiu-quantity-input.product-form__input quantity-input {
-  width: var(--side-info-width);
-  background-color: #FAFAFA;
-  border: #c9c9c9 1px solid;
-  color: black;
-  border-radius: 50px;
-  margin-top: var(--inner-section-spacing);
-}
-product-info.tinkiu-product .tinkiu-quantity-input.product-form__input quantity-input:focus, product-info.tinkiu-product .tinkiu-quantity-input.product-form__input quantity-input:focus-visible {
-  outline: none;
-  box-shadow: none;
-}
-product-info.tinkiu-product .tinkiu-quantity-input.product-form__input quantity-input::after {
-  box-shadow: none;
-}
-product-info.tinkiu-product .tinkiu-quantity-input.product-form__input quantity-input button,
-product-info.tinkiu-product .tinkiu-quantity-input.product-form__input quantity-input input {
-  font-size: var(--small-copy);
-  font-family: "Dazzed", sans-serif;
-}
-product-info.tinkiu-product .tinkiu-quantity-input.product-form__input quantity-input button:hover {
-  color: black;
-}
 product-info.tinkiu-product .tinkiu-product-description {
   width: var(--side-info-width);
   max-width: var(--text-max-width);
@@ -1840,6 +1845,38 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   justify-content: center;
   flex-direction: row;
   margin-top: var(--blurb-button-margin-top);
+}
+
+.tinkiu-cart-items th {
+  font-size: var(--ui-small);
+  letter-spacing: 0;
+  border-color: #c9c9c9;
+}
+.tinkiu-cart-items td {
+  font-size: var(--copy-s);
+}
+.tinkiu-cart-items td a {
+  font-family: "Dazzed", sans-serif;
+  letter-spacing: 0;
+}
+.tinkiu-cart-items td a:hover {
+  text-decoration-thickness: 1px;
+}
+.tinkiu-cart-items td img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.tinkiu-cart-items .title-wrapper-with-link a.underlined-link {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.tinkiu-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-direction: column;
 }
 
 ul {

@@ -1,0 +1,35 @@
+@use 'tinkiu-typography' as *;
+@use 'tinkiu-colors' as *;
+
+.tinkiu-cart-items {
+  th {
+    font-size: var(--ui-small);
+    letter-spacing: 0;
+    border-color: $gray;
+  }
+
+  td {
+    font-size: var(--copy-s);
+
+    a {
+      font-family: $font-family-body;
+      letter-spacing: 0;
+
+      &:hover {
+        text-decoration-thickness: 1px;
+      }
+    }
+
+    img {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+  }
+
+  .title-wrapper-with-link {
+    a.underlined-link {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+  }
+}

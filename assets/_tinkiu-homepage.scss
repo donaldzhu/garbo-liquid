@@ -69,4 +69,8 @@
     margin: var(--paragraph-spacing) 0;
     max-width: var(--text-max-width);
   }
+
+  h2+button {
+    margin-top: var(--section-media-spacing);
+  }
 }

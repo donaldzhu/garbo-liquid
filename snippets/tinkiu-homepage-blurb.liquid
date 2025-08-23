@@ -2,7 +2,10 @@
   assign header = data.header | default: header
   assign text = data.text | default: text
   assign linkButton = data.linkButton | default: linkButton
+  assign linkButtonText = linkButton.buttonLabel | default: linkButtonText
+  assign linkButtonUrl = linkButton.link._ref | default: linkButtonUrl
 %}
+
 
 <div class="tinkiu-homepage__blurb {{ class }}">
   {% if header and renderHeader != false %}
@@ -15,8 +18,10 @@
       {{ text | newline_to_br }}
     </p>
   {% endif %}
-  {% if linkButton and renderButton != false %}
+  {% if linkButtonText and renderButton != false %}
     {% render 'tinkiu-cta-button'
-      , linkButton: linkButton %}
+      , linkButton: linkButton
+      , label: linkButtonText
+      , link: linkButtonUrl %}
   {% endif %}
 </div>

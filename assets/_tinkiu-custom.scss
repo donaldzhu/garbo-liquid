@@ -111,3 +111,34 @@ main {
 .tinkiu-main {
   padding-top: calc(#{$header-height} + var(--large-section-gap));
 }
+
+
+.tinkiu-quantity-input {
+  margin: 0;
+
+  quantity-input.quantity {
+    @include no-focus-outline;
+    width: var(--side-info-width);
+
+    background-color: $ash;
+    border: border($gray);
+    color: black;
+    border-radius: 50px;
+    background-color: $ash;
+
+
+    &::after {
+      box-shadow: none;
+    }
+
+    button,
+    input {
+      font-size: var(--small-copy);
+      font-family: $font-family-body;
+    }
+
+    button:hover {
+      color: black;
+    }
+  }
+}

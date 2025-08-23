@@ -1,0 +1,5 @@
+@use 'tinkiu-layouts' as *;
+
+.tinkiu-404 {
+  @include flex-column;
+}

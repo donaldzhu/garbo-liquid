@@ -1,8 +1,14 @@
 {% assign withSpace = withSpace | default: false, allow_blank: true %}
+{% assign title = title | default: title %}
+{% assign smallTitle = smallTitle | default: smallTitle %}
+{% assign secondaryTitle = secondaryTitle | default: secondaryTitle %}
+
 
 <div class="tinkiu-section-header">
-  {% render 'tinkiu-dot'
-    , withSpace: withSpace %}
+  {% if noDot != true %}
+    {% render 'tinkiu-dot'
+      , withSpace: withSpace %}
+  {% endif %}
   {% if title %}
     <h1>
       {{- title | escape -}}
