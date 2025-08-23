@@ -1,22 +1,30 @@
-<div class="tinkiu-stories">
-  {% render 'tinkiu-section-header'
-    , title: 'Stories' %}
-  <div class="tinkiu-stories__content">
-    {% assign stories = shop.metaobjects['app--6007307--sanity-documents-stories'].values %}
-    {%- paginate shop.metaobjects['app--6007307--sanity-documents-stories'].values by 10 -%}
-      {% for story in shop.metaobjects['app--6007307--sanity-documents-stories'].values %}
-        {% render 'tinkiu-homepage-stories'
-          , storyData: story
-          , short: true %}
-      {% endfor %}
-      {%- if paginate.pages > 1 -%}
-        {% render 'tinkiu-pagination'
-          , paginate: paginate
-          , anchor: '' %}
-      {%- endif -%}
-    {% endpaginate %}
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-story'].values %}
+{% assign slug = request.path | remove: '/pages/stories' %}
+
+{% if slug == blank %}
+  <div class="tinkiu-stories">
+    {% render 'tinkiu-section-header'
+      , title: 'Stories' %}
+    <div class="tinkiu-stories__content">
+      {%- paginate metaobj by 10 -%}
+        {% for story in metaobj %}
+          {% render 'tinkiu-story-preview'
+            , storyData: story
+            , short: true %}
+        {% endfor %}
+        {%- if paginate.pages > 1 -%}
+          {% render 'tinkiu-pagination'
+            , paginate: paginate
+            , anchor: '' %}
+        {%- endif -%}
+      {% endpaginate %}
+    </div>
   </div>
-</div>
+{% else %}
+  {% render 'tinkiu-story'
+    , slug: slug
+    , metaobj: metaobj %}
+{% endif %}
 
 {% schema %}
   {

@@ -13,4 +13,9 @@
   .tinkiu-pagination-wrapper {
     margin-top: var(--section-media-spacing);
   }
+
+  .tinkiu-story__preview:first-child .tinkiu-story__preview__content {
+    margin-top: 0;
+  }
+
 }

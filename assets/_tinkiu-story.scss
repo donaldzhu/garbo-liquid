@@ -1,6 +1,8 @@
 @use 'tinkiu-layouts' as *;
 @use 'tinkiu-typography' as *;
 
+@forward 'tinkiu-story-preview';
+
 .tinkiu-story-container {
   @include flex-column;
   width: 100vw;

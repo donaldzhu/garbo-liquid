@@ -3,7 +3,7 @@
 @use 'tinkiu-typography' as *;
 @use 'tinkiu-size-maps' as *;
 
-.tinkiu-homepage__stories__content {
+.tinkiu-story__preview__content {
   @include flex(flex-start);
   width: var(--full-width);
   gap: var(--column-gap);
@@ -14,7 +14,7 @@
     @include square;
   }
 
-  .tinkiu-homepage__stories__image {
+  .tinkiu-story__preview__image {
     display: flex;
     width: var(--split-image-width);
     flex-shrink: 0;
@@ -31,7 +31,7 @@
     }
   }
 
-  .tinkiu-homepage__stories__content__info {
+  .tinkiu-story__preview__content__info {
     @include flex-column(flex-start, space-between);
   }
 
@@ -51,17 +51,17 @@
   }
 
 
-  .tinkiu-homepage__stories__category {
+  .tinkiu-story__preview__category {
     text-align: left;
     font-size: var(--small-copy);
     margin-top: var(--small-space-y);
   }
 
-  .tinkiu-homepage__stories__details {
+  .tinkiu-story__preview__details {
     @include details;
   }
 
-  .tinkiu-homepage__stories__description {
+  .tinkiu-story__preview__description {
     @include description;
     text-align: left;
     margin: var(--homepage-stories-description-margin-top) 0;

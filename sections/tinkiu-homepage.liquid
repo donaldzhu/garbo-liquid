@@ -1,5 +1,6 @@
 {% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-home'].values %}
 
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const stickyContainer = document.querySelector('.tinkiu-homepage__sticky-container');
@@ -15,6 +16,7 @@
   })
 </script>
 
+
 <div class="tinkiu-homepage">
   {% for o in metaobj -%}
     <div class="tinkiu-homepage__sticky-container">
@@ -24,8 +26,8 @@
         , data: o.feature.value %}
       {% render 'tinkiu-homepage-products'
         , data: o.products.value %}
-      {% render 'tinkiu-homepage-stories'
-        , data: o.stories.value %}
+      {% render 'tinkiu-story-preview'
+        , data: o.story.value %}
       {% render 'tinkiu-homepage-founder'
         , data: o.founder.value %}
       {% render 'tinkiu-homepage-ethos'
