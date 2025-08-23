@@ -1,15 +1,14 @@
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-typography' as *;
-@use 'tinkiu-colors' as *;
-@use 'tinkiu-sizes' as *;
+@use 'layouts' as *;
+@use 'typography' as *;
+@use 'colors' as *;
+@use 'sizes' as *;
 
 .tinkiu-contact {
   @include flex($full-screen: true, $column: true, $no-padding: true);
 
   .tinkiu-contact__contact-items {
     @include details;
-    width: fit-content;
-    max-width: column-width(8);
+    @include inset-width(true);
     margin: var(--large-inner-section-gap) 0;
   }
 
@@ -19,10 +18,8 @@
   @include flex($full-screen: true, $column: true);
 
   .contact {
-    max-width: column-width(8);
-    width: 100%;
+    @include inset-width(true);
   }
-
 
   .field {
     margin: var(--paragraph-spacing) 0 0;
@@ -33,7 +30,7 @@
     @include flex($gapped: true);
 
     .field {
-      width: column-width(4);
+      @include half-inset-width;
       margin: 0;
 
       input {

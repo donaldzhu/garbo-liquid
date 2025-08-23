@@ -1,47 +1,3 @@
-.tinkiu-portable-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 8 + var(--column-gap) * (8 - 1));
-}
-.tinkiu-portable-text p {
-  line-height: 1.2;
-}
-.tinkiu-portable-text p em,
-.tinkiu-portable-text p code {
-  font-style: normal;
-  font-family: "Dazzed", sans-serif;
-}
-.tinkiu-portable-text ul,
-.tinkiu-portable-text ol {
-  padding-left: var(--story-list-margin);
-  font-size: var(--large-copy);
-  align-self: flex-start;
-}
-.tinkiu-portable-text ul {
-  display: block;
-  list-style: disc;
-}
-.tinkiu-portable-text li {
-  line-height: 1.2;
-}
-.tinkiu-portable-text img,
-.tinkiu-portable-text video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.tinkiu-portable-text p:not(:first-child),
-.tinkiu-portable-text img:not(:first-child),
-.tinkiu-portable-text video:not(:first-child),
-.tinkiu-portable-text iframe:not(:first-child),
-.tinkiu-portable-text blockquote:not(:first-child),
-.tinkiu-portable-text ol:not(:first-child),
-.tinkiu-portable-text ul:not(:first-child) {
-  margin: var(--section-media-spacing) 0 0 !important;
-}
-
 .tinkiu-homepage__intro {
   width: 100vw;
   height: 100vh;
@@ -93,6 +49,9 @@
 .tinkiu-homepage__intro-image-container--static .tinkiu-blurb {
   margin: 0;
   opacity: 0;
+}
+.tinkiu-homepage__intro-image-container--static .tinkiu-dot {
+  margin-top: calc(var(--header-logo-height) + var(--header-margin-y) * 2);
 }
 
 .tinkiu-homepage__intro-image-container-inner--static {
@@ -220,7 +179,7 @@
   margin-bottom: var(--products-margin-bottom);
 }
 @media (max-width: 1280px) {
-  .tinkiu-homepage__products-container > :nth-child(3) {
+  .tinkiu-homepage__products-container > :nth-child(4) {
     display: none;
   }
 }
@@ -560,6 +519,13 @@ main > div:last-child {
   color: black;
 }
 
+.tinkiu-flex-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .tinkiu-price:not(.price--on-sale) .price__regular, .tinkiu-price.price--on-sale .price__sale {
   display: flex;
   align-items: center;
@@ -722,7 +688,7 @@ div.tinkiu-product-details p:first-child ~ p {
   gap: var(--inner-column-gap);
 }
 .product__info-wrapper div.tinkiu-buy-buttons div.product-form__buttons > * {
-  width: calc((var(--side-info-width) - var(--column-gap)) / 2);
+  width: calc((100% - (2 - 1) * var(--inner-column-gap)) / 2);
 }
 .product__info-wrapper div.tinkiu-buy-buttons button#tcustomizer-add,
 .product__info-wrapper div.tinkiu-buy-buttons button[type=submit],
@@ -934,6 +900,11 @@ slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.
   flex-direction: row;
   gap: var(--column-gap);
 }
+@media (max-width: 1280px) {
+  .tinkiu-product-list > :nth-child(4) {
+    display: none;
+  }
+}
 
 .tinkiu-product-section {
   display: flex;
@@ -1006,24 +977,24 @@ div.tinkiu-main-collection-product-grid.gradient aside.facets-wrapper {
   line-height: 1;
 }
 
-details.tinkiu-facet-details,
+details.tinkiu-facet-details:not([open]),
 details.facets__disclosure-vertical[open] {
   border-color: #c9c9c9;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical,
-details.tinkiu-facet-details .facets__display-vertical,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical,
 details.facets__disclosure-vertical[open] .facets__display-vertical {
   animation: none;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset,
-details.tinkiu-facet-details .facets__display-vertical fieldset,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset,
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset {
   padding: 0;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul,
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul {
   display: flex;
@@ -1034,10 +1005,10 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   justify-content: flex-start;
   gap: var(--small-space-y);
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li .facet-checkbox,
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li label,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li .facet-checkbox,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li label,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li .facet-checkbox,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li label,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li .facet-checkbox,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li label,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li .facet-checkbox,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li label,
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul li .facet-checkbox,
@@ -1050,10 +1021,10 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   padding: 0;
   color: black;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li .facet-checkbox svg,
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li label svg,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li .facet-checkbox svg,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li label svg,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li .facet-checkbox svg,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li label svg,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li .facet-checkbox svg,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li label svg,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li .facet-checkbox svg,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li label svg,
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul li .facet-checkbox svg,
@@ -1061,13 +1032,13 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   margin-right: 0;
   background-color: transparent;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li .facet-checkbox, details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li .facet-checkbox *,
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li label,
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li label *,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li .facet-checkbox,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li .facet-checkbox *,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li label,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li label *,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li .facet-checkbox, details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li .facet-checkbox *,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li label,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li label *,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li .facet-checkbox,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li .facet-checkbox *,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li label,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li label *,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li .facet-checkbox,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li .facet-checkbox *,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li label,
@@ -1081,10 +1052,10 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   line-height: 1.1;
   color: black;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li .facet-checkbox .facet-checkbox__text-label:hover,
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li label .facet-checkbox__text-label:hover,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li .facet-checkbox .facet-checkbox__text-label:hover,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li label .facet-checkbox__text-label:hover,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li .facet-checkbox .facet-checkbox__text-label:hover,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li label .facet-checkbox__text-label:hover,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li .facet-checkbox .facet-checkbox__text-label:hover,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li label .facet-checkbox__text-label:hover,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li .facet-checkbox .facet-checkbox__text-label:hover,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li label .facet-checkbox__text-label:hover,
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul li .facet-checkbox .facet-checkbox__text-label:hover,
@@ -1093,36 +1064,57 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   text-decoration-thickness: 0.05em;
   text-underline-offset: 0.1em;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ svg,
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ svg,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ svg,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ svg,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ svg,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ svg,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ svg,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ svg,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ svg,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ svg,
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ svg,
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ svg {
   background-color: black;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ .svg-wrapper svg,
-details.tinkiu-facet-details .parent-display.facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ .svg-wrapper svg,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ .svg-wrapper svg,
-details.tinkiu-facet-details .facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ .svg-wrapper svg,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ .svg-wrapper svg,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ .svg-wrapper svg,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ .svg-wrapper svg,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ .svg-wrapper svg,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ .svg-wrapper svg,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ .svg-wrapper svg,
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul li .facet-checkbox input[type=checkbox]:checked ~ .svg-wrapper svg,
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul li label input[type=checkbox]:checked ~ .svg-wrapper svg {
   visibility: hidden;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical price-range,
-details.tinkiu-facet-details .facets__display-vertical price-range,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical price-range,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical price-range,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical price-range,
 details.facets__disclosure-vertical[open] .facets__display-vertical price-range {
   display: flex;
-  gap: var(--inner-column-gap);
   padding: 0;
+  display: flex;
+  gap: var(--inner-column-gap);
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field,
-details.tinkiu-facet-details .facets__display-vertical price-range .tinkiu-price-facet-field,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical price-range > *,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical price-range > *,
+details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical price-range > *,
+details.facets__disclosure-vertical[open] .facets__display-vertical price-range > * {
+  width: calc((100% - (2 - 1) * var(--inner-column-gap)) / 2);
+}
+@media (max-width: 1280px) {
+  details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical price-range,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical price-range,
+details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical price-range,
+details.facets__disclosure-vertical[open] .facets__display-vertical price-range {
+    flex-wrap: wrap;
+  }
+  details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical price-range > *,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical price-range > *,
+details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical price-range > *,
+details.facets__disclosure-vertical[open] .facets__display-vertical price-range > * {
+    width: 100%;
+  }
+}
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical price-range .tinkiu-price-facet-field,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field,
 details.facets__disclosure-vertical[open] .facets__display-vertical price-range .tinkiu-price-facet-field {
   display: flex;
@@ -1131,17 +1123,17 @@ details.facets__disclosure-vertical[open] .facets__display-vertical price-range 
   flex-direction: row;
   margin: 0;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field:before, details.tinkiu-facet-details .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field:after,
-details.tinkiu-facet-details .facets__display-vertical price-range .tinkiu-price-facet-field:before,
-details.tinkiu-facet-details .facets__display-vertical price-range .tinkiu-price-facet-field:after,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field:before, details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field:after,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical price-range .tinkiu-price-facet-field:before,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical price-range .tinkiu-price-facet-field:after,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field:before,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field:after,
 details.facets__disclosure-vertical[open] .facets__display-vertical price-range .tinkiu-price-facet-field:before,
 details.facets__disclosure-vertical[open] .facets__display-vertical price-range .tinkiu-price-facet-field:after {
   box-shadow: none;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field input,
-details.tinkiu-facet-details .facets__display-vertical price-range .tinkiu-price-facet-field input,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field input,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical price-range .tinkiu-price-facet-field input,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field input,
 details.facets__disclosure-vertical[open] .facets__display-vertical price-range .tinkiu-price-facet-field input {
   font-family: "Dazzed", sans-serif;
@@ -1152,8 +1144,8 @@ details.facets__disclosure-vertical[open] .facets__display-vertical price-range 
   border: #c9c9c9 1px solid;
   border-radius: 4px;
 }
-details.tinkiu-facet-details .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field label,
-details.tinkiu-facet-details .facets__display-vertical price-range .tinkiu-price-facet-field label,
+details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field label,
+details.tinkiu-facet-details:not([open]) .facets__display-vertical price-range .tinkiu-price-facet-field label,
 details.facets__disclosure-vertical[open] .parent-display.facets__display-vertical price-range .tinkiu-price-facet-field label,
 details.facets__disclosure-vertical[open] .facets__display-vertical price-range .tinkiu-price-facet-field label {
   font-size: var(--ui-small);
@@ -1161,7 +1153,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical price-range 
   letter-spacing: 0;
   top: auto;
 }
-details.tinkiu-facet-details summary,
+details.tinkiu-facet-details:not([open]) summary,
 details.facets__disclosure-vertical[open] summary {
   padding: var(--filter-label-margin) 0;
   font-family: "Dazzed", sans-serif;
@@ -1172,11 +1164,11 @@ details.facets__disclosure-vertical[open] summary {
   text-transform: uppercase;
   font-weight: normal;
 }
-details.tinkiu-facet-details summary ~ p,
+details.tinkiu-facet-details:not([open]) summary ~ p,
 details.facets__disclosure-vertical[open] summary ~ p {
   margin-bottom: var(--detail-label-margin);
 }
-details.tinkiu-facet-details summary:hover .facets__summary-label,
+details.tinkiu-facet-details:not([open]) summary:hover .facets__summary-label,
 details.facets__disclosure-vertical[open] summary:hover .facets__summary-label {
   text-decoration: none;
 }
@@ -1232,6 +1224,9 @@ details.facets__disclosure-vertical[open] summary:hover .facets__summary-label {
   justify-content: flex-start;
   gap: var(--column-gap);
   flex-wrap: wrap;
+}
+.tinkiu-product-grid product-info {
+  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 3 + var(--column-gap) * (3 - 1));
 }
 .tinkiu-product-grid .tinkiu-product-insert .tinkiu-product-insert__images img {
   width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 3 + var(--column-gap) * (3 - 1));
@@ -1638,8 +1633,8 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--paragraph-spacing);
   width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 8 + var(--column-gap) * (8 - 1));
+  gap: var(--paragraph-spacing);
 }
 .tinkiu-story .tinkiu-story__details {
   width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 4 + var(--column-gap) * (4 - 1));
@@ -1708,8 +1703,8 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 }
 .tinkiu-socials-embed .tinkiu-socials-embed__content iframe,
 .tinkiu-socials-embed .tinkiu-socials-embed__content blockquote {
-  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 4 + var(--column-gap) * (4 - 1)) !important;
-  max-width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 4 + var(--column-gap) * (4 - 1)) !important;
+  width: var(--socials-embed-width) !important;
+  max-width: var(--socials-embed-width) !important;
 }
 
 .tinkiu-stories {
@@ -1819,8 +1814,8 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   width: 100vw;
 }
 .tinkiu-contact-form .contact {
+  width: fit-content;
   max-width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 8 + var(--column-gap) * (8 - 1));
-  width: 100%;
 }
 .tinkiu-contact-form .field {
   margin: var(--paragraph-spacing) 0 0;
@@ -1889,11 +1884,48 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   text-underline-offset: 0.1em;
 }
 
-.tinkiu-404 {
+.tinkiu-portable-text {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 8 + var(--column-gap) * (8 - 1));
+}
+.tinkiu-portable-text p {
+  line-height: 1.2;
+}
+.tinkiu-portable-text p em,
+.tinkiu-portable-text p code {
+  font-style: normal;
+  font-family: "Dazzed", sans-serif;
+}
+.tinkiu-portable-text ul,
+.tinkiu-portable-text ol {
+  padding-left: var(--story-list-margin);
+  font-size: var(--large-copy);
+  align-self: flex-start;
+}
+.tinkiu-portable-text ul {
+  display: block;
+  list-style: disc;
+}
+.tinkiu-portable-text li {
+  line-height: 1.2;
+}
+.tinkiu-portable-text img,
+.tinkiu-portable-text video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.tinkiu-portable-text p:not(:first-child),
+.tinkiu-portable-text img:not(:first-child),
+.tinkiu-portable-text video:not(:first-child),
+.tinkiu-portable-text iframe:not(:first-child),
+.tinkiu-portable-text blockquote:not(:first-child),
+.tinkiu-portable-text ol:not(:first-child),
+.tinkiu-portable-text ul:not(:first-child) {
+  margin: var(--section-media-spacing) 0 0 !important;
 }
 
 ul {
@@ -2437,7 +2469,7 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --filter-label-margin: 1.2rem;
+    --filter-label-margin: 1.5rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
@@ -2523,6 +2555,21 @@ a, a:-webkit-any-link, a:visited {
 @media (min-width: 1536px) {
   :root {
     --list-width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 3 + var(--column-gap) * (3 - 1));
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  :root {
+    --socials-embed-width: calc(calc((calc(1024px - var(--page-margin-x) * 2) - (12 - 1) * var(--column-gap)) / 12) * 5 + var(--column-gap) * (5 - 1));
+  }
+}
+@media (min-width: 1280px) and (max-width: 1535px) {
+  :root {
+    --socials-embed-width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 4 + var(--column-gap) * (4 - 1));
+  }
+}
+@media (min-width: 1536px) {
+  :root {
+    --socials-embed-width: calc(calc((var(--full-width) - (12 - 1) * var(--column-gap)) / 12) * 4 + var(--column-gap) * (4 - 1));
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {

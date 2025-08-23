@@ -1,5 +1,5 @@
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-typography' as *;
+@use 'layouts' as *;
+@use 'typography' as *;
 
 .tinkiu-collection-hero {
   @include flex($column: true);
@@ -12,7 +12,7 @@
 
   img {
     border-radius: var(--media-border-radius);
-    width: column-width(8);
+    @include inset-width;
 
     &:last-child {
       margin-bottom: var(--section-media-spacing);

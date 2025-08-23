@@ -1,8 +1,8 @@
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-size-maps' as *;
-@use 'tinkiu-typography' as *;
-@use 'tinkiu-colors' as *;
-@use 'tinkiu-sizes' as *;
+@use 'layouts' as *;
+@use 'size-maps' as *;
+@use 'typography' as *;
+@use 'colors' as *;
+@use 'sizes' as *;
 
 div.tinkiu-main-collection-product-grid.gradient {
   @include flex($full-screen: true, $column: true, $no-padding: true);
@@ -61,7 +61,7 @@ div.tinkiu-main-collection-product-grid.gradient {
   }
 }
 
-details.tinkiu-facet-details,
+details.tinkiu-facet-details:not([open]),
 details.facets__disclosure-vertical[open] {
   border-color: $gray;
 
@@ -118,8 +118,18 @@ details.facets__disclosure-vertical[open] {
 
     price-range {
       display: flex;
-      gap: var(--inner-column-gap);
       padding: 0;
+      @include split($gap: var(--inner-column-gap));
+
+
+      @media (max-width: $xl) {
+        flex-wrap: wrap;
+
+        >* {
+          width: 100%;
+        }
+      }
+
 
       .tinkiu-price-facet-field {
         @include flex($justify: flex-start);
@@ -164,7 +174,6 @@ details.facets__disclosure-vertical[open] {
   @include flex($align: flex-end, $justify: flex-start, $full-screen: true, $column: true);
   @include no-focus-outline;
 
-
   @include hover-underline(none);
 
 
@@ -203,7 +212,13 @@ details.facets__disclosure-vertical[open] {
   @include flex($flex-start: true, $gapped: true);
   flex-wrap: wrap;
 
+  $product-info-width: column-width(3);
+
+  product-info {
+    width: $product-info-width;
+  }
+
   .tinkiu-product-insert .tinkiu-product-insert__images img {
-    @include square(column-width(3));
+    @include square($product-info-width);
   }
 }

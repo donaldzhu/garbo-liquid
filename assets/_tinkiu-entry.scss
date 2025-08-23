@@ -1,9 +1,8 @@
-@forward 'tinkiu-colors';
-@forward 'tinkiu-sizes';
-@forward 'tinkiu-size-maps';
-@forward 'tinkiu-typography';
-@forward 'tinkiu-layouts';
-@forward 'tinkiu-portable-text';
+@forward 'colors';
+@forward 'sizes';
+@forward 'size-maps';
+@forward 'typography';
+@forward 'layouts';
 
 @forward 'tinkiu-homepage';
 @forward 'tinkiu-header';
@@ -17,4 +16,4 @@
 @forward 'tinkiu-services';
 @forward 'tinkiu-contact';
 @forward 'tinkiu-cart-items';
-@forward 'tinkiu-404';
+@forward 'tinkiu-portable-text';

@@ -1,9 +1,7 @@
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-colors' as *;
+@use 'layouts' as *;
+@use 'colors' as *;
 
-
-
-
+// FINISHED
 .product__info-wrapper div.tinkiu-buy-buttons {
 
   &,
@@ -22,12 +20,7 @@
   }
 
   div.product-form__buttons {
-    display: flex;
-    gap: var(--inner-column-gap);
-
-    >* {
-      width: calc((var(--side-info-width) - var(--column-gap)) / 2);
-    }
+    @include split($gap: var(--inner-column-gap));
   }
 
   button#tcustomizer-add,
@@ -38,8 +31,7 @@
   }
 
   button.shopify-payment-button__button {
-    background-color: $red;
-    color: $ash;
+    @include button-active;
   }
 
   shopify-buy-it-now-button:disabled {

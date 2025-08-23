@@ -1,5 +1,5 @@
-@use 'tinkiu-colors' as *;
-@use 'tinkiu-layouts' as *;
+@use 'colors' as *;
+@use 'layouts' as *;
 
 
 .tinkiu-footer {
@@ -20,7 +20,7 @@
 
       &:first-child,
       &:nth-child(2) {
-        width: column-width(4);
+        @include half-inset-width;
       }
 
       &:nth-child(3),

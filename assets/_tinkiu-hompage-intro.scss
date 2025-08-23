@@ -1,6 +1,6 @@
-@use 'tinkiu-sizes' as *;
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-colors' as *;
+@use 'sizes' as *;
+@use 'layouts' as *;
+@use 'colors' as *;
 
 .tinkiu-homepage__intro {
   @include fullscreen;
@@ -40,6 +40,10 @@
     .tinkiu-blurb {
       margin: 0;
       opacity: 0;
+    }
+
+    .tinkiu-dot {
+      margin-top: $header-height;
     }
   }
 }

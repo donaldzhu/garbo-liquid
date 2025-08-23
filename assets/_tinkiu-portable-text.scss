@@ -1,9 +1,8 @@
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-typography' as *;
+@use 'layouts' as *;
+@use 'typography' as *;
 
 .tinkiu-portable-text {
-  @include flex($column: true);
-  width: column-width(8);
+  @include flex($column: true, $inset-width: true);
 
   p {
     line-height: 1.2;

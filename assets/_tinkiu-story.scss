@@ -1,5 +1,5 @@
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-typography' as *;
+@use 'layouts' as *;
+@use 'typography' as *;
 
 @forward 'tinkiu-story-preview';
 
@@ -11,7 +11,7 @@
   @include flex($column: true, $full-width: true, $no-padding: true);
 
   .tinkiu-story__hero-media {
-    width: column-width(8);
+    @include inset-width;
 
     img {
       display: flex;
@@ -21,14 +21,13 @@
   }
 
   .tinkiu-story__folio {
-    @include flex($align: flex-start, $gapped: true);
-    width: column-width(8);
+    @include flex($align: flex-start, $gapped: true, $inset-width: true);
     margin-top: var(--section-media-spacing);
   }
 
   .tinkiu-story__description {
     @include description;
-    width: column-width(4);
+    @include half-inset-width;
     margin-top: 0;
   }
 
@@ -49,26 +48,24 @@
     .tinkiu-story__details-container {
       @include flex($column: true);
       gap: var(--paragraph-spacing);
-      width: column-width(4);
+      @include half-inset-width;
 
     }
   }
 
   .tinkiu-story__folio:not(.tinkiu-story__folio--with-product) {
     .tinkiu-story__details-container {
-      @include flex($flex-start: true);
+      @include flex($flex-start: true, $inset-width: true);
       gap: var(--paragraph-spacing);
-      width: column-width(8);
     }
   }
 
   .tinkiu-story__details {
-    width: column-width(4);
+    @include half-inset-width;
   }
 
   .tinkiu-story__content {
-    @include flex($column: true);
-    width: column-width(8);
+    @include flex($column: true, $inset-width: true);
 
     p {
       line-height: 1.2;

@@ -1,13 +1,14 @@
-@use 'tinkiu-sizes' as *;
-@use 'tinkiu-colors' as *;
-@use 'tinkiu-typography' as *;
+@use 'sizes' as *;
+@use 'colors' as *;
+@use 'typography' as *;
+
 
 @mixin square($size: 100%) {
   width: $size;
   height: $size;
 }
 
-@mixin flex($align: center, $justify: center, $column: false, $flex-start: false, $gapped: false, $section-gapped: false, $full-screen: false, $full-width: false, $no-padding: false, $no-space: false) {
+@mixin flex($align: center, $justify: center, $column: false, $flex-start: false, $gapped: false, $section-gapped: false, $full-screen: false, $full-width: false, $inset-width: false, $no-padding: false, $no-space: false) {
   display: flex;
   align-items: $align;
   justify-content: $justify;
@@ -39,6 +40,10 @@
 
   @if $full-width {
     width: var(--full-width);
+  }
+
+  @if $inset-width {
+    @include inset-width;
   }
 
   @if $no-padding {
@@ -118,6 +123,11 @@
   }
 }
 
+@mixin button-active {
+  background-color: $red;
+  color: $ash;
+}
+
 @mixin button {
   appearance: none;
   font-weight: bold;
@@ -130,8 +140,7 @@
   color: $red;
 
   &:hover {
-    background-color: $red;
-    color: $ash;
+    @include button-active;
   }
 }
 
@@ -181,5 +190,49 @@
 @mixin hover-underline($text-decoration: underline) {
   &:hover {
     @include underline($text-decoration);
+  }
+}
+
+@mixin split($split-count: 2, $gap: var(--column-gap)) {
+  display: flex;
+  gap: $gap;
+
+  >* {
+    width: calc((100% - (#{$split-count} - 1) * #{$gap}) / #{$split-count});
+  }
+}
+
+@mixin inset-width($use-max-width: false) {
+
+  $inset-width: column-width(8);
+
+  @if $use-max-width {
+    width: fit-content;
+    max-width: $inset-width;
+  }
+
+  @else {
+    width: $inset-width;
+  }
+}
+
+@mixin half-inset-width($use-max-width: false) {
+  $half-inset-width: column-width(4);
+
+  @if $use-max-width {
+    width: fit-content;
+    max-width: $half-inset-width;
+  }
+
+  @else {
+    width: $half-inset-width;
+  }
+}
+
+@mixin list-hide-on-mobile {
+  @media (max-width: $xl) {
+    >:nth-child(4) {
+      display: none;
+    }
   }
 }

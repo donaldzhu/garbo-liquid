@@ -1,5 +1,5 @@
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-typography' as *;
+@use 'layouts' as *;
+@use 'typography' as *;
 
 .tinkiu-socials-embed {
   @include flex($column: true);
@@ -14,9 +14,8 @@
 
     iframe,
     blockquote {
-
-      width: column-width(4) !important;
-      max-width: column-width(4) !important;
+      width: var(--socials-embed-width) !important;
+      max-width: var(--socials-embed-width) !important;
     }
   }
 }

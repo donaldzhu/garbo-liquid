@@ -1,7 +1,7 @@
-@use 'tinkiu-sizes' as *;
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-colors' as *;
-@use 'tinkiu-typography' as *;
+@use 'sizes' as *;
+@use 'layouts' as *;
+@use 'colors' as *;
+@use 'typography' as *;
 
 @forward 'tinkiu-price';
 @forward 'tinkiu-product-variant-picker';

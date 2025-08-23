@@ -1,10 +1,7 @@
-@use 'tinkiu-sizes' as *;
-@use 'tinkiu-typography' as *;
-@use 'tinkiu-layouts' as *;
+@use 'sizes' as *;
+@use 'typography' as *;
+@use 'layouts' as *;
 
-$l: 1024px;
-$xl: 1280px;
-$xxl: 1536px;
 
 $breakpoints: (
   l: $l,
@@ -201,7 +198,7 @@ $product-details-gap: (
 );
 
 $filter-label-margin: (
-  l: $small-space-m,
+  l: $small-space-l,
   xl: $small-space-l,
   xxl: $small-space-l,
 );
@@ -274,6 +271,12 @@ $list-width: (
   l: column-width(4, full-width($l)),
   xl: column-width(3),
   xxl: column-width(3),
+);
+
+$socials-embed-width: (
+  l: column-width(5, full-width($l)),
+  xl: column-width(4),
+  xxl: column-width(4),
 );
 
 $homepage-stories-image-height: (
@@ -451,6 +454,7 @@ $size-maps: (
   // Layout & Sizing
   full-width: $full-width,
   list-width: $list-width,
+  socials-embed-width: $socials-embed-width,
   homepage-stories-image-height: $homepage-stories-image-height,
   homepage-stories-image-height-short: $homepage-stories-image-height-short,
   text-max-width: $text-max-width,

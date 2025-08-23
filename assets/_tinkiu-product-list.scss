@@ -1,6 +1,7 @@
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-typography' as *;
+@use 'layouts' as *;
+@use 'typography' as *;
 
 .tinkiu-product-list {
   @include flex($gapped: true);
+  @include list-hide-on-mobile;
 }

@@ -1,6 +1,6 @@
-@use 'tinkiu-layouts' as *;
-@use 'tinkiu-colors' as *;
-@use 'tinkiu-size-maps' as *;
+@use 'layouts' as *;
+@use 'colors' as *;
+@use 'size-maps' as *;
 
 @mixin and-children() {
 

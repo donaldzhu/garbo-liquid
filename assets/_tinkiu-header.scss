@@ -1,7 +1,7 @@
-@use 'tinkiu-colors' as *;
-@use 'tinkiu-sizes' as *;
-@use 'tinkiu-typography' as *;
-@use 'tinkiu-layouts' as *;
+@use 'colors' as *;
+@use 'sizes' as *;
+@use 'typography' as *;
+@use 'layouts' as *;
 
 header {
   @include flex($full-screen: true, $align: center, $justify: space-between);
