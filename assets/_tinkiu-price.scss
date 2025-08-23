@@ -7,13 +7,13 @@
 
   &:not(.price--on-sale) .price__regular,
   &.price--on-sale .price__sale {
-    @include flex(flex-start, flex-start);
+    @include flex($flex-start: true);
 
     gap: var(--inner-column-gap);
 
     span,
     span s {
-      font-size: var(--product-caption);
+      font-size: var(--small-copy-label);
       letter-spacing: 0;
       margin: 0;
     }

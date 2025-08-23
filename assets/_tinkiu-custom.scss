@@ -21,7 +21,7 @@
 }
 
 .tinkiu-section-header {
-  @include flex-column;
+  @include flex($column: true);
 
   h1 {
     @include section-header;
@@ -84,7 +84,7 @@ main {
 }
 
 .tinkiu-list-item {
-  @include flex-column(flex-start, center);
+  @include flex($column: true, $align: flex-start);
   width: var(--list-width);
 
   img {

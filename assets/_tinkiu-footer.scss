@@ -3,21 +3,19 @@
 
 
 .tinkiu-footer {
-  @include flex-column;
+  @include flex($column: true);
   background-color: $red;
   position: relative;
 
   .tinkiu-footer__links {
-    @include flex(flex-start, space-between);
-    width: var(--full-width);
+    @include flex($align: flex-start, $justify: space-between, $gapped: true, $full-width: true);
     padding-top: var(--footer-padding); // auto
     padding-bottom: var(--header-margin-y);
     font-size: var(--small-copy);
-    gap: var(--column-gap);
     color: white;
 
     >.tinkiu-footer__links__column {
-      @include flex(flex-start, flex-start);
+      @include flex($flex-start: true);
       line-height: 1.3;
 
       &:first-child,

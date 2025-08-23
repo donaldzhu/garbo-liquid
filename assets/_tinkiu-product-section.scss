@@ -3,7 +3,7 @@
 @use 'tinkiu-colors' as *;
 
 .tinkiu-product-section {
-  @include flex-column;
+  @include flex($column: true);
   background-color: $ash;
 
   h2 {

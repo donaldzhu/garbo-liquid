@@ -7,23 +7,55 @@
   height: $size;
 }
 
-@mixin flex($align: center, $justify: center) {
+@mixin flex($align: center, $justify: center, $column: false, $flex-start: false, $gapped: false, $section-gapped: false, $full-screen: false, $full-width: false, $no-padding: false, $no-space: false) {
   display: flex;
   align-items: $align;
   justify-content: $justify;
-  flex-direction: row;
-}
 
-@mixin flex-column($align: center, $justify: center) {
-  @include flex($align, $justify);
-  flex-direction: column;
+  @if $column {
+    flex-direction: column;
+  }
+
+  @else {
+    flex-direction: row;
+  }
+
+  @if $flex-start {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  @if $gapped {
+    gap: var(--column-gap);
+  }
+
+  @if $section-gapped {
+    gap: var(--section-media-spacing);
+  }
+
+  @if $full-screen {
+    width: 100vw;
+  }
+
+  @if $full-width {
+    width: var(--full-width);
+  }
+
+  @if $no-padding {
+    padding: 0;
+  }
+
+  @if $no-space {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 @function full-width($vw: 100vw) {
   @return calc(#{$vw} - var(--page-margin-x) * 2);
 }
 
-@mixin fullscreen($flex-direction: column, $align: center, $justify: center) {
+@mixin fullscreen($flex-direction: column) {
   width: 100vw;
   height: 100vh;
   min-height: max($fullscreen-height-min-vw, $fullscreen-height-min-px);
@@ -65,7 +97,7 @@
 }
 
 @mixin details {
-  @include flex(flex-start, flex-start);
+  @include flex($flex-start: true);
   flex-wrap: wrap;
   width: var(--side-info-width);
   gap: var(--inner-column-gap);
@@ -77,7 +109,7 @@
   }
 
   >div {
-    @include flex-column(flex-start, flex-start);
+    @include flex($column: true, $flex-start: true);
     width: side-info-column-width(2);
 
     p:first-child {
@@ -137,5 +169,17 @@
   &:focus-visible {
     outline: none;
     box-shadow: none;
+  }
+}
+
+@mixin underline($text-decoration: underline) {
+  text-decoration: $text-decoration;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.1em;
+}
+
+@mixin hover-underline($text-decoration: underline) {
+  &:hover {
+    @include underline($text-decoration);
   }
 }

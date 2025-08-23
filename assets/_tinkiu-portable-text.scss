@@ -2,7 +2,7 @@
 @use 'tinkiu-typography' as *;
 
 .tinkiu-portable-text {
-  @include flex-column;
+  @include flex($column: true);
   width: column-width(8);
 
   p {

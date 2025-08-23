@@ -5,18 +5,11 @@
 @use 'tinkiu-sizes' as *;
 
 div.tinkiu-main-collection-product-grid.gradient {
-  @include flex-column;
-  width: 100vw;
-  padding: 0;
+  @include flex($full-screen: true, $column: true, $no-padding: true);
 
   .facets-vertical.page-width {
-    @include flex(flex-start, flex-start);
-    width: var(--full-width);
-    margin: 0;
-    padding: 0;
+    @include flex($flex-start: true, $gapped: true, $full-width: true, $no-space: true);
     max-width: 100%;
-    align-items: flex-start;
-    gap: var(--column-gap);
   }
 
   aside.facets-wrapper {
@@ -80,14 +73,14 @@ details.facets__disclosure-vertical[open] {
       padding: 0;
 
       ul {
-        @include flex-column(flex-start, flex-start);
+        @include flex($column: true, $flex-start: true);
         gap: var(--small-space-y);
 
         li {
 
           .facet-checkbox,
           label {
-            @include flex(center, flex-start);
+            @include flex($justify: flex-start);
 
 
             gap: var(--radio-input-gap);
@@ -104,9 +97,10 @@ details.facets__disclosure-vertical[open] {
               @include detail-caption;
             }
 
-            &:hover .facet-checkbox__text-label {
-              text-decoration: none;
+            .facet-checkbox__text-label {
+              @include hover-underline(none);
             }
+
 
             input[type='checkbox']:checked {
               &~svg {
@@ -128,7 +122,7 @@ details.facets__disclosure-vertical[open] {
       padding: 0;
 
       .tinkiu-price-facet-field {
-        @include flex(center, flex-start);
+        @include flex($justify: flex-start);
         margin: 0;
 
         &:before,
@@ -167,14 +161,11 @@ details.facets__disclosure-vertical[open] {
 }
 
 .tinkiu-product-grid-container {
-  @include flex-column(flex-end, flex-start);
+  @include flex($align: flex-end, $justify: flex-start, $full-screen: true, $column: true);
   @include no-focus-outline;
-  width: 100vw;
 
 
-  &:hover {
-    text-decoration: none;
-  }
+  @include hover-underline(none);
 
 
   .tinkiu-facets-container-sort {
@@ -209,9 +200,8 @@ details.facets__disclosure-vertical[open] {
 
 
 .tinkiu-product-grid {
-  @include flex(flex-start, flex-start);
+  @include flex($flex-start: true, $gapped: true);
   flex-wrap: wrap;
-  gap: var(--column-gap);
 
   .tinkiu-product-insert .tinkiu-product-insert__images img {
     @include square(column-width(3));

@@ -3,7 +3,7 @@
 @use 'tinkiu-colors' as *;
 
 variant-selects.tinkiu-product-variant-picker {
-  @include flex-column(flex-start, flex-start);
+  @include flex($column: true, $flex-start: true);
   gap: var(--product-details-gap);
   margin-top: 0;
   margin-bottom: var(--product-details-gap);

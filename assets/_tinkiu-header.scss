@@ -4,8 +4,7 @@
 @use 'tinkiu-layouts' as *;
 
 header {
-  @include flex(center, space-between);
-  width: 100vw;
+  @include flex($full-screen: true, $align: center, $justify: space-between);
   padding: var(--header-margin-y) var(--page-margin-x);
   position: fixed;
   top: 0;

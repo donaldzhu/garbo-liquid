@@ -1,16 +1,14 @@
 @use 'tinkiu-layouts' as *;
 
 .tinkiu-services {
-  @include flex-column(center, flex-start);
-  width: 100vw;
-  gap: var(--section-media-spacing);
+  @include flex($justify: flex-start, $full-screen: true, $column: true, $section-gapped: true);
 
   .tinkiu-services__description {
     width: column-width(8);
   }
 
   .tinkiu-services__content {
-    @include flex-column;
+    @include flex($column: true);
     width: var(--full-width);
 
     .tinkiu-section-header h1 {

@@ -17,20 +17,16 @@
 @forward 'tinkiu-main-collection-banner';
 
 product-info.tinkiu-product {
-  @include flex-column;
+  @include flex($column: true);
   background-color: $ash;
 
   .page-width {
-    display: flex;
-    width: var(--full-width);
+    @include flex($full-width: true, $no-space: true, $flex-start: true);
     max-width: initial;
-    padding: 0;
-    margin: 0;
   }
 
   .product {
-    @include flex(flex-start, flex-start);
-    gap: var(--column-gap);
+    @include flex($flex-start: true, $gapped: true);
   }
 
   .grid__item.product__media-wrapper {

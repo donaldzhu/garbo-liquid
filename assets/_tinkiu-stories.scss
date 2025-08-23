@@ -2,9 +2,7 @@
 
 
 .tinkiu-stories {
-  @include flex-column(center, flex-start);
-  width: 100vw;
-  gap: var(--section-media-spacing);
+  @include flex($justify: flex-start, $full-screen: true, $column: true, $section-gapped: true);
 
   .tinkiu-stories__content {
     width: var(--full-width);

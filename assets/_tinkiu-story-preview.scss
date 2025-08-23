@@ -4,9 +4,7 @@
 @use 'tinkiu-size-maps' as *;
 
 .tinkiu-story__preview__content {
-  @include flex(flex-start);
-  width: var(--full-width);
-  gap: var(--column-gap);
+  @include flex($align: flex-start, $gapped: true, $full-width: true);
   margin-top: var(--section-media-spacing);
   height: var(--homepage-stories-image-height);
 
@@ -32,7 +30,7 @@
   }
 
   .tinkiu-story__preview__content__info {
-    @include flex-column(flex-start, space-between);
+    @include flex($column: true, $align: flex-start, $justify: space-between);
   }
 
   h3 {
@@ -43,11 +41,7 @@
     line-height: 1.1;
     max-width: var(--side-info-width);
 
-    &:hover {
-      text-decoration: underline;
-      text-decoration-thickness: 0.05em;
-      text-underline-offset: 0.1em;
-    }
+    @include hover-underline;
   }
 
 

@@ -2,6 +2,5 @@
 @use 'tinkiu-typography' as *;
 
 .tinkiu-product-list {
-  @include flex;
-  gap: var(--column-gap);
+  @include flex($gapped: true);
 }

@@ -2,14 +2,11 @@
 @use 'tinkiu-typography' as *;
 
 .tinkiu-collection-hero {
-  @include flex-column;
+  @include flex($column: true);
 
   .collection-hero__inner,
   .collection-hero__text-wrapper {
-    @include flex-column;
-    width: var(--full-width);
-    margin: 0;
-    padding: 0;
+    @include flex($column: true, $full-width: true, $no-space: true);
   }
 
 

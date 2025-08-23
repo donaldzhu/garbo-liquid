@@ -2,17 +2,12 @@
 @use 'tinkiu-colors' as *;
 @use 'tinkiu-sizes' as *;
 @use 'tinkiu-layouts' as *;
+@use 'tinkiu-size-maps' as *;
 
 @forward 'tinkiu-hompage-intro';
-@forward 'tinkiu-homepage-feature';
-@forward 'tinkiu-homepage-products';
-@forward 'tinkiu-homepage-founder';
-@forward 'tinkiu-homepage-ethos';
-@forward 'tinkiu-homepage-newsletter';
-@forward 'tinkiu-homepage-footer';
 
 .tinkiu-homepage {
-  @include flex-column;
+  @include flex($column: true);
   position: relative;
   background-color: $ash;
 
@@ -28,7 +23,7 @@
 
   >div,
   >.tinkiu-homepage__sticky-container>div {
-    @include flex-column;
+    @include flex($column: true);
   }
 
 }
@@ -50,10 +45,8 @@
 }
 
 
-
-
 .tinkiu-blurb {
-  @include flex-column;
+  @include flex($column: true);
 }
 
 .tinkiu-homepage,
@@ -71,5 +64,127 @@
 
   h2+button {
     margin-top: var(--section-media-spacing);
+  }
+}
+
+
+.tinkiu-homepage__feature {
+  @include flex($column: true);
+  margin-top: var(--section-media-spacing);
+
+  img,
+  video {
+    width: var(--full-width);
+    border-radius: var(--media-border-radius);
+  }
+
+  .tinkiu-dot {
+    margin-top: calc(var(--dot-margin-bottom) + var(--section-header) * (($header-line-height - 1) / 2));
+  }
+}
+
+.tinkiu-homepage__products-container {
+  @include flex($align: flex-start, $gapped: true, $full-width: true);
+  margin-bottom: var(--products-margin-bottom);
+
+  @media (max-width: $xl) {
+    >:nth-child(3) {
+      display: none;
+    }
+  }
+}
+
+.tinkiu-homepage__ethos__images {
+  @include flex($gapped: true);
+  margin: var(--paragraph-spacing) 0;
+}
+
+
+
+.tinkiu-homepage__founder {
+  img {
+    width: var(--homepage-ethos-image-size-short);
+    height: var(--homepage-ethos-image-size-long);
+    object-fit: cover;
+    border-radius: var(--homepage-ethos-image-size-short);
+    margin: var(--founder-image-margin) 0;
+  }
+
+  p.tinkiu-homepage__founder__name {
+    margin-bottom: 0;
+    margin-top: var(--small-space-y);
+  }
+}
+
+.tinkiu-homepage__newsletter {
+  @include fullscreen;
+  flex: none;
+  gap: var(--inner-section-spacing);
+
+  img {
+    height: var(--homepage-newsletter-image-height);
+  }
+
+  .tinkiu-homepage__newsletter__content {
+    @include flex($column: true);
+  }
+
+  .tinkiu-dot {
+    margin-top: 0;
+  }
+
+  .tinkiu-homepage__newsletter__form {
+    @include flex($column: true);
+    position: relative;
+  }
+
+  // TODO: success
+  input {
+
+    &,
+    &:focus,
+    &:not(:placeholder-shown) {
+      width: var(--newsletter-max-width);
+      padding: var(--input-padding) 0;
+      background-color: inherit;
+    }
+  }
+
+  label {
+    bottom: var(--input-padding);
+  }
+
+  .tinkiu-cta-button {
+    margin-top: var(--form-button-margin-top);
+  }
+}
+
+.tinkiu-homepage__footer {
+  @include fullscreen;
+  z-index: 99;
+  max-height: 100vh;
+
+  .tinkiu-logo {
+    padding-top: $header-height;
+    width: var(--homepage-logo-width);
+    height: auto;
+  }
+
+  h2 {
+    margin-top: var(--inner-section-spacing);
+    color: white;
+  }
+
+
+  .tinkiu-footer__content {
+    @include flex($column: true);
+    position: relative;
+    top: 45%;
+    transform: translate(0, -50%);
+  }
+
+  .tinkiu-footer__links {
+    margin-top: auto;
+    margin-bottom: var(--header-margin-y);
   }
 }

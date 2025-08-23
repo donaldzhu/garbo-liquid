@@ -2,7 +2,7 @@
 @use 'tinkiu-typography' as *;
 
 .tinkiu-socials-embed {
-  @include flex-column;
+  @include flex($column: true);
 
   h2 {
     @include section-header;
@@ -10,8 +10,7 @@
   }
 
   .tinkiu-socials-embed__content {
-    @include flex(flex-start, flex-start);
-    gap: var(--column-gap);
+    @include flex($flex-start: true, $gapped: true);
 
     iframe,
     blockquote {

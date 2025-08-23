@@ -52,12 +52,6 @@ $header-font-size: (
   xxl: $copy,
 );
 
-$product-caption: (
-  l: $copy,
-  xl: $copy,
-  xxl: $copy,
-);
-
 $ui-small: (
   l: $copy-s,
   xl: $copy-s,
@@ -420,9 +414,8 @@ $size-maps: (
   medium-copy: $medium-copy,
   small-copy: $small-copy,
   header-font-size: $header-font-size,
-  product-caption: $product-caption,
-  ui-small: $ui-small,
   small-copy-label: $small-copy-label,
+  ui-small: $ui-small,
   variant-pill: $variant-pill,
   // Spacing & Margins
   page-margin-x: $page-margin-x,

@@ -1,9 +1,0 @@
-@use 'tinkiu-sizes' as *;
-@use 'tinkiu-layouts' as *;
-
-
-.tinkiu-homepage__ethos__images {
-  display: flex;
-  gap: var(--column-gap);
-  margin: var(--paragraph-spacing) 0;
-}

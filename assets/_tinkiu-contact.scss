@@ -4,9 +4,7 @@
 @use 'tinkiu-sizes' as *;
 
 .tinkiu-contact {
-  @include flex-column;
-  width: 100vw;
-  padding: 0;
+  @include flex($full-screen: true, $column: true, $no-padding: true);
 
   .tinkiu-contact__contact-items {
     @include details;
@@ -18,8 +16,7 @@
 }
 
 .tinkiu-contact-form {
-  @include flex-column;
-  width: 100vw;
+  @include flex($full-screen: true, $column: true);
 
   .contact {
     max-width: column-width(8);
@@ -33,8 +30,7 @@
   }
 
   .contact__fields {
-    @include flex;
-    gap: var(--column-gap);
+    @include flex($gapped: true);
 
     .field {
       width: column-width(4);

@@ -4,7 +4,7 @@
 
 
 .tinkiu-product-insert {
-  @include flex-column (flex-start, flex-start);
+  @include flex($column: true, $flex-start: true);
 
   p.tinkiu-product-insert__description {
     margin: 0;
@@ -38,8 +38,7 @@
   }
 
   .tinkiu-product-insert__images {
-    @include flex;
-    gap: var(--column-gap);
+    @include flex($gapped: true);
 
     img {
       flex: none;

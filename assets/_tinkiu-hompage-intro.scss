@@ -33,7 +33,7 @@
   }
 
   &--static {
-    @include flex-column;
+    @include flex($column: true);
     gap: 5vh;
 
     .tinkiu-dot,

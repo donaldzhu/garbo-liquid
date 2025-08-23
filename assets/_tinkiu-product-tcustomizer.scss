@@ -21,7 +21,7 @@
   }
 
   .tcustomizer-photo-action {
-    @include flex-column(flex-start, flex-start);
+    @include flex($column: true, $flex-start: true);
     gap: var(--small-space-y);
   }
 
