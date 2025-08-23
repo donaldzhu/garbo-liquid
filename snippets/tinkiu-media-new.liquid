@@ -1,0 +1,32 @@
+{% liquid
+  assign type = data.type | default: type
+  assign url = data.url | default: url
+  assign alt = data.alt | default: alt
+  assign control = control | default: false
+
+  assign image = data.image | default: image
+  assign width = data.width | default: 1500
+%}
+
+{{ image.presentation | json }}
+{% if image %}
+  {% assign url = image | image_url: width: width %}
+  {{ url | image_tag: class: 'tinkiu-media' }}
+{% else %}
+  {% if type == 'image' %}
+    <img
+      src="{{ url }}"
+      alt="{{ meta.alt }}"
+      class="tinkiu-media" />
+  {% elsif type == 'video' %}
+    <video
+      class="tinkiu-media"
+      {% if control %}
+      controls
+      {% endif %}
+      src="{{ url }}"
+      autoplay
+      muted
+      loop></video>
+  {% endif %}
+{% endif %}

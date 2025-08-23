@@ -2,8 +2,10 @@
 @use 'typography' as *;
 @use 'layouts' as *;
 
-
 $breakpoints: (
+  xs: 0,
+  s: $s,
+  m: $m,
   l: $l,
   xl: $xl,
   xxl: $xxl,
@@ -14,63 +16,84 @@ $breakpoints: (
 // ============================================================================
 
 $section-header: (
+  xs: $header-l,
+  s: $header-l,
+  m: $header-l,
   l: $header-l,
   xl: $header-xl,
   xxl: $header-xxl,
 );
 
 $subsection-header: (
+  xs: $subheader-l,
+  s: $subheader-l,
+  m: $subheader-l,
   l: $subheader-l,
   xl: $subheader-xxl,
   xxl: $subheader-xxl,
 );
 
 $large-copy: (
+  xs: $large-copy-m,
+  s: $large-copy-m,
+  m: $large-copy-m,
   l: $large-copy-m,
   xl: $large-copy-l,
   xxl: $large-copy-xl,
 );
 
 $medium-copy: (
+  xs: $large-copy-xs,
+  s: $large-copy-xs,
+  m: $large-copy-xs,
   l: $large-copy-xs,
   xl: $large-copy-s,
   xxl: $large-copy-s,
 );
 
 $small-copy: (
+  xs: $copy-s,
+  s: $copy-s,
+  m: $copy-s,
   l: $copy-s,
   xl: $copy-m,
   xxl: $copy-m,
 );
 
 $header-font-size: (
+  xs: $copy-s,
+  s: $copy-s,
+  m: $copy-s,
   l: $copy-s,
   xl: $copy,
   xxl: $copy,
 );
 
 $ui-small: (
+  xs: $copy-s,
+  s: $copy-s,
+  m: $copy-s,
   l: $copy-s,
   xl: $copy-s,
   xxl: $copy-s,
 );
 
 $small-copy-label: (
+  xs: $copy,
+  s: $copy,
+  m: $copy,
   l: $copy,
   xl: $copy,
   xxl: $copy,
 );
 
 $variant-pill: (
+  xs: $copy-s,
+  s: $copy-s,
+  m: $copy-s,
   l: $copy-s,
   xl: $copy-m,
   xxl: $copy-m,
-);
-
-$input-padding: (
-  l: $small-space-s,
-  xl: $small-space-m,
-  xxl: $small-space-m,
 );
 
 // ============================================================================
@@ -78,180 +101,270 @@ $input-padding: (
 // ============================================================================
 
 $page-margin-x: (
+  xs: $spacing-m,
+  s: $spacing-m,
+  m: $spacing-m,
   l: $spacing-m,
   xl: $spacing-l,
   xxl: $spacing-l,
 );
 
 $page-margin-y: (
+  xs: $spacing-m,
+  s: $spacing-m,
+  m: $spacing-m,
   l: $spacing-m,
   xl: $spacing-m,
   xxl: $spacing-m,
 );
 
 $header-margin-y: (
+  xs: $spacing-s,
+  s: $spacing-s,
+  m: $spacing-s,
   l: $spacing-s,
   xl: $spacing-m,
   xxl: $spacing-m,
 );
 
 $section-media-spacing: (
+  xs: $spacing-l,
+  s: $spacing-l,
+  m: $spacing-l,
   l: $spacing-l,
   xl: $spacing-xl,
   xxl: $spacing-xl,
 );
 
 $large-inner-section-gap: (
+  xs: $large-spacing-s,
+  s: $large-spacing-s,
+  m: $large-spacing-s,
   l: $large-spacing-s,
   xl: $large-spacing-m,
   xxl: $large-spacing-m,
 );
 
 $homepage-stories-description-margin-top: (
+  xs: $spacing-l,
+  s: $spacing-l,
+  m: $spacing-l,
   l: $spacing-l,
   xl: $spacing-xl,
   xxl: $spacing-xl,
 );
 
 $paragraph-spacing: (
+  xs: $small-space-l,
+  s: $small-space-l,
+  m: $small-space-l,
   l: $small-space-l,
   xl: $spacing-s,
   xxl: $spacing-s,
 );
 
 $inner-section-spacing: (
+  xs: $large-spacing-xs,
+  s: $large-spacing-xs,
+  m: $large-spacing-xs,
   l: $large-spacing-xs,
   xl: $large-spacing-s,
   xxl: $large-spacing-s,
 );
 
 $products-margin-bottom: (
+  xs: $spacing-xxl,
+  s: $spacing-xxl,
+  m: $spacing-xxl,
   l: $spacing-xxl,
   xl: $large-spacing-xs,
   xxl: $large-spacing-xs,
 );
 
 $product-insert-price-margin: (
+  xs: $small-space-xxs,
+  s: $small-space-xxs,
+  m: $small-space-xxs,
   l: $small-space-xxs,
   xl: $small-space-xs,
   xxl: $small-space-xs,
 );
 
 $products-gap: (
+  xs: $small-space-m,
+  s: $small-space-m,
+  m: $small-space-m,
   l: $small-space-m,
   xl: $small-space-m,
   xxl: $small-space-m,
 );
 
 $blurb-button-margin-top: (
+  xs: $small-space-m,
+  s: $small-space-m,
+  m: $small-space-m,
   l: $small-space-m,
   xl: $small-space-m,
   xxl: $small-space-m,
 );
 
 $form-button-margin-top: (
+  xs: $spacing-l,
+  s: $spacing-l,
+  m: $spacing-l,
   l: $spacing-l,
   xl: $spacing-xl,
   xxl: $spacing-xl,
 );
 
 $list-margin: (
+  xs: $small-space-l,
+  s: $small-space-l,
+  m: $small-space-l,
   l: $small-space-l,
   xl: $spacing-s,
   xxl: $spacing-s,
 );
 
 $column-gap: (
+  xs: $spacing-s,
+  s: $spacing-s,
+  m: $spacing-s,
   l: $spacing-s,
   xl: $spacing-m,
   xxl: $spacing-m,
 );
 
 $inner-column-gap: (
+  xs: $small-space-l,
+  s: $small-space-l,
+  m: $small-space-l,
   l: $small-space-l,
   xl: $spacing-s,
   xxl: $spacing-s,
 );
 
 $header-gap: (
+  xs: $spacing-m,
+  s: $spacing-m,
+  m: $spacing-m,
   l: $spacing-m,
   xl: $spacing-l,
   xxl: $spacing-l,
 );
 
 $footer-padding: (
+  xs: $large-spacing-xs,
+  s: $large-spacing-xs,
+  m: $large-spacing-xs,
   l: $large-spacing-xs,
   xl: $large-spacing-s,
   xxl: $large-spacing-s,
 );
 
 $footer-margin-top: (
+  xs: $large-spacing-l,
+  s: $large-spacing-l,
+  m: $large-spacing-l,
   l: $large-spacing-l,
   xl: $large-spacing-xl,
   xxl: $large-spacing-xl,
 );
 
 $product-details-gap: (
+  xs: $spacing-m,
+  s: $spacing-m,
+  m: $spacing-m,
   l: $spacing-m,
   xl: $spacing-l,
   xxl: $spacing-l,
 );
 
 $filter-label-margin: (
-  l: $small-space-l,
+  xs: $small-space-m,
+  s: $small-space-m,
+  m: $small-space-m,
+  l: $small-space-m,
   xl: $small-space-l,
   xxl: $small-space-l,
 );
 
 $large-section-gap: (
+  xs: $large-spacing-m,
+  s: $large-spacing-m,
+  m: $large-spacing-m,
   l: $large-spacing-m,
   xl: $large-spacing-l,
   xxl: $large-spacing-l,
 );
 
 $dot-margin-bottom: (
+  xs: $spacing-m,
+  s: $spacing-m,
+  m: $spacing-m,
   l: $spacing-m,
   xl: $spacing-l,
   xxl: $spacing-xl,
 );
 
 $founder-image-margin: (
+  xs: $spacing-l,
+  s: $spacing-l,
+  m: $spacing-l,
   l: $spacing-l,
   xl: $spacing-xl,
   xxl: $spacing-xl,
 );
 
 $small-space-y: (
+  xs: $small-space-s,
+  s: $small-space-s,
+  m: $small-space-s,
   l: $small-space-s,
   xl: $small-space-m,
   xxl: $small-space-m,
 );
 
 $detail-label-margin: (
+  xs: $small-space-xs,
+  s: $small-space-xs,
+  m: $small-space-xs,
   l: $small-space-xs,
   xl: $small-space-s,
   xxl: $small-space-s,
 );
 
 $story-list-margin: (
+  xs: $spacing-xxl,
+  s: $spacing-xxl,
+  m: $spacing-xxl,
   l: $spacing-xxl,
   xl: $large-spacing-xs,
   xxl: $large-spacing-xs,
 );
 
 $hair-space-y: (
+  xs: $small-space-xxs,
+  s: $small-space-xxs,
+  m: $small-space-xxs,
   l: $small-space-xxs,
   xl: $small-space-xs,
   xxl: $small-space-xs,
 );
 
 $footer-icon-spacing: (
+  xs: $spacing-s,
+  s: $spacing-s,
+  m: $spacing-s,
   l: $spacing-s,
   xl: $spacing-m,
   xxl: $spacing-m,
 );
 
 $radio-input-gap: (
+  xs: $small-space-xs,
+  s: $small-space-xs,
+  m: $small-space-xs,
   l: $small-space-xs,
   xl: $small-space-s,
   xxl: $small-space-s,
@@ -262,66 +375,102 @@ $radio-input-gap: (
 // ============================================================================
 
 $full-width: (
+  xs: full-width(),
+  s: full-width(),
+  m: full-width(),
   l: full-width(),
   xl: full-width(),
   xxl: full-width($xxl),
 );
 
+$inset-width: (
+  xs: min(full-width(), column-width(8, full-width($l))),
+  s: min(full-width(), column-width(8, full-width($l))),
+  m: min(full-width(), column-width(8, full-width($l))),
+  l: column-width(8),
+  xl: column-width(8),
+  xxl: column-width(8),
+);
+
 $list-width: (
+  xs: column-width(4, full-width($l)),
+  s: column-width(4, full-width($l)),
+  m: column-width(4, full-width($l)),
   l: column-width(4, full-width($l)),
   xl: column-width(3),
   xxl: column-width(3),
 );
 
-$socials-embed-width: (
-  l: column-width(5, full-width($l)),
-  xl: column-width(4),
-  xxl: column-width(4),
-);
-
 $homepage-stories-image-height: (
+  xs: 1000px,
+  s: 1000px,
+  m: 1000px,
   l: 1000px,
   xl: 1000px,
   xxl: 1200px,
 );
 
 $homepage-stories-image-height-short: (
+  xs: 500px,
+  s: 500px,
+  m: 500px,
   l: 500px,
   xl: 500px,
   xxl: 650px,
 );
 
 $text-max-width: (
+  xs: 600px,
+  s: 600px,
+  m: 600px,
   l: 600px,
   xl: 725px,
   xxl: 725px,
 );
 
 $text-max-width-long: (
+  xs: 800px,
+  s: 800px,
+  m: 800px,
   l: 800px,
   xl: 900px,
   xxl: 900px,
 );
 
+
+// TODO
 $side-info-width: (
+  xs: column-width($side-info-columns - 1, full-width($s)),
+  s: column-width($side-info-columns - 1, full-width($m)),
+  m: column-width($side-info-columns - 1, full-width($m)),
   l: column-width($side-info-columns - 1, full-width($xl)),
   xl: column-width($side-info-columns),
   xxl: column-width($side-info-columns),
 );
 
+
 $split-image-width: (
+  xs: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
+  s: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
+  m: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
   l: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
   xl: column-width($total-columns - $side-info-columns),
   xxl: column-width($total-columns - $side-info-columns),
 );
 
 $newsletter-max-width: (
+  xs: 575px,
+  s: 575px,
+  m: 575px,
   l: 575px,
   xl: 675px,
   xxl: 675px,
 );
 
 $homepage-logo-width: (
+  xs: 550px,
+  s: 550px,
+  m: 550px,
   l: 550px,
   xl: 600px,
   xxl: 800px,
@@ -329,61 +478,91 @@ $homepage-logo-width: (
 
 $homepage-image-size-aspect-ratio: 1.4;
 $homepage-image-size-short: (
+  xs: 200px,
+  s: 200px,
+  m: 200px,
   l: 200px,
   xl: 325px,
   xxl: 400px,
 );
 
 $homepage-ethos-image-size-short: (
+  xs: 300px,
+  s: 300px,
+  m: 300px,
   l: 300px,
   xl: 475px,
   xxl: 550px,
 );
 
 $homepage-image-size-long: (
+  xs: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
+  s: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
+  m: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
   l: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
   xl: map-get($homepage-image-size-short, xl) * $homepage-image-size-aspect-ratio,
   xxl: map-get($homepage-image-size-short, xxl) * $homepage-image-size-aspect-ratio,
 );
 
 $homepage-ethos-image-size-long: (
+  xs: map-get($homepage-ethos-image-size-short, l) * $homepage-image-size-aspect-ratio,
+  s: map-get($homepage-ethos-image-size-short, l) * $homepage-image-size-aspect-ratio,
+  m: map-get($homepage-ethos-image-size-short, l) * $homepage-image-size-aspect-ratio,
   l: map-get($homepage-ethos-image-size-short, l) * $homepage-image-size-aspect-ratio,
   xl: map-get($homepage-ethos-image-size-short, xl) * $homepage-image-size-aspect-ratio,
-  xxl: map-get($homepage-ethos-image-size-short, xxl) * $homepage-image-size-aspect-ratio,
+  xxl: map-get($homepage-image-size-short, xxl) * $homepage-image-size-aspect-ratio,
 );
 
 
 $header-logo-height: (
+  xs: 24px,
+  s: 24px,
+  m: 24px,
   l: 24px,
   xl: 30px,
   xxl: 30px,
 );
 
 $homepage-intro-logo-vw: (
+  xs: 70vw,
+  s: 70vw,
+  m: 70vw,
   l: 70vw,
   xl: 60vw,
   xxl: 60vw,
 );
 
 $homepage-intro-image-padding-bottom: (
+  xs: 0.4,
+  s: 0.4,
+  m: 0.4,
   l: 0.4,
   xl: 0.3,
   xxl: 0.25,
 );
 
 $homepage-newsletter-image-height: (
+  xs: 150px,
+  s: 150px,
+  m: 150px,
   l: 150px,
   xl: 200px,
   xxl: 200px,
 );
 
 $dot-size: (
+  xs: 20px,
+  s: 20px,
+  m: 20px,
   l: 20px,
   xl: 24px,
   xxl: 24px,
 );
 
 $media-border-radius: (
+  xs: 2.5rem,
+  s: 2.5rem,
+  m: 2.5rem,
   l: 2.5rem,
   xl: 3rem,
   xxl: 3rem,
@@ -394,15 +573,30 @@ $media-border-radius: (
 // ============================================================================
 
 $button-padding: (
+  xs: $small-space-l $spacing-m,
+  s: $small-space-l $spacing-m,
+  m: $small-space-l $spacing-m,
   l: $small-space-l $spacing-m,
   xl: $small-space-l $spacing-m,
   xxl: $small-space-l $spacing-m,
 );
 
 $button-radius: (
+  xs: $small-space-l * 2,
+  s: $small-space-l * 2,
+  m: $small-space-l * 2,
   l: $small-space-l * 2,
   xl: $small-space-l * 2,
   xxl: $small-space-l * 2,
+);
+
+$input-padding: (
+  xs: $small-space-s,
+  s: $small-space-s,
+  m: $small-space-s,
+  l: $small-space-s,
+  xl: $small-space-m,
+  xxl: $small-space-m,
 );
 
 // ============================================================================
@@ -453,8 +647,8 @@ $size-maps: (
   story-list-margin: $story-list-margin,
   // Layout & Sizing
   full-width: $full-width,
+  inset-width: $inset-width,
   list-width: $list-width,
-  socials-embed-width: $socials-embed-width,
   homepage-stories-image-height: $homepage-stories-image-height,
   homepage-stories-image-height-short: $homepage-stories-image-height-short,
   text-max-width: $text-max-width,
@@ -509,9 +703,19 @@ $len: length($ordered);
     $next-min: map-get($breakpoints, $next-bp);
     $max: $next-min - 1px;
 
-    @media (min-width: #{$min}) and (max-width: #{$max}) {
-      :root {
-        --#{$var-name}: #{$value};
+    @if $bp =='xs' {
+      @media (max-width: #{$max}) {
+        :root {
+          --#{$var-name}: #{$value};
+        }
+      }
+    }
+
+    @else {
+      @media (min-width: #{$min}) and (max-width: #{$max}) {
+        :root {
+          --#{$var-name}: #{$value};
+        }
       }
     }
   }

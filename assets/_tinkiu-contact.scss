@@ -8,8 +8,16 @@
 
   .tinkiu-contact__contact-items {
     @include details;
-    @include inset-width(true);
+
+    @include split(4, $gap: var(--inner-column-gap));
+    width: var(--inset-width);
+    max-width: var(--inset-width);
     margin: var(--large-inner-section-gap) 0;
+
+    @include below-medium-mobile {
+      @include split(2, $gap: var(--inner-column-gap));
+      flex-wrap: wrap;
+    }
   }
 
 }
@@ -18,7 +26,10 @@
   @include flex($full-screen: true, $column: true);
 
   .contact {
-    @include inset-width(true);
+    width: var(--inset-width);
+    max-width: var(--inset-width);
+    padding: 0;
+    margin: 0;
   }
 
   .field {
@@ -28,14 +39,25 @@
 
   .contact__fields {
     @include flex($gapped: true);
+    @include split;
+
+    @include below-small-mobile {
+      flex-direction: column;
+      gap: var(--inner-column-gap);
+
+      .field {
+        width: 100%;
+      }
+    }
 
     .field {
-      @include half-inset-width;
       margin: 0;
 
       input {
         border: border(black);
       }
+
+
     }
   }
 

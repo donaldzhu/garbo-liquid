@@ -229,8 +229,26 @@
   }
 }
 
+@mixin below-small-mobile {
+  @media (max-width: calc(#{$s} - 1px)) {
+    @content;
+  }
+}
+
+@mixin below-medium-mobile {
+  @media (max-width: calc(#{$l} - 1px)) {
+    @content;
+  }
+}
+
+@mixin above-large-desktop {
+  @media (min-width: $xl) {
+    @content;
+  }
+}
+
 @mixin list-hide-on-mobile {
-  @media (max-width: $xl) {
+  @include above-large-desktop {
     >:nth-child(4) {
       display: none;
     }

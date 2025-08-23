@@ -123,7 +123,7 @@ details.facets__disclosure-vertical[open] {
       @include split($gap: var(--inner-column-gap));
 
 
-      @media (max-width: $xl) {
+      @include above-large-desktop {
         flex-wrap: wrap;
 
         >* {
