@@ -38,7 +38,7 @@
             /* document.body.style.overflow = 'auto'; */
            }
         }, '+=0')
-        .to(['.tinkiu-homepage-header .tinkiu-logo','.tinkiu-homepage__intro-image-container--static .tinkiu-dot','.tinkiu-homepage__intro-image-container--static .tinkiu-homepage__blurb'], {
+        .to(['.tinkiu-homepage-header .tinkiu-logo','.tinkiu-homepage__intro-image-container--static .tinkiu-dot','.tinkiu-homepage__intro-image-container--static .tinkiu-blurb'], {
           duration: FADE_DURATION,
           opacity: 1,
         }, '+=0')
@@ -69,7 +69,7 @@
       {% render 'tinkiu-dot'
         , withSpace: false %}
     </div>
-    {% render 'tinkiu-homepage-blurb'
+    {% render 'tinkiu-blurb'
       , data: intro %}
   </div>
 </div>

@@ -53,12 +53,12 @@
 
 
 
-.tinkiu-homepage__blurb {
+.tinkiu-blurb {
   @include flex-column;
 }
 
 .tinkiu-homepage,
-.tinkiu-homepage__blurb {
+.tinkiu-blurb {
 
   h2 {
     @include section-header;

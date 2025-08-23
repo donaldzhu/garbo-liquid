@@ -1,7 +1,7 @@
 <div class="tinkiu-homepage__ethos">
 
   {% render 'tinkiu-dot' %}
-  {% render 'tinkiu-homepage-blurb'
+  {% render 'tinkiu-blurb'
     , data: data
     , renderButton: false %}
   <p>{{ data.paragraph1 }}</p>
@@ -13,7 +13,7 @@
     {% endfor %}
   </div>
   <p>{{ data.paragraph2 }}</p>
-  {% render 'tinkiu-homepage-blurb'
+  {% render 'tinkiu-blurb'
     , data: data
     , renderHeader: false %}
 </div>
