@@ -2,9 +2,9 @@
   {% render 'tinkiu-section-header'
     , title: 'Stories' %}
   <div class="tinkiu-stories__content">
-    {% assign stories = shop.metaobjects['app--6007307--sanity-documents-story'].values %}
-    {%- paginate shop.metaobjects['app--6007307--sanity-documents-story'].values by 10 -%}
-      {% for story in shop.metaobjects['app--6007307--sanity-documents-story'].values %}
+    {% assign stories = shop.metaobjects['app--6007307--sanity-documents-stories'].values %}
+    {%- paginate shop.metaobjects['app--6007307--sanity-documents-stories'].values by 10 -%}
+      {% for story in shop.metaobjects['app--6007307--sanity-documents-stories'].values %}
         {% render 'tinkiu-homepage-stories'
           , storyData: story
           , short: true %}
