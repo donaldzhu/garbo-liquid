@@ -9,7 +9,12 @@
   &.price--on-sale .price__sale {
     @include flex($flex-start: true);
 
-    gap: var(--inner-column-gap);
+    gap: var(--price-gap);
+
+    @include mobile {
+      flex-direction: column;
+      gap: 0;
+    }
 
     span,
     span s {

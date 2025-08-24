@@ -17,7 +17,13 @@
   & div.product-form__buttons {
     width: var(--side-info-width);
     max-width: 100%;
+
+    @include mobile {
+      width: var(--full-width);
+      max-width: var(--full-width);
+    }
   }
+
 
   div.product-form__buttons {
     @include split($gap: var(--inner-column-gap));

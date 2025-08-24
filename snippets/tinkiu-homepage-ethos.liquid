@@ -8,9 +8,11 @@
   <div class="tinkiu-homepage__ethos__images">
     {% for data in data.images %}
       {% render 'tinkiu-homepage-ethos-image'
-        , data: data
+        , caption: data.caption
+        , image: data.image
         , isLast: forloop.last %}
     {% endfor %}
+    {% assign allCaptions = data.images[0].caption | append: ', ' | append: data.images[1].caption | append: ', & ' | append: data.images[2].caption | append: '.' %}
   </div>
   <p>{{ data.paragraph2 }}</p>
   {% render 'tinkiu-blurb'

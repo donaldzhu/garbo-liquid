@@ -1,11 +1,13 @@
 $header-xxl: 5.6rem;
 $header-xl: 5rem;
 $header-l: 4.5rem;
+$header-m: 4rem;
 $header-line-height: 1.15;
 
 $subheader-xxl: 3.6rem;
 $subheader-xl: 3.2rem;
 $subheader-l: 2.8rem;
+
 
 $large-copy-xl: 2.4rem;
 $large-copy-l: 2.2rem;
@@ -15,7 +17,8 @@ $large-copy-xs: 1.65rem;
 
 $copy: 1.5rem;
 $copy-m: 1.4rem;
-$copy-s: 1.25rem;
+$copy-s: 1.3rem;
+$copy-xs: 1.2rem;
 
 $font-family-heading: 'Fenul', serif;
 $font-family-body: 'Dazzed', sans-serif;
@@ -35,6 +38,7 @@ $subsection-header-letter-spacing: 0.02em;
   @include detail-caption;
   font-weight: bold;
   text-transform: uppercase;
+  margin-bottom: 1px;
 
   &~p {
     margin-bottom: var(--detail-label-margin);

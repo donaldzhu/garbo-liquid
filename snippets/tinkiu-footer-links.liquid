@@ -1,28 +1,32 @@
 <div class="tinkiu-footer__links">
-  <div class="tinkiu-footer__links__column">
-    Tinkiu, LLC. © {{ 'now' | date: '%Y' }}
+  <div class="tinkiu-footer__links__row-mobile">
+    <div class="tinkiu-footer__links__column">
+      Tinkiu, LLC. © {{ 'now' | date: '%Y' }}
+    </div>
+    <div class="tinkiu-footer__links__column tinkiu-footer__links__column--social">
+      <a href="/">
+        {% render 'tinkiu-icon-instagram' %}
+      </a>
+      <a href="/">
+        {% render 'tinkiu-icon-youtube' %}
+      </a>
+      <a href="/">
+        {% render 'tinkiu-icon-tiktok' %}
+      </a>
+      <a href="/">
+        {% render 'tinkiu-icon-xhs' %}
+      </a>
+    </div>
   </div>
-  <div class="tinkiu-footer__links__column">
-    <a href="/">
-      {% render 'tinkiu-icon-instagram' %}
-    </a>
-    <a href="/">
-      {% render 'tinkiu-icon-youtube' %}
-    </a>
-    <a href="/">
-      {% render 'tinkiu-icon-tiktok' %}
-    </a>
-    <a href="/">
-      {% render 'tinkiu-icon-xhs' %}
-    </a>
-  </div>
-  <div class="tinkiu-footer__links__column">
-    <a href="/">PRODUCTS</a>
-    <a href="/">SERVICES</a>
-    <a href="/">BLOG</a>
-  </div>
-  <div class="tinkiu-footer__links__column">
-    <a href="/">ABOUT</a>
-    <a href="/">CONTACT</a>
+  <div class="tinkiu-footer__links__row-mobile tinkiu-footer__links__nav">
+    <div class="tinkiu-footer__links__column">
+      <a href="/">PRODUCTS</a>
+      <a href="/">SERVICES</a>
+      <a href="/">BLOG</a>
+    </div>
+    <div class="tinkiu-footer__links__column">
+      <a href="/">ABOUT</a>
+      <a href="/">CONTACT</a>
+    </div>
   </div>
 </div>

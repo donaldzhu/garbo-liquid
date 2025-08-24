@@ -30,6 +30,68 @@ header {
       display: flex;
     }
   }
+
+  .tinkiu-header__hamburger,
+  .tinkiu-header__mobile-popup {
+    display: none;
+  }
+
+  @include mobile {
+    .tinkiu-header__hamburger {
+      display: block;
+      position: absolute;
+      left: var(--page-margin-x);
+      transform: translate(0, 0);
+
+      &,
+      svg {
+        @include square(30px);
+      }
+    }
+
+    .tinkiu-header__mobile-popup {
+      @include fullscreen;
+      @include flex($column: true, $align: flex-start);
+
+      background-color: rgba($ash, 0.85);
+      backdrop-filter: blur(12px);
+      position: fixed;
+      max-width: 100vw;
+      max-height: 100vh;
+      top: 0;
+      left: 0;
+      transform: none;
+
+      .tinkiu-header__mobile-popup__content {
+        width: var(--full-width);
+      }
+
+      p {
+        @include detail-label;
+        margin-bottom: var(--section-media-spacing);
+      }
+
+      ul {
+        @include flex($full-width: true, $section-gapped: true, $flex-start: true, $column: true);
+
+
+        li,
+        a {
+          font-size: var(--large-copy);
+        }
+
+        a {
+          padding: var(--small-space-y) 0;
+        }
+
+
+      }
+    }
+
+    >ul {
+      display: none;
+    }
+  }
 }
 
 .tinkiu-logo {

@@ -3,5 +3,25 @@
 
 .tinkiu-product-list {
   @include flex($gapped: true);
-  @include list-hide-on-mobile;
+  @include trimmed-list;
+
+  @include mobile {
+    @include split(3);
+
+    .tinkiu-product-insert .tinkiu-product-insert__images img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+
+  @include below-medium-mobile {
+    @include split(2);
+  }
+
+  @include below-small-mobile {
+    >* {
+      width: 100%;
+    }
+  }
 }

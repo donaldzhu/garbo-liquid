@@ -6,7 +6,13 @@
 .tinkiu-story__preview__content {
   @include flex($align: flex-start, $gapped: true, $full-width: true);
   margin-top: var(--section-media-spacing);
-  height: var(--homepage-stories-image-height);
+
+  @include mobile {
+    flex-direction: column;
+    display: block;
+    align-items: center;
+    @include inset-width;
+  }
 
   >div {
     @include square;
@@ -16,6 +22,7 @@
     display: flex;
     width: var(--split-image-width);
     flex-shrink: 0;
+    height: fit-content;
 
     a {
       display: flex;
@@ -24,16 +31,26 @@
 
     img {
       border-radius: var(--media-border-radius);
+      height: var(--homepage-stories-image-height);
       width: 100%;
       object-fit: cover;
+    }
+
+    @include mobile {
+      width: 100%;
     }
   }
 
   .tinkiu-story__preview__content__info {
     @include flex($column: true, $align: flex-start, $justify: space-between);
+
+    div {
+      max-width: 100%;
+    }
   }
 
   h3 {
+    @include hover-underline;
     margin: 0;
     margin-top: var(--large-inner-section-gap);
     font-size: var(--subsection-header);
@@ -41,7 +58,10 @@
     line-height: 1.1;
     max-width: var(--side-info-width);
 
-    @include hover-underline;
+    @include mobile {
+      margin-top: var(--section-media-spacing);
+    }
+
   }
 
 
@@ -53,6 +73,10 @@
 
   .tinkiu-story__preview__details {
     @include details;
+
+    @include mobile {
+      margin-top: var(--section-media-spacing);
+    }
   }
 
   .tinkiu-story__preview__description {
@@ -63,17 +87,35 @@
 
   .tinkiu-cta-button {
     margin: 0;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   .tinkiu-product-insert {
     justify-self: flex-end;
+
+    @include mobile {
+      display: none;
+    }
   }
 
-  &--short {
-    h3 {
-      margin-top: 0;
+  &--short.tinkiu-story__preview__content {
+    @include desktop {
+      h3 {
+        margin-top: 0;
+      }
     }
 
-    height: var(--homepage-stories-image-height-short);
+    img {
+      height: var(--homepage-stories-image-height-short);
+    }
+
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: var(--large-section-gap);
+      }
+    }
   }
 }

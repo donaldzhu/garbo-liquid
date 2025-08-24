@@ -7,7 +7,19 @@
   ul.collection-list.grid {
     padding-top: var(--section-media-spacing);
     @include split($split-count: 3, $gap: var(--column-gap));
-    @include flex($full-width: true, $justify: flex-start, $gapped: true);
+    @include flex($full-width: true, $flex-start: true, $gapped: true);
+
+    @include mobile {
+      @include split;
+    }
+
+    @include below-small-mobile {
+
+      >*,
+      img {
+        width: var(--full-width);
+      }
+    }
 
     h3 {
       padding-top: var(--small-space-y);

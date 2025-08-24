@@ -28,4 +28,12 @@
   .title-wrapper-with-link a.underlined-link {
     @include underline;
   }
+
+  quantity-input.quantity {
+    width: auto;
+
+    @include below-small-mobile {
+      width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2); // DEFAULT
+    }
+  }
 }

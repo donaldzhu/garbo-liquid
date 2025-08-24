@@ -77,15 +77,15 @@ main {
     }
   }
 
-  section:last-child,
-  >div:last-child {
-    margin-bottom: var(--footer-margin-top);
-  }
+
 }
 
 .tinkiu-list-item {
   @include flex($column: true, $align: flex-start);
-  width: var(--list-width);
+
+  @include desktop {
+    width: var(--list-width);
+  }
 
   img {
     @include square;
@@ -151,4 +151,9 @@ img.tinkiu-media {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+video.tinkiu-media {
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
 }

@@ -7,16 +7,21 @@
   @include flex($full-screen: true, $column: true, $no-padding: true);
 
   .tinkiu-contact__contact-items {
-    @include details;
-
+    @include details(true, true, true);
     @include split(4, $gap: var(--inner-column-gap));
     width: var(--inset-width);
     max-width: var(--inset-width);
     margin: var(--large-inner-section-gap) 0;
+    flex-wrap: wrap;
 
     @include below-medium-mobile {
       @include split(2, $gap: var(--inner-column-gap));
-      flex-wrap: wrap;
+    }
+
+    @include below-small-mobile {
+      >div {
+        width: 100%;
+      }
     }
   }
 

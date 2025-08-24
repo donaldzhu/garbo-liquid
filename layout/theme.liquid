@@ -325,6 +325,15 @@ body {
 }
     {% endstyle %}
 
+    {% if request.path != '/' %}
+      {% style %}
+        main section:last-child,
+        main > div:last-child {
+          margin-bottom: var(--footer-margin-top);
+        }
+      {% endstyle %}
+    {% endif %}
+
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'tinkiu-base.css' | asset_url | stylesheet_tag }}
     <link

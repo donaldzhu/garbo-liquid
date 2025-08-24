@@ -4,6 +4,97 @@
 @use 'colors' as *;
 @use 'sizes' as *;
 
+
+@mixin checkbox-li {
+
+  .facet-checkbox,
+  label {
+    @include flex($justify: flex-start);
+
+    gap: var(--radio-input-gap);
+    color: black;
+
+    svg {
+      margin-right: 0;
+      background-color: transparent;
+    }
+
+    &,
+    & * {
+      @include detail-caption;
+    }
+
+    .facet-checkbox__text-label {
+      @include hover-underline(none);
+    }
+
+
+    input[type='checkbox']:checked {
+      &~svg {
+        background-color: black;
+      }
+
+      &~.svg-wrapper svg {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+@mixin price-range {
+  price-range {
+    display: flex;
+    padding: 0;
+    @include split($gap: var(--inner-column-gap));
+
+
+    @include below-large-desktop {
+      flex-wrap: wrap;
+
+      >* {
+        width: 100%;
+      }
+    }
+
+
+    .tinkiu-price-facet-field {
+      @include flex($justify: flex-start);
+      margin: 0;
+
+      &.field:last-child {
+        margin-left: 0;
+      }
+
+      &:before,
+      &:after {
+        box-shadow: none;
+      }
+
+      input {
+        @include ui;
+        padding: var(--input-padding);
+        border: border($gray);
+        border-radius: $input-border-radius;
+
+        @include mobile {
+          margin: 0 2.5rem; // FROM DEFAULT
+        }
+      }
+
+      label {
+        font-size: var(--ui-small);
+        text-transform: uppercase;
+        letter-spacing: 0;
+        top: auto;
+
+        @include mobile {
+          left: 4rem; // FROM DEFAULT
+        }
+      }
+    }
+  }
+}
+
 div.tinkiu-main-collection-product-grid.gradient {
   @include flex($full-screen: true, $column: true, $no-padding: true);
   margin-top: var(--section-media-spacing);
@@ -11,18 +102,81 @@ div.tinkiu-main-collection-product-grid.gradient {
   .facets-vertical.page-width {
     @include flex($flex-start: true, $gapped: true, $full-width: true, $no-space: true);
     max-width: 100%;
+
+    @include below-medium-mobile {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   aside.facets-wrapper {
     width: column-width(3);
     padding: 0;
     flex: none;
+
+    @include below-medium-mobile {
+      width: var(--full-width);
+      align-items: flex-start;
+    }
   }
 
 }
 
 .tinkiu-facets-container.facets-container {
   padding-top: 0;
+
+  .mobile-facets__open-label {
+    text-transform: uppercase;
+  }
+
+
+
+  div.mobile-facets__footer {
+    background-color: $ash;
+    border: none;
+
+    facet-remove,
+    button {
+      @include cta-button;
+    }
+
+    facet-remove {
+      @include uninherit-button;
+    }
+  }
+
+  div.mobile-facets__details {
+    div.mobile-facets__summary {
+      padding-top: 0.25rem; // FROM DEFAULT
+    }
+  }
+
+  .mobile-facets__summary>div>span:first-child,
+  .mobile-facets__sort label {
+    text-transform: uppercase;
+  }
+
+  .mobile-facets__close-button {
+    text-transform: uppercase;
+    @include uninherit-button;
+  }
+
+  .mobile-facets__list {
+    flex-direction: column;
+
+    li {
+      @include checkbox-li;
+
+      label:hover span {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .mobile-facets__submenu {
+    @include price-range;
+  }
+
 
   facet-filters-form form {
     width: 100%;
@@ -59,12 +213,49 @@ div.tinkiu-main-collection-product-grid.gradient {
 
 
     }
+
+    .facets-layout-list--swatch .facets__label {
+      padding-top: var(--paragraph-margin);
+      padding-bottom: var(--paragraph-margin);
+
+
+      @include mobile {
+        padding-top: var(--filter-label-margin);
+        padding-bottom: var(--filter-label-margin);
+
+        &:hover {
+          .facet-checkbox__text-label {
+            text-decoration: none;
+          }
+        }
+
+        .facet-checkbox__text {
+          font-size: var(--ui-small);
+        }
+      }
+    }
   }
 }
 
 details.tinkiu-facet-details:not([open]),
 details.facets__disclosure-vertical[open] {
+  @include price-range;
+
   border-color: $gray;
+
+
+  summary {
+    padding: var(--filter-label-margin) 0;
+    @include detail-label;
+    font-weight: normal;
+
+    &:hover {
+      .facets__summary-label {
+        text-decoration: none;
+      }
+    }
+  }
+
 
   .parent-display.facets__display-vertical,
   .facets__display-vertical {
@@ -78,97 +269,16 @@ details.facets__disclosure-vertical[open] {
         gap: var(--small-space-y);
 
         li {
+          @include checkbox-li;
 
-          .facet-checkbox,
           label {
-            @include flex($justify: flex-start);
-
-
-            gap: var(--radio-input-gap);
             padding: 0;
-            color: black;
-
-            svg {
-              margin-right: 0;
-              background-color: transparent;
-            }
-
-            &,
-            & * {
-              @include detail-caption;
-            }
-
-            .facet-checkbox__text-label {
-              @include hover-underline(none);
-            }
-
-
-            input[type='checkbox']:checked {
-              &~svg {
-                background-color: black;
-              }
-
-              &~.svg-wrapper svg {
-                visibility: hidden;
-              }
-            }
           }
         }
       }
     }
-
-    price-range {
-      display: flex;
-      padding: 0;
-      @include split($gap: var(--inner-column-gap));
-
-
-      @include above-large-desktop {
-        flex-wrap: wrap;
-
-        >* {
-          width: 100%;
-        }
-      }
-
-
-      .tinkiu-price-facet-field {
-        @include flex($justify: flex-start);
-        margin: 0;
-
-        &:before,
-        &:after {
-          box-shadow: none;
-        }
-
-        input {
-          @include ui;
-          padding: var(--input-padding);
-          border: border($gray);
-          border-radius: $input-border-radius;
-        }
-
-        label {
-          font-size: var(--ui-small);
-          text-transform: uppercase;
-          letter-spacing: 0;
-          top: auto;
-        }
-      }
-    }
   }
 
-  summary {
-    padding: var(--filter-label-margin) 0;
-    @include detail-label;
-    font-weight: normal;
-
-    &:hover {
-      .facets__summary-label {
-        text-decoration: none;
-      }
-    }
-  }
 }
 
 .tinkiu-product-grid-container {
@@ -177,9 +287,13 @@ details.facets__disclosure-vertical[open] {
 
   @include hover-underline(none);
 
+  @include below-medium-mobile {
+    align-items: center;
+  }
 
   .tinkiu-facets-container-sort {
     margin: 0;
+
     padding: 0;
 
     flex: none;
@@ -213,13 +327,26 @@ details.facets__disclosure-vertical[open] {
   @include flex($flex-start: true, $gapped: true);
   flex-wrap: wrap;
 
-  $product-info-width: column-width(3);
+  /* $product-info-width: column-width(3); */
+  @include split(3);
 
-  product-info {
+  /* product-info {
     width: $product-info-width;
+  } */
+  @include mobile {
+    @include split(2);
+  }
+
+  @include below-medium-mobile {
+    width: var(--full-width);
+  }
+
+  @include below-small-mobile {
+    @include split(1);
   }
 
   .tinkiu-product-insert .tinkiu-product-insert__images img {
-    @include square($product-info-width);
+    /* @include square($product-info-width); */
+    @include square(100%);
   }
 }

@@ -101,12 +101,37 @@
   @return $color 1px solid;
 }
 
-@mixin details {
+@mixin details($responsive: false, $no-container-width: false, $no-inner-width: false) {
   @include flex($flex-start: true);
   flex-wrap: wrap;
-  width: var(--side-info-width);
   gap: var(--inner-column-gap);
   margin-top: var(--large-inner-section-gap);
+
+  @if $responsive {
+    @include desktop {
+      @if $no-container-width ==false {
+        width: var(--side-info-width);
+      }
+
+      @if $no-inner-width ==false {
+        >div {
+          width: side-info-column-width(2);
+        }
+      }
+    }
+  }
+
+  @else {
+    @if $no-container-width ==false {
+      width: var(--side-info-width);
+    }
+
+    @if $no-inner-width ==false {
+      >div {
+        width: side-info-column-width(2);
+      }
+    }
+  }
 
   p {
     margin: 0;
@@ -115,7 +140,8 @@
 
   >div {
     @include flex($column: true, $flex-start: true);
-    width: side-info-column-width(2);
+
+
 
     p:first-child {
       @include detail-label;
@@ -204,15 +230,15 @@
 
 @mixin inset-width($use-max-width: false) {
 
-  $inset-width: column-width(8);
+  $inset-width: var(--inset-width);
 
   @if $use-max-width {
     width: fit-content;
-    max-width: $inset-width;
+    max-width: var(--inset-width);
   }
 
   @else {
-    width: $inset-width;
+    width: var(--inset-width);
   }
 }
 
@@ -236,21 +262,63 @@
 }
 
 @mixin below-medium-mobile {
+  @media (max-width: calc(#{$m} - 1px)) {
+    @content;
+  }
+}
+
+@mixin mobile {
   @media (max-width: calc(#{$l} - 1px)) {
     @content;
   }
 }
 
-@mixin above-large-desktop {
-  @media (min-width: $xl) {
+@mixin desktop {
+  @media (min-width: $l) {
     @content;
   }
 }
 
-@mixin list-hide-on-mobile {
-  @include above-large-desktop {
+@mixin below-large-desktop {
+  @media (max-width: calc(#{$xl} - 1px)) {
+    @content;
+  }
+}
+
+@mixin trimmed-list {
+  width: var(--full-width);
+
+  @include below-large-desktop {
+    >:nth-child(3) {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    flex-wrap: wrap;
+  }
+
+  @include below-medium-mobile {
+    >:nth-child(3) {
+      display: flex;
+    }
+  }
+
+  @include below-small-mobile {
+
+    >:nth-child(3),
     >:nth-child(4) {
       display: none;
     }
+  }
+}
+
+@mixin uninherit-button {
+
+  &,
+  &:hover {
+    color: black;
+    background-color: transparent;
+    border: none;
   }
 }

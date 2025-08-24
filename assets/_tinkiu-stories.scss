@@ -6,6 +6,11 @@
 
   .tinkiu-stories__content {
     width: var(--full-width);
+
+    @include mobile {
+      @include flex($column: true);
+      gap: calc(var(--section-media-spacing) * 2);
+    }
   }
 
   .tinkiu-pagination-wrapper {

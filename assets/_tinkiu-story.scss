@@ -23,17 +23,24 @@
   .tinkiu-story__folio {
     @include flex($align: flex-start, $gapped: true, $inset-width: true);
     margin-top: var(--section-media-spacing);
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   .tinkiu-story__description {
     @include description;
     @include half-inset-width;
     margin-top: 0;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   .tinkiu-story__details {
-
-    @include details;
+    @include details($responsive: true);
     @include flex($flex-start: true);
     margin-top: 0;
 
@@ -42,26 +49,55 @@
       width: 100%;
       margin-top: inherit;
     }
+
+    @include mobile {
+      width: 100%;
+      @include split;
+    }
   }
+
+  .tinkiu-story__folio--with-product .tinkiu-story__details-container {
+    gap: var(--paragraph-spacing);
+
+    @include mobile {
+      margin-top: var(--paragraph-spacing);
+    }
+  }
+
 
   .tinkiu-story__folio--with-product {
     .tinkiu-story__details-container {
       @include flex($column: true);
-      gap: var(--paragraph-spacing);
       @include half-inset-width;
 
+      @include mobile {
+        width: 100%;
+        align-items: flex-start;
+      }
+    }
+
+    .tinkiu-product-insert__images {
+      @include mobile {
+        @include split;
+      }
     }
   }
 
   .tinkiu-story__folio:not(.tinkiu-story__folio--with-product) {
     .tinkiu-story__details-container {
       @include flex($flex-start: true, $inset-width: true);
-      gap: var(--paragraph-spacing);
+
+      @include mobile {
+        width: 100%;
+        align-items: flex-start;
+      }
     }
   }
 
   .tinkiu-story__details {
-    @include half-inset-width;
+    @include desktop {
+      @include half-inset-width;
+    }
   }
 
   .tinkiu-story__content {

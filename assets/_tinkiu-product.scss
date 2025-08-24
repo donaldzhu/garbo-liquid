@@ -36,6 +36,10 @@ product-info.tinkiu-product {
   .product__info-wrapper {
     padding: 0;
     width: var(--side-info-width);
+
+    section {
+      margin-bottom: 0;
+    }
   }
 
   .product__info-container>div:first-child {
@@ -65,10 +69,4 @@ product-info.tinkiu-product {
 
 .tinkiu-product-list {
   margin-bottom: var(--products-margin-bottom);
-}
-
-.tinkiu-quantity-input {
-
-
-  quantity-input {}
 }

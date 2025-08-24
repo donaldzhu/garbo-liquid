@@ -1,6 +1,7 @@
-<div class="tinkiu-homepage__ethos__image tinkiu-list-item">
-  <img src="{{ data.image.url }}" alt="{{ data.image.alt }}">
+<div class="tinkiu-homepage__ethos__image tinkiu-list-item{% if isMobile %} tinkiu-homepage__ethos__image-mobile{% endif %}">
+  <img src="{{ image.url }}" alt="{{ image.alt }}">
   {% render 'tinkiu-homepage-large-list'
-    , text: data.caption
-    , isLast: isLast %}
+    , text: caption
+    , isLast: isLast
+    , isMobile: isMobile %}
 </div>

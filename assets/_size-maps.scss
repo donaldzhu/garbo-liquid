@@ -16,7 +16,7 @@ $breakpoints: (
 // ============================================================================
 
 $section-header: (
-  xs: $header-l,
+  xs: $header-m,
   s: $header-l,
   m: $header-l,
   l: $header-l,
@@ -34,9 +34,9 @@ $subsection-header: (
 );
 
 $large-copy: (
-  xs: $large-copy-m,
-  s: $large-copy-m,
-  m: $large-copy-m,
+  xs: $copy,
+  s: $large-copy-s,
+  m: $large-copy-s,
   l: $large-copy-m,
   xl: $large-copy-l,
   xxl: $large-copy-xl,
@@ -101,7 +101,7 @@ $variant-pill: (
 // ============================================================================
 
 $page-margin-x: (
-  xs: $spacing-m,
+  xs: $spacing-s,
   s: $spacing-m,
   m: $spacing-m,
   l: $spacing-m,
@@ -119,18 +119,18 @@ $page-margin-y: (
 );
 
 $header-margin-y: (
-  xs: $spacing-s,
-  s: $spacing-s,
-  m: $spacing-s,
+  xs: $spacing-l,
+  s: $spacing-l,
+  m: $spacing-l,
   l: $spacing-s,
   xl: $spacing-m,
   xxl: $spacing-m,
 );
 
 $section-media-spacing: (
-  xs: $spacing-l,
-  s: $spacing-l,
-  m: $spacing-l,
+  xs: $spacing-m,
+  s: $spacing-m,
+  m: $spacing-m,
   l: $spacing-l,
   xl: $spacing-xl,
   xxl: $spacing-xl,
@@ -146,9 +146,9 @@ $large-inner-section-gap: (
 );
 
 $homepage-stories-description-margin-top: (
-  xs: $spacing-l,
-  s: $spacing-l,
-  m: $spacing-l,
+  xs: $spacing-m,
+  s: $spacing-m,
+  m: $spacing-m,
   l: $spacing-l,
   xl: $spacing-xl,
   xxl: $spacing-xl,
@@ -254,18 +254,18 @@ $header-gap: (
 );
 
 $footer-padding: (
-  xs: $large-spacing-xs,
-  s: $large-spacing-xs,
-  m: $large-spacing-xs,
+  xs: $spacing-l,
+  s: $spacing-l,
+  m: $spacing-l,
   l: $large-spacing-xs,
   xl: $large-spacing-s,
   xxl: $large-spacing-s,
 );
 
 $footer-margin-top: (
-  xs: $large-spacing-l,
-  s: $large-spacing-l,
-  m: $large-spacing-l,
+  xs: $large-spacing-s,
+  s: $large-spacing-m,
+  m: $large-spacing-m,
   l: $large-spacing-l,
   xl: $large-spacing-xl,
   xxl: $large-spacing-xl,
@@ -317,10 +317,10 @@ $founder-image-margin: (
 );
 
 $small-space-y: (
-  xs: $small-space-s,
-  s: $small-space-s,
-  m: $small-space-s,
-  l: $small-space-s,
+  xs: $small-space-m,
+  s: $small-space-m,
+  m: $small-space-m,
+  l: $small-space-m,
   xl: $small-space-m,
   xxl: $small-space-m,
 );
@@ -344,10 +344,10 @@ $story-list-margin: (
 );
 
 $hair-space-y: (
-  xs: $small-space-xxs,
-  s: $small-space-xxs,
-  m: $small-space-xxs,
-  l: $small-space-xxs,
+  xs: $small-space-xs,
+  s: $small-space-xs,
+  m: $small-space-xs,
+  l: $small-space-xs,
   xl: $small-space-xs,
   xxl: $small-space-xs,
 );
@@ -401,48 +401,55 @@ $list-width: (
   xxl: column-width(3),
 );
 
+$socials-embed-width: (
+  xs: min(column-width(4, full-width($xl)), full-width()),
+  s: min(column-width(4, full-width($xl)), full-width()),
+  m: min(column-width(4, full-width($xl)), full-width()),
+  l: min(column-width(4, full-width($xl)), full-width()),
+  xl: column-width(4),
+  xxl: column-width(4),
+);
+
 $homepage-stories-image-height: (
-  xs: 1000px,
-  s: 1000px,
-  m: 1000px,
+  xs: 600px,
+  s: 800px,
+  m: 800px,
   l: 1000px,
   xl: 1000px,
   xxl: 1200px,
 );
 
 $homepage-stories-image-height-short: (
-  xs: 500px,
-  s: 500px,
-  m: 500px,
+  xs: 250px,
+  s: 400px,
+  m: 400px,
   l: 500px,
   xl: 500px,
   xxl: 650px,
 );
 
 $text-max-width: (
-  xs: 600px,
-  s: 600px,
-  m: 600px,
-  l: 600px,
-  xl: 725px,
-  xxl: 725px,
+  xs: min(full-width(), 600px),
+  s: min(full-width(), 600px),
+  m: min(full-width(), 600px),
+  l: min(full-width(), 600px),
+  xl: min(full-width(), 725px),
+  xxl: min(full-width(), 725px),
 );
 
 $text-max-width-long: (
-  xs: 800px,
-  s: 800px,
-  m: 800px,
-  l: 800px,
-  xl: 900px,
-  xxl: 900px,
+  xs: min(full-width(), 800px),
+  s: min(full-width(), 800px),
+  m: min(full-width(), 800px),
+  l: min(full-width(), 800px),
+  xl: min(full-width(), 900px),
+  xxl: min(full-width(), 900px),
 );
 
-
-// TODO
 $side-info-width: (
-  xs: column-width($side-info-columns - 1, full-width($s)),
-  s: column-width($side-info-columns - 1, full-width($m)),
-  m: column-width($side-info-columns - 1, full-width($m)),
+  xs: full-width(),
+  s: full-width(),
+  m: full-width(),
   l: column-width($side-info-columns - 1, full-width($xl)),
   xl: column-width($side-info-columns),
   xxl: column-width($side-info-columns),
@@ -450,9 +457,9 @@ $side-info-width: (
 
 
 $split-image-width: (
-  xs: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
-  s: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
-  m: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
+  xs: full-width(),
+  s: full-width(),
+  m: full-width(),
   l: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
   xl: column-width($total-columns - $side-info-columns),
   xxl: column-width($total-columns - $side-info-columns),
@@ -468,9 +475,9 @@ $newsletter-max-width: (
 );
 
 $homepage-logo-width: (
-  xs: 550px,
-  s: 550px,
-  m: 550px,
+  xs: 300px,
+  s: 350px,
+  m: 450px,
   l: 550px,
   xl: 600px,
   xxl: 800px,
@@ -487,30 +494,30 @@ $homepage-image-size-short: (
 );
 
 $homepage-ethos-image-size-short: (
-  xs: 300px,
-  s: 300px,
-  m: 300px,
-  l: 300px,
-  xl: 475px,
-  xxl: 550px,
+  xs: min(var(--full-width), 300px),
+  s: min(var(--full-width), 300px),
+  m: min(var(--full-width), 400px),
+  l: min(var(--full-width), 300px),
+  xl: min(var(--full-width), 475px),
+  xxl: min(var(--full-width), 550px),
 );
 
 $homepage-image-size-long: (
-  xs: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
-  s: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
-  m: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
+  xs: map-get($homepage-image-size-short, xs) * $homepage-image-size-aspect-ratio,
+  s: map-get($homepage-image-size-short, s) * $homepage-image-size-aspect-ratio,
+  m: map-get($homepage-image-size-short, m) * $homepage-image-size-aspect-ratio,
   l: map-get($homepage-image-size-short, l) * $homepage-image-size-aspect-ratio,
   xl: map-get($homepage-image-size-short, xl) * $homepage-image-size-aspect-ratio,
   xxl: map-get($homepage-image-size-short, xxl) * $homepage-image-size-aspect-ratio,
 );
 
 $homepage-ethos-image-size-long: (
-  xs: map-get($homepage-ethos-image-size-short, l) * $homepage-image-size-aspect-ratio,
-  s: map-get($homepage-ethos-image-size-short, l) * $homepage-image-size-aspect-ratio,
-  m: map-get($homepage-ethos-image-size-short, l) * $homepage-image-size-aspect-ratio,
-  l: map-get($homepage-ethos-image-size-short, l) * $homepage-image-size-aspect-ratio,
-  xl: map-get($homepage-ethos-image-size-short, xl) * $homepage-image-size-aspect-ratio,
-  xxl: map-get($homepage-image-size-short, xxl) * $homepage-image-size-aspect-ratio,
+  xs: calc(#{map-get($homepage-ethos-image-size-short, xs)} * #{$homepage-image-size-aspect-ratio}),
+  s: calc(#{map-get($homepage-ethos-image-size-short, s)} * #{$homepage-image-size-aspect-ratio}),
+  m: calc(#{map-get($homepage-ethos-image-size-short, m)} * #{$homepage-image-size-aspect-ratio}),
+  l: calc(#{map-get($homepage-ethos-image-size-short, l)} * #{$homepage-image-size-aspect-ratio}),
+  xl: calc(#{map-get($homepage-ethos-image-size-short, xl)} * #{$homepage-image-size-aspect-ratio}),
+  xxl: calc(#{map-get($homepage-ethos-image-size-short, xxl)} * #{$homepage-image-size-aspect-ratio}),
 );
 
 
@@ -542,27 +549,27 @@ $homepage-intro-image-padding-bottom: (
 );
 
 $homepage-newsletter-image-height: (
-  xs: 150px,
-  s: 150px,
-  m: 150px,
+  xs: 95px,
+  s: 115px,
+  m: 130px,
   l: 150px,
   xl: 200px,
   xxl: 200px,
 );
 
 $dot-size: (
-  xs: 20px,
-  s: 20px,
-  m: 20px,
+  xs: 16px,
+  s: 16px,
+  m: 16px,
   l: 20px,
   xl: 24px,
   xxl: 24px,
 );
 
 $media-border-radius: (
-  xs: 2.5rem,
-  s: 2.5rem,
-  m: 2.5rem,
+  xs: 1.5rem,
+  s: 2rem,
+  m: 2rem,
   l: 2.5rem,
   xl: 3rem,
   xxl: 3rem,
@@ -591,6 +598,15 @@ $button-radius: (
 );
 
 $input-padding: (
+  xs: $small-space-s,
+  s: $small-space-s,
+  m: $small-space-s,
+  l: $small-space-s,
+  xl: $small-space-m,
+  xxl: $small-space-m,
+);
+
+$price-gap: (
   xs: $small-space-s,
   s: $small-space-s,
   m: $small-space-s,
@@ -649,6 +665,7 @@ $size-maps: (
   full-width: $full-width,
   inset-width: $inset-width,
   list-width: $list-width,
+  socials-embed-width: $socials-embed-width,
   homepage-stories-image-height: $homepage-stories-image-height,
   homepage-stories-image-height-short: $homepage-stories-image-height-short,
   text-max-width: $text-max-width,
@@ -672,6 +689,7 @@ $size-maps: (
   button-padding: $button-padding,
   button-radius: $button-radius,
   input-padding: $input-padding,
+  price-gap: $price-gap,
 );
 
 @mixin responsive-var($map, $var-name) {
