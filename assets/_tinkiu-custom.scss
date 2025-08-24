@@ -112,6 +112,12 @@ main {
   padding-top: calc(#{$header-height} + var(--large-section-gap));
 }
 
+.tinkiu-main-product-page {
+  @include mobile {
+    padding-top: $header-height;
+  }
+}
+
 
 .tinkiu-quantity-input {
   margin: 0;

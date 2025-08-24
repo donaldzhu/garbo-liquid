@@ -188,6 +188,9 @@
   border-radius: var(--button-radius);
   margin-top: var(--blurb-button-margin-top);
 
+  &:disabled {
+    pointer-events: none;
+  }
 }
 
 @mixin description {

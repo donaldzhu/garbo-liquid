@@ -737,6 +737,10 @@ button[type=submit]:hover {
   background-color: #DF2726;
   color: #FAFAFA;
 }
+.tinkiu-cta-button:disabled,
+button[type=submit]:disabled {
+  pointer-events: none;
+}
 
 main {
   background-color: #FAFAFA;
@@ -784,6 +788,12 @@ main section.shopify-section.section, main section.shopify-section.section > div
 
 .tinkiu-main {
   padding-top: calc(calc(var(--header-logo-height) + var(--header-margin-y) * 2) + var(--large-section-gap));
+}
+
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-main-product-page {
+    padding-top: calc(var(--header-logo-height) + var(--header-margin-y) * 2);
+  }
 }
 
 .tinkiu-quantity-input {
@@ -1039,6 +1049,11 @@ div.tinkiu-product-details p:first-child ~ p {
   background-color: #DF2726;
   color: #FAFAFA;
 }
+.product__info-wrapper div.tinkiu-buy-buttons button#tcustomizer-add:disabled,
+.product__info-wrapper div.tinkiu-buy-buttons button[type=submit]:disabled,
+.product__info-wrapper div.tinkiu-buy-buttons button.shopify-payment-button__button:disabled {
+  pointer-events: none;
+}
 .product__info-wrapper div.tinkiu-buy-buttons button.shopify-payment-button__button {
   background-color: #DF2726;
   color: #FAFAFA;
@@ -1130,6 +1145,10 @@ div.tinkiu-product-details p:first-child ~ p {
 .tinkiu-product-app button.tcustomizer-btn:hover {
   background-color: #DF2726;
   color: #FAFAFA;
+}
+.tinkiu-product-app label.tcustomizer-btn:disabled,
+.tinkiu-product-app button.tcustomizer-btn:disabled {
+  pointer-events: none;
 }
 @media (min-width: 1024px) {
   .tinkiu-product-app label.tcustomizer-btn,
@@ -1379,6 +1398,10 @@ div.tinkiu-main-collection-product-grid.gradient aside.facets-wrapper {
 .tinkiu-facets-container.facets-container div.mobile-facets__footer button:hover {
   background-color: #DF2726;
   color: #FAFAFA;
+}
+.tinkiu-facets-container.facets-container div.mobile-facets__footer facet-remove:disabled,
+.tinkiu-facets-container.facets-container div.mobile-facets__footer button:disabled {
+  pointer-events: none;
 }
 .tinkiu-facets-container.facets-container div.mobile-facets__footer facet-remove, .tinkiu-facets-container.facets-container div.mobile-facets__footer facet-remove:hover {
   color: black;
@@ -3540,12 +3563,12 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --large-section-gap: 12rem;
+    --large-section-gap: 7.5rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --large-section-gap: 12rem;
+    --large-section-gap: 7.5rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
