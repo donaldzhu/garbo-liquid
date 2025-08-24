@@ -108,18 +108,23 @@
 
   <ul class="left-menu">
     <li>
-      <a href="/collections/sum-yu-collection">
-        FEATURED COLLECTION
+      <a href="{{ pages['services'].url }}">
+        SERVICES
       </a>
     </li>
     <li>
-      <a href="{{ collections.all.url }}">
-        PRODUCTS
+      <a href="{{ pages['contact'].url }}">
+        CONTACT
       </a>
     </li>
     <li>
-      <a href="{{ pages['stories'].url }}">
-        STORIES
+      <a href="{{ routes.cart_url }}">
+        CART
+      </a>
+    </li>
+    <li>
+      <a href="{{ routes.account_url }}">
+        ORDERS
       </a>
     </li>
   </ul>
