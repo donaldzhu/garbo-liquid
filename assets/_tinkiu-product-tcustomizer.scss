@@ -64,7 +64,11 @@
   label.tcustomizer-btn,
   button.tcustomizer-btn {
     @include cta-button;
-    width: side-info-column-width(2);
+
+    @include desktop {
+      width: side-info-column-width(2);
+    }
+
     min-width: 22.5rem;
     border: border(black);
     padding: var(--button-padding) !important;

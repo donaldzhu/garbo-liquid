@@ -549,7 +549,7 @@ header .tinkiu-header__hamburger svg {
     color: black;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 1px;
+    margin-bottom: 0.2rem;
     margin-bottom: var(--section-media-spacing);
   }
   header .tinkiu-header__mobile-popup p ~ p {
@@ -881,7 +881,7 @@ variant-selects.tinkiu-product-variant-picker fieldset legend.form__label {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 0.2rem;
   margin: 0;
   margin-bottom: var(--detail-label-margin);
 }
@@ -965,7 +965,7 @@ div.tinkiu-product-details > div p:first-child {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 0.2rem;
 }
 div.tinkiu-product-details > div p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -983,7 +983,7 @@ div.tinkiu-product-details p:first-child {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 0.2rem;
 }
 div.tinkiu-product-details p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -1055,7 +1055,7 @@ div.tinkiu-product-details p:first-child ~ p {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 0.2rem;
 }
 .tinkiu-product-app label.tcustomizer-field__heading ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -1133,7 +1133,6 @@ div.tinkiu-product-details p:first-child ~ p {
   padding: var(--button-padding);
   border-radius: var(--button-radius);
   margin-top: var(--blurb-button-margin-top);
-  width: calc(calc((var(--side-info-width) - (5 - 1) * var(--column-gap)) / 5) * 2 + var(--column-gap) * (2 - 1));
   min-width: 22.5rem;
   border: black 1px solid;
   padding: var(--button-padding) !important;
@@ -1144,6 +1143,12 @@ div.tinkiu-product-details p:first-child ~ p {
 .tinkiu-product-app button.tcustomizer-btn:hover {
   background-color: #DF2726;
   color: #FAFAFA;
+}
+@media (min-width: 1024px) {
+  .tinkiu-product-app label.tcustomizer-btn,
+.tinkiu-product-app button.tcustomizer-btn {
+    width: calc(calc((var(--side-info-width) - (5 - 1) * var(--column-gap)) / 5) * 2 + var(--column-gap) * (2 - 1));
+  }
 }
 .tinkiu-product-app label.tcustomizer-btn, .tinkiu-product-app label.tcustomizer-btn:hover,
 .tinkiu-product-app button.tcustomizer-btn,
@@ -1622,7 +1627,7 @@ details.facets__disclosure-vertical[open] summary {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 0.2rem;
   font-weight: normal;
 }
 details.tinkiu-facet-details:not([open]) summary ~ p,
@@ -2119,7 +2124,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 0.2rem;
 }
 .tinkiu-story__preview__content .tinkiu-story__preview__details > div p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -2273,7 +2278,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 0.2rem;
 }
 .tinkiu-story .tinkiu-story__details > div p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -2521,7 +2526,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 0.2rem;
 }
 .tinkiu-contact .tinkiu-contact__contact-items > div p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);

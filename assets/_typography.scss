@@ -38,7 +38,7 @@ $subsection-header-letter-spacing: 0.02em;
   @include detail-caption;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 0.2rem;
 
   &~p {
     margin-bottom: var(--detail-label-margin);
