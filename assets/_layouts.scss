@@ -61,14 +61,14 @@
 }
 
 @mixin fullscreen($flex-direction: column) {
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   min-height: max($fullscreen-height-min-vw, $fullscreen-height-min-px);
   max-height: min($fullscreen-height-max-vw, $fullscreen-height-max-px);
   flex-direction: $flex-direction;
 
   @include mobile {
-    max-height: min(135vw, $fullscreen-height-max-px);
+    max-height: min(135dvw, $fullscreen-height-max-px);
   }
 }
 

@@ -35,7 +35,7 @@
 .tinkiu-homepage__sticky-container.sticky {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100dvh;
   justify-content: flex-end;
 
   @include mobile {
@@ -221,8 +221,8 @@
   gap: var(--inner-section-spacing);
 
   @include mobile {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-top: 10dvh;
+    margin-bottom: 10dvh;
   }
 
   img {
@@ -272,7 +272,7 @@
   z-index: 99;
 
   @include mobile {
-    max-height: 100vh;
+    max-height: 100dvh;
   }
 
   .tinkiu-logo {
