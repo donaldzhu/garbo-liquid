@@ -66,6 +66,10 @@
   min-height: max($fullscreen-height-min-vw, $fullscreen-height-min-px);
   max-height: min($fullscreen-height-max-vw, $fullscreen-height-max-px);
   flex-direction: $flex-direction;
+
+  @include mobile {
+    max-height: min(135vw, $fullscreen-height-max-px);
+  }
 }
 
 @mixin shift-to-center() {

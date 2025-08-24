@@ -42,11 +42,23 @@
     height: fit-content;
     position: relative;
   }
+
+  >:not(.tinkiu-homepage__intro) {
+    opacity: 0;
+  }
 }
 
 .tinkiu-homepage-header {
   background-color: transparent;
   color: white;
+
+  .tinkiu-header__hamburger {
+    pointer-events: none;
+  }
+
+  .tinkiu-header__hamburger svg {
+    fill: white;
+  }
 
   .tinkiu-logo {
     opacity: 0;
@@ -230,6 +242,10 @@
     position: relative;
   }
 
+  h2 {
+    margin-bottom: var(--section-media-spacing);
+  }
+
   // TODO: success
   input {
 
@@ -254,7 +270,10 @@
 .tinkiu-homepage__footer {
   @include fullscreen;
   z-index: 99;
-  max-height: 100vh;
+
+  @include mobile {
+    max-height: 100vh;
+  }
 
   .tinkiu-logo {
     padding-top: $header-height;

@@ -7,8 +7,10 @@
   flex: none;
   position: relative;
 
+
   .tinkiu-logo {
     @include shift-to-center;
+    position: fixed;
     z-index: 999;
     width: max(var(--homepage-logo-width), var(--homepage-intro-logo-vw));
     height: auto;
@@ -30,6 +32,9 @@
   &--animated {
     @include top-right;
     transition: all 0.5s ease-in-out;
+    height: 100vh;
+    position: fixed;
+    max-height: 100vh;
   }
 
   &--static {

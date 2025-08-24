@@ -9,7 +9,6 @@
       stickyContainer.classList.add('sticky');
       wrapper.style.position = 'relative';
       wrapper.style.setProperty('--top', `calc(${Array.from(stickyContainer.children).reduce((acc, elem) => acc + elem.getBoundingClientRect().height + parseFloat(getComputedStyle(elem).getPropertyValue('margin-top')) + parseFloat(getComputedStyle(elem).getPropertyValue('margin-bottom')), 0)}px - 100vh)`);
-      // console.log(stickyContainer.style.top);
       requestAnimationFrame(animate);
     }
     animate();

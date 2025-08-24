@@ -35,11 +35,35 @@
     onload="this.media='all'">
 {%- endif -%}
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let isOpen = false;
+
+    const hamburger = document.querySelector('.tinkiu-header__hamburger');
+    const hamburgerIcon = document.querySelector('.tinkiu-header__hamburger__icon');
+    const closeIcon = document.querySelector('.tinkiu-header__close__icon');
+    const mobilePopup = document.querySelector('.tinkiu-header__mobile-popup');
+
+    hamburger.addEventListener('click', () => {
+      isOpen = !isOpen;
+      hamburgerIcon.style.display = isOpen ? 'none' : 'block';
+      closeIcon.style.display = isOpen ? 'block' : 'none';
+      mobilePopup.style.display = isOpen ? 'flex' : 'none';
+      document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    });
+  });
+</script>
+
 <header class="{% if request.path == '/' %}tinkiu-homepage-header{% endif %}">
-  <div class="tinkiu-header__hamburger">
-    {{ 'tinkiu-menu-icon.svg' | inline_asset_content }}
-  </div>
-  {% comment %} <div class="tinkiu-header__mobile-popup">
+  <button class="tinkiu-header__hamburger">
+    <span class="tinkiu-header__hamburger__icon">
+      {{ 'tinkiu-menu-icon.svg' | inline_asset_content }}
+    </span>
+    <span class="tinkiu-header__close__icon">
+      {{ 'tinkiu-close-icon.svg' | inline_asset_content }}
+    </span>
+  </button>
+  <div class="tinkiu-header__mobile-popup">
     <div class="tinkiu-header__mobile-popup__content">
       <p>Menu</p>
       <ul class="left-menu">
@@ -75,7 +99,7 @@
         </li>
       </ul>
     </div>
-  </div> {% endcomment %}
+  </div>
   <div class="tinkiu-logo-container">
     <a href="{{ routes.root_url }}">
       {% render 'tinkiu-logo' %}
