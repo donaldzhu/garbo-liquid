@@ -83,21 +83,25 @@
           </a>
         </li>
         <li>
-          <a href="{{ collections.all.url }}">
-            FEATURED COLLECTION
+          <a href="{{ pages['services'].url }}">
+            SERVICES
           </a>
         </li>
         <li>
-          <a href="{{ collections.all.url }}">
-            PRODUCTS
+          <a href="{{ pages['contact'].url }}">
+            CONTACT
           </a>
         </li>
         <li>
-          <a href="{{ pages['stories'].url }}">
-            STORIES
+          <a href="{{ routes.cart_url }}">
+            CART
           </a>
         </li>
-      </ul>
+        <li>
+          <a href="{{ routes.account_url }}">
+            ORDERS
+          </a>
+        </li>
     </div>
   </div>
   <div class="tinkiu-logo-container">
@@ -108,23 +112,18 @@
 
   <ul class="left-menu">
     <li>
-      <a href="{{ pages['services'].url }}">
-        SERVICES
+      <a href="/collections/sum-yu-collection">
+        FEATURED COLLECTION
       </a>
     </li>
     <li>
-      <a href="{{ pages['contact'].url }}">
-        CONTACT
+      <a href="{{ collections.all.url }}">
+        PRODUCTS
       </a>
     </li>
     <li>
-      <a href="{{ routes.cart_url }}">
-        CART
-      </a>
-    </li>
-    <li>
-      <a href="{{ routes.account_url }}">
-        ORDERS
+      <a href="{{ pages['stories'].url }}">
+        STORIES
       </a>
     </li>
   </ul>
