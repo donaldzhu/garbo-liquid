@@ -184,7 +184,7 @@
 .tinkiu-homepage-header .tinkiu-header__hamburger svg {
   fill: white;
 }
-.tinkiu-homepage-header .tinkiu-logo {
+.tinkiu-homepage-header .tinkiu-logo-container {
   opacity: 0;
   pointer-events: none;
 }

@@ -5,24 +5,32 @@
     document.addEventListener('DOMContentLoaded', function() {
       const isMobile = window.innerWidth < 750;
       const img = isMobile ? document.querySelector('.tinkiu-homepage__intro-image--animated-mobile img') : document.querySelector('.tinkiu-homepage__intro-image--animated-desktop img');
-      img.addEventListener('load', () => {
 
-      const DELAY = 0.5;
+      let hasPlayedOnLoad = false;
+      const HAS_PLAYED_KEY = 'has-played-intro-slides';
+      const hasPlayed = sessionStorage.getItem(HAS_PLAYED_KEY);
 
-      const INTRO_DURATION = 1.25;
-      const MOVE_DURATION = 0.5;
+      const onload = () => {
+        if (hasPlayedOnLoad) return;
 
-      const FADE_DURATION = 0.2;
+        const intro = document.querySelector('.tinkiu-homepage__intro');
 
-      const timeline = gsap.timeline();
+        const DELAY = hasPlayed ? 0 : 0.5;
 
-       const introImageContainer = document.querySelector('.tinkiu-homepage__intro-image-container--static');
-       const introImageAnimated= document.querySelector('.tinkiu-homepage__intro-image--animated');
-       const introImageStatic = document.querySelector('.tinkiu-homepage__intro-image--static');
-       const INSET_WIDTH = getComputedStyle(introImageContainer).getPropertyValue('--homepage-image-size-long');
-       const INSET_HEIGHT = getComputedStyle(introImageContainer).getPropertyValue('--homepage-image-size-short');
+        const INTRO_DURATION = hasPlayed ? 1 : 1.25;
+        const MOVE_DURATION = hasPlayed ? 0.3 : 0.5;
 
-       const INSET_HEADER_COLOR = getComputedStyle(introImageContainer).getPropertyValue('--header-color');
+        const FADE_DURATION = hasPlayed ? 0.15 : 0.2;
+
+        const timeline = gsap.timeline();
+
+        const introImageContainer = document.querySelector('.tinkiu-homepage__intro-image-container--static');
+        const introImageAnimated= document.querySelector('.tinkiu-homepage__intro-image--animated');
+        const introImageStatic = document.querySelector('.tinkiu-homepage__intro-image--static');
+        const INSET_WIDTH = getComputedStyle(introImageContainer).getPropertyValue('--homepage-image-size-long');
+        const INSET_HEIGHT = getComputedStyle(introImageContainer).getPropertyValue('--homepage-image-size-short');
+
+        const INSET_HEADER_COLOR = getComputedStyle(introImageContainer).getPropertyValue('--header-color');
 
         timeline
         .to('.tinkiu-homepage__intro .tinkiu-logo', { duration: FADE_DURATION, opacity: 0 }, `+=${DELAY}`)
@@ -41,12 +49,12 @@
             introImageAnimated.style.opacity = 0;
             introImageStatic.style.opacity = 1;
             document.body.style.overflow = 'auto';
-            document.querySelector('.tinkiu-homepage-header .tinkiu-logo').style.pointerEvents = 'all';
+            document.querySelector('.tinkiu-homepage-header .tinkiu-logo-container').style.pointerEvents = 'all';
             document.querySelector('.tinkiu-header__hamburger').style.pointerEvents = 'all';
            }
         }, '-=0')
         .to([
-          '.tinkiu-homepage-header .tinkiu-logo',
+          '.tinkiu-homepage-header .tinkiu-logo-container',
           '.tinkiu-homepage__intro-image-container--static .tinkiu-dot',
           '.tinkiu-homepage__intro-image-container--static .tinkiu-blurb',
           '.tinkiu-homepage__sticky-container.sticky >:not(.tinkiu-homepage__intro)',
@@ -61,12 +69,18 @@
         }, '`-=0')
         .to('header.tinkiu-homepage-header', { duration: FADE_DURATION, color: 'black' }, `-=${FADE_DURATION}`)
         .to('.tinkiu-header__hamburger svg', { duration: FADE_DURATION, fill: 'black' }, `-=${FADE_DURATION}`)
-        .to('header.tinkiu-homepage-header', { backgroundColor: INSET_HEADER_COLOR, duration: 0 }, "+=0")
-      });
+        .to('header.tinkiu-homepage-header', {
+          backgroundColor: INSET_HEADER_COLOR,
+          duration: 0,
+        }, "+=0")
 
+        sessionStorage.setItem(HAS_PLAYED_KEY, 'true');
+        hasPlayedOnLoad = true;
+      }
+
+      img.addEventListener('load', onload);
+      if (img.complete) onload();
     })
-
-
 </script>
 
 <div class="tinkiu-homepage__intro">
