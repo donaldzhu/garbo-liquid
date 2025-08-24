@@ -22,6 +22,7 @@
   width: max(var(--homepage-logo-width), var(--homepage-intro-logo-vw));
   height: auto;
   pointer-events: none;
+  opacity: 0;
 }
 
 .tinkiu-homepage__intro-image-container--animated, .tinkiu-homepage__intro-image-container--static {
@@ -49,10 +50,12 @@
   top: 0;
   right: 0;
   transition: all 0.5s ease-in-out;
+  transition: opacity 0s;
   height: 100dvh;
   position: fixed;
   max-height: 100dvh;
   pointer-events: none;
+  opacity: 0;
 }
 .tinkiu-homepage__intro-image-container--static {
   display: flex;

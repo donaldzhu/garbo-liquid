@@ -10,17 +10,21 @@
       const HAS_PLAYED_KEY = 'has-played-intro-slides';
       const hasPlayed = sessionStorage.getItem(HAS_PLAYED_KEY);
 
+      const toggleAll = (query, callback) => Array.from(document.querySelectorAll(query)).forEach(element => callback(element));
+
       const onload = () => {
         if (hasPlayedOnLoad) return;
+        if (!hasPlayed)
+          toggleAll('.tinkiu-homepage__intro-image-container--animated, .tinkiu-homepage__intro .tinkiu-logo', (element) => element.style.opacity = 1);
+
 
         const intro = document.querySelector('.tinkiu-homepage__intro');
 
         const DELAY = hasPlayed ? 0 : 0.5;
 
-        const INTRO_DURATION = hasPlayed ? 1 : 1.25;
-        const MOVE_DURATION = hasPlayed ? 0.3 : 0.5;
-
-        const FADE_DURATION = hasPlayed ? 0.15 : 0.2;
+        const INTRO_DURATION = hasPlayed ? 0 : 1.25;
+        const MOVE_DURATION = hasPlayed ? 0 : 0.5;
+        const FADE_DURATION = hasPlayed ? 0 : 0.2;
 
         const timeline = gsap.timeline();
 
