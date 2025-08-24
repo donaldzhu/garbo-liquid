@@ -23,6 +23,11 @@
   .tcustomizer-photo-action {
     @include flex($column: true, $flex-start: true);
     gap: var(--small-space-y);
+
+    @include mobile {
+      @include flex;
+      @include split;
+    }
   }
 
   .tcustomizer__text-field-wrapper {
@@ -62,7 +67,7 @@
     width: side-info-column-width(2);
     min-width: 22.5rem;
     border: border(black);
-    padding: var(--input-padding) !important;
+    padding: var(--button-padding) !important;
     margin: 0;
     height: auto;
 
@@ -83,6 +88,10 @@
 
   .tcustomizer-photo-uploaded {
     @include square(column-width(1));
+
+    @include mobile {
+      @include square(35vw);
+    }
   }
 
   .tcustomizer-field__input {
