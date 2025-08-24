@@ -1,7 +1,7 @@
 {% liquid
   assign type = data.type | default: type
   assign url = data.url | default: url
-  assign alt = data.alt | default: alt
+  assign alt = data.meta.alt | default: alt
   assign control = control | default: false
 %}
 
@@ -9,7 +9,7 @@
 {% if type == 'image' %}
   <img
     src="{{ url }}"
-    alt="{{ meta.alt }}"
+    alt="{{ alt }}"
     class="tinkiu-media" />
 {% elsif type == 'video' %}
   <video

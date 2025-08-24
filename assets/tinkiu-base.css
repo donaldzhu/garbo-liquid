@@ -102,6 +102,28 @@
   position: relative;
 }
 
+.tinkiu-homepage__intro-image--animated-desktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-homepage__intro-image--animated-desktop {
+    display: none;
+  }
+}
+
+.tinkiu-homepage__intro-image--animated-mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-homepage__intro-image--animated-mobile {
+    display: block;
+  }
+}
+
 .tinkiu-homepage {
   display: flex;
   align-items: center;
@@ -473,6 +495,12 @@ header div {
 header ul {
   gap: var(--header-gap);
   font-size: var(--header-font-size);
+}
+header a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.1em;
+  text-underline-offset: 0.3em;
 }
 header .tinkiu-logo-container {
   display: flex;

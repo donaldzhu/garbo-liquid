@@ -1,0 +1,9 @@
+<li>
+  <a
+    href="{{ href }}"
+    {% if request.path == href %}
+    class="active"
+    {% endif %}>
+    {{ text }}
+  </a>
+</li>

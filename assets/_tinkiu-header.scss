@@ -23,6 +23,11 @@ header {
     font-size: var(--header-font-size);
   }
 
+  a.active {
+    @include underline;
+    text-underline-offset: 0.3em;
+  }
+
   .tinkiu-logo-container {
     @include flex;
 

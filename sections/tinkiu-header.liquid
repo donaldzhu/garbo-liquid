@@ -67,41 +67,13 @@
     <div class="tinkiu-header__mobile-popup__content">
       <p>Menu</p>
       <ul class="left-menu">
-        <li>
-          <a href="/collections/sum-yu-collection">
-            FEATURED COLLECTION
-          </a>
-        </li>
-        <li>
-          <a href="{{ collections.all.url }}">
-            PRODUCTS
-          </a>
-        </li>
-        <li>
-          <a href="{{ pages['stories'].url }}">
-            STORIES
-          </a>
-        </li>
-        <li>
-          <a href="{{ pages['services'].url }}">
-            SERVICES
-          </a>
-        </li>
-        <li>
-          <a href="{{ pages['contact'].url }}">
-            CONTACT
-          </a>
-        </li>
-        <li>
-          <a href="{{ routes.cart_url }}">
-            CART
-          </a>
-        </li>
-        <li>
-          <a href="{{ routes.account_url }}">
-            ORDERS
-          </a>
-        </li>
+        {% render 'tinkiu-header-anchor' href: '/collections/sum-yu-collection', text: 'FEATURED COLLECTION' %}
+        {% render 'tinkiu-header-anchor' href: '/collections/all', text: 'PRODUCTS' %}
+        {% render 'tinkiu-header-anchor' href: '/pages/stories', text: 'STORIES' %}
+        {% render 'tinkiu-header-anchor' href: '/pages/contact', text: 'CONTACT' %}
+        {% render 'tinkiu-header-anchor' href: '/pages/services', text: 'SERVICES' %}
+        {% render 'tinkiu-header-anchor' href: '/cart', text: 'CART' %}
+        {% render 'tinkiu-header-anchor' href: '/pages/orders', text: 'ORDERS' %}
     </div>
   </div>
   <div class="tinkiu-logo-container">
@@ -111,21 +83,9 @@
   </div>
 
   <ul class="left-menu">
-    <li>
-      <a href="/collections/sum-yu-collection">
-        FEATURED COLLECTION
-      </a>
-    </li>
-    <li>
-      <a href="{{ collections.all.url }}">
-        PRODUCTS
-      </a>
-    </li>
-    <li>
-      <a href="{{ pages['stories'].url }}">
-        STORIES
-      </a>
-    </li>
+    {% render 'tinkiu-header-anchor' href: '/collections/sum-yu-collection', text: 'FEATURED COLLECTION' %}
+    {% render 'tinkiu-header-anchor' href: '/collections/all', text: 'PRODUCTS' %}
+    {% render 'tinkiu-header-anchor' href: '/pages/stories', text: 'STORIES' %}
   </ul>
   <div class="tinkiu-logo-container">
     <a href="{{ routes.root_url }}">
@@ -133,26 +93,10 @@
     </a>
   </div>
   <ul class="right-menu">
-    <li>
-      <a href="{{ pages['services'].url }}">
-        SERVICES
-      </a>
-    </li>
-    <li>
-      <a href="{{ pages['contact'].url }}">
-        CONTACT
-      </a>
-    </li>
-    <li>
-      <a href="{{ routes.cart_url }}">
-        CART
-      </a>
-    </li>
-    <li>
-      <a href="{{ routes.account_url }}">
-        ORDERS
-      </a>
-    </li>
+    {% render 'tinkiu-header-anchor' href: '/pages/contact', text: 'CONTACT' %}
+        {% render 'tinkiu-header-anchor' href: '/pages/services', text: 'SERVICES' %}
+        {% render 'tinkiu-header-anchor' href: '/cart', text: 'CART' %}
+        {% render 'tinkiu-header-anchor' href: '/pages/orders', text: 'ORDERS' %}
   </ul>
 </header>
 

@@ -62,8 +62,19 @@
     , color: 'white' %}
   <div class="tinkiu-homepage__intro-image-container--animated">
     <div class="tinkiu-homepage__intro-image--animated">
-      {% render 'tinkiu-media'
-        , data: intro.slides[5].image %}
+      <div class="tinkiu-homepage__intro-image--animated-desktop">
+        {% render 'tinkiu-media'
+          , data: intro.slides[5].image %}
+      </div>
+      <div class="tinkiu-homepage__intro-image--animated-mobile">
+        {% assign url = intro.slides[5].image.filename | file_img_url: 'large' %}
+        {% render 'tinkiu-media'
+          , url: url
+          , type: 'image'
+          , alt: intro.slides[5].image.meta.alt %}
+
+
+      </div>
     </div>
   </div>
 
