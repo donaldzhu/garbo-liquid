@@ -45,6 +45,7 @@
 
   >:not(.tinkiu-homepage__intro) {
     opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -62,6 +63,7 @@
 
   .tinkiu-logo {
     opacity: 0;
+    pointer-events: none;
   }
 }
 

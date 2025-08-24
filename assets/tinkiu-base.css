@@ -21,6 +21,7 @@
   z-index: 999;
   width: max(var(--homepage-logo-width), var(--homepage-intro-logo-vw));
   height: auto;
+  pointer-events: none;
 }
 
 .tinkiu-homepage__intro-image-container--animated, .tinkiu-homepage__intro-image-container--static {
@@ -51,6 +52,7 @@
   height: 100dvh;
   position: fixed;
   max-height: 100dvh;
+  pointer-events: none;
 }
 .tinkiu-homepage__intro-image-container--static {
   display: flex;
@@ -169,6 +171,7 @@
 }
 .tinkiu-homepage__sticky-container.sticky > :not(.tinkiu-homepage__intro) {
   opacity: 0;
+  pointer-events: none;
 }
 
 .tinkiu-homepage-header {
@@ -183,6 +186,7 @@
 }
 .tinkiu-homepage-header .tinkiu-logo {
   opacity: 0;
+  pointer-events: none;
 }
 
 .tinkiu-blurb {

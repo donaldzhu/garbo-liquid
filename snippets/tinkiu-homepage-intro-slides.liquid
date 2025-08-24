@@ -3,7 +3,11 @@
     history.scrollRestoration = "manual";
     window.scrollTo(0, 0);
     document.addEventListener('DOMContentLoaded', function() {
-      const DELAY = 0.6;
+      const isMobile = window.innerWidth < 750;
+      const img = isMobile ? document.querySelector('.tinkiu-homepage__intro-image--animated-mobile img') : document.querySelector('.tinkiu-homepage__intro-image--animated-desktop img');
+      img.addEventListener('load', () => {
+
+      const DELAY = 0.5;
 
       const INTRO_DURATION = 1.25;
       const MOVE_DURATION = 0.5;
@@ -37,7 +41,8 @@
             introImageAnimated.style.opacity = 0;
             introImageStatic.style.opacity = 1;
             document.body.style.overflow = 'auto';
-            document.querySelector('.tinkiu-header__hamburger').style.pointerEvents = 'auto';
+            document.querySelector('.tinkiu-homepage-header .tinkiu-logo').style.pointerEvents = 'all';
+            document.querySelector('.tinkiu-header__hamburger').style.pointerEvents = 'all';
            }
         }, '-=0')
         .to([
@@ -48,10 +53,17 @@
         ], {
           duration: FADE_DURATION,
           opacity: 1,
+          onComplete: () => {
+            Array.from(document.querySelectorAll('.tinkiu-homepage__sticky-container.sticky >:not(.tinkiu-homepage__intro)')).forEach(element => {
+              element.style.pointerEvents = 'all';
+            });
+          }
         }, '`-=0')
         .to('header.tinkiu-homepage-header', { duration: FADE_DURATION, color: 'black' }, `-=${FADE_DURATION}`)
         .to('.tinkiu-header__hamburger svg', { duration: FADE_DURATION, fill: 'black' }, `-=${FADE_DURATION}`)
         .to('header.tinkiu-homepage-header', { backgroundColor: INSET_HEADER_COLOR, duration: 0 }, "+=0")
+      });
+
     })
 
 
@@ -72,8 +84,6 @@
           , url: url
           , type: 'image'
           , alt: intro.slides[5].image.meta.alt %}
-
-
       </div>
     </div>
   </div>
