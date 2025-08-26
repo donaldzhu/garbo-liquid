@@ -53,8 +53,7 @@
             introImageAnimated.style.opacity = 0;
             introImageStatic.style.opacity = 1;
             document.body.style.overflow = 'auto';
-            document.querySelector('.tinkiu-homepage-header .tinkiu-logo-container').style.pointerEvents = 'all';
-            document.querySelector('.tinkiu-header__hamburger').style.pointerEvents = 'all';
+            toggleAll('.tinkiu-homepage-header .tinkiu-logo-container, .tinkiu-header__hamburger, .tinkiu-header__cart-mobile', (element) => element.style.pointerEvents = 'all');
            }
         }, '-=0')
         .to([
@@ -72,7 +71,7 @@
           }
         }, '`-=0')
         .to('header.tinkiu-homepage-header', { duration: FADE_DURATION, color: 'black' }, `-=${FADE_DURATION}`)
-        .to('.tinkiu-header__hamburger svg', { duration: FADE_DURATION, fill: 'black' }, `-=${FADE_DURATION}`)
+        .to('.tinkiu-header__hamburger svg, .tinkiu-header__cart-mobile svg', { duration: FADE_DURATION, fill: 'black' }, `-=${FADE_DURATION}`)
         .to('header.tinkiu-homepage-header', {
           backgroundColor: INSET_HEADER_COLOR,
           duration: 0,

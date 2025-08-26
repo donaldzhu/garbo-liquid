@@ -53,12 +53,13 @@
   background-color: transparent;
   color: white;
 
-  .tinkiu-header__hamburger {
+  .tinkiu-header__hamburger,
+  .tinkiu-header__cart-mobile {
     pointer-events: none;
-  }
 
-  .tinkiu-header__hamburger svg {
-    fill: white;
+    svg {
+      fill: white;
+    }
   }
 
   .tinkiu-logo-container {

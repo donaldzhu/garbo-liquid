@@ -3,25 +3,27 @@
   assign text = data.text | default: text
   assign linkButton = data.linkButton | default: linkButton
   assign linkButtonText = linkButton.buttonLabel | default: linkButtonText
-  assign linkButtonUrl = linkButton.link._ref | default: linkButtonUrl
+  assign linkButtonUrl = linkButton.link | default: linkButtonUrl
 %}
 
 
-<div class="tinkiu-blurb {{ class }}">
-  {% if header and renderHeader != false %}
-    <h2>
-      {{ header }}
-    </h2>
-  {% endif %}
-  {% if text and renderText != false %}
-    <p>
-      {{ text | newline_to_br }}
-    </p>
-  {% endif %}
-  {% if linkButtonText and renderButton != false %}
-    {% render 'tinkiu-cta-button'
-      , linkButton: linkButton
-      , label: linkButtonText
-      , link: linkButtonUrl %}
-  {% endif %}
-</div>
+{% if linkButtonText != blank and linkButtonUrl != blank %}
+  <div class="tinkiu-blurb {{ class }}">
+    {% if header and renderHeader != false %}
+      <h2>
+        {{ header }}
+      </h2>
+    {% endif %}
+    {% if text and renderText != false %}
+      <p>
+        {{ text | newline_to_br }}
+      </p>
+    {% endif %}
+    {% if linkButtonText and renderButton != false %}
+      {% render 'tinkiu-cta-button'
+        , linkButton: linkButton
+        , label: linkButtonText
+        , link: linkButtonUrl %}
+    {% endif %}
+  </div>
+{% endif %}

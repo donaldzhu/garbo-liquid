@@ -37,19 +37,25 @@ header {
   }
 
   .tinkiu-header__hamburger,
+  .tinkiu-header__cart-mobile,
   .tinkiu-header__mobile-popup {
     display: none;
   }
 
   @include mobile {
-    .tinkiu-header__hamburger {
-      @include uninherit-button;
+
+    .tinkiu-header__hamburger,
+    .tinkiu-header__cart-mobile {
       padding: 0;
       display: block;
       position: absolute;
+      z-index: 9999;
+    }
+
+    .tinkiu-header__hamburger {
+      @include uninherit-button;
       left: var(--page-margin-x);
       transform: translate(0, 0);
-      z-index: 9999;
 
       &,
       svg {
@@ -59,6 +65,15 @@ header {
       .tinkiu-header__close__icon {
         display: none;
         transform: translateX(-10%)
+      }
+    }
+
+    .tinkiu-header__cart-mobile {
+      right: var(--page-margin-x);
+
+      &,
+      svg {
+        @include square(25px);
       }
     }
 

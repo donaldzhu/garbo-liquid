@@ -1,10 +1,31 @@
 @use 'size-maps' as *;
 @use 'layouts' as *;
 @use 'typography' as *;
+@use 'colors' as *;
 
 
 .tinkiu-product-insert {
   @include flex($column: true, $flex-start: true);
+
+  .tinkiu-product-insert__details {
+    &:not(:first-child) {
+      margin-top: var(--products-gap);
+    }
+
+    &--sold-out {
+
+      .tinkiu-product-insert__details__title,
+      p {
+        color: $dark-gray;
+        text-decoration: line-through;
+      }
+
+      .tinkiu-price span {
+        color: $dark-gray;
+      }
+
+    }
+  }
 
   p.tinkiu-product-insert__description {
     margin: 0;
@@ -20,9 +41,6 @@
     margin-bottom: calc(var(--products-gap) - 0.25rem); // line-height compensation
     line-height: 1.1;
 
-    &:not(:first-child) {
-      margin-top: var(--products-gap);
-    }
   }
 
   &--small {

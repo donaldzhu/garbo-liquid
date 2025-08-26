@@ -3,9 +3,16 @@
 %}
 
 
-<h4>{{ product.title }}</h4>
-{% if disable_description != true %}
-  <p class="tinkiu-product-insert__description">{{ product.metafields['app--6007307--sanity-fields'].shortDescription }}</p>
-{% endif %}
-{% render 'price'
-  , product: product %}
+<div class="tinkiu-product-insert__details {% if product.available == false %}tinkiu-product-insert__details--sold-out{% endif %}">
+  <h4>
+    <span class="tinkiu-product-insert__details__title">{{ product.title }}</span>
+    {% if product.available == false %}
+      <span class="tinkiu-product-insert__details__sold-out">(Sold Out)</span>
+    {% endif %}
+  </h4>
+  {% if disable_description != true %}
+    <p class="tinkiu-product-insert__description">{{ product.metafields['app--6007307--sanity-fields'].shortDescription }}</p>
+  {% endif %}
+  {% render 'price'
+    , product: product %}
+</div>

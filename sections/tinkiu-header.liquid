@@ -63,6 +63,11 @@
       {{ 'tinkiu-close-icon.svg' | inline_asset_content }}
     </span>
   </button>
+  <a class="tinkiu-header__cart-mobile" href="{{ routes.cart_url }}">
+    <span class="tinkiu-header__cart-mobile__icon">
+      {{ 'tinkiu-cart-icon.svg' | inline_asset_content }}
+    </span>
+  </a>
   <div class="tinkiu-header__mobile-popup">
     <div class="tinkiu-header__mobile-popup__content">
       <p>Menu</p>
@@ -72,8 +77,7 @@
         {% render 'tinkiu-header-anchor' href: '/pages/stories', text: 'STORIES' %}
         {% render 'tinkiu-header-anchor' href: '/pages/contact', text: 'CONTACT' %}
         {% render 'tinkiu-header-anchor' href: '/pages/services', text: 'SERVICES' %}
-        {% render 'tinkiu-header-anchor' href: '/cart', text: 'CART' %}
-        {% render 'tinkiu-header-anchor' href: '/pages/orders', text: 'ORDERS' %}
+        {% render 'tinkiu-header-anchor' href: '/account/login', text: 'ORDERS' %}
     </div>
   </div>
   <div class="tinkiu-logo-container">
@@ -96,7 +100,7 @@
     {% render 'tinkiu-header-anchor' href: '/pages/contact', text: 'CONTACT' %}
         {% render 'tinkiu-header-anchor' href: '/pages/services', text: 'SERVICES' %}
         {% render 'tinkiu-header-anchor' href: '/cart', text: 'CART' %}
-        {% render 'tinkiu-header-anchor' href: '/pages/orders', text: 'ORDERS' %}
+        {% render 'tinkiu-header-anchor' href: '/account/login', text: 'ORDERS' %}
   </ul>
 </header>
 

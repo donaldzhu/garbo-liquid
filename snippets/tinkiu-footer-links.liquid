@@ -1,19 +1,25 @@
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-footer'].values %}
+
+{% for o in metaobj -%}
+  {% assign data = o %}
+{% endfor %}
+
 <div class="tinkiu-footer__links">
   <div class="tinkiu-footer__links__row-mobile">
     <div class="tinkiu-footer__links__column">
       Tinkiu, LLC. © {{ 'now' | date: '%Y' }}
     </div>
     <div class="tinkiu-footer__links__column tinkiu-footer__links__column--social">
-      <a href="/">
+      <a href={{ data.instagram }}>
         {% render 'tinkiu-icon-instagram' %}
       </a>
-      <a href="/">
+      <a href={{ data.youtube }}>
         {% render 'tinkiu-icon-youtube' %}
       </a>
-      <a href="/">
+      <a href={{ data.tiktok }}>
         {% render 'tinkiu-icon-tiktok' %}
       </a>
-      <a href="/">
+      <a href={{ data.xhs }}>
         {% render 'tinkiu-icon-xhs' %}
       </a>
     </div>

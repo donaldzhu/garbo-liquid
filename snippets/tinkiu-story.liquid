@@ -6,6 +6,13 @@
   {% endif %}
 {% endfor %}
 
+<script>
+  (() => {
+    const title = '{{ story.title.value }}';
+    if (title) document.title = `${title} | {{ shop.name }}`;
+  })()
+</script>
+
 <div class="tinkiu-story-container">
   <div class="tinkiu-story">
     {% render 'tinkiu-section-header'

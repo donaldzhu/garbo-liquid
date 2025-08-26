@@ -282,7 +282,7 @@ details.facets__disclosure-vertical[open] {
 }
 
 .tinkiu-product-grid-container {
-  @include flex($align: flex-end, $justify: flex-start, $full-screen: true, $column: true);
+  @include flex($flex-start: true, $full-screen: true, $column: true);
   @include no-focus-outline;
 
   @include hover-underline(none);
@@ -291,9 +291,15 @@ details.facets__disclosure-vertical[open] {
     align-items: center;
   }
 
+  &,
+  .collection {
+    width: 100%;
+  }
+
   .tinkiu-facets-container-sort {
     margin: 0;
 
+    width: 100%;
     padding: 0;
 
     flex: none;
@@ -319,6 +325,10 @@ details.facets__disclosure-vertical[open] {
         @include no-focus-outline;
       }
     }
+
+    .facet-filters.sorting {
+      padding: 0;
+    }
   }
 }
 
@@ -326,6 +336,7 @@ details.facets__disclosure-vertical[open] {
 .tinkiu-product-grid {
   @include flex($flex-start: true, $gapped: true);
   flex-wrap: wrap;
+  width: 100%;
 
   /* $product-info-width: column-width(3); */
   @include split(3);

@@ -3,8 +3,6 @@
 
 .tinkiu-price {
 
-
-
   &:not(.price--on-sale) .price__regular,
   &.price--on-sale .price__sale {
     @include flex($flex-start: true);
@@ -26,7 +24,7 @@
 
   .price__sale {
     s {
-      color: $gray;
+      color: $dark-gray;
     }
   }
 
