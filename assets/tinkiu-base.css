@@ -2736,6 +2736,31 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
     width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
   }
 }
+.tinkiu-cart-items .cart__warnings .tinkiu-cart-empty__button {
+  appearance: none;
+  font-weight: bold;
+  border: #DF2726 1px solid;
+  background-color: transparent;
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  color: #DF2726;
+  font-family: "Dazzed", sans-serif;
+  font-size: var(--ui-small);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  margin-top: var(--blurb-button-margin-top);
+}
+.tinkiu-cart-items .cart__warnings .tinkiu-cart-empty__button:hover {
+  background-color: #DF2726;
+  color: #FAFAFA;
+}
+.tinkiu-cart-items .cart__warnings .tinkiu-cart-empty__button:disabled {
+  pointer-events: none;
+}
 
 .tinkiu-portable-text {
   display: flex;

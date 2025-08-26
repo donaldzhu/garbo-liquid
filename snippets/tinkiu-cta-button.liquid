@@ -1,5 +1,5 @@
 {% liquid
-  assign link = linkButton.link._ref | default: link
+  assign link = linkButton.link | default: link
   assign label = linkButton.buttonLabel | default: label
 %}
 

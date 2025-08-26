@@ -36,4 +36,10 @@
       width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2); // DEFAULT
     }
   }
+
+  .cart__warnings {
+    .tinkiu-cart-empty__button {
+      @include cta-button;
+    }
+  }
 }
