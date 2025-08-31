@@ -1256,6 +1256,9 @@ div.tinkiu-product-details p:first-child ~ p {
 .tinkiu-product-app .tcustomizer-watermark {
   display: none !important;
 }
+.tinkiu-product-app .tcustomizer-response {
+  font-size: var(--small-copy);
+}
 
 slider-component.tinkiu-product-media-gallery {
   width: var(--split-image-width);
