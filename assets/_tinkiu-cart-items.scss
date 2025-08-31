@@ -25,6 +25,15 @@
     }
   }
 
+  .price {
+    letter-spacing: 0;
+  }
+
+  .cart-item__name.h4 {
+    font-weight: bold;
+    letter-spacing: $subsection-header-letter-spacing;
+  }
+
   .title-wrapper-with-link a.underlined-link {
     @include underline;
   }

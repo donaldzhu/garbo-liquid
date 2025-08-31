@@ -2737,6 +2737,13 @@ product-info.tinkiu-product .tinkiu-product-insert__details__sold-out {
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+.tinkiu-cart-items .price {
+  letter-spacing: 0;
+}
+.tinkiu-cart-items .cart-item__name.h4 {
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
 .tinkiu-cart-items .title-wrapper-with-link a.underlined-link {
   text-decoration: underline;
   text-decoration-thickness: 0.05em;
