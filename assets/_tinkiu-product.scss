@@ -65,10 +65,6 @@ product-info.tinkiu-product {
   .tinkiu-product-description {
     @include description;
   }
-
-  .tinkiu-product-insert__details__sold-out {
-    font-weight: normal;
-  }
 }
 
 .tinkiu-product-list {

@@ -2079,9 +2079,6 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   font-size: var(--small-copy);
   line-height: 1.25;
 }
-product-info.tinkiu-product .tinkiu-product-insert__details__sold-out {
-  font-weight: normal;
-}
 
 .tinkiu-product-list {
   margin-bottom: var(--products-margin-bottom);
@@ -4950,9 +4947,6 @@ img {
 
 .tinkiu-logo .tinkiu-logo-seal {
   fill: #DF2726;
-}
-.tinkiu-logo .tinkiu-logo-seal-negative {
-  fill: none;
 }
 .tinkiu-logo--all-white .tinkiu-logo-text,
 .tinkiu-logo--all-white .tinkiu-logo-seal {
