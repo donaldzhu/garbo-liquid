@@ -1,7 +1,6 @@
 {% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-story'].values %}
 {% assign slug = request.path | remove: '/pages/stories' %}
 
-
 {% if slug == blank %}
   <div class="tinkiu-stories">
     {% render 'tinkiu-section-header'

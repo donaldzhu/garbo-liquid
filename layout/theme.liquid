@@ -35,6 +35,33 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
+    {% assign parts = request.path | split: '/pages/stories/' %}
+    {% assign subpath = parts[1] %}
+    {% if subpath %}
+      {% assign stories = shop.metaobjects['app--6007307--sanity-documents-story'].values %}
+      {% for story in stories %}
+        {% if story.slug == subpath %}
+          {% assign description = story.description %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if request.path == '/pages/services' %}
+      {% assign services = shop.metaobjects['app--6007307--sanity-documents-services'].values %}
+      {% for service in services %}
+        {% assign description = service.description %}
+        {% break %}
+      {% endfor %}
+    {% endif %}
+
+    <script>
+      console.log({{ description | json }})
+    </script>
+
+    {% if description != blank %}
+      <meta name="description" content="{{ description | escape }}">
+    {% endif %}
+
     {% render 'meta-tags' %}
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>

@@ -420,6 +420,7 @@
   width: min(var(--newsletter-max-width), var(--full-width));
   padding: var(--input-padding) 0;
   background-color: inherit;
+  height: 2.5em;
 }
 .tinkiu-homepage__newsletter label {
   bottom: var(--input-padding);
@@ -902,8 +903,8 @@ video.tinkiu-media {
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-price:not(.price--on-sale) .price__regular, .tinkiu-price.price--on-sale .price__sale {
-    flex-direction: column;
-    gap: 0;
+    /*    flex-direction: column;
+    gap: 0; */
   }
 }
 .tinkiu-price:not(.price--on-sale) .price__regular span,
@@ -1933,13 +1934,17 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
 .tinkiu-product-insert .tinkiu-product-insert__details--sold-out .tinkiu-price span {
   color: #a4a4a4;
 }
+.tinkiu-product-insert .tinkiu-product-insert__details--sold-out .tinkiu-product-insert__details__sold-out {
+  font-weight: normal;
+}
 .tinkiu-product-insert p.tinkiu-product-insert__description {
   margin: 0;
   font-size: var(--small-copy);
   text-align: left;
-  margin-bottom: 2px;
 }
 .tinkiu-product-insert h4 {
+  font-weight: bold;
+  letter-spacing: 0.02em;
   font-size: var(--medium-copy);
   font-family: "Dazzed", sans-serif;
   margin-top: 0;
@@ -2069,7 +2074,10 @@ product-info.tinkiu-product .tinkiu-product-description {
 }
 product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-product .tinkiu-product-description p {
   font-size: var(--small-copy);
-  line-height: 1.4;
+  line-height: 1.25;
+}
+product-info.tinkiu-product .tinkiu-product-insert__details__sold-out {
+  font-weight: normal;
 }
 
 .tinkiu-product-list {
@@ -2224,7 +2232,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 }
 .tinkiu-story__preview__content .tinkiu-story__preview__description, .tinkiu-story__preview__content .tinkiu-story__preview__description p {
   font-size: var(--small-copy);
-  line-height: 1.4;
+  line-height: 1.25;
 }
 .tinkiu-story__preview__content .tinkiu-cta-button {
   margin: 0;
@@ -2306,7 +2314,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 }
 .tinkiu-story .tinkiu-story__description, .tinkiu-story .tinkiu-story__description p {
   font-size: var(--small-copy);
-  line-height: 1.4;
+  line-height: 1.25;
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-story .tinkiu-story__description {
@@ -2375,7 +2383,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 }
 .tinkiu-story .tinkiu-story__details .tinkiu-story__description, .tinkiu-story .tinkiu-story__details .tinkiu-story__description p {
   font-size: var(--small-copy);
-  line-height: 1.4;
+  line-height: 1.25;
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-story .tinkiu-story__details {
@@ -2876,272 +2884,272 @@ a, a:-webkit-any-link, a:visited {
 
 @media (max-width: 479px) {
   :root {
+    --section-header: 3.6rem;
+  }
+}
+@media (min-width: 480px) and (max-width: 749px) {
+  :root {
     --section-header: 4rem;
   }
 }
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --section-header: 4.5rem;
-  }
-}
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --section-header: 4.5rem;
+    --section-header: 4rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --section-header: 4.5rem;
+    --section-header: 4rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --section-header: 5rem;
+    --section-header: 4.6rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --section-header: 5.6rem;
+    --section-header: 5.2rem;
   }
 }
 @media (max-width: 479px) {
   :root {
-    --subsection-header: 2.8rem;
+    --subsection-header: 2.4rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --subsection-header: 2.8rem;
+    --subsection-header: 2.4rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --subsection-header: 2.8rem;
+    --subsection-header: 2.4rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --subsection-header: 2.8rem;
+    --subsection-header: 2.4rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --subsection-header: 3.6rem;
+    --subsection-header: 3.2rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --subsection-header: 3.6rem;
+    --subsection-header: 3.2rem;
   }
 }
 @media (max-width: 479px) {
   :root {
-    --large-copy: 1.5rem;
+    --large-copy: 1.45rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --large-copy: 1.8rem;
+    --large-copy: 1.65rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --large-copy: 1.8rem;
+    --large-copy: 1.65rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --large-copy: 2rem;
+    --large-copy: 1.65rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --large-copy: 2.2rem;
+    --large-copy: 1.65rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --large-copy: 2.4rem;
+    --large-copy: 1.85rem;
   }
 }
 @media (max-width: 479px) {
   :root {
-    --medium-copy: 1.65rem;
+    --medium-copy: 1.3rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --medium-copy: 1.65rem;
+    --medium-copy: 1.3rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --medium-copy: 1.65rem;
+    --medium-copy: 1.3rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --medium-copy: 1.65rem;
+    --medium-copy: 1.3rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --medium-copy: 1.8rem;
+    --medium-copy: 1.3rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --medium-copy: 1.8rem;
+    --medium-copy: 1.3rem;
   }
 }
 @media (max-width: 479px) {
   :root {
-    --small-copy: 1.3rem;
+    --small-copy: 1.2rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --small-copy: 1.3rem;
+    --small-copy: 1.2rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --small-copy: 1.3rem;
+    --small-copy: 1.2rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --small-copy: 1.3rem;
+    --small-copy: 1.2rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --small-copy: 1.4rem;
+    --small-copy: 1.25rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --small-copy: 1.4rem;
+    --small-copy: 1.25rem;
   }
 }
 @media (max-width: 479px) {
+  :root {
+    --header-font-size: 1.2rem;
+  }
+}
+@media (min-width: 480px) and (max-width: 749px) {
+  :root {
+    --header-font-size: 1.2rem;
+  }
+}
+@media (min-width: 750px) and (max-width: 1023px) {
+  :root {
+    --header-font-size: 1.2rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  :root {
+    --header-font-size: 1.2rem;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1535px) {
   :root {
     --header-font-size: 1.3rem;
   }
 }
-@media (min-width: 480px) and (max-width: 749px) {
+@media (min-width: 1536px) {
   :root {
     --header-font-size: 1.3rem;
   }
 }
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --header-font-size: 1.3rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --header-font-size: 1.3rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --header-font-size: 1.5rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --header-font-size: 1.5rem;
-  }
-}
 @media (max-width: 479px) {
   :root {
-    --small-copy-label: 1.5rem;
+    --small-copy-label: 1.3rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --small-copy-label: 1.5rem;
+    --small-copy-label: 1.3rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --small-copy-label: 1.5rem;
+    --small-copy-label: 1.3rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --small-copy-label: 1.5rem;
+    --small-copy-label: 1.3rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --small-copy-label: 1.5rem;
+    --small-copy-label: 1.3rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --small-copy-label: 1.5rem;
+    --small-copy-label: 1.3rem;
   }
 }
 @media (max-width: 479px) {
   :root {
-    --ui-small: 1.3rem;
+    --ui-small: 1.2rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --ui-small: 1.3rem;
+    --ui-small: 1.2rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --ui-small: 1.3rem;
+    --ui-small: 1.2rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --ui-small: 1.3rem;
+    --ui-small: 1.2rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --ui-small: 1.3rem;
+    --ui-small: 1.2rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --ui-small: 1.3rem;
+    --ui-small: 1.2rem;
   }
 }
 @media (max-width: 479px) {
   :root {
-    --variant-pill: 1.3rem;
+    --variant-pill: 1.2rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --variant-pill: 1.3rem;
+    --variant-pill: 1.2rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --variant-pill: 1.3rem;
+    --variant-pill: 1.2rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --variant-pill: 1.3rem;
+    --variant-pill: 1.2rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --variant-pill: 1.4rem;
+    --variant-pill: 1.25rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --variant-pill: 1.4rem;
+    --variant-pill: 1.25rem;
   }
 }
 @media (max-width: 479px) {
@@ -3206,32 +3214,32 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --header-margin-y: 3rem;
+    --header-margin-y: 2.25rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --header-margin-y: 3rem;
+    --header-margin-y: 2.25rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --header-margin-y: 3rem;
+    --header-margin-y: 2.25rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --header-margin-y: 1.8rem;
+    --header-margin-y: 1.5rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --header-margin-y: 2.25rem;
+    --header-margin-y: 1.8rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --header-margin-y: 2.25rem;
+    --header-margin-y: 1.8rem;
   }
 }
 @media (max-width: 479px) {
@@ -3446,62 +3454,62 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --products-gap: 1.2rem;
+    --products-gap: 1.1rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --products-gap: 1.2rem;
+    --products-gap: 1.1rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --products-gap: 1.2rem;
+    --products-gap: 1.1rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --products-gap: 1.2rem;
+    --products-gap: 1.1rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --products-gap: 1.2rem;
+    --products-gap: 1.1rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --products-gap: 1.2rem;
+    --products-gap: 1.1rem;
   }
 }
 @media (max-width: 479px) {
   :root {
-    --blurb-button-margin-top: 1.2rem;
+    --blurb-button-margin-top: 1.1rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --blurb-button-margin-top: 1.2rem;
+    --blurb-button-margin-top: 1.1rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --blurb-button-margin-top: 1.2rem;
+    --blurb-button-margin-top: 1.1rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --blurb-button-margin-top: 1.2rem;
+    --blurb-button-margin-top: 1.1rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --blurb-button-margin-top: 1.2rem;
+    --blurb-button-margin-top: 1.1rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --blurb-button-margin-top: 1.2rem;
+    --blurb-button-margin-top: 1.1rem;
   }
 }
 @media (max-width: 479px) {
@@ -3746,32 +3754,32 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --small-space-y: 1.2rem;
+    --small-space-y: 1.1rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --small-space-y: 1.2rem;
+    --small-space-y: 1.1rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --small-space-y: 1.2rem;
+    --small-space-y: 1.1rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --small-space-y: 1.2rem;
+    --small-space-y: 1.1rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --small-space-y: 1.2rem;
+    --small-space-y: 1.1rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --small-space-y: 1.2rem;
+    --small-space-y: 1.1rem;
   }
 }
 @media (max-width: 479px) {
@@ -3926,22 +3934,22 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --filter-label-margin: 1.2rem;
+    --filter-label-margin: 1.1rem;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --filter-label-margin: 1.2rem;
+    --filter-label-margin: 1.1rem;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --filter-label-margin: 1.2rem;
+    --filter-label-margin: 1.1rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --filter-label-margin: 1.2rem;
+    --filter-label-margin: 1.1rem;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
@@ -4226,32 +4234,32 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --text-max-width: min(100vw - var(--page-margin-x) * 2, 600px);
+    --text-max-width: min(100vw - var(--page-margin-x) * 2, 525px);
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --text-max-width: min(100vw - var(--page-margin-x) * 2, 600px);
+    --text-max-width: min(100vw - var(--page-margin-x) * 2, 525px);
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --text-max-width: min(100vw - var(--page-margin-x) * 2, 600px);
+    --text-max-width: min(100vw - var(--page-margin-x) * 2, 525px);
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --text-max-width: min(100vw - var(--page-margin-x) * 2, 600px);
+    --text-max-width: min(100vw - var(--page-margin-x) * 2, 525px);
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --text-max-width: min(100vw - var(--page-margin-x) * 2, 725px);
+    --text-max-width: min(100vw - var(--page-margin-x) * 2, 600px);
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --text-max-width: min(100vw - var(--page-margin-x) * 2, 725px);
+    --text-max-width: min(100vw - var(--page-margin-x) * 2, 600px);
   }
 }
 @media (max-width: 479px) {
@@ -4406,32 +4414,32 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --header-logo-height: 24px;
+    --header-logo-height: 20px;
   }
 }
 @media (min-width: 480px) and (max-width: 749px) {
   :root {
-    --header-logo-height: 24px;
+    --header-logo-height: 20px;
   }
 }
 @media (min-width: 750px) and (max-width: 1023px) {
   :root {
-    --header-logo-height: 24px;
+    --header-logo-height: 20px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root {
-    --header-logo-height: 24px;
+    --header-logo-height: 20px;
   }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --header-logo-height: 30px;
+    --header-logo-height: 24px;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --header-logo-height: 30px;
+    --header-logo-height: 24px;
   }
 }
 @media (max-width: 479px) {
@@ -4786,12 +4794,12 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --input-padding: 1.2rem;
+    --input-padding: 1.1rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --input-padding: 1.2rem;
+    --input-padding: 1.1rem;
   }
 }
 @media (max-width: 479px) {
@@ -4816,12 +4824,12 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
   :root {
-    --price-gap: 1.2rem;
+    --price-gap: 1.1rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --price-gap: 1.2rem;
+    --price-gap: 1.1rem;
   }
 }
 body {

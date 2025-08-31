@@ -24,6 +24,10 @@
         color: $dark-gray;
       }
 
+      .tinkiu-product-insert__details__sold-out {
+        font-weight: normal;
+      }
+
     }
   }
 
@@ -31,10 +35,11 @@
     margin: 0;
     font-size: var(--small-copy);
     text-align: left;
-    margin-bottom: 2px; // TODO
   }
 
   h4 {
+    font-weight: bold;
+    letter-spacing: $subsection-header-letter-spacing;
     font-size: var(--medium-copy);
     font-family: $font-family-body;
     margin-top: 0;

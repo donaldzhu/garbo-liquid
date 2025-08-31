@@ -7,11 +7,12 @@
   &.price--on-sale .price__sale {
     @include flex($flex-start: true);
 
+
     gap: var(--price-gap);
 
     @include mobile {
-      flex-direction: column;
-      gap: 0;
+      /*    flex-direction: column;
+      gap: 0; */
     }
 
     span,
@@ -23,6 +24,8 @@
   }
 
   .price__sale {
+
+
     s {
       color: $dark-gray;
     }

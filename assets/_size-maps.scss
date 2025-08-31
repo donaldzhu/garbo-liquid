@@ -34,10 +34,10 @@ $subsection-header: (
 );
 
 $large-copy: (
-  xs: $copy,
-  s: $large-copy-s,
-  m: $large-copy-s,
-  l: $large-copy-m,
+  xs: $large-copy-m,
+  s: $large-copy-l,
+  m: $large-copy-l,
+  l: $large-copy-l,
   xl: $large-copy-l,
   xxl: $large-copy-xl,
 );
@@ -119,12 +119,12 @@ $page-margin-y: (
 );
 
 $header-margin-y: (
-  xs: $spacing-l,
-  s: $spacing-l,
-  m: $spacing-l,
-  l: $spacing-s,
-  xl: $spacing-m,
-  xxl: $spacing-m,
+  xs: $spacing-m,
+  s: $spacing-m,
+  m: $spacing-m,
+  l: $small-space-l,
+  xl: $spacing-s,
+  xxl: $spacing-s,
 );
 
 $section-media-spacing: (
@@ -429,12 +429,12 @@ $homepage-stories-image-height-short: (
 );
 
 $text-max-width: (
-  xs: min(full-width(), 600px),
-  s: min(full-width(), 600px),
-  m: min(full-width(), 600px),
-  l: min(full-width(), 600px),
-  xl: min(full-width(), 725px),
-  xxl: min(full-width(), 725px),
+  xs: min(full-width(), 525px),
+  s: min(full-width(), 525px),
+  m: min(full-width(), 525px),
+  l: min(full-width(), 525px),
+  xl: min(full-width(), 600px),
+  xxl: min(full-width(), 600px),
 );
 
 $text-max-width-long: (
@@ -522,12 +522,12 @@ $homepage-ethos-image-size-long: (
 
 
 $header-logo-height: (
-  xs: 24px,
-  s: 24px,
-  m: 24px,
-  l: 24px,
-  xl: 30px,
-  xxl: 30px,
+  xs: 20px,
+  s: 20px,
+  m: 20px,
+  l: 20px,
+  xl: 24px,
+  xxl: 24px,
 );
 
 $homepage-intro-logo-vw: (
