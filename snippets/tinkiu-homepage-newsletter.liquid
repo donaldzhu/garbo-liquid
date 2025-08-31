@@ -2,7 +2,7 @@
   <img src="{{ data.image.url }}" alt="{{ data.image.alt }}">
   <div class="tinkiu-homepage__newsletter__content">
     {% render 'tinkiu-dot' %}
-    <h2>{{ data.header }}</h2>
+    <h2>{{ data.title }}</h2>
     {% form 'customer'
       , class: 'tinkiu-homepage__newsletter__form' %}
       <input
@@ -55,7 +55,7 @@
         </h3>
       {%- endif -%}
       <button type="submit" class="tinkiu-cta-button">
-        {{ data.ctaLabel }}
+        Sign Up for Newsletter
       </button>
     {% endform %}
   </div>

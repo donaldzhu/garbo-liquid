@@ -19,7 +19,8 @@
   .tinkiu-services__hero-media {
     @include inset-width;
 
-    img {
+    img,
+    video {
       display: flex;
       border-radius: var(--media-border-radius);
       width: 100%;

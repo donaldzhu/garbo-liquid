@@ -35,6 +35,19 @@
     onload="this.media='all'">
 {%- endif -%}
 
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-featuredCollection'].values %}
+{% for o in metaobj -%}
+{% comment %}   {% for collection in o.collections.value %}
+    {% assign data = collection %}
+  {% endfor %} {% endcomment %}
+  {% assign id = o.featuredCollection | split: '/' | last | plus: 0 %}
+  {% for collection in collections %}
+    {% if collection.id == id %}
+      {% assign featuredCollection = collection.handle | prepend: '/collections/' %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     let isOpen = false;
@@ -72,7 +85,7 @@
     <div class="tinkiu-header__mobile-popup__content">
       <p>Menu</p>
       <ul class="left-menu">
-        {% render 'tinkiu-header-anchor' href: '/collections/sum-yu-collection', text: 'FEATURED COLLECTION' %}
+        {% render 'tinkiu-header-anchor' href: featuredCollection, text: 'FEATURED COLLECTION' %}
         {% render 'tinkiu-header-anchor' href: '/collections/all', text: 'PRODUCTS' %}
         {% render 'tinkiu-header-anchor' href: '/pages/stories', text: 'STORIES' %}
         {% render 'tinkiu-header-anchor' href: '/pages/contact', text: 'CONTACT' %}
@@ -97,10 +110,17 @@
     </a>
   </div>
   <ul class="right-menu">
+    {% assign cartText = 'CART' %}
+    {% if cart != empty %}
+
+      {% assign cartCount = cart.item_count %}
+      {% assign cartText = 'CART ' | append: ' ( ' | append: cartCount | append: ' )' %}
+    {% endif %}
+
     {% render 'tinkiu-header-anchor' href: '/pages/contact', text: 'CONTACT' %}
-        {% render 'tinkiu-header-anchor' href: '/pages/services', text: 'SERVICES' %}
-        {% render 'tinkiu-header-anchor' href: '/cart', text: 'CART' %}
-        {% render 'tinkiu-header-anchor' href: '/account/login', text: 'ORDERS' %}
+    {% render 'tinkiu-header-anchor' href: '/pages/services', text: 'SERVICES' %}
+    {% render 'tinkiu-header-anchor' href: '/cart', text: cartText %}
+    {% render 'tinkiu-header-anchor' href: '/account/login', text: 'ORDERS' %}
   </ul>
 </header>
 

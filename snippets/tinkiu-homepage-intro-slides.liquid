@@ -86,6 +86,7 @@
     })
 </script>
 
+
 <div class="tinkiu-homepage__intro">
   {% render 'tinkiu-logo'
     , color: 'white' %}
@@ -93,14 +94,14 @@
     <div class="tinkiu-homepage__intro-image--animated">
       <div class="tinkiu-homepage__intro-image--animated-desktop">
         {% render 'tinkiu-media'
-          , data: intro.slides[5].image %}
+          , data: intro.introImage %}
       </div>
       <div class="tinkiu-homepage__intro-image--animated-mobile">
-        {% assign url = intro.slides[5].image.filename | file_img_url: 'large' %}
+        {% assign url = intro.introImage.filename | file_img_url: 'large' %}
         {% render 'tinkiu-media'
           , url: url
           , type: 'image'
-          , alt: intro.slides[5].image.meta.alt %}
+          , alt: intro.introImage.meta.alt %}
       </div>
     </div>
   </div>
@@ -111,7 +112,7 @@
         , withSpace: false %}
       <div class="tinkiu-homepage__intro-image--static">
         {% render 'tinkiu-media'
-          , data: intro.slides[5].image %}
+          , data: intro.introImage %}
       </div>
       {% render 'tinkiu-dot'
         , withSpace: false %}

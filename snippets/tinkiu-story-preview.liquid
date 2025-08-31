@@ -2,6 +2,7 @@
 {% assign short = short | default: false %}
 {% assign matchedStory = storyData %}
 
+
 {% if matchedStory == blank %}
   {% for story in metaobj -%}
     {% if story.slug.value == data.storySlug %}

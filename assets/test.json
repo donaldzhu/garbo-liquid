@@ -1,18 +1,22 @@
 {
-  "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0620\/2939\/8087\/files\/IMG_1252.png?v=1754157233",
-  "meta": {
-    "width": 1882,
-    "height": 1506,
-    "fileSize": 3804997,
-    "alt": ""
+  "_type": "homeNewsletter",
+  "image": {
+    "_type": "shopify.asset",
+    "filename": "ctxsp-2.png",
+    "id": "gid:\/\/shopify\/MediaImage\/23817728524359",
+    "meta": {
+      "alt": "",
+      "fileSize": 723528,
+      "height": 578,
+      "width": 1080
+    },
+    "preview": {
+      "height": 578,
+      "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0620\/2939\/8087\/files\/ctxsp-2.png?v=1754197704",
+      "width": 1080
+    },
+    "type": "image",
+    "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0620\/2939\/8087\/files\/ctxsp-2.png?v=1754197704"
   },
-  "type": "image",
-  "_type": "shopify.asset",
-  "preview": {
-    "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0620\/2939\/8087\/files\/IMG_1252.png?v=1754157233",
-    "width": 1882,
-    "height": 1506
-  },
-  "filename": "IMG_1252.png",
-  "id": "gid:\/\/shopify\/MediaImage\/23816156119111"
+  "title": "Be Connected."
 }
