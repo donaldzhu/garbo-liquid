@@ -2700,6 +2700,12 @@ product-info.tinkiu-product .tinkiu-product-insert__details__sold-out {
 .tinkiu-contact-form input.field__input ~ label,
 .tinkiu-contact-form textarea.text-area ~ label {
   left: var(--input-padding);
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 .tinkiu-contact-form .contact__button {
   display: flex;

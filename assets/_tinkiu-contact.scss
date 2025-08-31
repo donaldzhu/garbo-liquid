@@ -87,6 +87,9 @@
 
     ~label {
       left: var(--input-padding);
+      top: 0;
+      height: 100%;
+      @include flex($align: center);
     }
   }
 
