@@ -2,6 +2,7 @@
   assign mediaUrl = data.media.url | default: mediaUrl
   assign mediaType = data.media.type | default: mediaType
   assign mediaAlt = data.media.alt | default: mediaAlt
+  assign hideSection = data.hideSection | default: hideSection
 
   assign header = data.header | default: header
   assign text = data.text | default: text
@@ -9,14 +10,17 @@
 %}
 
 
-<div class="tinkiu-homepage__feature">
-  {% render 'tinkiu-media'
-    , type: mediaType
-    , url: mediaUrl
-    , alt: mediaAlt %}
-  {% render 'tinkiu-dot' %}
-  {% render 'tinkiu-blurb'
-    , header: header
-    , text: text
-    , linkButton: linkButton %}
-</div>
+{% comment %} {{ hideSection | json }} {% endcomment %}
+{% if hideSection != true %}
+  <div class="tinkiu-homepage__feature">
+    {% render 'tinkiu-media'
+      , type: mediaType
+      , url: mediaUrl
+      , alt: mediaAlt %}
+    {% render 'tinkiu-dot' %}
+    {% render 'tinkiu-blurb'
+      , header: header
+      , text: text
+      , linkButton: linkButton %}
+  </div>
+{% endif %}

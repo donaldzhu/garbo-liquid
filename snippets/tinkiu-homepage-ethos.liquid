@@ -1,21 +1,23 @@
-<div class="tinkiu-homepage__ethos">
+{% if data.hideSection != true %}
+  <div class="tinkiu-homepage__ethos">
 
-  {% render 'tinkiu-dot' %}
-  {% render 'tinkiu-blurb'
-    , data: data
-    , renderButton: false %}
-  <p>{{ data.paragraph1 }}</p>
-  <div class="tinkiu-homepage__ethos__images">
-    {% for data in data.images %}
-      {% render 'tinkiu-homepage-ethos-image'
-        , caption: data.caption
-        , image: data.image
-        , isLast: forloop.last %}
-    {% endfor %}
-    {% assign allCaptions = data.images[0].caption | append: ', ' | append: data.images[1].caption | append: ', & ' | append: data.images[2].caption | append: '.' %}
+    {% render 'tinkiu-dot' %}
+    {% render 'tinkiu-blurb'
+      , data: data
+      , renderButton: false %}
+    <p>{{ data.paragraph1 }}</p>
+    <div class="tinkiu-homepage__ethos__images">
+      {% for data in data.images %}
+        {% render 'tinkiu-homepage-ethos-image'
+          , caption: data.caption
+          , image: data.image
+          , isLast: forloop.last %}
+      {% endfor %}
+      {% assign allCaptions = data.images[0].caption | append: ', ' | append: data.images[1].caption | append: ', & ' | append: data.images[2].caption | append: '.' %}
+    </div>
+    <p>{{ data.paragraph2 }}</p>
+    {% render 'tinkiu-blurb'
+      , data: data
+      , renderHeader: false %}
   </div>
-  <p>{{ data.paragraph2 }}</p>
-  {% render 'tinkiu-blurb'
-    , data: data
-    , renderHeader: false %}
-</div>
+{% endif %}

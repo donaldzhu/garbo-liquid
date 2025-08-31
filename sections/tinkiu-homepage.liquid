@@ -25,8 +25,10 @@
         , data: o.feature.value %}
       {% render 'tinkiu-homepage-products'
         , data: o.products.value %}
-      {% render 'tinkiu-story-preview'
-        , data: o.story.value %}
+      {% if o.story.value.hideSection != true %}
+        {% render 'tinkiu-story-preview'
+          , data: o.story.value %}
+      {% endif %}
       {% render 'tinkiu-homepage-founder'
         , data: o.founder.value %}
       {% render 'tinkiu-homepage-ethos'

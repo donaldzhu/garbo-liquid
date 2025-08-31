@@ -1,22 +1,30 @@
 {
-  "_type": "homeNewsletter",
-  "image": {
-    "_type": "shopify.asset",
-    "filename": "ctxsp-2.png",
-    "id": "gid:\/\/shopify\/MediaImage\/23817728524359",
-    "meta": {
-      "alt": "",
-      "fileSize": 723528,
-      "height": 578,
-      "width": 1080
-    },
+  "media": {
     "preview": {
-      "height": 578,
-      "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0620\/2939\/8087\/files\/ctxsp-2.png?v=1754197704",
-      "width": 1080
+      "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0620\/2939\/8087\/files\/preview_images\/eeff21d30fbc44f89f4723c8293a41a8.thumbnail.0000000000.jpg?v=1754171843",
+      "width": 1920,
+      "height": 1080
     },
-    "type": "image",
-    "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0620\/2939\/8087\/files\/ctxsp-2.png?v=1754197704"
+    "filename": "eeff21d30fbc44f89f4723c8293a41a8.mov",
+    "id": "gid:\/\/shopify\/Video\/23816825897031",
+    "url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/eeff21d30fbc44f89f4723c8293a41a8.mov",
+    "meta": {
+      "duration": 24560,
+      "fileSize": 18838516,
+      "alt": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "type": "video",
+    "_type": "shopify.asset"
   },
-  "title": "Be Connected."
+  "header": "Sum Yu Series",
+  "linkButton": {
+    "link": "\/collections\/sum-yu-collection",
+    "_type": "linkButton",
+    "buttonLabel": "MAKE YOUR OWN"
+  },
+  "hideSection": false,
+  "text": "Sterling rings, necklaces, and earrings customized with everlasting engraving of your loved ones’ words. ",
+  "_type": "homeFeature"
 }

@@ -30,6 +30,10 @@
     @include flex($column: true);
   }
 
+  .tinkiu-homepage__intro+div>.tinkiu-dot--with-space:first-child {
+    margin-top: var(--section-media-spacing);
+  }
+
 }
 
 .tinkiu-homepage__sticky-container.sticky {

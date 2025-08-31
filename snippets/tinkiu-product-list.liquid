@@ -1,36 +1,9 @@
 <div class="tinkiu-product-list">
-  <div class="tinkiu-homepage__product tinkiu-list-item">
-    {% render 'tinkiu-product-insert'
-      , id: product.id %}
-  </div>
-  <div class="tinkiu-homepage__product tinkiu-list-item">
-    {% render 'tinkiu-product-insert'
-      , id: product.id %}
-  </div>
-  <div class="tinkiu-homepage__product tinkiu-list-item">
-    {% render 'tinkiu-product-insert'
-      , id: product.id %}
-  </div>
-  <div class="tinkiu-homepage__product tinkiu-list-item">
-    {% render 'tinkiu-product-insert'
-      , id: product.id %}
-  </div>
-{% comment %} {% for product in products %}
-              <div class="tinkiu-homepage__product tinkiu-list-item">
-                {% render 'tinkiu-product-insert'
-                  , id: product.id %}
-              </div>
-              <div class="tinkiu-homepage__product tinkiu-list-item">
-                {% render 'tinkiu-product-insert'
-                  , id: product.id %}
-              </div>
-              <div class="tinkiu-homepage__product tinkiu-list-item">
-                {% render 'tinkiu-product-insert'
-                  , id: product.id %}
-              </div>
-              <div class="tinkiu-homepage__product tinkiu-list-item">
-                {% render 'tinkiu-product-insert'
-                  , id: product.id %}
-              </div>
-  {% endfor %} {% endcomment %}
+  {% assign products = recommendations.products | limit: 4 %}
+  {% for product in products %}
+    <div class="tinkiu-homepage__product tinkiu-list-item">
+      {% render 'tinkiu-product-insert'
+        , id: product.id %}
+    </div>
+  {% endfor %}
 </div>

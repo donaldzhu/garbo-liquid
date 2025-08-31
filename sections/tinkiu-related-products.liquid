@@ -4,14 +4,14 @@
     data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
     data-section-id="{{ section.id }}"
     data-product-id="{{ product.id }}">
-    {% render 'tinkiu-product-section'
-      , product: product
-      , header: 'You May Also Like'
-      , link: '/collections/all'
-      , label: 'View All' %}
-
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+      {% render 'tinkiu-product-section'
+        , product: product
+        , header: 'You May Also Like'
+        , link: '/collections/all'
+        , label: 'View All' %}
+    {% endif %}
   </product-recommendations>
-
 </div>
 
 
