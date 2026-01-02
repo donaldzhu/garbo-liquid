@@ -109,12 +109,13 @@ main {
 }
 
 .tinkiu-main {
-  padding-top: calc(#{$header-height} + var(--large-section-gap));
+  --main-padding-top: calc(#{$header-height} + var(--large-section-gap));
+  padding-top: var(--main-padding-top);
 }
 
 .tinkiu-main-product-page {
   @include mobile {
-    padding-top: $header-height;
+    --main-padding-top: #{$header-height};
   }
 }
 

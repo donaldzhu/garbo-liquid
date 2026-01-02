@@ -838,12 +838,13 @@ main section.shopify-section.section, main section.shopify-section.section > div
 }
 
 .tinkiu-main {
-  padding-top: calc(calc(var(--header-logo-height) + var(--header-margin-y) * 2) + var(--large-section-gap));
+  --main-padding-top: calc(calc(var(--header-logo-height) + var(--header-margin-y) * 2) + var(--large-section-gap));
+  padding-top: var(--main-padding-top);
 }
 
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-main-product-page {
-    padding-top: calc(var(--header-logo-height) + var(--header-margin-y) * 2);
+    --main-padding-top: calc(var(--header-logo-height) + var(--header-margin-y) * 2);
   }
 }
 
@@ -1270,7 +1271,7 @@ slider-component.tinkiu-product-media-gallery ul.product__media-list {
   gap: var(--inner-column-gap);
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide {
-  aspect-ratio: 1;
+  aspect-ratio: 4/5;
   flex: none;
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide .product__media-icon.motion-reduce {
@@ -1279,7 +1280,7 @@ slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide .product-media-container,
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide .product__modal-opener.product__modal-opener--image,
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide .product__media.media {
-  aspect-ratio: 1;
+  aspect-ratio: 4/5;
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -1288,7 +1289,7 @@ slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.
   overflow: hidden;
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide:not(:first-child) {
-  width: calc((var(--split-image-width) - var(--inner-column-gap) * 2) / 3);
+  width: 100%;
 }
 
 .tinkiu-product-media-modal .product-media-modal__content img:not(.active) {
@@ -1305,6 +1306,9 @@ slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.
   background: #FAFAFA;
   padding-top: 0;
   padding-bottom: 0;
+}
+.tinkiu-product-media-modal img {
+  background-color: transparent;
 }
 
 .tinkiu-product-list {
@@ -2050,6 +2054,8 @@ product-info.tinkiu-product .grid__item.product__media-wrapper {
 product-info.tinkiu-product .product__info-wrapper {
   padding: 0;
   width: var(--side-info-width);
+  position: sticky;
+  top: var(--main-padding-top);
 }
 product-info.tinkiu-product .product__info-wrapper section {
   margin-bottom: 0;

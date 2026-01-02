@@ -36,6 +36,8 @@ product-info.tinkiu-product {
   .product__info-wrapper {
     padding: 0;
     width: var(--side-info-width);
+    position: sticky;
+    top: var(--main-padding-top);
 
     section {
       margin-bottom: 0;

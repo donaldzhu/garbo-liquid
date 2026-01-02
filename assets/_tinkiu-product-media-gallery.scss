@@ -22,7 +22,7 @@ slider-component.tinkiu-product-media-gallery {
   }
 
   li.product__media-item.grid__item.slider__slide {
-    aspect-ratio: 1;
+    aspect-ratio: 4/5;
     flex: none;
 
     .product__media-icon.motion-reduce {
@@ -30,7 +30,7 @@ slider-component.tinkiu-product-media-gallery {
     }
 
     @include and-children {
-      aspect-ratio: 1;
+      aspect-ratio: 4/5;
       object-fit: cover;
       height: 100%;
       width: 100%;
@@ -42,6 +42,6 @@ slider-component.tinkiu-product-media-gallery {
 
   li.product__media-item.grid__item.slider__slide:not(:first-child) {
     $column-width: calc((var(--split-image-width) - var(--inner-column-gap) * 2) / 3);
-    width: $column-width;
+    width: 100%;
   }
 }
