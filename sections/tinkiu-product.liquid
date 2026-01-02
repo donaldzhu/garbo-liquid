@@ -710,10 +710,10 @@
     </script>
   </div>
 </product-info>
-{% assign embed_code = product.metafields['app--6007307--sanity-fields'].socialsEmbed.value.embedCode %}
+{% comment %} {% assign embed_code = product.metafields['app--6007307--sanity-fields'].socialsEmbed.value.embedCode %}
 {% if embed_code != blank %}
   {% render 'tinkiu-socials-embed', content: embed_code %}
-{% endif %}
+{% endif %} {% endcomment %}
 {% schema %}
 {
   "name": "t:sections.main-product.name",
@@ -2036,6 +2036,28 @@
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
         }
       ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "image_zoom",
+      "options": [
+        {
+          "value": "lightbox",
+          "label": "t:sections.main-product.settings.image_zoom.options__1.label"
+        },
+        {
+          "value": "hover",
+          "label": "t:sections.main-product.settings.image_zoom.options__2.label"
+        },
+        {
+          "value": "none",
+          "label": "t:sections.main-product.settings.image_zoom.options__3.label"
+        }
+      ],
+      "default": "hover",
+      "label": "t:sections.main-product.settings.image_zoom.label"
     }
   ]
 }

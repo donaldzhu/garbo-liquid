@@ -53,8 +53,7 @@
         "quantity_selector",
         "buy_buttons",
         "description"
-      ],
-      "settings": {}
+      ]
     },
     "tinkiu-related-products": {
       "type": "tinkiu-related-products",
