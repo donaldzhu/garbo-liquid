@@ -23,6 +23,7 @@ $fullscreen-height-max-px: 1500px;
 $total-columns: 12;
 $side-info-columns: 5;
 $header-height: calc(var(--header-logo-height) + var(--header-margin-y) * 2);
+$product-image-max-width: calc((100vh - var(--large-section-gap)) / 5 * 4);
 
 $input-border-radius: 4px;
 

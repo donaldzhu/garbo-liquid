@@ -12,7 +12,7 @@
 }
 
 slider-component.tinkiu-product-media-gallery {
-  width: var(--split-image-width);
+  width: 100%;
 
   ul.product__media-list {
     margin: 0;
@@ -41,7 +41,7 @@ slider-component.tinkiu-product-media-gallery {
   }
 
   li.product__media-item.grid__item.slider__slide:not(:first-child) {
-    $column-width: calc((var(--split-image-width) - var(--inner-column-gap) * 2) / 3);
+    $column-width: calc((var(--product-image-width) - var(--inner-column-gap) * 2) / 3);
     width: 100%;
   }
 }

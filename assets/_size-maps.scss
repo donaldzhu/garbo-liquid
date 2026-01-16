@@ -292,10 +292,10 @@ $filter-label-margin: (
 $large-section-gap: (
   xs: $large-spacing-s,
   s: $large-spacing-s,
-  m: $large-spacing-m,
-  l: $large-spacing-m,
-  xl: $large-spacing-l,
-  xxl: $large-spacing-l,
+  m: $large-spacing-s,
+  l: $large-spacing-s,
+  xl: $large-spacing-m,
+  xxl: $large-spacing-m,
 );
 
 $dot-margin-bottom: (
@@ -463,6 +463,15 @@ $split-image-width: (
   l: calc(var(--full-width) - var(--side-info-width) - var(--column-gap)),
   xl: column-width($total-columns - $side-info-columns),
   xxl: column-width($total-columns - $side-info-columns),
+);
+
+$product-image-width: (
+  xs: full-width(),
+  s: full-width(),
+  m: full-width(),
+  l: column-width($total-columns - $side-info-columns - 3),
+  xl: column-width($total-columns - $side-info-columns - 3),
+  xxl: column-width($total-columns - $side-info-columns - 2),
 );
 
 $newsletter-max-width: (
@@ -672,6 +681,7 @@ $size-maps: (
   text-max-width-long: $text-max-width-long,
   side-info-width: $side-info-width,
   split-image-width: $split-image-width,
+  product-image-width: $product-image-width,
   newsletter-max-width: $newsletter-max-width,
   homepage-logo-width: $homepage-logo-width,
   header-logo-height: $header-logo-height,

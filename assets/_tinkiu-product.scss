@@ -21,16 +21,22 @@ product-info.tinkiu-product {
   background-color: $ash;
 
   .page-width {
-    @include flex($full-width: true, $no-space: true, $flex-start: true);
+    @include flex($full-width: true, $no-space: true, $justify: center);
     max-width: initial;
   }
 
   .product {
-    @include flex($flex-start: true, $gapped: true);
+    @include flex($align: flex-start, $gapped: true);
   }
 
   .grid__item.product__media-wrapper {
-    width: var(--split-image-width);
+    width: var(--product-image-width);
+    --max-width: calc((100vh - var(--large-section-gap)) / 5 * 4);
+    max-width: var(--max-width);
+
+    @include mobile {
+      --max-width: calc((80vh - var(--large-section-gap)) / 5 * 4);
+    }
   }
 
   .product__info-wrapper {
