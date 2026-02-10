@@ -1,3 +1,10 @@
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-header'].values %}
+
+{% for o in metaobj -%}
+  {% assign data = o %}
+{% endfor %}
+
+
 <link
   rel="stylesheet"
   href="{{ 'component-list-menu.css' | asset_url }}"
@@ -85,12 +92,12 @@
     <div class="tinkiu-header__mobile-popup__content">
       <p>Menu</p>
       <ul class="left-menu">
-        {% render 'tinkiu-header-anchor' href: featuredCollection, text: 'FEATURED COLLECTION' %}
-        {% render 'tinkiu-header-anchor' href: '/collections/all', text: 'PRODUCTS' %}
-        {% render 'tinkiu-header-anchor' href: '/pages/stories', text: 'STORIES' %}
-        {% render 'tinkiu-header-anchor' href: '/pages/contact', text: 'CONTACT' %}
-        {% render 'tinkiu-header-anchor' href: '/pages/services', text: 'SERVICES' %}
-        {% render 'tinkiu-header-anchor' href: '/account/login', text: 'ORDERS' %}
+        {% render 'tinkiu-header-anchor' href: featuredCollection, text: data.featuredCollection %}
+        {% render 'tinkiu-header-anchor' href: '/collections/all', text: data.products %}
+        {% render 'tinkiu-header-anchor' href: '/pages/stories', text: data.stories %}
+        {% render 'tinkiu-header-anchor' href: '/pages/contact', text: data.contact %}
+        {% render 'tinkiu-header-anchor' href: '/pages/services', text: data.services %}
+        {% render 'tinkiu-header-anchor' href: '/account/login', text: data.orders %}
     </div>
   </div>
   <div class="tinkiu-logo-container">
@@ -100,9 +107,9 @@
   </div>
 
   <ul class="left-menu">
-    {% render 'tinkiu-header-anchor' href: '/collections/sum-yu-collection', text: 'FEATURED COLLECTION' %}
-    {% render 'tinkiu-header-anchor' href: '/collections/all', text: 'PRODUCTS' %}
-    {% render 'tinkiu-header-anchor' href: '/pages/stories', text: 'STORIES' %}
+    {% render 'tinkiu-header-anchor' href: '/collections/sum-yu-collection', text: data.featuredCollection %}
+    {% render 'tinkiu-header-anchor' href: '/collections/all', text: data.products %}
+    {% render 'tinkiu-header-anchor' href: '/pages/stories', text: data.stories %}
   </ul>
   <div class="tinkiu-logo-container">
     <a href="{{ routes.root_url }}">
@@ -117,10 +124,10 @@
       {% assign cartText = 'CART ' | append: ' ( ' | append: cartCount | append: ' )' %}
     {% endif %}
 
-    {% render 'tinkiu-header-anchor' href: '/pages/contact', text: 'CONTACT' %}
-    {% render 'tinkiu-header-anchor' href: '/pages/services', text: 'SERVICES' %}
+    {% render 'tinkiu-header-anchor' href: '/pages/contact', text: data.contact %}
+    {% render 'tinkiu-header-anchor' href: '/pages/services', text: data.services %}
     {% render 'tinkiu-header-anchor' href: '/cart', text: cartText %}
-    {% render 'tinkiu-header-anchor' href: '/account/login', text: 'ORDERS' %}
+    {% render 'tinkiu-header-anchor' href: '/account/login', text: data.orders %}
   </ul>
 </header>
 
