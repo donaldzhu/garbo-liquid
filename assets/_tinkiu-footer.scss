@@ -10,7 +10,7 @@
   .tinkiu-footer__links {
     @include flex($align: flex-start, $justify: space-between, $gapped: true, $full-width: true);
     padding-top: var(--footer-padding); // auto
-    padding-bottom: var(--header-margin-y);
+    padding-bottom: calc(var(--header-margin-y) * 2);
     font-size: var(--small-copy);
     color: white;
     flex-wrap: wrap;

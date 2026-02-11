@@ -649,7 +649,7 @@ header .tinkiu-header__mobile-popup ul a {
   gap: var(--column-gap);
   width: var(--full-width);
   padding-top: var(--footer-padding);
-  padding-bottom: var(--header-margin-y);
+  padding-bottom: calc(var(--header-margin-y) * 2);
   font-size: var(--small-copy);
   color: white;
   flex-wrap: wrap;
@@ -2493,6 +2493,60 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-story .tinkiu-story__content iframe,
 .tinkiu-story .tinkiu-story__content blockquote {
   margin: var(--section-media-spacing) 0 !important;
+}
+
+.tinkiu-own-story {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--section-media-spacing);
+  width: 100vw;
+}
+.tinkiu-own-story .tinkiu-own-story__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: var(--full-width);
+}
+.tinkiu-own-story .tinkiu-own-story__gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: var(--column-gap);
+  width: var(--full-width);
+  flex-wrap: wrap;
+  margin: var(--section-media-spacing) 0;
+}
+.tinkiu-own-story .tinkiu-own-story__gallery img {
+  --column-count: 3;
+  width: calc((var(--full-width) - var(--column-gap) * (var(--column-count) - 1)) / var(--column-count));
+  height: calc((var(--full-width) - var(--column-gap) * (var(--column-count) - 1)) / var(--column-count));
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-own-story .tinkiu-own-story__gallery img {
+    --column-count: 2;
+  }
+}
+.tinkiu-own-story .tinkiu-own-story__vimeo {
+  width: var(--full-width);
+}
+.tinkiu-own-story .tinkiu-own-story__vimeo iframe {
+  aspect-ratio: 16/9;
+}
+.tinkiu-own-story .tinkiu-own-story__images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--column-gap);
+  width: var(--inset-width);
+  margin-top: var(--section-media-spacing);
+}
+.tinkiu-own-story .tinkiu-own-story__images img {
+  width: 100%;
 }
 
 .tinkiu-socials-embed {

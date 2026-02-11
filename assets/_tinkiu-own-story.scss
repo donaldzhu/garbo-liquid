@@ -1,0 +1,47 @@
+@use 'layouts' as *;
+
+.tinkiu-own-story {
+  @include flex($justify: flex-start, $full-screen: true, $column: true, $section-gapped: true);
+
+  .tinkiu-own-story__content {
+    @include flex($column: true);
+    width: var(--full-width);
+  }
+
+  .tinkiu-own-story__gallery {
+    @include flex($gapped: true, );
+    width: var(--full-width);
+    flex-wrap: wrap;
+    margin: var(--section-media-spacing) 0;
+
+    img {
+      --column-count: 3;
+      $size: calc((var(--full-width) - var(--column-gap) * (var(--column-count) - 1)) / var(--column-count));
+      @include square($size);
+
+      @include mobile {
+        --column-count: 2;
+      }
+    }
+
+  }
+
+
+  .tinkiu-own-story__vimeo {
+    width: var(--full-width);
+
+    iframe {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  .tinkiu-own-story__images {
+    @include flex($gapped: true, $column: true);
+    width: var(--inset-width);
+    margin-top: var(--section-media-spacing);
+
+    img {
+      width: 100%;
+    }
+  }
+}

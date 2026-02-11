@@ -1,0 +1,43 @@
+{% assign stories = shop.metaobjects['app--6007307--sanity-documents-tinkiuStory'].values %}
+{% for story in stories %}
+  {% assign o = story %}
+{% endfor %}
+
+
+<script>
+  console.log({{ o | json }})
+</script>
+
+<div class="tinkiu-own-story">
+  {% render 'tinkiu-section-header'
+    , title: o.title %}
+  <div class="tinkiu-own-story__content">
+    <div class="tinkiu-portable-text">
+      {% render 'portable-text'
+        , portableText: o.storyContent.value %}
+    </div>
+  </div>
+  <div class="tinkiu-own-story__gallery">
+    {% for image in o.gallery.value %}
+      {% render 'tinkiu-media'
+        , data: image.image %}
+    {% endfor %}
+  </div>
+  <div class="tinkiu-own-story__vimeo">
+    {% render 'tinkiu-vimeo'
+      , vimeo_url: o.vimeoLink %}
+  </div>
+  <div class="tinkiu-own-story__images">
+    {% for image in o.additionalPhotos.value %}
+      {% render 'tinkiu-media'
+        , data: image.image %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Tinkiu’s Own Story",
+    "settings": []
+  }
+{% endschema %}

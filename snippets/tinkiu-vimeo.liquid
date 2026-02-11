@@ -1,0 +1,18 @@
+{% comment %}
+  Vimeo Embed Snippet
+  Usage: {% render 'vimeo-embed', vimeo_url: story.vimeoLink %}
+{% endcomment %}
+
+{% if vimeo_url != blank %}
+  {% assign vimeo_id = vimeo_url | remove: 'https://' | remove: 'http://' | remove: 'www.' | remove: 'vimeo.com/' | remove: 'vimeo.com' | split: '/' | first %}
+
+  {% if vimeo_id != blank %}
+      <iframe
+        src="https://player.vimeo.com/video/{{ vimeo_id }}"
+        style="width: 100%; height: auto;"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+  {% endif %}
+{% endif %}

@@ -52,6 +52,13 @@
         {% break %}
       {% endfor %}
     {% endif %}
+    {% if request.path == '/pages/tinkiu-story' %}
+      {% assign story_contents = shop.metaobjects['app--6007307--sanity-documents-story'].values %}
+      {% for story in story_contents %}
+          {% assign description = story.title %}
+      {% endfor %}
+    {% endif %}
+
 
     {% if description != blank %}
       <meta name="description" content="{{ description | escape }}">
