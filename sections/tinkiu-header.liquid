@@ -92,7 +92,7 @@
     <div class="tinkiu-header__mobile-popup__content">
       <p>Menu</p>
       <ul class="left-menu">
-        {% render 'tinkiu-header-anchor' href: featuredCollection, text: data.featuredCollection %}
+        {% render 'tinkiu-header-anchor' href: '/collections', text: data.featuredCollection %}
         {% render 'tinkiu-header-anchor' href: '/collections/all', text: data.products %}
         {% render 'tinkiu-header-anchor' href: '/pages/stories', text: data.stories %}
         {% render 'tinkiu-header-anchor' href: '/pages/contact', text: data.contact %}
@@ -107,7 +107,7 @@
   </div>
 
   <ul class="left-menu">
-    {% render 'tinkiu-header-anchor' href: '/collections/sum-yu-collection', text: data.featuredCollection %}
+    {% render 'tinkiu-header-anchor' href: '/collections', text: data.featuredCollection %}
     {% render 'tinkiu-header-anchor' href: '/collections/all', text: data.products %}
     {% render 'tinkiu-header-anchor' href: '/pages/stories', text: data.stories %}
   </ul>
