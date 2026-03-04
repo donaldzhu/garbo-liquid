@@ -58,10 +58,10 @@
   }
 
   .tinkiu-story__folio--with-product .tinkiu-story__details-container {
-    gap: var(--paragraph-spacing);
+    gap: var(--inner-column-gap);
 
     @include mobile {
-      margin-top: var(--paragraph-spacing);
+      margin-top: var(--inner-column-gap);
     }
   }
 
@@ -118,7 +118,7 @@
     ol {
 
       padding-left: var(--story-list-margin);
-      margin: var(--paragraph-spacing) var(--story-list-margin);
+      margin: var(--inner-column-gap) var(--story-list-margin);
 
       font-size: var(--large-copy);
     }

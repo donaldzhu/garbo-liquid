@@ -1,4 +1,13 @@
 @charset "UTF-8";
+* {
+  --ui-small: $copy-s;
+  --small-copy-label: $copy;
+  --small-space-y: $s-space-4;
+  --hair-space-y: $s-space-2;
+  --button-padding: 1.5rem 2.25rem;
+  --button-radius: 3rem;
+}
+
 .tinkiu-homepage__intro {
   width: 100dvw;
   height: 100dvh;
@@ -150,7 +159,7 @@
 }
 .tinkiu-homepage p {
   text-align: center;
-  margin: var(--paragraph-spacing) 0;
+  margin: var(--inner-column-gap) 0;
   max-width: var(--text-max-width);
 }
 .tinkiu-homepage > div,
@@ -215,7 +224,7 @@
 .tinkiu-homepage p,
 .tinkiu-blurb p {
   text-align: center;
-  margin: var(--paragraph-spacing) 0;
+  margin: var(--inner-column-gap) 0;
   max-width: var(--text-max-width);
 }
 .tinkiu-homepage h2 + button,
@@ -323,7 +332,7 @@
   justify-content: center;
   flex-direction: row;
   gap: var(--column-gap);
-  margin: var(--paragraph-spacing) 0;
+  margin: var(--inner-column-gap) 0;
 }
 .tinkiu-homepage__ethos__images .tinkiu-homepage__ethos__image-mobile {
   display: none;
@@ -817,7 +826,7 @@ header .tinkiu-header__mobile-popup ul a {
   font-size: var(--medium-copy);
   text-align: center;
   font-family: "Dazzed", sans-serif;
-  margin: var(--paragraph-spacing) 0 var(--section-media-spacing);
+  margin: var(--inner-column-gap) 0 var(--section-media-spacing);
 }
 .tinkiu-section-header .tinkiu-dot {
   margin-bottom: var(--dot-margin-bottom);
@@ -840,7 +849,7 @@ button[type=submit] {
   text-transform: uppercase;
   padding: var(--button-padding);
   border-radius: var(--button-radius);
-  margin-top: var(--blurb-button-margin-top);
+  margin-top: var(--small-space-y);
 }
 .tinkiu-cta-button:hover,
 button[type=submit]:hover {
@@ -890,10 +899,10 @@ main section.shopify-section.section, main section.shopify-section.section > div
   width: 100%;
 }
 .tinkiu-list-item h3:first-child {
-  margin-bottom: var(--list-margin);
+  margin-bottom: var(--inner-column-gap);
 }
 .tinkiu-list-item h3:not(:first-child) {
-  margin-top: var(--list-margin);
+  margin-top: var(--inner-column-gap);
 }
 
 .tinkiu-main {
@@ -1011,7 +1020,7 @@ variant-selects.tinkiu-product-variant-picker fieldset legend.form__label ~ p {
 }
 variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--swatch {
   display: flex;
-  gap: var(--radio-input-gap);
+  gap: var(--detail-label-margin);
 }
 variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--swatch .swatch-input__input + .swatch-input__label {
   margin: 0;
@@ -1030,7 +1039,7 @@ variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill
   color: black;
   margin: 0;
   border-color: black;
-  font-size: var(--variant-pill);
+  font-size: var(--small-copy);
   padding: 0.625em 1.25em;
 }
 variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill input[type=radio]:checked + label {
@@ -1161,7 +1170,7 @@ div.tinkiu-product-details p:first-child ~ p {
   text-transform: uppercase;
   padding: var(--button-padding);
   border-radius: var(--button-radius);
-  margin-top: var(--blurb-button-margin-top);
+  margin-top: var(--small-space-y);
   margin: 0;
 }
 .product__info-wrapper div.tinkiu-buy-buttons button#tcustomizer-add:hover,
@@ -1255,7 +1264,7 @@ div.tinkiu-product-details p:first-child ~ p {
   text-transform: uppercase;
   padding: var(--button-padding);
   border-radius: var(--button-radius);
-  margin-top: var(--blurb-button-margin-top);
+  margin-top: var(--small-space-y);
   min-width: 22.5rem;
   border: black 1px solid;
   padding: var(--button-padding) !important;
@@ -1514,7 +1523,7 @@ div.tinkiu-main-collection-product-grid.gradient aside.facets-wrapper {
   text-transform: uppercase;
   padding: var(--button-padding);
   border-radius: var(--button-radius);
-  margin-top: var(--blurb-button-margin-top);
+  margin-top: var(--small-space-y);
 }
 .tinkiu-facets-container.facets-container div.mobile-facets__footer facet-remove:hover,
 .tinkiu-facets-container.facets-container div.mobile-facets__footer button:hover {
@@ -1554,7 +1563,7 @@ div.tinkiu-main-collection-product-grid.gradient aside.facets-wrapper {
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  gap: var(--radio-input-gap);
+  gap: var(--detail-label-margin);
   color: black;
 }
 .tinkiu-facets-container.facets-container .mobile-facets__list li .facet-checkbox svg,
@@ -1812,7 +1821,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  gap: var(--radio-input-gap);
+  gap: var(--detail-label-margin);
   color: black;
 }
 details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li .facet-checkbox svg,
@@ -2000,7 +2009,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   justify-content: flex-start;
 }
 .tinkiu-product-insert .tinkiu-product-insert__details:not(:first-child) {
-  margin-top: var(--products-gap);
+  margin-top: var(--small-space-y);
 }
 .tinkiu-product-insert .tinkiu-product-insert__details--sold-out .tinkiu-product-insert__details__title,
 .tinkiu-product-insert .tinkiu-product-insert__details--sold-out p {
@@ -2024,7 +2033,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   font-size: var(--medium-copy);
   font-family: "Dazzed", sans-serif;
   margin-top: 0;
-  margin-bottom: calc(var(--products-gap) - 0.25rem);
+  margin-bottom: calc(var(--small-space-y) - 0.25rem);
   line-height: 1.1;
 }
 .tinkiu-product-insert--small .tinkiu-product-insert__images img {
@@ -2474,11 +2483,11 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   }
 }
 .tinkiu-story .tinkiu-story__folio--with-product .tinkiu-story__details-container {
-  gap: var(--paragraph-spacing);
+  gap: var(--inner-column-gap);
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-story .tinkiu-story__folio--with-product .tinkiu-story__details-container {
-    margin-top: var(--paragraph-spacing);
+    margin-top: var(--inner-column-gap);
   }
 }
 .tinkiu-story .tinkiu-story__folio--with-product .tinkiu-story__details-container {
@@ -2541,7 +2550,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-story .tinkiu-story__content ul,
 .tinkiu-story .tinkiu-story__content ol {
   padding-left: var(--story-list-margin);
-  margin: var(--paragraph-spacing) var(--story-list-margin);
+  margin: var(--inner-column-gap) var(--story-list-margin);
   font-size: var(--large-copy);
 }
 .tinkiu-story .tinkiu-story__content ul {
@@ -2573,11 +2582,6 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   width: 100vw;
 }
 .tinkiu-own-story .tinkiu-own-story__content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: var(--full-width);
   margin: var(--small-section-media-spacing) 0;
 }
 .tinkiu-own-story .tinkiu-own-story__gallery {
@@ -2794,7 +2798,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   margin: 0;
 }
 .tinkiu-contact-form .field {
-  margin: var(--paragraph-spacing) 0 0;
+  margin: var(--inner-column-gap) 0 0;
   font-size: var(--small-copy);
 }
 .tinkiu-contact-form .contact__fields {
@@ -2851,7 +2855,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin-top: var(--blurb-button-margin-top);
+  margin-top: var(--small-space-y);
 }
 
 .tinkiu-cart-items th {
@@ -2909,7 +2913,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   text-transform: uppercase;
   padding: var(--button-padding);
   border-radius: var(--button-radius);
-  margin-top: var(--blurb-button-margin-top);
+  margin-top: var(--small-space-y);
 }
 .tinkiu-cart-items .cart__warnings .tinkiu-cart-empty__button:hover {
   background-color: #DF2726;
@@ -3018,6 +3022,15 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 }
 .tinkiu-main-list-collections ul.collection-list.grid img {
   aspect-ratio: 1;
+}
+
+.tinkiu-text-only h2,
+.tinkiu-text-only h3,
+.tinkiu-text-only h4,
+.tinkiu-text-only h5,
+.tinkiu-text-only h6 {
+  font-family: "Dazzed", sans-serif;
+  font-weight: bold;
 }
 
 ul {
@@ -3212,96 +3225,6 @@ a, a:-webkit-any-link, a:visited {
 @media (min-width: 1536px) {
   :root {
     --header-font-size: 1.3rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
-    --small-copy-label: 1.3rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --small-copy-label: 1.3rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --small-copy-label: 1.3rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --small-copy-label: 1.3rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --small-copy-label: 1.3rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --small-copy-label: 1.3rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
-    --ui-small: 1.2rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --ui-small: 1.2rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --ui-small: 1.2rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --ui-small: 1.2rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --ui-small: 1.2rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --ui-small: 1.2rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
-    --variant-pill: 1.2rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --variant-pill: 1.2rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --variant-pill: 1.2rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --variant-pill: 1.2rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --variant-pill: 1.25rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --variant-pill: 1.25rem;
   }
 }
 @media (max-width: 479px) {
@@ -3516,36 +3439,6 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --paragraph-spacing: 1.5rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --paragraph-spacing: 1.5rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --paragraph-spacing: 1.5rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --paragraph-spacing: 1.5rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --paragraph-spacing: 1.8rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --paragraph-spacing: 1.8rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
     --inner-section-spacing: 6rem;
   }
 }
@@ -3636,66 +3529,6 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --products-gap: 1.1rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --products-gap: 1.1rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --products-gap: 1.1rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --products-gap: 1.1rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --products-gap: 1.1rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --products-gap: 1.1rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
-    --blurb-button-margin-top: 1.1rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --blurb-button-margin-top: 1.1rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --blurb-button-margin-top: 1.1rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --blurb-button-margin-top: 1.1rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --blurb-button-margin-top: 1.1rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --blurb-button-margin-top: 1.1rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
     --form-button-margin-top: 3rem;
   }
 }
@@ -3722,36 +3555,6 @@ a, a:-webkit-any-link, a:visited {
 @media (min-width: 1536px) {
   :root {
     --form-button-margin-top: 3.6rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
-    --list-margin: 1.5rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --list-margin: 1.5rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --list-margin: 1.5rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --list-margin: 1.5rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --list-margin: 1.8rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --list-margin: 1.8rem;
   }
 }
 @media (max-width: 479px) {
@@ -3936,36 +3739,6 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --small-space-y: 1.1rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --small-space-y: 1.1rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --small-space-y: 1.1rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --small-space-y: 1.1rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --small-space-y: 1.1rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --small-space-y: 1.1rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
     --footer-icon-spacing: 1.8rem;
   }
 }
@@ -3996,36 +3769,6 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --radio-input-gap: 0.5rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --radio-input-gap: 0.5rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --radio-input-gap: 0.5rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --radio-input-gap: 0.5rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --radio-input-gap: 0.8rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --radio-input-gap: 0.8rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
     --detail-label-margin: 0.5rem;
   }
 }
@@ -4052,36 +3795,6 @@ a, a:-webkit-any-link, a:visited {
 @media (min-width: 1536px) {
   :root {
     --detail-label-margin: 0.8rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
-    --hair-space-y: 0.5rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --hair-space-y: 0.5rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --hair-space-y: 0.5rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --hair-space-y: 0.5rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --hair-space-y: 0.5rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --hair-space-y: 0.5rem;
   }
 }
 @media (max-width: 479px) {
@@ -4926,66 +4639,6 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --button-padding: 1.5rem 2.25rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --button-padding: 1.5rem 2.25rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --button-padding: 1.5rem 2.25rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --button-padding: 1.5rem 2.25rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --button-padding: 1.5rem 2.25rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --button-padding: 1.5rem 2.25rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
-    --button-radius: 3rem;
-  }
-}
-@media (min-width: 480px) and (max-width: 749px) {
-  :root {
-    --button-radius: 3rem;
-  }
-}
-@media (min-width: 750px) and (max-width: 1023px) {
-  :root {
-    --button-radius: 3rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  :root {
-    --button-radius: 3rem;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-  :root {
-    --button-radius: 3rem;
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --button-radius: 3rem;
-  }
-}
-@media (max-width: 479px) {
-  :root {
     --input-padding: 0.8rem;
   }
 }
@@ -5157,4 +4810,13 @@ img {
 }
 .tinkiu-logo--white .tinkiu-logo-text {
   fill: white;
+}
+
+.tinkiu-full-width {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: var(--full-width);
+  margin: 0 max(var(--page-margin-x), (100vw - var(--full-width)) / 2);
 }

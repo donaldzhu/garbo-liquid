@@ -150,3 +150,10 @@ img {
     }
   }
 }
+
+
+.tinkiu-full-width {
+  @include flex($column: true);
+  width: var(--full-width);
+  margin: 0 max(var(--page-margin-x), calc(100vw - var(--full-width)) / 2);
+}

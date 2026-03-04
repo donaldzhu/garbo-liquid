@@ -4,8 +4,6 @@
   @include flex($justify: flex-start, $full-screen: true, $column: true, $section-gapped: true);
 
   .tinkiu-own-story__content {
-    @include flex($column: true);
-    width: var(--full-width);
     margin: var(--small-section-media-spacing) 0;
   }
 

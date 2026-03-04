@@ -69,316 +69,239 @@ $header-font-size: (
   xxl: $copy,
 );
 
-$ui-small: (
-  xs: $copy-s,
-  s: $copy-s,
-  m: $copy-s,
-  l: $copy-s,
-  xl: $copy-s,
-  xxl: $copy-s,
-);
+* {
+  --ui-small: $copy-s;
+  --small-copy-label: $copy;
+  --small-space-y: $s-space-4;
+  --hair-space-y: $s-space-2;
+  --button-padding: #{$s-space-5} #{$space-2};
+  --button-radius: #{($s-space-5 * 2)};
+}
 
-$small-copy-label: (
-  xs: $copy,
-  s: $copy,
-  m: $copy,
-  l: $copy,
-  xl: $copy,
-  xxl: $copy,
-);
-
-$variant-pill: (
-  xs: $copy-s,
-  s: $copy-s,
-  m: $copy-s,
-  l: $copy-s,
-  xl: $copy-m,
-  xxl: $copy-m,
-);
 
 // ============================================================================
 // SPACING & MARGINS
 // ============================================================================
 
 $page-margin-x: (
-  xs: $spacing-s,
-  s: $spacing-m,
-  m: $spacing-m,
-  l: $spacing-m,
-  xl: $spacing-l,
-  xxl: $spacing-l,
+  xs: $space-1,
+  s: $space-2,
+  m: $space-2,
+  l: $space-2,
+  xl: $space-3,
+  xxl: $space-3,
 );
 
 $page-margin-y: (
-  xs: $spacing-m,
-  s: $spacing-m,
-  m: $spacing-m,
-  l: $spacing-m,
-  xl: $spacing-m,
-  xxl: $spacing-m,
+  xs: $space-2,
+  s: $space-2,
+  m: $space-2,
+  l: $space-2,
+  xl: $space-2,
+  xxl: $space-2,
 );
 
 
 $small-section-media-spacing: (
-  xs: $spacing-m,
-  s: $spacing-m,
-  m: $spacing-m,
-  l: $spacing-m,
-  xl: $spacing-l,
-  xxl: $spacing-l,
+  xs: $space-2,
+  s: $space-2,
+  m: $space-2,
+  l: $space-2,
+  xl: $space-3,
+  xxl: $space-3,
 );
 
 $header-margin-y: (
-  xs: $spacing-m,
-  s: $spacing-m,
-  m: $spacing-m,
-  l: $small-space-l,
-  xl: $spacing-s,
-  xxl: $spacing-s,
+  xs: $space-2,
+  s: $space-2,
+  m: $space-2,
+  l: $s-space-5,
+  xl: $space-1,
+  xxl: $space-1,
 );
 
 $section-media-spacing: (
-  xs: $spacing-m,
-  s: $spacing-m,
-  m: $spacing-m,
-  l: $spacing-l,
-  xl: $spacing-xl,
-  xxl: $spacing-xl,
+  xs: $space-2,
+  s: $space-2,
+  m: $space-2,
+  l: $space-3,
+  xl: $space-4,
+  xxl: $space-4,
 );
 
 $large-inner-section-gap: (
-  xs: $large-spacing-s,
-  s: $large-spacing-s,
-  m: $large-spacing-s,
-  l: $large-spacing-s,
-  xl: $large-spacing-m,
-  xxl: $large-spacing-m,
+  xs: $l-spacing-2,
+  s: $l-spacing-2,
+  m: $l-spacing-2,
+  l: $l-spacing-2,
+  xl: $l-spacing-3,
+  xxl: $l-spacing-3,
 );
 
 $homepage-stories-description-margin-top: (
-  xs: $spacing-m,
-  s: $spacing-m,
-  m: $spacing-m,
-  l: $spacing-l,
-  xl: $spacing-xl,
-  xxl: $spacing-xl,
-);
-
-$paragraph-spacing: (
-  xs: $small-space-l,
-  s: $small-space-l,
-  m: $small-space-l,
-  l: $small-space-l,
-  xl: $spacing-s,
-  xxl: $spacing-s,
-);
-
-$inner-section-spacing: (
-  xs: $large-spacing-xs,
-  s: $large-spacing-xs,
-  m: $large-spacing-xs,
-  l: $large-spacing-xs,
-  xl: $large-spacing-s,
-  xxl: $large-spacing-s,
-);
-
-$products-margin-bottom: (
-  xs: $spacing-xxl,
-  s: $spacing-xxl,
-  m: $spacing-xxl,
-  l: $spacing-xxl,
-  xl: $large-spacing-xs,
-  xxl: $large-spacing-xs,
-);
-
-$product-insert-price-margin: (
-  xs: $small-space-xxs,
-  s: $small-space-xxs,
-  m: $small-space-xxs,
-  l: $small-space-xxs,
-  xl: $small-space-xs,
-  xxl: $small-space-xs,
-);
-
-$products-gap: (
-  xs: $small-space-m,
-  s: $small-space-m,
-  m: $small-space-m,
-  l: $small-space-m,
-  xl: $small-space-m,
-  xxl: $small-space-m,
-);
-
-$blurb-button-margin-top: (
-  xs: $small-space-m,
-  s: $small-space-m,
-  m: $small-space-m,
-  l: $small-space-m,
-  xl: $small-space-m,
-  xxl: $small-space-m,
-);
-
-$form-button-margin-top: (
-  xs: $spacing-l,
-  s: $spacing-l,
-  m: $spacing-l,
-  l: $spacing-l,
-  xl: $spacing-xl,
-  xxl: $spacing-xl,
-);
-
-$list-margin: (
-  xs: $small-space-l,
-  s: $small-space-l,
-  m: $small-space-l,
-  l: $small-space-l,
-  xl: $spacing-s,
-  xxl: $spacing-s,
-);
-
-$column-gap: (
-  xs: $spacing-xs,
-  s: $spacing-s,
-  m: $spacing-s,
-  l: $spacing-s,
-  xl: $spacing-m,
-  xxl: $spacing-m,
+  xs: $space-2,
+  s: $space-2,
+  m: $space-2,
+  l: $space-3,
+  xl: $space-4,
+  xxl: $space-4,
 );
 
 $inner-column-gap: (
-  xs: $small-space-l,
-  s: $small-space-l,
-  m: $small-space-l,
-  l: $small-space-l,
-  xl: $spacing-s,
-  xxl: $spacing-s,
+  xs: $s-space-5,
+  s: $s-space-5,
+  m: $s-space-5,
+  l: $s-space-5,
+  xl: $space-1,
+  xxl: $space-1,
+);
+
+$inner-section-spacing: (
+  xs: $l-spacing-1,
+  s: $l-spacing-1,
+  m: $l-spacing-1,
+  l: $l-spacing-1,
+  xl: $l-spacing-2,
+  xxl: $l-spacing-2,
+);
+
+$products-margin-bottom: (
+  xs: $space-5,
+  s: $space-5,
+  m: $space-5,
+  l: $space-5,
+  xl: $l-spacing-1,
+  xxl: $l-spacing-1,
+);
+
+$product-insert-price-margin: (
+  xs: $s-space-1,
+  s: $s-space-1,
+  m: $s-space-1,
+  l: $s-space-1,
+  xl: $s-space-2,
+  xxl: $s-space-2,
+);
+
+$form-button-margin-top: (
+  xs: $space-3,
+  s: $space-3,
+  m: $space-3,
+  l: $space-3,
+  xl: $space-4,
+  xxl: $space-4,
+);
+
+
+
+$column-gap: (
+  xs: $s-space-5,
+  s: $space-1,
+  m: $space-1,
+  l: $space-1,
+  xl: $space-2,
+  xxl: $space-2,
 );
 
 $header-gap: (
-  xs: $spacing-m,
-  s: $spacing-m,
-  m: $spacing-m,
-  l: $spacing-m,
-  xl: $spacing-l,
-  xxl: $spacing-l,
+  xs: $space-2,
+  s: $space-2,
+  m: $space-2,
+  l: $space-2,
+  xl: $space-3,
+  xxl: $space-3,
 );
 
 $footer-padding: (
-  xs: $spacing-l,
-  s: $spacing-l,
-  m: $spacing-l,
-  l: $large-spacing-xs,
-  xl: $large-spacing-s,
-  xxl: $large-spacing-s,
+  xs: $space-3,
+  s: $space-3,
+  m: $space-3,
+  l: $l-spacing-1,
+  xl: $l-spacing-2,
+  xxl: $l-spacing-2,
 );
 
 $footer-margin-top: (
-  xs: $large-spacing-s,
-  s: $large-spacing-m,
-  m: $large-spacing-m,
-  l: $large-spacing-l,
-  xl: $large-spacing-xl,
-  xxl: $large-spacing-xl,
+  xs: $l-spacing-2,
+  s: $l-spacing-3,
+  m: $l-spacing-3,
+  l: $l-spacing-4,
+  xl: $l-spacing-5,
+  xxl: $l-spacing-5,
 );
 
 $product-details-gap: (
-  xs: $spacing-m,
-  s: $spacing-m,
-  m: $spacing-m,
-  l: $spacing-m,
-  xl: $spacing-l,
-  xxl: $spacing-l,
+  xs: $space-2,
+  s: $space-2,
+  m: $space-2,
+  l: $space-2,
+  xl: $space-3,
+  xxl: $space-3,
 );
 
 $filter-label-margin: (
-  xs: $small-space-m,
-  s: $small-space-m,
-  m: $small-space-m,
-  l: $small-space-m,
-  xl: $small-space-l,
-  xxl: $small-space-l,
+  xs: $s-space-4,
+  s: $s-space-4,
+  m: $s-space-4,
+  l: $s-space-4,
+  xl: $s-space-5,
+  xxl: $s-space-5,
 );
 
 $large-section-gap: (
-  xs: $large-spacing-s,
-  s: $large-spacing-s,
-  m: $large-spacing-s,
-  l: $large-spacing-s,
-  xl: $large-spacing-m,
-  xxl: $large-spacing-m,
+  xs: $l-spacing-2,
+  s: $l-spacing-2,
+  m: $l-spacing-2,
+  l: $l-spacing-2,
+  xl: $l-spacing-3,
+  xxl: $l-spacing-3,
 );
 
 $dot-margin-bottom: (
-  xs: $spacing-m,
-  s: $spacing-m,
-  m: $spacing-m,
-  l: $spacing-m,
-  xl: $spacing-l,
-  xxl: $spacing-xl,
+  xs: $space-2,
+  s: $space-2,
+  m: $space-2,
+  l: $space-2,
+  xl: $space-3,
+  xxl: $space-4,
 );
 
 $founder-image-margin: (
-  xs: $spacing-l,
-  s: $spacing-l,
-  m: $spacing-l,
-  l: $spacing-l,
-  xl: $spacing-xl,
-  xxl: $spacing-xl,
-);
-
-$small-space-y: (
-  xs: $small-space-m,
-  s: $small-space-m,
-  m: $small-space-m,
-  l: $small-space-m,
-  xl: $small-space-m,
-  xxl: $small-space-m,
+  xs: $space-3,
+  s: $space-3,
+  m: $space-3,
+  l: $space-3,
+  xl: $space-4,
+  xxl: $space-4,
 );
 
 $detail-label-margin: (
-  xs: $small-space-xs,
-  s: $small-space-xs,
-  m: $small-space-xs,
-  l: $small-space-xs,
-  xl: $small-space-s,
-  xxl: $small-space-s,
+  xs: $s-space-2,
+  s: $s-space-2,
+  m: $s-space-2,
+  l: $s-space-2,
+  xl: $s-space-3,
+  xxl: $s-space-3,
 );
 
 $story-list-margin: (
-  xs: $spacing-xxl,
-  s: $spacing-xxl,
-  m: $spacing-xxl,
-  l: $spacing-xxl,
-  xl: $large-spacing-xs,
-  xxl: $large-spacing-xs,
-);
-
-$hair-space-y: (
-  xs: $small-space-xs,
-  s: $small-space-xs,
-  m: $small-space-xs,
-  l: $small-space-xs,
-  xl: $small-space-xs,
-  xxl: $small-space-xs,
+  xs: $space-5,
+  s: $space-5,
+  m: $space-5,
+  l: $space-5,
+  xl: $l-spacing-1,
+  xxl: $l-spacing-1,
 );
 
 $footer-icon-spacing: (
-  xs: $spacing-s,
-  s: $spacing-s,
-  m: $spacing-s,
-  l: $spacing-s,
-  xl: $spacing-m,
-  xxl: $spacing-m,
+  xs: $space-1,
+  s: $space-1,
+  m: $space-1,
+  l: $space-1,
+  xl: $space-2,
+  xxl: $space-2,
 );
 
-$radio-input-gap: (
-  xs: $small-space-xs,
-  s: $small-space-xs,
-  m: $small-space-xs,
-  l: $small-space-xs,
-  xl: $small-space-s,
-  xxl: $small-space-s,
-);
 
 // ============================================================================
 // LAYOUT & SIZING
@@ -598,40 +521,22 @@ $media-border-radius: (
 // COMPONENTS
 // ============================================================================
 
-$button-padding: (
-  xs: $small-space-l $spacing-m,
-  s: $small-space-l $spacing-m,
-  m: $small-space-l $spacing-m,
-  l: $small-space-l $spacing-m,
-  xl: $small-space-l $spacing-m,
-  xxl: $small-space-l $spacing-m,
-);
-
-$button-radius: (
-  xs: $small-space-l * 2,
-  s: $small-space-l * 2,
-  m: $small-space-l * 2,
-  l: $small-space-l * 2,
-  xl: $small-space-l * 2,
-  xxl: $small-space-l * 2,
-);
-
 $input-padding: (
-  xs: $small-space-s,
-  s: $small-space-s,
-  m: $small-space-s,
-  l: $small-space-s,
-  xl: $small-space-m,
-  xxl: $small-space-m,
+  xs: $s-space-3,
+  s: $s-space-3,
+  m: $s-space-3,
+  l: $s-space-3,
+  xl: $s-space-4,
+  xxl: $s-space-4,
 );
 
 $price-gap: (
-  xs: $small-space-s,
-  s: $small-space-s,
-  m: $small-space-s,
-  l: $small-space-s,
-  xl: $small-space-m,
-  xxl: $small-space-m,
+  xs: $s-space-3,
+  s: $s-space-3,
+  m: $s-space-3,
+  l: $s-space-3,
+  xl: $s-space-4,
+  xxl: $s-space-4,
 );
 
 // ============================================================================
@@ -646,9 +551,6 @@ $size-maps: (
   medium-copy: $medium-copy,
   small-copy: $small-copy,
   header-font-size: $header-font-size,
-  small-copy-label: $small-copy-label,
-  ui-small: $ui-small,
-  variant-pill: $variant-pill,
   // Spacing & Margins
   page-margin-x: $page-margin-x,
   page-margin-y: $page-margin-y,
@@ -657,25 +559,18 @@ $size-maps: (
   section-media-spacing: $section-media-spacing,
   large-inner-section-gap: $large-inner-section-gap,
   homepage-stories-description-margin-top: $homepage-stories-description-margin-top,
-  paragraph-spacing: $paragraph-spacing,
   inner-section-spacing: $inner-section-spacing,
   products-margin-bottom: $products-margin-bottom,
   product-insert-price-margin: $product-insert-price-margin,
-  products-gap: $products-gap,
-  blurb-button-margin-top: $blurb-button-margin-top,
   form-button-margin-top: $form-button-margin-top,
-  list-margin: $list-margin,
   column-gap: $column-gap,
   inner-column-gap: $inner-column-gap,
   header-gap: $header-gap,
   large-section-gap: $large-section-gap,
   dot-margin-bottom: $dot-margin-bottom,
   founder-image-margin: $founder-image-margin,
-  small-space-y: $small-space-y,
   footer-icon-spacing: $footer-icon-spacing,
-  radio-input-gap: $radio-input-gap,
   detail-label-margin: $detail-label-margin,
-  hair-space-y: $hair-space-y,
   product-details-gap: $product-details-gap,
   filter-label-margin: $filter-label-margin,
   footer-padding: $footer-padding,
@@ -707,8 +602,6 @@ $size-maps: (
   media-border-radius: $media-border-radius,
 
   // Components
-  button-padding: $button-padding,
-  button-radius: $button-radius,
   input-padding: $input-padding,
   price-gap: $price-gap,
 );

@@ -21,7 +21,7 @@
 
   p {
     text-align: center;
-    margin: var(--paragraph-spacing) 0;
+    margin: var(--inner-column-gap) 0;
     max-width: var(--text-max-width);
   }
 
@@ -89,7 +89,7 @@
 
   p {
     text-align: center;
-    margin: var(--paragraph-spacing) 0;
+    margin: var(--inner-column-gap) 0;
     max-width: var(--text-max-width);
   }
 
@@ -170,7 +170,7 @@
 
 .tinkiu-homepage__ethos__images {
   @include flex($gapped: true);
-  margin: var(--paragraph-spacing) 0;
+  margin: var(--inner-column-gap) 0;
 
   .tinkiu-homepage__ethos__image-mobile {
     display: none;

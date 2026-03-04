@@ -20,7 +20,7 @@ variant-selects.tinkiu-product-variant-picker {
     &.product-form__input {
       &--swatch {
         display: flex;
-        gap: var(--radio-input-gap);
+        gap: var(--detail-label-margin);
 
         .swatch-input__input+.swatch-input__label {
           margin: 0;
@@ -43,7 +43,7 @@ variant-selects.tinkiu-product-variant-picker {
             color: black;
             margin: 0;
             border-color: black;
-            font-size: var(--variant-pill);
+            font-size: var(--small-copy);
             padding: 0.625em 1.25em;
           }
 

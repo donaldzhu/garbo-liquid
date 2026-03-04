@@ -4,7 +4,6 @@
 @use 'colors' as *;
 
 
-
 .tinkiu-dot {
   @include square(var(--dot-size));
   background-color: $red;
@@ -46,7 +45,7 @@
     font-size: var(--medium-copy);
     text-align: center;
     font-family: $font-family-body;
-    margin: var(--paragraph-spacing) 0 var(--section-media-spacing);
+    margin: var(--inner-column-gap) 0 var(--section-media-spacing);
   }
 
   .tinkiu-dot {
@@ -99,11 +98,11 @@ main {
     width: 100%;
 
     &:first-child {
-      margin-bottom: var(--list-margin);
+      margin-bottom: var(--inner-column-gap);
     }
 
     &:not(:first-child) {
-      margin-top: var(--list-margin);
+      margin-top: var(--inner-column-gap);
     }
   }
 }

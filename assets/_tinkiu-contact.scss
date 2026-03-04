@@ -38,7 +38,7 @@
   }
 
   .field {
-    margin: var(--paragraph-spacing) 0 0;
+    margin: var(--inner-column-gap) 0 0;
     font-size: var(--small-copy);
   }
 
@@ -95,6 +95,6 @@
 
   .contact__button {
     @include flex;
-    margin-top: var(--blurb-button-margin-top);
+    margin-top: var(--small-space-y);
   }
 }

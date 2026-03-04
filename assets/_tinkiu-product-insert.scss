@@ -9,7 +9,7 @@
 
   .tinkiu-product-insert__details {
     &:not(:first-child) {
-      margin-top: var(--products-gap);
+      margin-top: var(--small-space-y);
     }
 
     &--sold-out {
@@ -43,7 +43,7 @@
     font-size: var(--medium-copy);
     font-family: $font-family-body;
     margin-top: 0;
-    margin-bottom: calc(var(--products-gap) - 0.25rem); // line-height compensation
+    margin-bottom: calc(var(--small-space-y) - 0.25rem); // line-height compensation
     line-height: 1.1;
 
   }

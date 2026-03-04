@@ -1,34 +1,31 @@
-{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-story'].values %}
-{% assign slug = request.path | remove: '/pages/stories' %}
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
 
-{% if slug == blank %}
-  <div class="tinkiu-stories">
-    {% render 'tinkiu-section-header'
-      , title: 'Stories' %}
-    <div class="tinkiu-stories__content">
-      {%- paginate metaobj by 10 -%}
-        {% for story in metaobj %}
-          {% render 'tinkiu-story-preview'
-            , storyData: story
-            , short: true %}
-        {% endfor %}
-        {%- if paginate.pages > 1 -%}
-          {% render 'tinkiu-pagination'
-            , paginate: paginate
-            , anchor: '' %}
-        {%- endif -%}
-      {% endpaginate %}
-    </div>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="tinkiu-text-only tinkiu-full-width">
+  {% render 'tinkiu-section-header'
+    , title: page.title %}
+  <div class="tinkiu-portable-text">
+    {{ page.content }}
   </div>
-{% else %}
-  {% render 'tinkiu-story'
-    , slug: slug
-    , metaobj: metaobj %}
-{% endif %}
+</div>
 
 {% schema %}
   {
-    "name": "Tinkiu Stories",
-    "settings": []
+    "name": "t:sections.main-page.name",
+    "tag": "section",
+    "class": "section"
   }
 {% endschema %}
