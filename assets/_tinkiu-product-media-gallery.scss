@@ -1,13 +1,18 @@
-@use 'layouts' as *;
-@use 'colors' as *;
-@use 'size-maps' as *;
+@use "layouts" as *;
+@use "colors" as *;
+@use "size-maps" as *;
 
 @mixin and-children() {
-
   .product-media-container,
   .product__modal-opener.product__modal-opener--image,
   .product__media.media {
     @content;
+  }
+}
+
+.tinkiu-product-media-gallery-container {
+  @include mobile {
+    display: none;
   }
 }
 
@@ -41,7 +46,9 @@ slider-component.tinkiu-product-media-gallery {
   }
 
   li.product__media-item.grid__item.slider__slide:not(:first-child) {
-    $column-width: calc((var(--product-image-width) - var(--inner-column-gap) * 2) / 3);
+    $column-width: calc(
+      (var(--product-image-width) - var(--inner-column-gap) * 2) / 3
+    );
     width: 100%;
   }
 }

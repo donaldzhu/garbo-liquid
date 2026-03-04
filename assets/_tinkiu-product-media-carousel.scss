@@ -1,0 +1,7 @@
+@use "layouts" as *;
+
+.tinkiu-product-media-carousel-container {
+  @include desktop {
+    display: none;
+  }
+}

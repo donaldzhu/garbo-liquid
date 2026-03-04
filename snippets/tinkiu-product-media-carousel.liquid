@@ -73,14 +73,15 @@
       transition: transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    #MediaGallery-{{ section.id }} .product__media-item {
+    #MediaGallery-{{ section.id }}
+    .product__media-item {
       flex: 0 0 100%;
       width: 100%;
       min-width: 100%;
     }
 
     /* ─── Dot Indicators ──────────────────────────────── */
-    .carousel-dots-{{ section.id }} {
+    #CarouselDots-{{ section.id }} {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -88,18 +89,21 @@
       padding: 12px 0 4px;
     }
 
-    .carousel-dots-{{ section.id }} .dot {
+    #CarouselDots-{{ section.id }}
+    > .dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
       background: currentColor;
       opacity: 0.25;
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      transition: opacity 0.2s ease
+      , transform 0.2s ease;
       flex-shrink: 0;
       cursor: pointer;
     }
 
-    .carousel-dots-{{ section.id }} .dot.is-active {
+    #CarouselDots-{{ section.id }}
+    > .dot.is-active {
       opacity: 1;
       transform: scale(1.4);
     }
@@ -112,7 +116,7 @@
 
   /* ─── Desktop: hide dots only ────────────────────────── */
   @media screen and (min-width: 750px) {
-    .carousel-dots-{{ section.id }} {
+    #CarouselDots-{{ section.id }} {
       display: none;
     }
   }
@@ -149,19 +153,19 @@
           class="product__media-item grid__item slider__slide is-active{% if single_media_visible %} product__media-item--single{% endif %}{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}"
           data-media-id="{{ section.id }}-{{ featured_media.id }}">
           {%- assign media_position = 1 -%}
-          {% render 'tinkiu-product-thumbnail',
-            media: featured_media,
-            media_count: media_count,
-            position: media_position,
-            desktop_layout: section.settings.gallery_layout,
-            mobile_layout: section.settings.mobile_thumbnails,
-            loop: section.settings.enable_video_looping,
-            modal_id: section.id,
-            xr_button: true,
-            media_width: media_width,
-            media_fit: section.settings.media_fit,
-            constrain_to_viewport: section.settings.constrain_to_viewport,
-            lazy_load: false
+          {% render 'tinkiu-product-thumbnail'
+            , media: featured_media
+            , media_count: media_count
+            , position: media_position
+            , desktop_layout: section.settings.gallery_layout
+            , mobile_layout: section.settings.mobile_thumbnails
+            , loop: section.settings.enable_video_looping
+            , modal_id: section.id
+            , xr_button: true
+            , media_width: media_width
+            , media_fit: section.settings.media_fit
+            , constrain_to_viewport: section.settings.constrain_to_viewport
+            , lazy_load: false
           %}
         </li>
       {%- endif -%}
@@ -183,19 +187,19 @@
                 assign lazy_load = true
               endif
             -%}
-            {% render 'tinkiu-product-thumbnail',
-              media: media,
-              media_count: media_count,
-              position: media_position,
-              desktop_layout: section.settings.gallery_layout,
-              mobile_layout: section.settings.mobile_thumbnails,
-              loop: section.settings.enable_video_looping,
-              modal_id: section.id,
-              xr_button: true,
-              media_width: media_width,
-              media_fit: section.settings.media_fit,
-              constrain_to_viewport: section.settings.constrain_to_viewport,
-              lazy_load: lazy_load
+            {% render 'tinkiu-product-thumbnail'
+              , media: media
+              , media_count: media_count
+              , position: media_position
+              , desktop_layout: section.settings.gallery_layout
+              , mobile_layout: section.settings.mobile_thumbnails
+              , loop: section.settings.enable_video_looping
+              , modal_id: section.id
+              , xr_button: true
+              , media_width: media_width
+              , media_fit: section.settings.media_fit
+              , constrain_to_viewport: section.settings.constrain_to_viewport
+              , lazy_load: lazy_load
             %}
           </li>
         {%- endunless -%}
@@ -221,7 +225,7 @@
 
   {%- comment -%} Dot indicators (mobile only) {%- endcomment -%}
   {%- if media_count > 1 -%}
-    <div class="carousel-dots-{{ section.id }}" aria-hidden="true">
+    <div id="CarouselDots-{{ section.id }}" aria-hidden="true">
       {%- for i in (1..media_count) -%}
         <span class="dot{% if forloop.first %} is-active{% endif %}"></span>
       {%- endfor -%}
@@ -256,7 +260,6 @@
           (min-width: 750px) calc((100vw - 15rem) / 8),
           calc((100vw - 8rem) / 3)
         {%- endcapture -%}
-
         {%- if featured_media != null -%}
           {%- liquid
             capture media_index
@@ -319,7 +322,9 @@
               <button
                 class="thumbnail global-media-settings global-media-settings--no-shadow"
                 aria-label="{%- if media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
-                {% if media == product.selected_or_first_available_variant.featured_media or product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %}aria-current="true"{% endif %}
+                {% if media == product.selected_or_first_available_variant.featured_media or product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %}
+                aria-current="true"
+                {% endif %}
                 aria-controls="GalleryViewer-{{ section.id }}"
                 aria-describedby="{{ thumbnail_id }}">
                 {{ media.preview_image | image_url: width: 832 | image_tag: loading: 'lazy', sizes: sizes, widths: '54, 74, 104, 162, 208, 324, 416, 624, 832, 1248', id: thumbnail_id, alt: media.alt | escape }}
@@ -346,81 +351,72 @@
 </media-gallery>
 
 <script>
-  (function () {
-    var sectionId   = {{ section.id | json }};
-    var list        = document.getElementById('Slider-Gallery-' + sectionId);
-    var dotsWrap    = document.querySelector('.carousel-dots-' + sectionId);
+  (() => {
+    if (window.innerWidth >= 750) return;
 
-    if (!list) return;
+    const sectionId = {{ section.id | json }};
+    const gallery   = document.getElementById(`MediaGallery-${sectionId}`);
+    const list      = document.getElementById(`Slider-Gallery-${sectionId}`);
+    const dotsWrap  = document.getElementById(`CarouselDots-${sectionId}`);
 
-    var slides = Array.from(list.querySelectorAll('.product__media-item'));
-    var count  = slides.length;
+    if (!gallery || !list) return;
+
+    const slides = [...list.querySelectorAll(':scope > .product__media-item')];
+    const count  = slides.length;
     if (count < 2) return;
 
     // ── State ────────────────────────────────────────────────────────────────
-    var current   = 0;   // logical index into real slides (0-based)
-    var animating = false;
+    let current   = 0;   // logical index (0-based) into real slides
+    let vIndex    = 1;   // virtual index; real slides sit at 1..count
+    let animating = false;
 
-    // Virtual index: real slides live at 1..count inside [clone-last, ...real..., clone-first]
-    // We manage this purely with transform — no DOM clones needed because we
-    // only ever show the current slide and briefly reveal the next during animation.
-    // Instead: prepend clone of last, append clone of first (one each).
-    var clonePre  = slides[count - 1].cloneNode(true);
-    var clonePost = slides[0].cloneNode(true);
+    // ── Clone first/last for infinite loop ───────────────────────────────────
+    // Layout: [clone-of-last | slide-0 … slide-n | clone-of-first]
+    const clonePre  = slides.at(-1).cloneNode(true);
+    const clonePost = slides[0].cloneNode(true);
     clonePre.setAttribute('aria-hidden', 'true');
     clonePost.setAttribute('aria-hidden', 'true');
     list.insertBefore(clonePre, slides[0]);
     list.appendChild(clonePost);
 
-    // Total virtual count = count + 2; virtual index of real[0] = 1
-    var vIndex = 1; // starts at real slide 0
-
-    // Position track to current vIndex instantly (no animation)
-    function setTrack(vi, animated) {
-      if (animated) list.classList.add('is-animating');
-      else          list.classList.remove('is-animating');
-      list.style.transform = 'translateX(' + (-vi * 100) + '%)';
-    }
+    // ── Track position ───────────────────────────────────────────────────────
+    const setTrack = (vi, animated) => {
+      list.classList.toggle('is-animating', animated);
+      list.style.transform = `translateX(${-vi * 100}%)`;
+    };
 
     setTrack(vIndex, false);
 
     // ── Dots ─────────────────────────────────────────────────────────────────
-    var dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll('.dot')) : [];
+    const dots = dotsWrap ? [...dotsWrap.querySelectorAll(':scope > .dot')] : [];
 
-    function updateDots() {
-      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === current); });
-    }
+    const updateDots = () => {
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+    };
     updateDots();
 
-    // ── Navigate one step ────────────────────────────────────────────────────
-    function goTo(direction) { // direction: +1 or -1
+    // ── Navigate ─────────────────────────────────────────────────────────────
+    const goTo = (direction) => {
       if (animating) return;
       animating = true;
-
       vIndex += direction;
       setTrack(vIndex, true);
-    }
+    };
 
-    // After the CSS transition ends, silently jump if we're on a clone
-    list.addEventListener('transitionend', function (e) {
-      // Only act on transform transitions on the list itself, not children
+    // ── Transition end: silent teleport when landing on a clone ──────────────
+    list.addEventListener('transitionend', (e) => {
       if (e.target !== list || e.propertyName !== 'transform') return;
 
       if (vIndex === 0 || vIndex === count + 1) {
-        var target      = vIndex === 0 ? count : 1;
-        var nextCurrent = vIndex === 0 ? count - 1 : 0;
+        const target      = vIndex === 0 ? count : 1;
+        const nextCurrent = vIndex === 0 ? count - 1 : 0;
 
-        // 1. Remove transition class so next transform is instant
+        // Strip transition before jumping — force reflow to commit it first
         list.classList.remove('is-animating');
-
-        // 2. Force reflow — commits the class removal before we move the track,
-        //    preventing any flash/blink on the loop-around
-        void list.offsetWidth;
-
-        // 3. Jump to the real mirror slide with no active transition
+        list.offsetWidth; // reflow
         vIndex  = target;
         current = nextCurrent;
-        list.style.transform = 'translateX(' + (-vIndex * 100) + '%)';
+        list.style.transform = `translateX(${-vIndex * 100}%)`;
       } else {
         list.classList.remove('is-animating');
         current = vIndex - 1;
@@ -431,59 +427,49 @@
     });
 
     // ── Touch handling ───────────────────────────────────────────────────────
-    var touchStartX = 0;
-    var touchStartY = 0;
-    var isDragging  = false;
-    var THRESHOLD   = 40; // px needed to register a swipe
+    const THRESHOLD = 40;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isDragging  = false;
 
-    list.addEventListener('touchstart', function (e) {
+    list.addEventListener('touchstart', (e) => {
       touchStartX = e.touches[0].clientX;
       touchStartY = e.touches[0].clientY;
       isDragging  = true;
     }, { passive: true });
 
-    list.addEventListener('touchmove', function (e) {
+    list.addEventListener('touchmove', (e) => {
       if (!isDragging) return;
-      var dx = e.touches[0].clientX - touchStartX;
-      var dy = e.touches[0].clientY - touchStartY;
-      // If primarily vertical, let the browser handle it and cancel our swipe
-      if (Math.abs(dy) > Math.abs(dx)) {
-        isDragging = false;
-      }
+      const dx = e.touches[0].clientX - touchStartX;
+      const dy = e.touches[0].clientY - touchStartY;
+      // Bail if gesture is more vertical than horizontal
+      if (Math.abs(dy) > Math.abs(dx)) isDragging = false;
     }, { passive: true });
 
-    list.addEventListener('touchend', function (e) {
+    list.addEventListener('touchend', (e) => {
       if (!isDragging) return;
       isDragging = false;
-      var dx = e.changedTouches[0].clientX - touchStartX;
+      const dx = e.changedTouches[0].clientX - touchStartX;
       if (dx < -THRESHOLD) goTo(+1);
       else if (dx > THRESHOLD) goTo(-1);
     });
 
     // ── Dot clicks ───────────────────────────────────────────────────────────
-    if (dotsWrap) {
-      dotsWrap.addEventListener('click', function (e) {
-        var dot = e.target.closest('.dot');
-        if (!dot || animating) return;
-        var idx = dots.indexOf(dot);
-        if (idx === current || idx < 0) return;
-        var dir = idx > current ? +1 : -1;
-        // Step one at a time, queuing is not needed — dots jump directly
-        // by temporarily setting vIndex to the target without animation then firing one step
-        // Simpler: just animate one step in the right direction per tap;
-        // for multi-step, we jump directly.
-        var stepsAway = Math.abs(idx - current);
-        if (stepsAway === 1) {
-          goTo(dir);
-        } else {
-          // Instant jump without loop-wrap (direct, no clone logic needed for dots)
-          animating = true;
-          current = idx;
-          vIndex  = idx + 1;
-          setTrack(vIndex, true);
-          // transitionend will clean up animating flag and updateDots
-        }
-      });
-    }
+    dotsWrap?.addEventListener('click', (e) => {
+      const dot = e.target.closest('.dot');
+      if (!dot || animating) return;
+      const idx = dots.indexOf(dot);
+      if (idx < 0 || idx === current) return;
+      const stepsAway = Math.abs(idx - current);
+      if (stepsAway === 1) {
+        goTo(idx > current ? +1 : -1);
+      } else {
+        // Multi-step: jump directly (transitionend handles cleanup)
+        animating = true;
+        current   = idx;
+        vIndex    = idx + 1;
+        setTrack(vIndex, true);
+      }
+    });
   })();
 </script>

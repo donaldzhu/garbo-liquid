@@ -1,9 +1,8 @@
-@use 'layouts' as *;
-@use 'colors' as *;
+@use "layouts" as *;
+@use "colors" as *;
 
 // FINISHED
 .product__info-wrapper div.tinkiu-buy-buttons {
-
   &,
   & product-form {
     margin: 0;
@@ -24,13 +23,15 @@
     }
   }
 
-
   div.product-form__buttons {
     @include split($gap: var(--inner-column-gap));
+    button {
+      flex-grow: 1;
+    }
   }
 
   button#tcustomizer-add,
-  button[type='submit'],
+  button[type="submit"],
   button.shopify-payment-button__button {
     @include cta-button;
     margin: 0;
