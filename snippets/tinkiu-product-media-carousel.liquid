@@ -341,39 +341,36 @@
 <script>
   (() => {
     const sectionId = {{ section.id | json }};
-    const list      = document.getElementById(`Slider-Gallery-${sectionId}`);
-    const dotsWrap  = document.getElementById(`CarouselDots-${sectionId}`);
+    const list = document.getElementById('Slider-Gallery-' + sectionId);
+    const dotsContainer = document.querySelector('.carousel-dots-' + sectionId);
 
-    if (!list) return;
+    if (!list || !dotsContainer || window.innerWidth >= 750) return;
 
+    const dots   = [...dotsContainer.querySelectorAll('.dot')];
     const slides = [...list.querySelectorAll('.product__media-item')];
-    const count  = slides.length;
-    if (count < 2) return;
-
-    const dots = dotsWrap ? [...dotsWrap.querySelectorAll('.dot')] : [];
 
     const updateDots = (index) => {
-      dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
     };
 
-    // IntersectionObserver: update active dot as slides scroll into view
     const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const idx = slides.indexOf(entry.target);
           if (idx !== -1) updateDots(idx);
         }
-      }
+      });
     }, { root: list, threshold: 0.5 });
 
     slides.forEach((slide) => observer.observe(slide));
 
-    // Dot clicks scroll to the matching slide
-    dotsWrap?.addEventListener('click', (e) => {
+    dotsContainer.addEventListener('click', (e) => {
       const dot = e.target.closest('.dot');
       if (!dot) return;
       const idx = dots.indexOf(dot);
-      if (idx !== -1) slides[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      if (idx !== -1 && slides[idx]) {
+        slides[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      }
     });
   })();
 </script>
