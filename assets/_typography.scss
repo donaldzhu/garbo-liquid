@@ -8,7 +8,6 @@ $subheader-xxl: 3.2rem;
 $subheader-xl: 2.8rem;
 $subheader-l: 2.4rem;
 
-
 $large-copy-xl: 1.85rem;
 $large-copy-l: 1.65rem;
 $large-copy-m: 1.45rem;
@@ -20,17 +19,16 @@ $copy-m: 1.25rem;
 $copy-s: 1.2rem;
 $copy-xs: 1.2rem;
 
-$font-family-heading: 'Fenul', serif;
-$font-family-body: 'Dazzed', sans-serif;
+$font-family-heading: "Fenul", serif;
+$font-family-body: "Dazzed", sans-serif;
 
-$facet-label-line-height: 1.1;
+$facet-label-line-height: 1.15;
 $subsection-header-letter-spacing: 0.02em;
-
 
 @mixin detail-caption() {
   font-family: $font-family-body;
   font-size: var(--small-copy);
-  line-height: 1.1;
+  line-height: 1.15;
   color: black;
 }
 
@@ -40,7 +38,7 @@ $subsection-header-letter-spacing: 0.02em;
   text-transform: uppercase;
   margin-bottom: 0.2rem;
 
-  &~p {
+  & ~ p {
     margin-bottom: var(--detail-label-margin);
   }
 }

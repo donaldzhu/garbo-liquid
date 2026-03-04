@@ -1,6 +1,4 @@
-@use 'tinkiu-entry' as *;
-
-
+@use "tinkiu-entry" as *;
 
 ul {
   list-style: none;
@@ -31,11 +29,10 @@ body {
   background-color: $ash;
 }
 
-
 body,
 p,
 button {
-  font-family: 'Dazzed', sans-serif;
+  font-family: "Dazzed", sans-serif;
 }
 
 p {
@@ -48,14 +45,13 @@ button {
 }
 
 body {
-
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: 'Fenul', serif;
+    font-family: "Fenul", serif;
     margin: 0;
     letter-spacing: -0.003em;
   }
@@ -66,10 +62,8 @@ body {
     line-height: 1.15;
   }
 
-
   input.field__input,
   textarea.text-area {
-
     &,
     &:focus,
     &:not(:placeholder-shown) {
@@ -84,14 +78,13 @@ body {
   .field,
   input.field__input,
   textarea.text-area {
-
     &::before,
     &::after {
       display: none;
     }
 
-    &:focus~label,
-    &:not(:placeholder-shown)~label {
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
       display: none;
     }
   }
@@ -108,7 +101,6 @@ body {
 #shop-hcaptcha-badge-container {
   display: none !important;
 }
-
 
 video {
   background-color: $ash-dark;
@@ -127,9 +119,7 @@ img {
     fill: $red;
   }
 
-
   &--all-white {
-
     .tinkiu-logo-text,
     .tinkiu-logo-seal {
       fill: white;
@@ -137,7 +127,6 @@ img {
   }
 
   &--all-black {
-
     .tinkiu-logo-text,
     .tinkiu-logo-seal {
       fill: black;
@@ -151,9 +140,9 @@ img {
   }
 }
 
-
 .tinkiu-full-width {
   @include flex($column: true);
+  gap: var(--inner-section-spacing);
   width: var(--full-width);
   margin: 0 max(var(--page-margin-x), calc(100vw - var(--full-width)) / 2);
 }

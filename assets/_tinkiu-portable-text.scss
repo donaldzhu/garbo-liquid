@@ -1,5 +1,5 @@
-@use 'layouts' as *;
-@use 'typography' as *;
+@use "layouts" as *;
+@use "typography" as *;
 
 .tinkiu-portable-text {
   @include flex($column: true, $inset-width: true, $align: flex-start);
@@ -23,11 +23,25 @@
 
   ul {
     display: block;
-    list-style: disc;
   }
 
   li {
     line-height: 1.2;
+
+    list-style: none; // Remove default bullet
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: calc(
+        -0.65 * var(--story-list-margin)
+      ); // Exact distance from the text
+    }
+
+    &:not(:first-child) {
+      margin-top: var(--inner-column-gap);
+    }
   }
 
   img,

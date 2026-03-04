@@ -1,8 +1,7 @@
-@use 'size-maps' as *;
-@use 'layouts' as *;
-@use 'typography' as *;
-@use 'colors' as *;
-
+@use "size-maps" as *;
+@use "layouts" as *;
+@use "typography" as *;
+@use "colors" as *;
 
 .tinkiu-product-insert {
   @include flex($column: true, $flex-start: true);
@@ -13,7 +12,6 @@
     }
 
     &--sold-out {
-
       .tinkiu-product-insert__details__title,
       p {
         color: $dark-gray;
@@ -27,7 +25,6 @@
       .tinkiu-product-insert__details__sold-out {
         font-weight: normal;
       }
-
     }
   }
 
@@ -43,9 +40,10 @@
     font-size: var(--medium-copy);
     font-family: $font-family-body;
     margin-top: 0;
-    margin-bottom: calc(var(--small-space-y) - 0.25rem); // line-height compensation
-    line-height: 1.1;
-
+    margin-bottom: calc(
+      var(--small-space-y) - 0.25rem
+    ); // line-height compensation
+    line-height: 1.15;
   }
 
   &--small {

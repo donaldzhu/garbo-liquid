@@ -1,9 +1,9 @@
-@use 'colors' as *;
-@use 'sizes' as *;
-@use 'typography' as *;
-@use 'layouts' as *;
+@use "colors" as *;
+@use "sizes" as *;
+@use "typography" as *;
+@use "layouts" as *;
 
-header {
+.tinkiu-homepage-header {
   @include flex($full-screen: true, $align: center, $justify: space-between);
   padding: var(--header-margin-y) var(--page-margin-x);
   position: fixed;
@@ -43,7 +43,6 @@ header {
   }
 
   @include mobile {
-
     .tinkiu-header__hamburger,
     .tinkiu-header__cart-mobile {
       padding: 0;
@@ -64,7 +63,7 @@ header {
 
       .tinkiu-header__close__icon {
         display: none;
-        transform: translateX(-10%)
+        transform: translateX(-10%);
       }
     }
 
@@ -78,16 +77,9 @@ header {
     }
 
     .tinkiu-header__mobile-popup {
+      @include blurred-background;
       @include fullscreen;
       @include flex($column: true, $align: flex-start);
-
-      background-color: rgba($ash, 0.85);
-      backdrop-filter: blur(15px);
-      position: fixed;
-      max-width: 100dvw;
-      max-height: 100dvh !important;
-      top: 0;
-      left: 0;
       transform: none;
       display: none;
 
@@ -96,13 +88,18 @@ header {
       }
 
       p {
-        @include detail-label;
+        /* @include detail-label; */
+        font-weight: bold;
         margin-bottom: var(--section-media-spacing);
       }
 
       ul {
-        @include flex($full-width: true, $section-gapped: true, $flex-start: true, $column: true);
-
+        @include flex(
+          $full-width: true,
+          $section-gapped: true,
+          $flex-start: true,
+          $column: true
+        );
 
         li,
         a {
@@ -112,12 +109,10 @@ header {
         a {
           padding: var(--small-space-y) 0;
         }
-
-
       }
     }
 
-    >ul {
+    > ul {
       display: none;
     }
   }

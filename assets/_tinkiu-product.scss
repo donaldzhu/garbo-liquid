@@ -1,20 +1,20 @@
-@use 'sizes' as *;
-@use 'layouts' as *;
-@use 'colors' as *;
-@use 'typography' as *;
+@use "sizes" as *;
+@use "layouts" as *;
+@use "colors" as *;
+@use "typography" as *;
 
-@forward 'tinkiu-price';
-@forward 'tinkiu-product-variant-picker';
-@forward 'tinkiu-product-details';
-@forward 'tinkiu-buy-buttons';
-@forward 'tinkiu-product-tcustomizer';
-@forward 'tinkiu-product-media-gallery';
-@forward 'tinkiu-product-media-modal';
-@forward 'tinkiu-product-list';
-@forward 'tinkiu-product-section';
-@forward 'tinkiu-product-grid';
-@forward 'tinkiu-product-insert';
-@forward 'tinkiu-main-collection-banner';
+@forward "tinkiu-price";
+@forward "tinkiu-product-variant-picker";
+@forward "tinkiu-product-details";
+@forward "tinkiu-buy-buttons";
+@forward "tinkiu-product-tcustomizer";
+@forward "tinkiu-product-media-gallery";
+@forward "tinkiu-product-media-modal";
+@forward "tinkiu-product-list";
+@forward "tinkiu-product-section";
+@forward "tinkiu-product-grid";
+@forward "tinkiu-product-insert";
+@forward "tinkiu-main-collection-banner";
 
 product-info.tinkiu-product {
   @include flex($column: true);
@@ -50,18 +50,18 @@ product-info.tinkiu-product {
     }
   }
 
-  .product__info-container>div:first-child {
+  .product__info-container > div:first-child {
     margin: 0;
   }
 
   .product__title {
-    margin-bottom: var(--homepage-stories-description-margin-top);
+    margin-bottom: var(--section-media-spacing);
   }
 
-  .product__title>h1 {
+  .product__title > h1 {
     text-transform: uppercase;
     margin: 0;
-    line-height: 1.1;
+    line-height: 1.15;
     font-size: var(--subsection-header);
     max-width: var(--side-info-width);
   }

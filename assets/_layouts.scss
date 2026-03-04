@@ -1,23 +1,32 @@
-@use 'sizes' as *;
-@use 'colors' as *;
-@use 'typography' as *;
-
+@use "sizes" as *;
+@use "colors" as *;
+@use "typography" as *;
 
 @mixin square($size: 100%) {
   width: $size;
   height: $size;
 }
 
-@mixin flex($align: center, $justify: center, $column: false, $flex-start: false, $gapped: false, $section-gapped: false, $full-screen: false, $full-width: false, $inset-width: false, $no-padding: false, $no-space: false) {
+@mixin flex(
+  $align: center,
+  $justify: center,
+  $column: false,
+  $flex-start: false,
+  $gapped: false,
+  $section-gapped: false,
+  $full-screen: false,
+  $full-width: false,
+  $inset-width: false,
+  $no-padding: false,
+  $no-space: false
+) {
   display: flex;
   align-items: $align;
   justify-content: $justify;
 
   @if $column {
     flex-direction: column;
-  }
-
-  @else {
+  } @else {
     flex-direction: row;
   }
 
@@ -92,20 +101,39 @@
 }
 
 @function column-width($column-count, $full-width: var(--full-width)) {
-  $single-column-width: calc((#{$full-width} - (#{$total-columns} - 1) * var(--column-gap)) / #{$total-columns});
-  @return calc(#{$single-column-width} * #{$column-count} + var(--column-gap) * (#{$column-count} - 1));
+  $single-column-width: calc(
+    (#{$full-width} - (#{$total-columns} - 1) * var(--column-gap)) /
+      #{$total-columns}
+  );
+  @return calc(
+    #{$single-column-width} * #{$column-count} + var(--column-gap) *
+      (#{$column-count} - 1)
+  );
 }
 
-@function side-info-column-width($column-count, $full-width: var(--side-info-width)) {
-  $single-column-width: calc((#{$full-width} - (#{$side-info-columns} - 1) * var(--column-gap)) / #{$side-info-columns});
-  @return calc(#{$single-column-width} * #{$column-count} + var(--column-gap) * (#{$column-count} - 1));
+@function side-info-column-width(
+  $column-count,
+  $full-width: var(--side-info-width)
+) {
+  $single-column-width: calc(
+    (#{$full-width} - (#{$side-info-columns} - 1) * var(--column-gap)) /
+      #{$side-info-columns}
+  );
+  @return calc(
+    #{$single-column-width} * #{$column-count} + var(--column-gap) *
+      (#{$column-count} - 1)
+  );
 }
 
 @function border($color: $red) {
   @return $color 1px solid;
 }
 
-@mixin details($responsive: false, $no-container-width: false, $no-inner-width: false) {
+@mixin details(
+  $responsive: false,
+  $no-container-width: false,
+  $no-inner-width: false
+) {
   @include flex($flex-start: true);
   flex-wrap: wrap;
   gap: var(--inner-column-gap);
@@ -118,20 +146,18 @@
       }
 
       @if $no-inner-width ==false {
-        >div {
+        > div {
           width: side-info-column-width(2);
         }
       }
     }
-  }
-
-  @else {
+  } @else {
     @if $no-container-width ==false {
       width: var(--side-info-width);
     }
 
     @if $no-inner-width ==false {
-      >div {
+      > div {
         width: side-info-column-width(2);
       }
     }
@@ -142,10 +168,8 @@
     @include detail-caption;
   }
 
-  >div {
+  > div {
     @include flex($column: true, $flex-start: true);
-
-
 
     p:first-child {
       @include detail-label;
@@ -206,7 +230,6 @@
 }
 
 @mixin no-focus-outline {
-
   &:focus,
   &:focus-visible {
     outline: none;
@@ -230,21 +253,18 @@
   display: flex;
   gap: $gap;
 
-  >* {
+  > * {
     width: calc((100% - (#{$split-count} - 1) * #{$gap}) / #{$split-count});
   }
 }
 
 @mixin inset-width($use-max-width: false) {
-
   $inset-width: var(--inset-width);
 
   @if $use-max-width {
     width: fit-content;
     max-width: var(--inset-width);
-  }
-
-  @else {
+  } @else {
     width: var(--inset-width);
   }
 }
@@ -255,9 +275,7 @@
   @if $use-max-width {
     width: fit-content;
     max-width: $half-inset-width;
-  }
-
-  @else {
+  } @else {
     width: $half-inset-width;
   }
 }
@@ -296,7 +314,7 @@
   width: var(--full-width);
 
   @include below-large-desktop {
-    >:nth-child(3):nth-last-child(2) {
+    > :nth-child(3):nth-last-child(2) {
       display: none;
     }
   }
@@ -307,18 +325,34 @@
   }
 
   @include below-medium-mobile {
-    >:nth-child(3):nth-last-child(2) {
+    > :nth-child(3):nth-last-child(2) {
       display: flex;
     }
   }
 }
 
 @mixin uninherit-button {
-
   &,
   &:hover {
     color: black;
     background-color: transparent;
     border: none;
   }
+}
+
+@function capped-size($height) {
+  @return min(var(--full-width), #{$height});
+}
+
+@mixin blurred-background($opacity: 0.8) {
+  background-color: rgba($ash, $opacity);
+  backdrop-filter: blur(15px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-width: 100dvw;
+  max-height: 100dvh !important;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
 }
