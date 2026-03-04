@@ -44,81 +44,69 @@
 -%}
 
 <style>
-  /* ─── Mobile: transform-driven carousel (one slide at a time) ─── */
-  @media screen and (max-width: 749px) {
-    #MediaGallery-{{ section.id }} .tinkiu-product-media-gallery {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    /* The track slides via transform — no overflow scroll at all */
-    #MediaGallery-{{ section.id }} .product__media-list {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow: visible;
-      gap: 0;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      will-change: transform;
-      user-select: none;
-      -webkit-user-select: none;
-      /* Must be on the scrollable element that receives touch events */
-      touch-action: pan-y;
-    }
-
-    /* Animate only when JS adds this class (not during touch drag) */
-    #MediaGallery-{{ section.id }} .product__media-list.is-animating {
-      transition: transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    #MediaGallery-{{ section.id }}
-    .product__media-item {
-      flex: 0 0 100%;
-      width: 100%;
-      min-width: 100%;
-    }
-
-    /* ─── Dot Indicators ──────────────────────────────── */
-    #CarouselDots-{{ section.id }} {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-      padding: 12px 0 4px;
-    }
-
-    #CarouselDots-{{ section.id }}
-    > .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: currentColor;
-      opacity: 0.25;
-      transition: opacity 0.2s ease
-      , transform 0.2s ease;
-      flex-shrink: 0;
-      cursor: pointer;
-    }
-
-    #CarouselDots-{{ section.id }}
-    > .dot.is-active {
-      opacity: 1;
-      transform: scale(1.4);
-    }
-
-    /* Hide desktop thumbnail strip on mobile */
-    #GalleryThumbnails-{{ section.id }} {
-      display: none !important;
-    }
+  #MediaGallery-{{ section.id }} .tinkiu-product-media-gallery {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
   }
 
-  /* ─── Desktop: hide dots only ────────────────────────── */
-  @media screen and (min-width: 750px) {
-    #CarouselDots-{{ section.id }} {
-      display: none;
-    }
+  #MediaGallery-{{ section.id }}
+  .product__media-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #MediaGallery-{{ section.id }}
+  .product__media-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  #MediaGallery-{{ section.id }}
+  .product__media-item {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  #CarouselDots-{{ section.id }} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 0 4px;
+  }
+
+  #CarouselDots-{{ section.id }}
+  > .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.25;
+    transition: opacity 0.2s ease
+    , transform 0.2s ease;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  #CarouselDots-{{ section.id }}
+  > .dot.is-active {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+
+  #GalleryThumbnails-{{ section.id }} {
+    display: none !important;
   }
 </style>
 
@@ -352,157 +340,40 @@
 
 <script>
   (() => {
-    const LOG = (...args) => console.log('[Carousel]', ...args);
-
-    LOG('Script executing, innerWidth:', window.innerWidth);
-
-    if (window.innerWidth >= 750) {
-      LOG('Bailing — desktop width, carousel disabled');
-      return;
-    }
-
     const sectionId = {{ section.id | json }};
-    LOG('Section ID:', sectionId);
+    const list      = document.getElementById(`Slider-Gallery-${sectionId}`);
+    const dotsWrap  = document.getElementById(`CarouselDots-${sectionId}`);
 
-    const gallery  = document.getElementById(`MediaGallery-${sectionId}`);
-    const list     = document.getElementById(`Slider-Gallery-${sectionId}`);
-    const dotsWrap = document.getElementById(`CarouselDots-${sectionId}`);
-
-    LOG('gallery:', gallery);
-    LOG('list:', list);
-    LOG('dotsWrap:', dotsWrap);
-
-    if (!gallery || !list) {
-      LOG('ERROR: gallery or list element not found — aborting');
-      return;
-    }
+    if (!list) return;
 
     const slides = [...list.querySelectorAll('.product__media-item')];
     const count  = slides.length;
-    LOG('Slides found:', count, slides);
+    if (count < 2) return;
 
-    if (count < 2) {
-      LOG('Bailing — fewer than 2 slides, no carousel needed');
-      return;
-    }
-
-    // ── State ────────────────────────────────────────────────────────────────
-    let current   = 0;
-    let vIndex    = 1;
-    let animating = false;
-
-    // ── Clone first/last for infinite loop ───────────────────────────────────
-    const clonePre  = slides.at(-1).cloneNode(true);
-    const clonePost = slides[0].cloneNode(true);
-    clonePre.setAttribute('aria-hidden', 'true');
-    clonePost.setAttribute('aria-hidden', 'true');
-    list.insertBefore(clonePre, slides[0]);
-    list.appendChild(clonePost);
-    LOG('Clones inserted. Total children in list:', list.children.length);
-
-    // ── Track position ───────────────────────────────────────────────────────
-    const setTrack = (vi, animated) => {
-      list.classList.toggle('is-animating', animated);
-      list.style.transform = `translateX(${-vi * 100}%)`;
-      LOG(`setTrack(vi=${vi}, animated=${animated}) → transform: translateX(${-vi * 100}%)`);
-    };
-
-    setTrack(vIndex, false);
-
-    // ── Dots ─────────────────────────────────────────────────────────────────
     const dots = dotsWrap ? [...dotsWrap.querySelectorAll('.dot')] : [];
-    LOG('Dots found:', dots.length);
 
-    const updateDots = () => {
-      dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
-      LOG('updateDots → active index:', current);
-    };
-    updateDots();
-
-    // ── Navigate ─────────────────────────────────────────────────────────────
-    const goTo = (direction) => {
-      LOG(`goTo(${direction}) — animating=${animating}, current=${current}, vIndex=${vIndex}`);
-      if (animating) { LOG('Blocked — already animating'); return; }
-      animating = true;
-      vIndex += direction;
-      setTrack(vIndex, true);
+    const updateDots = (index) => {
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
     };
 
-    // ── Transition end ───────────────────────────────────────────────────────
-    list.addEventListener('transitionend', (e) => {
-      LOG('transitionend fired — target === list:', e.target === list, 'property:', e.propertyName);
-      if (e.target !== list || e.propertyName !== 'transform') return;
-
-      if (vIndex === 0 || vIndex === count + 1) {
-        const target      = vIndex === 0 ? count : 1;
-        const nextCurrent = vIndex === 0 ? count - 1 : 0;
-        LOG(`Loop wrap: vIndex ${vIndex} → ${target}, current → ${nextCurrent}`);
-        list.classList.remove('is-animating');
-        list.offsetWidth; // reflow
-        vIndex  = target;
-        current = nextCurrent;
-        list.style.transform = `translateX(${-vIndex * 100}%)`;
-      } else {
-        list.classList.remove('is-animating');
-        current = vIndex - 1;
-        LOG(`Normal slide end: current=${current}`);
+    // IntersectionObserver: update active dot as slides scroll into view
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const idx = slides.indexOf(entry.target);
+          if (idx !== -1) updateDots(idx);
+        }
       }
+    }, { root: list, threshold: 0.5 });
 
-      updateDots();
-      animating = false;
-    });
+    slides.forEach((slide) => observer.observe(slide));
 
-    // ── Touch handling ───────────────────────────────────────────────────────
-    const THRESHOLD = 40;
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let isDragging  = false;
-
-    list.addEventListener('touchstart', (e) => {
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-      isDragging  = true;
-      LOG('touchstart at', touchStartX, touchStartY);
-    }, { passive: true });
-
-    list.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      const dx = e.touches[0].clientX - touchStartX;
-      const dy = e.touches[0].clientY - touchStartY;
-      if (Math.abs(dy) > Math.abs(dx)) {
-        LOG('touchmove: vertical gesture detected, cancelling swipe');
-        isDragging = false;
-      }
-    }, { passive: true });
-
-    list.addEventListener('touchend', (e) => {
-      LOG('touchend — isDragging:', isDragging);
-      if (!isDragging) return;
-      isDragging = false;
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      LOG('touchend dx:', dx, 'threshold:', THRESHOLD);
-      if (dx < -THRESHOLD) goTo(+1);
-      else if (dx > THRESHOLD) goTo(-1);
-      else LOG('Swipe too short, ignored');
-    });
-
-    LOG('All listeners attached ✓');
-
-    // ── Dot clicks ───────────────────────────────────────────────────────────
+    // Dot clicks scroll to the matching slide
     dotsWrap?.addEventListener('click', (e) => {
       const dot = e.target.closest('.dot');
-      if (!dot || animating) return;
+      if (!dot) return;
       const idx = dots.indexOf(dot);
-      if (idx < 0 || idx === current) return;
-      const stepsAway = Math.abs(idx - current);
-      if (stepsAway === 1) {
-        goTo(idx > current ? +1 : -1);
-      } else {
-        animating = true;
-        current   = idx;
-        vIndex    = idx + 1;
-        setTrack(vIndex, true);
-      }
+      if (idx !== -1) slides[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     });
   })();
 </script>
