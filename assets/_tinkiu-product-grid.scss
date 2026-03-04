@@ -353,7 +353,7 @@ details.facets__disclosure-vertical[open] {
   }
 
   @include below-small-mobile {
-    @include split(1);
+    @include split(2);
   }
 
   .tinkiu-product-insert .tinkiu-product-insert__images img {

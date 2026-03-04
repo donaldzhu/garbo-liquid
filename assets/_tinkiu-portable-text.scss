@@ -2,7 +2,7 @@
 @use 'typography' as *;
 
 .tinkiu-portable-text {
-  @include flex($column: true, $inset-width: true);
+  @include flex($column: true, $inset-width: true, $align: flex-start);
 
   p {
     line-height: 1.2;
@@ -45,7 +45,7 @@
   ol,
   ul {
     &:not(:first-child) {
-      margin: var(--section-media-spacing) 0 0 !important;
+      margin: var(--small-section-media-spacing) 0 0 !important;
     }
   }
 }

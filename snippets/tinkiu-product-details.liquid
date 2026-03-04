@@ -7,7 +7,7 @@
 {% endfor %}
 
 
-<div class="tinkiu-product-details">
+<div class="tinkiu-product-details {% if genders == '' %}tinkiu-product-details--no-gender{% endif %}">
   <div class="tinkiu-product-detail">
     <p>CATEGORY</p>
     <p>{{ product.category }}</p>

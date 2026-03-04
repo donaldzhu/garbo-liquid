@@ -6,13 +6,17 @@
   .tinkiu-own-story__content {
     @include flex($column: true);
     width: var(--full-width);
+    margin: var(--small-section-media-spacing) 0;
   }
 
   .tinkiu-own-story__gallery {
-    @include flex($gapped: true, );
+    margin: var(--section-media-spacing) 0;
+  }
+
+  .tinkiu-own-story__gallery__images {
+    @include flex($gapped: true);
     width: var(--full-width);
     flex-wrap: wrap;
-    margin: var(--section-media-spacing) 0;
 
     img {
       --column-count: 3;
@@ -23,7 +27,6 @@
         --column-count: 2;
       }
     }
-
   }
 
 
@@ -36,12 +39,18 @@
   }
 
   .tinkiu-own-story__images {
-    @include flex($gapped: true, $column: true);
     width: var(--inset-width);
     margin-top: var(--section-media-spacing);
 
     img {
       width: 100%;
     }
+  }
+
+  .tinkiu-own-story__vimeo,
+  .tinkiu-own-story__images,
+  .tinkiu-own-story__gallery {
+    @include flex($column: true);
+    gap: var(--small-section-media-spacing);
   }
 }

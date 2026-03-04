@@ -14,4 +14,16 @@ div.tinkiu-product-details {
   p:first-child {
     @include detail-label;
   }
+
+  &--no-gender {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .tinkiu-product-detail {
+    @include mobile {
+      display: none;
+    }
+  }
 }

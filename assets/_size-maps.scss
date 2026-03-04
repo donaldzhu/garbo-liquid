@@ -118,6 +118,16 @@ $page-margin-y: (
   xxl: $spacing-m,
 );
 
+
+$small-section-media-spacing: (
+  xs: $spacing-m,
+  s: $spacing-m,
+  m: $spacing-m,
+  l: $spacing-m,
+  xl: $spacing-l,
+  xxl: $spacing-l,
+);
+
 $header-margin-y: (
   xs: $spacing-m,
   s: $spacing-m,
@@ -227,7 +237,7 @@ $list-margin: (
 );
 
 $column-gap: (
-  xs: $spacing-s,
+  xs: $spacing-xs,
   s: $spacing-s,
   m: $spacing-s,
   l: $spacing-s,
@@ -558,12 +568,12 @@ $homepage-intro-image-padding-bottom: (
 );
 
 $homepage-newsletter-image-height: (
-  xs: 95px,
-  s: 115px,
-  m: 130px,
-  l: 150px,
-  xl: 200px,
-  xxl: 200px,
+  xs: min(var(--full-width), 170px),
+  s: min(var(--full-width), 170px),
+  m: min(var(--full-width), 240px),
+  l: min(var(--full-width), 270px),
+  xl: min(var(--full-width), 360px),
+  xxl: min(var(--full-width), 360px),
 );
 
 $dot-size: (
@@ -642,6 +652,7 @@ $size-maps: (
   // Spacing & Margins
   page-margin-x: $page-margin-x,
   page-margin-y: $page-margin-y,
+  small-section-media-spacing: $small-section-media-spacing,
   header-margin-y: $header-margin-y,
   section-media-spacing: $section-media-spacing,
   large-inner-section-gap: $large-inner-section-gap,

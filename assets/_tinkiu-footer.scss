@@ -8,28 +8,33 @@
   position: relative;
 
   .tinkiu-footer__links {
-    @include flex($align: flex-start, $justify: space-between, $gapped: true, $full-width: true);
-    padding-top: var(--footer-padding); // auto
-    padding-bottom: calc(var(--header-margin-y) * 2);
+    @include flex($align: flex-start, $justify: space-between, $gapped: true);
+    width: 100vw;
+    padding: var(--footer-padding) var(--page-margin-x) var(--page-margin-y);
     font-size: var(--small-copy);
     color: white;
     flex-wrap: wrap;
+
+
+    .tinkiu-footer__links__column--social {
+      gap: var(--footer-icon-spacing);
+
+      @include mobile {
+        gap: calc(var(--footer-icon-spacing) / 2);
+      }
+    }
+
 
     .tinkiu-footer__links__row-mobile {
       @include flex($flex-start: true);
 
       &:first-child {
+
         >.tinkiu-footer__links__column {
           @include half-inset-width;
         }
 
-        >.tinkiu-footer__links__column--social {
-          gap: var(--footer-icon-spacing);
 
-          @include mobile {
-            gap: calc(var(--footer-icon-spacing) / 2);
-          }
-        }
       }
 
       &:last-child {
@@ -64,13 +69,78 @@
       }
     }
 
-    .tinkiu-footer__links__column {
+    .tinkiu-footer__links__column--social {
       @include flex($flex-start: true);
       line-height: 1.3;
     }
 
     svg {
       @include square(26px);
+    }
+
+    .tinkiu-footer__links__column--left {
+      @include flex($flex-start: true);
+      gap: var(--column-gap);
+
+      .tinkiu-footer__links__column--left__select {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+
+        span {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1,3 6,9 11,3' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          --icon-size: 0.85rem;
+          background-size: var(--icon-size) var(--icon-size);
+          /* ← control size in em here */
+          background-repeat: no-repeat;
+          background-position: right var(--icon-size) center;
+          padding-right: calc(var(--icon-size) * 3);
+        }
+
+      }
+
+      select {
+        appearance: none;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        /* hide the select visually, keep it functional */
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+
+    .tinkiu-footer__links__column--popup-menu {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tinkiu-footer__links__column--popup-menu__trigger {
+      color: white;
+      padding: 0;
+      font-weight: normal;
+    }
+
+    .tinkiu-footer__links__column--popup-menu__dropdown {
+      display: none;
+      position: absolute;
+      bottom: calc(100%);
+      right: 0;
+      background: white;
+      list-style: none;
+      margin-bottom: calc(var(--input-padding) * 1.25);
+      padding: var(--input-padding);
+      min-width: 180px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+
+
+    }
+
+    .tinkiu-footer__links__column--popup-menu__dropdown.is-open {
+      display: block;
+      border: black 1px solid;
+      color: black;
     }
   }
 

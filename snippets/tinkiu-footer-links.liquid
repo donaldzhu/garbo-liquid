@@ -4,28 +4,65 @@
   {% assign data = o %}
 {% endfor %}
 
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.tinkiu-footer__links__column--popup-menu__trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        trigger.nextElementSibling.classList.toggle('is-open');
+      });
+    });
+
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.tinkiu-footer__links__column--popup-menu__dropdown').forEach(el => {
+        el.classList.remove('is-open');
+      });
+    });
+})
+</script>
+
 <div class="tinkiu-footer__links">
-  <div class="tinkiu-footer__links__row-mobile">
-    <div class="tinkiu-footer__links__column">
-      Tinkiu © {{ 'now' | date: '%Y' }}
+
+    <div class="tinkiu-footer__links__column tinkiu-footer__links__column--left">
+      <span>Tinkiu © {{ 'now' | date: '%Y' }}</span>
+      {% form 'localization' %}
+        <div class="tinkiu-footer__links__column--left__select">
+        <span>Country/Currency</span>
+        <select name="country_code" onchange="this.form.submit()">
+          {% for country in localization.available_countries %}
+            <option value="{{ country.iso_code }}"
+              {% if country.iso_code == localization.country.iso_code %}selected{% endif %}>
+              {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+            </option>
+          {% endfor %}
+        </select>
+        </div>
+      {% endform %}
+
     </div>
     <div class="tinkiu-footer__links__column tinkiu-footer__links__column--social">
       <a href={{ data.instagram }}>
         {% render 'tinkiu-icon-instagram' %}
       </a>
-      <a href={{ data.youtube }}>
-        {% render 'tinkiu-icon-youtube' %}
-      </a>
       <a href={{ data.tiktok }}>
         {% render 'tinkiu-icon-tiktok' %}
       </a>
-      <a href={{ data.xhs }}>
-        {% render 'tinkiu-icon-xhs' %}
-      </a>
     </div>
-  </div>
+
   <div class="tinkiu-footer__links__row-mobile tinkiu-footer__links__nav">
-    <div class="tinkiu-footer__links__column">
+    <div class="tinkiu-footer__links__column--popup-menu">
+      <button class="tinkiu-footer__links__column--popup-menu__trigger" type="button">
+        CUSTOMER CARE
+      </button>
+      <ul class="tinkiu-footer__links__column--popup-menu__dropdown">
+        <li><a href="/">PRODUCTS</a></li>
+        <li><a href="/">SERVICES</a></li>
+        <li><a href="/">BLOG</a></li>
+        <li><a href="/">ABOUT</a></li>
+        <li><a href="/">CONTACT</a></li>
+      </ul>
+    </div>
+{% comment %}     <div class="tinkiu-footer__links__column">
       <a href="/">PRODUCTS</a>
       <a href="/">SERVICES</a>
       <a href="/">BLOG</a>
@@ -33,6 +70,6 @@
     <div class="tinkiu-footer__links__column">
       <a href="/">ABOUT</a>
       <a href="/">CONTACT</a>
-    </div>
+    </div> {% endcomment %}
   </div>
 </div>

@@ -92,11 +92,11 @@
     <div class="tinkiu-header__mobile-popup__content">
       <p>Menu</p>
       <ul class="left-menu">
-        {% render 'tinkiu-header-anchor' href: '/collections', text: data.featuredCollection %}
+
         {% render 'tinkiu-header-anchor' href: '/collections/all', text: data.products %}
-        {% render 'tinkiu-header-anchor' href: '/pages/stories', text: data.stories %}
+
         {% render 'tinkiu-header-anchor' href: '/pages/tinkiu-story', text: data.tinkiuStory %}
-        {% render 'tinkiu-header-anchor' href: '/pages/contact', text: data.contact %}
+        {% comment %} {% render 'tinkiu-header-anchor' href: '/pages/contact', text: data.contact %} {% endcomment %}
         {% render 'tinkiu-header-anchor' href: '/pages/services', text: data.services %}
         {% render 'tinkiu-header-anchor' href: '/account/login', text: data.orders %}
     </div>
@@ -108,9 +108,9 @@
   </div>
 
   <ul class="left-menu">
-    {% render 'tinkiu-header-anchor' href: '/collections', text: data.featuredCollection %}
+
     {% render 'tinkiu-header-anchor' href: '/collections/all', text: data.products %}
-    {% render 'tinkiu-header-anchor' href: '/pages/stories', text: data.stories %}
+
     {% render 'tinkiu-header-anchor' href: '/pages/tinkiu-story', text: data.tinkiuStory %}
   </ul>
   <div class="tinkiu-logo-container">
@@ -126,7 +126,7 @@
       {% assign cartText = 'CART ' | append: ' ( ' | append: cartCount | append: ' )' %}
     {% endif %}
 
-    {% render 'tinkiu-header-anchor' href: '/pages/contact', text: data.contact %}
+{% comment %}     {% render 'tinkiu-header-anchor' href: '/pages/contact', text: data.contact %} {% endcomment %}
     {% render 'tinkiu-header-anchor' href: '/pages/services', text: data.services %}
     {% render 'tinkiu-header-anchor' href: '/cart', text: cartText %}
     {% render 'tinkiu-header-anchor' href: '/account/login', text: data.orders %}

@@ -18,20 +18,25 @@
     </div>
   </div>
   <div class="tinkiu-own-story__gallery">
-    {% for image in o.gallery.value %}
-      {% render 'tinkiu-media'
-        , data: image.image %}
-    {% endfor %}
+    <div class="tinkiu-own-story__gallery__images">
+      {% for image in o.gallery.value %}
+        {% render 'tinkiu-media'
+          , data: image.image %}
+      {% endfor %}
+    </div>
+    <p>See more on Instagram</p>
   </div>
   <div class="tinkiu-own-story__vimeo">
     {% render 'tinkiu-vimeo'
       , vimeo_url: o.vimeoLink %}
+    <p>See more on Instagram</p>
   </div>
   <div class="tinkiu-own-story__images">
     {% for image in o.additionalPhotos.value %}
       {% render 'tinkiu-media'
         , data: image.image %}
     {% endfor %}
+    <p>See more on Instagram</p>
   </div>
 </div>
 

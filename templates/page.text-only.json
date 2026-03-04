@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "tinkiu-text-only"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
