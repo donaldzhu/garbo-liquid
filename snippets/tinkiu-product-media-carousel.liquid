@@ -352,66 +352,91 @@
 
 <script>
   (() => {
-    if (window.innerWidth >= 750) return;
+    const LOG = (...args) => console.log('[Carousel]', ...args);
+
+    LOG('Script executing, innerWidth:', window.innerWidth);
+
+    if (window.innerWidth >= 750) {
+      LOG('Bailing — desktop width, carousel disabled');
+      return;
+    }
 
     const sectionId = {{ section.id | json }};
-    const gallery   = document.getElementById(`MediaGallery-${sectionId}`);
-    const list      = document.getElementById(`Slider-Gallery-${sectionId}`);
-    const dotsWrap  = document.getElementById(`CarouselDots-${sectionId}`);
+    LOG('Section ID:', sectionId);
 
-    if (!gallery || !list) return;
+    const gallery  = document.getElementById(`MediaGallery-${sectionId}`);
+    const list     = document.getElementById(`Slider-Gallery-${sectionId}`);
+    const dotsWrap = document.getElementById(`CarouselDots-${sectionId}`);
+
+    LOG('gallery:', gallery);
+    LOG('list:', list);
+    LOG('dotsWrap:', dotsWrap);
+
+    if (!gallery || !list) {
+      LOG('ERROR: gallery or list element not found — aborting');
+      return;
+    }
 
     const slides = [...list.querySelectorAll('.product__media-item')];
     const count  = slides.length;
-    if (count < 2) return;
+    LOG('Slides found:', count, slides);
+
+    if (count < 2) {
+      LOG('Bailing — fewer than 2 slides, no carousel needed');
+      return;
+    }
 
     // ── State ────────────────────────────────────────────────────────────────
-    let current   = 0;   // logical index (0-based) into real slides
-    let vIndex    = 1;   // virtual index; real slides sit at 1..count
+    let current   = 0;
+    let vIndex    = 1;
     let animating = false;
 
     // ── Clone first/last for infinite loop ───────────────────────────────────
-    // Layout: [clone-of-last | slide-0 … slide-n | clone-of-first]
     const clonePre  = slides.at(-1).cloneNode(true);
     const clonePost = slides[0].cloneNode(true);
     clonePre.setAttribute('aria-hidden', 'true');
     clonePost.setAttribute('aria-hidden', 'true');
     list.insertBefore(clonePre, slides[0]);
     list.appendChild(clonePost);
+    LOG('Clones inserted. Total children in list:', list.children.length);
 
     // ── Track position ───────────────────────────────────────────────────────
     const setTrack = (vi, animated) => {
       list.classList.toggle('is-animating', animated);
       list.style.transform = `translateX(${-vi * 100}%)`;
+      LOG(`setTrack(vi=${vi}, animated=${animated}) → transform: translateX(${-vi * 100}%)`);
     };
 
     setTrack(vIndex, false);
 
     // ── Dots ─────────────────────────────────────────────────────────────────
     const dots = dotsWrap ? [...dotsWrap.querySelectorAll('.dot')] : [];
+    LOG('Dots found:', dots.length);
 
     const updateDots = () => {
       dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+      LOG('updateDots → active index:', current);
     };
     updateDots();
 
     // ── Navigate ─────────────────────────────────────────────────────────────
     const goTo = (direction) => {
-      if (animating) return;
+      LOG(`goTo(${direction}) — animating=${animating}, current=${current}, vIndex=${vIndex}`);
+      if (animating) { LOG('Blocked — already animating'); return; }
       animating = true;
       vIndex += direction;
       setTrack(vIndex, true);
     };
 
-    // ── Transition end: silent teleport when landing on a clone ──────────────
+    // ── Transition end ───────────────────────────────────────────────────────
     list.addEventListener('transitionend', (e) => {
+      LOG('transitionend fired — target === list:', e.target === list, 'property:', e.propertyName);
       if (e.target !== list || e.propertyName !== 'transform') return;
 
       if (vIndex === 0 || vIndex === count + 1) {
         const target      = vIndex === 0 ? count : 1;
         const nextCurrent = vIndex === 0 ? count - 1 : 0;
-
-        // Strip transition before jumping — force reflow to commit it first
+        LOG(`Loop wrap: vIndex ${vIndex} → ${target}, current → ${nextCurrent}`);
         list.classList.remove('is-animating');
         list.offsetWidth; // reflow
         vIndex  = target;
@@ -420,6 +445,7 @@
       } else {
         list.classList.remove('is-animating');
         current = vIndex - 1;
+        LOG(`Normal slide end: current=${current}`);
       }
 
       updateDots();
@@ -436,23 +462,31 @@
       touchStartX = e.touches[0].clientX;
       touchStartY = e.touches[0].clientY;
       isDragging  = true;
+      LOG('touchstart at', touchStartX, touchStartY);
     }, { passive: true });
 
     list.addEventListener('touchmove', (e) => {
       if (!isDragging) return;
       const dx = e.touches[0].clientX - touchStartX;
       const dy = e.touches[0].clientY - touchStartY;
-      // Bail if gesture is more vertical than horizontal
-      if (Math.abs(dy) > Math.abs(dx)) isDragging = false;
+      if (Math.abs(dy) > Math.abs(dx)) {
+        LOG('touchmove: vertical gesture detected, cancelling swipe');
+        isDragging = false;
+      }
     }, { passive: true });
 
     list.addEventListener('touchend', (e) => {
+      LOG('touchend — isDragging:', isDragging);
       if (!isDragging) return;
       isDragging = false;
       const dx = e.changedTouches[0].clientX - touchStartX;
+      LOG('touchend dx:', dx, 'threshold:', THRESHOLD);
       if (dx < -THRESHOLD) goTo(+1);
       else if (dx > THRESHOLD) goTo(-1);
+      else LOG('Swipe too short, ignored');
     });
+
+    LOG('All listeners attached ✓');
 
     // ── Dot clicks ───────────────────────────────────────────────────────────
     dotsWrap?.addEventListener('click', (e) => {
@@ -464,7 +498,6 @@
       if (stepsAway === 1) {
         goTo(idx > current ? +1 : -1);
       } else {
-        // Multi-step: jump directly (transitionend handles cleanup)
         animating = true;
         current   = idx;
         vIndex    = idx + 1;
