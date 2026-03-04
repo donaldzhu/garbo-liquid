@@ -50,8 +50,6 @@
       position: relative;
       width: 100%;
       overflow: hidden;
-      /* Block horizontal browser scroll; let vertical through */
-      touch-action: pan-y;
     }
 
     /* The track slides via transform — no overflow scroll at all */
@@ -66,6 +64,8 @@
       will-change: transform;
       user-select: none;
       -webkit-user-select: none;
+      /* Must be on the scrollable element that receives touch events */
+      touch-action: pan-y;
     }
 
     /* Animate only when JS adds this class (not during touch drag) */
@@ -361,7 +361,7 @@
 
     if (!gallery || !list) return;
 
-    const slides = [...list.querySelectorAll(':scope > .product__media-item')];
+    const slides = [...list.querySelectorAll('.product__media-item')];
     const count  = slides.length;
     if (count < 2) return;
 
@@ -388,7 +388,7 @@
     setTrack(vIndex, false);
 
     // ── Dots ─────────────────────────────────────────────────────────────────
-    const dots = dotsWrap ? [...dotsWrap.querySelectorAll(':scope > .dot')] : [];
+    const dots = dotsWrap ? [...dotsWrap.querySelectorAll('.dot')] : [];
 
     const updateDots = () => {
       dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
