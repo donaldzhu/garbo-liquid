@@ -31,12 +31,6 @@
             "swatch_shape": "circle"
           }
         },
-        "tepo_product_options_product_app_block_9fBVLf": {
-          "type": "shopify://apps/qikify-product-options/blocks/product-app-block/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
-          "settings": {
-            "product": "{{product}}"
-          }
-        },
         "qikify_product_options_product_app_block_kTnqDQ": {
           "type": "shopify://apps/qikify-product-options/blocks/product-app-block/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
           "settings": {
@@ -64,7 +58,6 @@
         "price",
         "details",
         "variant_picker",
-        "tepo_product_options_product_app_block_9fBVLf",
         "qikify_product_options_product_app_block_kTnqDQ",
         "quantity_selector",
         "buy_buttons",
