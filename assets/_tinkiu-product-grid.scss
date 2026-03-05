@@ -240,8 +240,8 @@ div.tinkiu-main-collection-product-grid.gradient {
       padding-bottom: var(--paragraph-margin);
 
       @include mobile {
-        padding-top: var(--filter-label-margin);
-        padding-bottom: var(--filter-label-margin);
+        padding-top: var(--small-gap);
+        padding-bottom: var(--small-gap);
 
         &:hover {
           .facet-checkbox__text-label {
@@ -264,7 +264,7 @@ details.facets__disclosure-vertical[open] {
   border-color: $gray;
 
   summary {
-    padding: var(--filter-label-margin) 0;
+    padding: var(--small-gap) 0;
     @include detail-label;
     font-weight: normal;
 

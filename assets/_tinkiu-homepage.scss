@@ -1,10 +1,10 @@
-@use 'typography' as *;
-@use 'colors' as *;
-@use 'sizes' as *;
-@use 'layouts' as *;
-@use 'size-maps' as *;
+@use "typography" as *;
+@use "colors" as *;
+@use "sizes" as *;
+@use "layouts" as *;
+@use "size-maps" as *;
 
-@forward 'tinkiu-hompage-intro';
+@forward "tinkiu-hompage-intro";
 
 .tinkiu-homepage {
   @include flex($column: true);
@@ -25,15 +25,14 @@
     max-width: var(--text-max-width);
   }
 
-  >div,
-  >.tinkiu-homepage__sticky-container>div {
+  > div,
+  > .tinkiu-homepage__sticky-container > div {
     @include flex($column: true);
   }
 
-  .tinkiu-homepage__intro+div>.tinkiu-dot--with-space:first-child {
+  .tinkiu-homepage__intro + div > .tinkiu-dot--with-space:first-child {
     margin-top: var(--section-media-spacing);
   }
-
 }
 
 .tinkiu-homepage__sticky-container.sticky {
@@ -47,7 +46,7 @@
     position: relative;
   }
 
-  >:not(.tinkiu-homepage__intro) {
+  > :not(.tinkiu-homepage__intro) {
     opacity: 0;
     pointer-events: none;
   }
@@ -56,6 +55,7 @@
 .tinkiu-homepage-header {
   background-color: transparent;
   color: white;
+  opacity: 0;
 
   .tinkiu-header__hamburger,
   .tinkiu-header__cart-mobile {
@@ -70,10 +70,7 @@
     opacity: 0;
     pointer-events: none;
   }
-
-
 }
-
 
 .tinkiu-blurb {
   @include flex($column: true);
@@ -81,7 +78,6 @@
 
 .tinkiu-homepage,
 .tinkiu-blurb {
-
   h2 {
     @include section-header;
     text-align: center;
@@ -93,11 +89,10 @@
     max-width: var(--text-max-width);
   }
 
-  h2+button {
+  h2 + button {
     margin-top: var(--section-media-spacing);
   }
 }
-
 
 .tinkiu-homepage__feature {
   @include flex($column: true);
@@ -110,7 +105,10 @@
   }
 
   .tinkiu-dot {
-    margin-top: calc(var(--dot-margin-bottom) + var(--section-header) * (($header-line-height - 1) / 2));
+    margin-top: calc(
+      var(--dot-margin-bottom) + var(--section-header) *
+        (($header-line-height - 1) / 2)
+    );
   }
 }
 
@@ -151,7 +149,6 @@
         display: flex;
       }
     }
-
   }
 
   @include below-small-mobile {
@@ -161,7 +158,7 @@
       display: none;
     }
 
-    >*,
+    > *,
     product-info .tinkiu-product-insert__images img {
       width: var(--full-width);
     }
@@ -171,6 +168,7 @@
 .tinkiu-homepage__ethos__images {
   @include flex($gapped: true);
   margin: var(--inner-column-gap) 0;
+  flex-wrap: wrap;
 
   .tinkiu-homepage__ethos__image-mobile {
     display: none;
@@ -180,12 +178,10 @@
     margin-bottom: 0;
     width: var(--full-width);
     @include split(3);
-
-
   }
 
   @include below-medium-mobile {
-    @include split;
+    @include split(2);
 
     .tinkiu-homepage__list-header {
       display: none;
@@ -196,18 +192,10 @@
     }
   }
 
-  @include below-small-mobile {
-    .tinkiu-homepage__ethos__image {
-      width: var(--full-width);
-    }
-
-    .tinkiu-homepage__ethos__image:nth-child(2) {
-      display: none;
-    }
+  .tinkiu-homepage__ethos__image {
+    flex: none;
   }
 }
-
-
 
 .tinkiu-homepage__founder {
   img {
@@ -257,7 +245,6 @@
 
   // TODO: success
   input {
-
     &,
     &:focus,
     &:not(:placeholder-shown) {
@@ -297,11 +284,10 @@
     color: white;
   }
 
-
   .tinkiu-footer__content {
     @include flex($column: true);
     position: relative;
-    top: 45%;
+    top: 30%;
     transform: translate(0, -50%);
   }
 
@@ -312,13 +298,6 @@
     @include mobile {
       padding-top: 0;
       margin-bottom: 0;
-    }
-
-  }
-
-  .tinkiu-footer__links .tinkiu-footer__links__row-mobile.tinkiu-footer__links__nav {
-    @include mobile {
-      display: none;
     }
   }
 }

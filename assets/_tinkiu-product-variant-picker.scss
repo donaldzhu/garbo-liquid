@@ -1,6 +1,6 @@
-@use 'typography' as *;
-@use 'layouts' as *;
-@use 'colors' as *;
+@use "typography" as *;
+@use "layouts" as *;
+@use "colors" as *;
 
 variant-selects.tinkiu-product-variant-picker {
   @include flex($column: true, $flex-start: true);
@@ -10,6 +10,8 @@ variant-selects.tinkiu-product-variant-picker {
 
   fieldset {
     margin: 0;
+
+    --label-margin: calc(var(--detail-label-margin) / 2);
 
     legend.form__label {
       @include detail-label;
@@ -22,38 +24,40 @@ variant-selects.tinkiu-product-variant-picker {
         display: flex;
         gap: var(--detail-label-margin);
 
-        .swatch-input__input+.swatch-input__label {
+        .swatch-input__input + .swatch-input__label {
           margin: 0;
         }
 
-        input[type='radio']:checked+label {
+        input[type="radio"]:checked + label {
           background-color: black;
           color: $ash;
+          margin-right: var(--label-margin);
         }
       }
 
       &--pill {
-        input[type='radio'] {
+        input[type="radio"] {
           margin: 0;
           width: 0;
           height: 0;
 
-          +label {
+          + label {
             background-color: $ash;
             color: black;
             margin: 0;
             border-color: black;
             font-size: var(--small-copy);
             padding: 0.625em 1.25em;
+            margin-right: var(--label-margin);
           }
 
-          &:checked+label {
+          &:checked + label {
             background-color: black;
             color: $ash;
           }
 
-          &.disabled+label,
-          &:checked.disabled+label {
+          &.disabled + label,
+          &:checked.disabled + label {
             color: $gray;
             border-color: $gray;
             cursor: not-allowed;

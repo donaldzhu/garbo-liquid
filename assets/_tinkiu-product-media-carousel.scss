@@ -5,3 +5,18 @@
     display: none;
   }
 }
+
+slider-component.tinkiu-product-media-carousel {
+  .tinkiu-product-media-carousel__list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: visible;
+    gap: var(--small-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    will-change: transform;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}

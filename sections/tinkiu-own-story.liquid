@@ -24,19 +24,19 @@
           , data: image.image %}
       {% endfor %}
     </div>
-    <p>See more on Instagram</p>
+    <p>{{ o.galleryCaption.value }}</p>
   </div>
   <div class="tinkiu-own-story__vimeo">
     {% render 'tinkiu-vimeo'
       , vimeo_url: o.vimeoLink %}
-    <p>See more on Instagram</p>
+    <p>{{ o.vimeoCaption.value }}</p>
   </div>
   <div class="tinkiu-own-story__images">
     {% for image in o.additionalPhotos.value %}
       {% render 'tinkiu-media'
         , data: image.image %}
     {% endfor %}
-    <p>See more on Instagram</p>
+    <p>{{ o.additionalPhotosCaption.value }}</p>
   </div>
 </div>
 

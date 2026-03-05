@@ -23,7 +23,7 @@ slider-component.tinkiu-product-media-gallery {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--inner-column-gap);
+    gap: var(--small-gap);
   }
 
   li.product__media-item.grid__item.slider__slide {

@@ -44,33 +44,19 @@
 -%}
 
 <style>
-  #MediaGallery-{{ section.id }} .tinkiu-product-media-gallery {
+  #MediaCarousel-{{ section.id }} .tinkiu-product-media-carousel {
     position: relative;
     width: 100%;
     overflow: hidden;
     touch-action: pan-y;
   }
 
-  #MediaGallery-{{ section.id }}
-  .product__media-list {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: visible;
-    gap: 0;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    will-change: transform;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-
-  #MediaGallery-{{ section.id }}
+  #MediaCarousel-{{ section.id }}
   .product__media-list.is-animating {
-    transition: transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.3s ease;
   }
 
-  #MediaGallery-{{ section.id }}
+  #MediaCarousel-{{ section.id }}
   .product__media-item {
     flex: 0 0 100%;
     width: 100%;
@@ -110,7 +96,7 @@
 </style>
 
 <media-gallery
-  id="MediaGallery-{{ section.id }}"
+  id="MediaCarousel-{{ section.id }}"
   role="region"
   {% if section.settings.enable_sticky_info %}
   class="product__column-sticky"
@@ -123,14 +109,14 @@
     class="visually-hidden"
     role="status"></div>
 
-  <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter tinkiu-product-media-gallery">
+  <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter tinkiu-product-media-carousel">
     <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
       {{ 'accessibility.skip_to_product_info' | t }}
     </a>
 
     <ul
       id="Slider-Carousel-{{ section.id }}"
-      class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
+      class="product__media-list tinkiu-product-media-carousel__list contains-media grid grid--peek list-unstyled slider slider--mobile"
       role="list">
 
       {%- if product.selected_or_first_available_variant.featured_media != null -%}
@@ -337,14 +323,13 @@
 </media-gallery>
 
 <script>
-  (() => {
+  document.addEventListener('DOMContentLoaded', () => {
     const sectionId = {{ section.id | json }};
     const list      = document.getElementById(`Slider-Carousel-${sectionId}`);
     const dotsWrap  = document.getElementById(`CarouselDots-${sectionId}`);
 
     if (!list) return;
 
-    // Use list.children so we only get direct children — never nested descendants
     const slides = [...list.children];
     const count  = slides.length;
     if (count < 2) return;
@@ -365,15 +350,22 @@
     let vIndex = 1;
 
     // ── Track ─────────────────────────────────────────────────────────────────
+    // Instead of calculating offset from percentages (which breaks with gap),
+    // measure the actual pixel offset of each slide from the list's left edge.
+    const getSlideOffset = (vi) => {
+      // All children in order: [clonePre, ...slides, clonePost]
+      const child = list.children[vi];
+      return child ? child.offsetLeft : 0;
+    };
+
     const setTrack = (vi, animated) => {
       list.classList.toggle('is-animating', animated);
-      list.style.transform = `translateX(${-vi * 100}%)`;
+      list.style.transform = `translateX(${-getSlideOffset(vi)}px)`;
     };
 
     setTrack(vIndex, false);
 
     // ── Dots ──────────────────────────────────────────────────────────────────
-    // Use children of the specific dots container — never a broad querySelector
     const dots = dotsWrap ? [...dotsWrap.children].filter(el => el.classList.contains('dot')) : [];
 
     const updateDots = () => {
@@ -391,7 +383,6 @@
 
     // ── Transition end ────────────────────────────────────────────────────────
     list.addEventListener('transitionend', (e) => {
-      // Guard: only handle our own transform, ignore bubbled child transitions
       if (e.target !== list || e.propertyName !== 'transform') return;
 
       list.classList.remove('is-animating');
@@ -399,12 +390,12 @@
       if (vIndex === 0) {
         vIndex  = count;
         current = count - 1;
-        list.offsetWidth; // reflow to commit transition removal before jumping
+        list.offsetWidth;
         setTrack(vIndex, false);
       } else if (vIndex === count + 1) {
         vIndex  = 1;
         current = 0;
-        list.offsetWidth; // reflow to commit transition removal before jumping
+        list.offsetWidth;
         setTrack(vIndex, false);
       } else {
         current = vIndex - 1;
@@ -443,7 +434,6 @@
 
     // ── Dot clicks ────────────────────────────────────────────────────────────
     dotsWrap?.addEventListener('click', (e) => {
-      // Ensure the clicked dot belongs strictly to this section's dot container
       const dot = e.target.closest(`#CarouselDots-${sectionId} > .dot`);
       if (!dot || animating) return;
       const idx = dots.indexOf(dot);
@@ -457,5 +447,5 @@
         setTrack(vIndex, true);
       }
     });
-  })();
+  });
 </script>

@@ -194,6 +194,7 @@
 .tinkiu-homepage-header {
   background-color: transparent;
   color: white;
+  opacity: 0;
 }
 .tinkiu-homepage-header .tinkiu-header__hamburger,
 .tinkiu-homepage-header .tinkiu-header__cart-mobile {
@@ -334,6 +335,7 @@
   flex-direction: row;
   gap: var(--column-gap);
   margin: var(--inner-column-gap) 0;
+  flex-wrap: wrap;
 }
 .tinkiu-homepage__ethos__images .tinkiu-homepage__ethos__image-mobile {
   display: none;
@@ -364,13 +366,8 @@
     display: none;
   }
 }
-@media (max-width: calc(480px - 1px)) {
-  .tinkiu-homepage__ethos__images .tinkiu-homepage__ethos__image {
-    width: var(--full-width);
-  }
-  .tinkiu-homepage__ethos__images .tinkiu-homepage__ethos__image:nth-child(2) {
-    display: none;
-  }
+.tinkiu-homepage__ethos__images .tinkiu-homepage__ethos__image {
+  flex: none;
 }
 
 .tinkiu-homepage__founder img {
@@ -474,7 +471,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  top: 45%;
+  top: 30%;
   transform: translate(0, -50%);
 }
 .tinkiu-homepage__footer .tinkiu-footer__links {
@@ -485,11 +482,6 @@
   .tinkiu-homepage__footer .tinkiu-footer__links {
     padding-top: 0;
     margin-bottom: 0;
-  }
-}
-@media (max-width: calc(1024px - 1px)) {
-  .tinkiu-homepage__footer .tinkiu-footer__links .tinkiu-footer__links__row-mobile.tinkiu-footer__links__nav {
-    display: none;
   }
 }
 
@@ -1064,6 +1056,7 @@ variant-selects.tinkiu-product-variant-picker {
 }
 variant-selects.tinkiu-product-variant-picker fieldset {
   margin: 0;
+  --label-margin: calc(var(--detail-label-margin) / 2);
 }
 variant-selects.tinkiu-product-variant-picker fieldset legend.form__label {
   font-family: "Dazzed", sans-serif;
@@ -1089,6 +1082,7 @@ variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--swat
 variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--swatch input[type=radio]:checked + label {
   background-color: black;
   color: #FAFAFA;
+  margin-right: var(--label-margin);
 }
 variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill input[type=radio] {
   margin: 0;
@@ -1102,6 +1096,7 @@ variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill
   border-color: black;
   font-size: var(--small-copy);
   padding: 0.625em 1.25em;
+  margin-right: var(--label-margin);
 }
 variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill input[type=radio]:checked + label {
   background-color: black;
@@ -1452,7 +1447,7 @@ slider-component.tinkiu-product-media-gallery ul.product__media-list {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--inner-column-gap);
+  gap: var(--small-gap);
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide {
   aspect-ratio: 4/5;
@@ -1800,8 +1795,8 @@ div.tinkiu-main-collection-product-grid.gradient aside.facets-wrapper {
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-facets-container.facets-container facet-filters-form form .facets-layout-list--swatch .facets__label {
-    padding-top: var(--filter-label-margin);
-    padding-bottom: var(--filter-label-margin);
+    padding-top: var(--small-gap);
+    padding-bottom: var(--small-gap);
   }
   .tinkiu-facets-container.facets-container facet-filters-form form .facets-layout-list--swatch .facets__label:hover .facet-checkbox__text-label {
     text-decoration: none;
@@ -1884,7 +1879,7 @@ details.facets__disclosure-vertical[open] price-range .tinkiu-price-facet-field 
 }
 details.tinkiu-facet-details:not([open]) summary,
 details.facets__disclosure-vertical[open] summary {
-  padding: var(--filter-label-margin) 0;
+  padding: var(--small-gap) 0;
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
   line-height: 1.15;
@@ -2243,6 +2238,19 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   .tinkiu-product-media-carousel-container {
     display: none;
   }
+}
+
+slider-component.tinkiu-product-media-carousel .tinkiu-product-media-carousel__list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: visible;
+  gap: var(--small-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 product-info.tinkiu-product {
@@ -3263,7 +3271,7 @@ a, a:-webkit-any-link, a:visited {
     --subsection-header: 3.2rem;
   }
 }
-@media (min-width: 480px) and (max-width: 1535px) {
+@media (max-width: 1535px) {
   :root {
     --extra-large-copy: 1.85rem;
   }
@@ -3525,12 +3533,12 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 1279px) {
   :root {
-    --filter-label-margin: 1.1rem;
+    --small-gap: 1.1rem;
   }
 }
 @media (min-width: 1280px) {
   :root {
-    --filter-label-margin: 1.5rem;
+    --small-gap: 1.5rem;
   }
 }
 @media (max-width: 1279px) {
