@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -23,7 +32,13 @@
           }
         },
         "tepo_product_options_product_app_block_9fBVLf": {
-          "type": "shopify://apps/tepo-product-options/blocks/product-app-block/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
+          "type": "shopify://apps/qikify-product-options/blocks/product-app-block/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "qikify_product_options_product_app_block_kTnqDQ": {
+          "type": "shopify://apps/qikify-product-options/blocks/product-app-block/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
           "settings": {
             "product": "{{product}}"
           }
@@ -50,10 +65,14 @@
         "details",
         "variant_picker",
         "tepo_product_options_product_app_block_9fBVLf",
+        "qikify_product_options_product_app_block_kTnqDQ",
         "quantity_selector",
         "buy_buttons",
         "description"
-      ]
+      ],
+      "settings": {
+        "image_zoom": "hover"
+      }
     },
     "tinkiu-related-products": {
       "type": "tinkiu-related-products",
