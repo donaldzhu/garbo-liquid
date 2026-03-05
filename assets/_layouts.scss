@@ -69,16 +69,21 @@
   @return calc(#{$vw} - var(--page-margin-x) * 2);
 }
 
-@mixin fullscreen($flex-direction: column) {
+@mixin fullscreen($flex-direction: column, $max-height: 9999px) {
   width: 100dvw;
   height: 100dvh;
   min-height: max($fullscreen-h-min-vw, $fullscreen-h-min-px);
-  max-height: min($fullscreen-h-max-vw, $fullscreen-h-max-px);
+  // max-height: min($fullscreen-h-max-vw, $fullscreen-h-max-px);
   flex-direction: $flex-direction;
 
   @include mobile {
     max-height: min(135dvw, $fullscreen-h-max-px);
   }
+}
+
+@mixin fullscreen-max-height($flex-direction: column) {
+  @include fullscreen($flex-direction);
+  max-height: min($fullscreen-h-max-vw, $fullscreen-h-max-px);
 }
 
 @mixin shift-to-center() {

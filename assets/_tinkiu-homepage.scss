@@ -213,7 +213,7 @@
 }
 
 .tinkiu-homepage__newsletter {
-  @include fullscreen;
+  @include fullscreen-max-height;
   flex: none;
   gap: var(--inner-section-spacing);
 
@@ -287,8 +287,12 @@
   .tinkiu-footer__content {
     @include flex($column: true);
     position: relative;
-    top: 30%;
+    top: 45%;
     transform: translate(0, -50%);
+
+    @include mobile {
+      top: 30%;
+    }
   }
 
   .tinkiu-footer__links {

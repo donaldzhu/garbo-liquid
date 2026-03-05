@@ -13,8 +13,8 @@
   width: 100dvw;
   height: 100dvh;
   min-height: max(50vw, 500px);
-  max-height: min(110vw, 1500px);
   flex-direction: column;
+  max-height: min(110vw, 1500px);
   flex: none;
   position: relative;
 }
@@ -45,8 +45,8 @@
   width: 100dvw;
   height: 100dvh;
   min-height: max(50vw, 500px);
-  max-height: min(110vw, 1500px);
   flex-direction: row;
+  max-height: min(110vw, 1500px);
   position: absolute;
   top: 0;
   right: 0;
@@ -386,8 +386,8 @@
   width: 100dvw;
   height: 100dvh;
   min-height: max(50vw, 500px);
-  max-height: min(110vw, 1500px);
   flex-direction: column;
+  max-height: min(110vw, 1500px);
   flex: none;
   gap: var(--inner-section-spacing);
 }
@@ -441,7 +441,6 @@
   width: 100dvw;
   height: 100dvh;
   min-height: max(50vw, 500px);
-  max-height: min(110vw, 1500px);
   flex-direction: column;
   z-index: 99;
 }
@@ -471,8 +470,13 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  top: 30%;
+  top: 45%;
   transform: translate(0, -50%);
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-homepage__footer .tinkiu-footer__content {
+    top: 30%;
+  }
 }
 .tinkiu-homepage__footer .tinkiu-footer__links {
   margin-top: auto;
@@ -575,7 +579,6 @@
     width: 100dvw;
     height: 100dvh;
     min-height: max(50vw, 500px);
-    max-height: min(110vw, 1500px);
     flex-direction: column;
     display: flex;
     align-items: flex-start;
@@ -1432,6 +1435,10 @@ div.tinkiu-product-details p:first-child ~ p {
 }
 .tinkiu-product-app .tcustomizer-response {
   font-size: var(--small-copy);
+}
+
+.tcustomizer-modals button.tcustomizer-btn {
+  font-family: "Dazzed", sans-serif !important;
 }
 
 @media (max-width: calc(1024px - 1px)) {

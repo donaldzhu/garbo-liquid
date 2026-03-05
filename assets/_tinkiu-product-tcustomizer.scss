@@ -1,7 +1,7 @@
-@use 'layouts' as *;
-@use 'colors' as *;
-@use 'typography' as *;
-@use 'sizes' as *;
+@use "layouts" as *;
+@use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
 
 .tinkiu-product-app {
   label.tcustomizer-field__heading {
@@ -50,7 +50,6 @@
   .tcustomizer__text-field-wrapper:focus-within {
     border: border($gray) !important;
   }
-
 
   .tcustomizer__text-field--subinfo {
     display: none;
@@ -107,7 +106,6 @@
 
     margin: 0;
 
-
     img {
       width: 100% !important;
       height: 100% !important;
@@ -124,5 +122,11 @@
 
   .tcustomizer-response {
     font-size: var(--small-copy);
+  }
+}
+
+.tcustomizer-modals {
+  button.tcustomizer-btn {
+    font-family: $font-family-body !important;
   }
 }
