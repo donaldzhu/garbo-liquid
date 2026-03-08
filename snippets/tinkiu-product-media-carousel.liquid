@@ -323,7 +323,7 @@
 </media-gallery>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+   ( () => {
     const sectionId = {{ section.id | json }};
     const list      = document.getElementById(`Slider-Carousel-${sectionId}`);
     const dotsWrap  = document.getElementById(`CarouselDots-${sectionId}`);
@@ -447,5 +447,23 @@
         setTrack(vIndex, true);
       }
     });
-  });
+
+
+    // ── Carousel height ───────────────────────────────────────────────────────
+    let firstCarouselRatio
+    const setCarouselHeight = () => {
+      const carouselContainers = [...list.children];
+      const carousels = carouselContainers.map(container => container.querySelector('div'));
+      const {width, height} = carousels[1].getBoundingClientRect();
+      firstCarouselRatio ??= height / width;
+      list.style.setProperty('--carousel-height', `${firstCarouselRatio * width}px`);
+    };
+    setCarouselHeight();
+
+    // ── Resize: recalculate track position and height ─────────────────────────
+    window.addEventListener('resize', () => {
+      setTrack(vIndex, false);
+      setCarouselHeight();
+    });
+  })();
 </script>

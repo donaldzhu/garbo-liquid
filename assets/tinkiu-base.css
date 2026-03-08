@@ -2259,6 +2259,13 @@ slider-component.tinkiu-product-media-carousel .tinkiu-product-media-carousel__l
   user-select: none;
   -webkit-user-select: none;
 }
+slider-component.tinkiu-product-media-carousel li .product-media-container,
+slider-component.tinkiu-product-media-carousel li modal-opener,
+slider-component.tinkiu-product-media-carousel li .product__media.media,
+slider-component.tinkiu-product-media-carousel li modal-opener .product__media.media img {
+  object-fit: contain;
+  height: var(--carousel-height);
+}
 
 product-info.tinkiu-product {
   display: flex;

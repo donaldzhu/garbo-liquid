@@ -19,4 +19,14 @@ slider-component.tinkiu-product-media-carousel {
     user-select: none;
     -webkit-user-select: none;
   }
+
+  li {
+    .product-media-container,
+    modal-opener,
+    .product__media.media,
+    modal-opener .product__media.media img {
+      object-fit: contain;
+      height: var(--carousel-height);
+    }
+  }
 }
