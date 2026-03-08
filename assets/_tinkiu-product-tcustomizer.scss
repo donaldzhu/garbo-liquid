@@ -84,15 +84,20 @@
     margin-top: var(--small-space-y);
   }
 
+  $photo-size-mobile: 45vw;
   .tcustomizer-photo-placeholder {
     @include square(side-info-column-width(2));
+
+    @include mobile {
+      @include square($photo-size-mobile);
+    }
   }
 
   .tcustomizer-photo-uploaded {
     @include square(column-width(1));
 
     @include mobile {
-      @include square(35vw);
+      @include square($photo-size-mobile);
     }
   }
 

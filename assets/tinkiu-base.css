@@ -2,7 +2,7 @@
 :root {
   --ui-small: 1.2rem;
   --small-copy-label: 1.3rem;
-  --small-space-y: 1.1rem;
+  --small-space-y: 1.5rem;
   --hair-space-y: 0.5rem;
   --button-padding: 1.5rem 2.25rem;
   --button-radius: 3rem;
@@ -1068,7 +1068,7 @@ variant-selects.tinkiu-product-variant-picker fieldset legend.form__label {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
   margin: 0;
   margin-bottom: var(--detail-label-margin);
 }
@@ -1160,7 +1160,7 @@ div.tinkiu-product-details > div p:first-child {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 div.tinkiu-product-details > div p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -1178,7 +1178,7 @@ div.tinkiu-product-details p:first-child {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 div.tinkiu-product-details p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -1268,7 +1268,7 @@ div.tinkiu-product-details p:first-child ~ p {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 .tinkiu-product-app label.tcustomizer-field__heading ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -1391,6 +1391,12 @@ div.tinkiu-product-details p:first-child ~ p {
       (2 - 1)
   );
 }
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-product-app .tcustomizer-photo-placeholder {
+    width: 45vw;
+    height: 45vw;
+  }
+}
 .tinkiu-product-app .tcustomizer-photo-uploaded {
   width: calc(
     calc(
@@ -1409,8 +1415,8 @@ div.tinkiu-product-details p:first-child ~ p {
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-product-app .tcustomizer-photo-uploaded {
-    width: 35vw;
-    height: 35vw;
+    width: 45vw;
+    height: 45vw;
   }
 }
 .tinkiu-product-app .tcustomizer-field__input {
@@ -1893,7 +1899,7 @@ details.facets__disclosure-vertical[open] summary {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
   font-weight: normal;
 }
 details.tinkiu-facet-details:not([open]) summary ~ p,
@@ -2261,10 +2267,13 @@ slider-component.tinkiu-product-media-carousel .tinkiu-product-media-carousel__l
 }
 slider-component.tinkiu-product-media-carousel li .product-media-container,
 slider-component.tinkiu-product-media-carousel li modal-opener,
-slider-component.tinkiu-product-media-carousel li .product__media.media,
-slider-component.tinkiu-product-media-carousel li modal-opener .product__media.media img {
-  object-fit: contain;
+slider-component.tinkiu-product-media-carousel li .product__media.media {
   height: var(--carousel-height);
+  padding: 0;
+}
+slider-component.tinkiu-product-media-carousel li modal-opener .product__media.media img {
+  height: var(--carousel-height, auto);
+  object-fit: contain;
 }
 
 product-info.tinkiu-product {
@@ -2475,7 +2484,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 .tinkiu-story__preview__content .tinkiu-story__preview__details > div p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -2643,7 +2652,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 .tinkiu-story .tinkiu-story__details > div p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);
@@ -2958,7 +2967,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   color: black;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 .tinkiu-contact .tinkiu-contact__contact-items > div p:first-child ~ p {
   margin-bottom: var(--detail-label-margin);

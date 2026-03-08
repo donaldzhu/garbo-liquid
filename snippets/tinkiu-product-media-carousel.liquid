@@ -68,7 +68,7 @@
     justify-content: center;
     align-items: center;
     gap: 6px;
-    padding: 12px 0 4px;
+    padding: 20px 0;
   }
 
   #CarouselDots-{{ section.id }}
@@ -448,12 +448,11 @@
       }
     });
 
-
     // ── Carousel height ───────────────────────────────────────────────────────
-    let firstCarouselRatio
+    let firstCarouselRatio;
     const setCarouselHeight = () => {
       const carouselContainers = [...list.children];
-      const carousels = carouselContainers.map(container => container.querySelector('div'));
+      const carousels = carouselContainers.map(container => container.querySelector('div img'));
       const {width, height} = carousels[1].getBoundingClientRect();
       firstCarouselRatio ??= height / width;
       list.style.setProperty('--carousel-height', `${firstCarouselRatio * width}px`);
@@ -462,6 +461,12 @@
 
     // ── Resize: recalculate track position and height ─────────────────────────
     window.addEventListener('resize', () => {
+      setTrack(vIndex, false);
+      setCarouselHeight();
+    });
+
+    // ── Modal close: re-snap after zoom/modal interaction ─────────────────────
+    document.addEventListener('modalClosed', () => {
       setTrack(vIndex, false);
       setCarouselHeight();
     });

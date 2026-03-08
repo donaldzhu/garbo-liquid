@@ -23,10 +23,14 @@ slider-component.tinkiu-product-media-carousel {
   li {
     .product-media-container,
     modal-opener,
-    .product__media.media,
-    modal-opener .product__media.media img {
-      object-fit: contain;
+    .product__media.media {
       height: var(--carousel-height);
+      padding: 0;
+    }
+
+    modal-opener .product__media.media img {
+      height: var(--carousel-height, auto);
+      object-fit: contain;
     }
   }
 }
