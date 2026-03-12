@@ -24,6 +24,10 @@ body {
   letter-spacing: 0;
 }
 
+:root {
+  --button-height: calc(var(--ui-small) + var(--button-padding) * 2);
+}
+
 :root,
 body {
   background-color: $ash;

@@ -2288,6 +2288,11 @@ slider-component.tinkiu-product-media-carousel li modal-opener .product__media.m
   font-size: var(--ui-small) !important;
   color: black !important;
 }
+#MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--drop-label,
+#MainContent .tinkiu-product-app .cl-upload--wrapper li {
+  transform: none !important;
+  will-change: none !important;
+}
 #MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--panel {
   border-radius: var(--button-radius);
 }
@@ -2343,6 +2348,55 @@ slider-component.tinkiu-product-media-carousel li modal-opener .product__media.m
 }
 .doka--root span {
   font-size: var(--ui-small) !important;
+}
+.doka--root * {
+  text-transform: uppercase !important;
+}
+.doka--root .doka--crop-rotator-line-mask,
+.doka--root .doka--crop-rotator,
+.doka--root .doka--button-action-reset {
+  display: none !important;
+}
+.doka--root .doka--edit-status {
+  color: black !important;
+}
+.doka--root button {
+  padding: var(--button-padding) !important;
+  border-radius: var(--button-radius) !important;
+  height: var(--button-height) !important;
+  margin: 0 !important;
+  font-weight: bold !important;
+}
+.doka--root button:hover, .doka--root button:focus {
+  background-color: transparent !important;
+  cursor: pointer !important;
+  web-kit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+.doka--root button span {
+  line-height: 1 !important;
+}
+.doka--root .doka--menu > button {
+  height: calc(var(--button-height) - var(--button-padding) * 2) !important;
+}
+.doka--root .doka--button-action-cancel {
+  background-color: transparent !important;
+  web-kit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: #DF2726 1px solid !important;
+  border-color: white !important;
+}
+.doka--root .doka--button-action-cancel:hover {
+  background-color: white !important;
+  color: black !important;
+}
+.doka--root .doka--button-action-confirm {
+  background-color: #DF2726 !important;
+  color: white !important;
+}
+.doka--root .doka--button-action-confirm:hover, .doka--root .doka--button-action-confirm:focus {
+  background-color: #DF2726 !important;
+  color: white !important;
 }
 
 product-info.tinkiu-product {
@@ -4142,6 +4196,10 @@ a, a:-webkit-any-link, a:visited {
 body {
   text-wrap: pretty;
   letter-spacing: 0;
+}
+
+:root {
+  --button-height: calc(var(--ui-small) + var(--button-padding) * 2);
 }
 
 :root,
