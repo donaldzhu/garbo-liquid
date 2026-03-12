@@ -16,6 +16,7 @@
 @forward "tinkiu-product-insert";
 @forward "tinkiu-main-collection-banner";
 @forward "tinkiu-product-media-carousel";
+@forward "tinkiu-upload-lift";
 
 product-info.tinkiu-product {
   @include flex($column: true);

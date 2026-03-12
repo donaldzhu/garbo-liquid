@@ -2276,6 +2276,33 @@ slider-component.tinkiu-product-media-carousel li modal-opener .product__media.m
   object-fit: contain;
 }
 
+#MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--drop-label {
+  cursor: pointer !important;
+}
+#MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--drop-label label {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: var(--ui-small) !important;
+  color: black !important;
+}
+#MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--panel {
+  border-radius: var(--button-radius);
+}
+#MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--drop-label label,
+#MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--file {
+  font-family: "Dazzed", sans-serif !important;
+}
+#MainContent .filepond--image-preview-overlay-success {
+  opacity: 0 !important;
+}
+
+.doka--root {
+  font-family: "Dazzed", sans-serif !important;
+}
+.doka--root span {
+  font-size: var(--ui-small) !important;
+}
+
 product-info.tinkiu-product {
   display: flex;
   align-items: center;

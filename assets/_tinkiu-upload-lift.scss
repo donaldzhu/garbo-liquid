@@ -1,0 +1,38 @@
+@use "layouts" as *;
+@use "colors" as *;
+@use "typography" as *;
+
+#MainContent {
+  .tinkiu-product-app .cl-upload--wrapper {
+    .filepond--drop-label {
+      cursor: pointer !important;
+
+      label {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: var(--ui-small) !important;
+        color: black !important;
+      }
+    }
+
+    .filepond--panel {
+      border-radius: var(--button-radius);
+    }
+
+    .filepond--drop-label label,
+    .filepond--file {
+      font-family: $font-family-body !important;
+    }
+  }
+
+  .filepond--image-preview-overlay-success {
+    opacity: 0 !important;
+  }
+}
+
+.doka--root {
+  font-family: $font-family-body !important;
+  span {
+    font-size: var(--ui-small) !important;
+  }
+}
