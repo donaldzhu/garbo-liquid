@@ -2364,8 +2364,17 @@ slider-component.tinkiu-product-media-carousel li modal-opener .product__media.m
   padding: var(--button-padding) !important;
   border-radius: var(--button-radius) !important;
   height: var(--button-height) !important;
-  margin: 0 !important;
   font-weight: bold !important;
+}
+@media (min-width: 1024px) {
+  .doka--root button {
+    margin: 0 !important;
+  }
+}
+@media (max-width: calc(1024px - 1px)) {
+  .doka--root button {
+    width: fit-content !important;
+  }
 }
 .doka--root button:hover, .doka--root button:focus {
   background-color: transparent !important;
@@ -2378,6 +2387,11 @@ slider-component.tinkiu-product-media-carousel li modal-opener .product__media.m
 }
 .doka--root .doka--menu > button {
   height: calc(var(--button-height) - var(--button-padding) * 2) !important;
+}
+@media (max-width: calc(1024px - 1px)) {
+  .doka--root .doka--menu {
+    margin: var(--page-margin-x) var(--page-margin-y) !important;
+  }
 }
 .doka--root .doka--button-action-cancel {
   background-color: transparent !important;
@@ -2397,6 +2411,9 @@ slider-component.tinkiu-product-media-carousel li modal-opener .product__media.m
 .doka--root .doka--button-action-confirm:hover, .doka--root .doka--button-action-confirm:focus {
   background-color: #DF2726 !important;
   color: white !important;
+}
+.doka--root .doka--toolbar > div:last-child {
+  display: none !important;
 }
 
 product-info.tinkiu-product {
