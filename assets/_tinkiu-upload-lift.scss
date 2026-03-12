@@ -4,6 +4,8 @@
 
 #MainContent {
   .tinkiu-product-app .cl-upload--wrapper {
+    margin-bottom: var(--inner-section-spacing);
+
     .filepond--drop-label {
       cursor: pointer !important;
 
@@ -18,6 +20,9 @@
     .filepond--panel {
       border-radius: var(--button-radius);
     }
+    .filepond--image-preview-wrapper {
+      border-radius: 2.4rem;
+    }
 
     .filepond--drop-label label,
     .filepond--file {
@@ -27,6 +32,29 @@
 
   .filepond--image-preview-overlay-success {
     opacity: 0 !important;
+  }
+
+  .cl-upload--label {
+    @include detail-label(true);
+    color: black !important;
+    font-size: var(--small-copy) !important;
+  }
+
+  .cl-upload--errors {
+    .cl-upload--error {
+      background-color: transparent !important;
+      border: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      pointer-events: none !important;
+
+      p {
+        font-size: var(--small-copy) !important;
+        color: $red !important;
+        width: fit-content !important;
+        @include with-asterisk;
+      }
+    }
   }
 }
 

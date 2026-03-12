@@ -2276,6 +2276,9 @@ slider-component.tinkiu-product-media-carousel li modal-opener .product__media.m
   object-fit: contain;
 }
 
+#MainContent .tinkiu-product-app .cl-upload--wrapper {
+  margin-bottom: var(--inner-section-spacing);
+}
 #MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--drop-label {
   cursor: pointer !important;
 }
@@ -2288,12 +2291,51 @@ slider-component.tinkiu-product-media-carousel li modal-opener .product__media.m
 #MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--panel {
   border-radius: var(--button-radius);
 }
+#MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--image-preview-wrapper {
+  border-radius: 2.4rem;
+}
 #MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--drop-label label,
 #MainContent .tinkiu-product-app .cl-upload--wrapper .filepond--file {
   font-family: "Dazzed", sans-serif !important;
 }
 #MainContent .filepond--image-preview-overlay-success {
   opacity: 0 !important;
+}
+#MainContent .cl-upload--label {
+  font-family: "Dazzed", sans-serif;
+  font-size: var(--small-copy);
+  line-height: 1.15;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: black !important;
+  font-size: var(--small-copy) !important;
+}
+#MainContent .cl-upload--label ~ p {
+  margin-bottom: var(--detail-label-margin);
+}
+#MainContent .cl-upload--label:after {
+  content: " *";
+  color: #DF2726 !important;
+  font-size: var(--small-copy) !important;
+}
+#MainContent .cl-upload--errors .cl-upload--error {
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
+#MainContent .cl-upload--errors .cl-upload--error p {
+  font-size: var(--small-copy) !important;
+  color: #DF2726 !important;
+  width: fit-content !important;
+}
+#MainContent .cl-upload--errors .cl-upload--error p:after {
+  content: " *";
+  color: #DF2726 !important;
+  font-size: var(--small-copy) !important;
 }
 
 .doka--root {

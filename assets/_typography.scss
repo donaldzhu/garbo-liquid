@@ -25,6 +25,16 @@ $font-family-body: "Dazzed", sans-serif;
 $facet-label-line-height: 1.15;
 $subsection-header-letter-spacing: 0.02em;
 
+@use "colors" as *;
+
+@mixin with-asterisk() {
+  &:after {
+    content: " *";
+    color: $red !important;
+    font-size: var(--small-copy) !important;
+  }
+}
+
 @mixin detail-caption() {
   font-family: $font-family-body;
   font-size: var(--small-copy);
@@ -32,7 +42,7 @@ $subsection-header-letter-spacing: 0.02em;
   color: black;
 }
 
-@mixin detail-label() {
+@mixin detail-label($with-asterisk: false) {
   @include detail-caption;
   font-weight: bold;
   text-transform: uppercase;
@@ -40,6 +50,10 @@ $subsection-header-letter-spacing: 0.02em;
 
   & ~ p {
     margin-bottom: var(--detail-label-margin);
+  }
+
+  @if $with-asterisk {
+    @include with-asterisk;
   }
 }
 
