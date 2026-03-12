@@ -37,6 +37,13 @@
             "product": "{{product}}"
           }
         },
+        "upload_lift_app_block_erN4ka": {
+          "type": "shopify://apps/upload-lift/blocks/app-block/3c98bdcb-7587-4ade-bfe4-7d8af00d05ca",
+          "settings": {
+            "product": "{{product}}",
+            "field": ""
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -59,6 +66,7 @@
         "details",
         "variant_picker",
         "qikify_product_options_product_app_block_kTnqDQ",
+        "upload_lift_app_block_erN4ka",
         "quantity_selector",
         "buy_buttons",
         "description"
