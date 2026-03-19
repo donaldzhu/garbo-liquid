@@ -51,9 +51,4 @@
     @include flex($column: true);
     gap: var(--small-section-media-spacing);
   }
-
-  .tinkiu-own-story__content p {
-    font-family: $font-family-heading !important;
-    font-size: var(--extra-large-copy) !important;
-  }
 }

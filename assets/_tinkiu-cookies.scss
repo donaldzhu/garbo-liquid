@@ -1,0 +1,12 @@
+@use "layouts" as *;
+@use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
+
+section.shopify-pc__banner__dialog {
+  #shopify-pc__banner__body-title,
+  span,
+  button {
+    font-size: var(--large-copy);
+  }
+}

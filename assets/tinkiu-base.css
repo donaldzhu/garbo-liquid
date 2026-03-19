@@ -2970,10 +2970,6 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   flex-direction: column;
   gap: var(--small-section-media-spacing);
 }
-.tinkiu-own-story .tinkiu-own-story__content p {
-  font-family: "Fenul", serif !important;
-  font-size: var(--extra-large-copy) !important;
-}
 
 .tinkiu-socials-embed {
   display: flex;
@@ -3390,6 +3386,12 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   margin-bottom: calc(-1 * var(--inner-column-gap));
 }
 
+section.shopify-pc__banner__dialog #shopify-pc__banner__body-title,
+section.shopify-pc__banner__dialog span,
+section.shopify-pc__banner__dialog button {
+  font-size: var(--large-copy);
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -3456,7 +3458,7 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (min-width: 1536px) {
   :root {
-    --large-copy: 1.85rem;
+    --large-copy: 1.65rem;
   }
 }
 @media (max-width: 1279px) {
