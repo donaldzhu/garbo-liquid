@@ -359,7 +359,7 @@ body {
 }
     {% endstyle %}
 
-    {% if request.path != '/' %}
+    {% if request.path != '/' or request.path != '/pages/home' %}
       {% style %}
         main section:last-child,
         main > div:last-child {
@@ -438,13 +438,13 @@ body {
 
     <main
       id="MainContent"
-      class="content-for-layout focus-none {% if template != 'index' %}tinkiu-main{% endif %} {% if template == 'product' %}tinkiu-main-product-page{% endif %}"
+      class="content-for-layout focus-none {% if template != 'index' and template != 'page.home' %}tinkiu-main{% endif %} {% if template == 'product' %}tinkiu-main-product-page{% endif %}"
       role="main"
       tabindex="-1">
       {{ content_for_layout }}
     </main>
 
-    {% if template != 'index' %}
+    {% if template != 'index' and template != 'page.home' %}
       {% sections 'footer-group' %}
     {% endif %}
 
