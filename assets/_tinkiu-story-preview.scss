@@ -53,10 +53,10 @@
   h3 {
     @include hover-underline;
     margin: 0;
-    margin-top: var(--large-inner-section-gap);
+    margin-top: var(--large-section-gap);
     font-size: var(--subsection-header);
     text-transform: uppercase;
-    line-height: 1.15;
+    line-height: 1.2;
     max-width: var(--side-info-width);
 
     @include mobile {

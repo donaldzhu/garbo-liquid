@@ -2,7 +2,7 @@ $header-xxl: 5.2rem;
 $header-xl: 4.6rem;
 $header-l: 4rem;
 $header-m: 3.6rem;
-$header-line-height: 1.15;
+$header-line-height: 1.2;
 
 $subheader-xxl: 3.2rem;
 $subheader-xl: 2.8rem;
@@ -22,7 +22,7 @@ $copy-xs: 1.2rem;
 $font-family-heading: "Fenul", serif;
 $font-family-body: "Dazzed", sans-serif;
 
-$facet-label-line-height: 1.15;
+$facet-label-line-height: 1.2;
 $subsection-header-letter-spacing: 0.02em;
 
 @use "colors" as *;
@@ -38,7 +38,7 @@ $subsection-header-letter-spacing: 0.02em;
 @mixin detail-caption() {
   font-family: $font-family-body;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
 }
 

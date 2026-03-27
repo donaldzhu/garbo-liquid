@@ -25,6 +25,8 @@
         render 'tinkiu-media' with block.image as data
       when "socialsEmbed"
         echo block.embedCode
+      when "table"
+        render 'portable-text-table' with block as data
       else
         if errors != false
           echo '<script type="text/javascript">console.warn("Unknown block type: {type}")</script>' | replace: "{type}", block._type

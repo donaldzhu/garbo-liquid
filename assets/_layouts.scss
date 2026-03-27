@@ -142,7 +142,7 @@
   @include flex($flex-start: true);
   flex-wrap: wrap;
   gap: var(--inner-column-gap);
-  margin-top: var(--large-inner-section-gap);
+  margin-top: var(--large-section-gap);
 
   @if $responsive {
     @include desktop {
@@ -225,7 +225,7 @@
 @mixin description {
   width: var(--side-info-width);
   max-width: var(--text-max-width);
-  margin-top: var(--inner-section-spacing);
+  margin: 0 0 var(--large-section-gap);
 
   &,
   & p {

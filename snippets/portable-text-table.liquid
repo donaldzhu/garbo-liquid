@@ -1,0 +1,32 @@
+{%- if data.rows and data.rows.size > 0 -%}
+  <div class="portable-table-container">
+    <table class="portable-table">
+
+      {%- comment -%} First row → thead {%- endcomment -%}
+      {%- assign header_row = data.rows | first -%}
+      {%- if header_row.cells and header_row.cells.size > 0 -%}
+        <thead>
+          <tr>
+            {%- for cell in header_row.cells -%}
+              <th scope="col">{{ cell }}</th>
+            {%- endfor -%}
+          </tr>
+        </thead>
+      {%- endif -%}
+
+      {%- comment -%} Remaining rows → tbody {%- endcomment -%}
+      {%- if data.rows.size > 1 -%}
+        <tbody>
+          {%- for row in data.rows offset: 1 -%}
+            <tr>
+              {%- for cell in row.cells -%}
+                <td>{{ cell }}</td>
+              {%- endfor -%}
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      {%- endif -%}
+
+    </table>
+  </div>
+{%- endif -%}

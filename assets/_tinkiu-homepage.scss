@@ -100,7 +100,7 @@
 
   img,
   video {
-    width: var(--full-width);
+    width: var(--full-width) !important;
     border-radius: var(--media-border-radius);
   }
 
@@ -214,8 +214,12 @@
 
 .tinkiu-homepage__newsletter {
   @include fullscreen-max-height;
+  height: fit-content;
+  min-height: 100dvh;
   flex: none;
   gap: var(--inner-section-spacing);
+  box-sizing: border-box;
+  padding: var(--large-section-gap) 0;
 
   @include mobile {
     margin-top: 10dvh;

@@ -1,7 +1,7 @@
-@use 'layouts' as *;
-@use 'typography' as *;
-@use 'colors' as *;
-@use 'sizes' as *;
+@use "layouts" as *;
+@use "typography" as *;
+@use "colors" as *;
+@use "sizes" as *;
 
 .tinkiu-contact {
   @include flex($full-screen: true, $column: true, $no-padding: true);
@@ -11,7 +11,7 @@
     @include split(4, $gap: var(--inner-column-gap));
     width: var(--inset-width);
     max-width: var(--inset-width);
-    margin: var(--large-inner-section-gap) 0;
+    margin: var(--large-section-gap) 0;
     flex-wrap: wrap;
 
     @include below-medium-mobile {
@@ -19,12 +19,11 @@
     }
 
     @include below-small-mobile {
-      >div {
+      > div {
         width: 100%;
       }
     }
   }
-
 }
 
 .tinkiu-contact-form {
@@ -61,20 +60,16 @@
       input {
         border: border(black);
       }
-
-
     }
   }
 
   textarea.text-area {
-
     &,
     &:focus,
     &:not(:placeholder-shown) {
       border: border(black);
       background-color: $ash;
     }
-
   }
 
   input.field__input,
@@ -85,7 +80,7 @@
     color: black;
     border-radius: $input-border-radius;
 
-    ~label {
+    ~ label {
       left: var(--input-padding);
       top: 0;
       height: 100%;

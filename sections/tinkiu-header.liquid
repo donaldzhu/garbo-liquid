@@ -97,12 +97,12 @@
 
         {% render 'tinkiu-header-anchor' href: '/pages/tinkiu-story', text: data.tinkiuStory %}
         {% comment %} {% render 'tinkiu-header-anchor' href: '/pages/contact', text: data.contact %} {% endcomment %}
-        {% render 'tinkiu-header-anchor' href: '/pages/services', text: data.services %}
+        {% render 'tinkiu-header-anchor' href: '/pages/faq', text: data.services %}
         {% render 'tinkiu-header-anchor' href: '/account/login', text: data.orders %}
     </div>
   </div>
   <div class="tinkiu-logo-container">
-    <a href="{{ routes.root_url }}">
+    <a href="/pages/home">
       {% render 'tinkiu-logo' %}
     </a>
   </div>
@@ -114,7 +114,7 @@
     {% render 'tinkiu-header-anchor' href: '/pages/tinkiu-story', text: data.tinkiuStory %}
   </ul>
   <div class="tinkiu-logo-container">
-    <a href="{{ routes.root_url }}">
+    <a href="/">
       {% render 'tinkiu-logo' %}
     </a>
   </div>
@@ -127,7 +127,7 @@
     {% endif %}
 
 {% comment %}     {% render 'tinkiu-header-anchor' href: '/pages/contact', text: data.contact %} {% endcomment %}
-    {% render 'tinkiu-header-anchor' href: '/pages/services', text: data.services %}
+    {% render 'tinkiu-header-anchor' href: '/pages/faq', text: data.services %}
     {% render 'tinkiu-header-anchor' href: '/cart', text: cartText %}
     {% render 'tinkiu-header-anchor' href: '/account/login', text: data.orders %}
   </ul>

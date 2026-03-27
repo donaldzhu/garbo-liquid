@@ -1,6 +1,6 @@
 {%- liquid
   comment
-    Here we define how to render a block of Portable Text. We use a case statement to output the HTML tag for the block type, and then recursively render the children of the block.
+    Here we define how to render a block of Portable Text.We use a case statement to output the HTML tag for the block type, and then recursively render the children of the block.
     You can customise how your blocks are rendered by adding more cases to this statement, or by altering the HTML tags being output.
   endcomment
 
@@ -27,7 +27,7 @@
   endif
 
   comment
-    Below we define the HTML tags for each block type. You can customise these to match your own Portable Text configuration.
+    Below we define the HTML tags for each block type.You can customise these to match your own Portable Text configuration.
   endcomment
   case block.style
     when "normal"
@@ -52,7 +52,10 @@
     when "blockquote"
       assign liquidBlock = '<blockquote>{children}</blockquote>'
     when "h1"
-      assign liquidBlock = '<h1>{children}</h1>'
+      capture custom_header
+        render 'tinkiu-section-header', title: children
+      endcapture
+      assign liquidBlock = custom_header
     when "h2"
       assign liquidBlock = '<h2>{children}</h2>'
     when "h3"

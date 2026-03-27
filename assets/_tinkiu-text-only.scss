@@ -1,4 +1,5 @@
 @use "typography" as *;
+@use "colors" as *;
 
 .tinkiu-text-only {
   h2,
@@ -8,7 +9,37 @@
   h6 {
     font-family: $font-family-body;
     font-weight: bold;
-    margin-top: var(--inner-section-spacing);
+    margin-top: var(--section-media-spacing);
     margin-bottom: calc(-1 * var(--inner-column-gap));
+  }
+
+  h4 {
+    font-size: var(--large-copy);
+  }
+}
+
+.portable-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--small-section-media-spacing) 0;
+  font-size: var(--medium-copy);
+
+  .portable-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .portable-table th,
+  .portable-table td {
+    padding: 0.65em 1em;
+    text-align: left;
+    border: 1px solid $gray;
+    vertical-align: top;
+  }
+
+  .portable-table th {
+    font-weight: bold;
+    white-space: nowrap;
   }
 }

@@ -45,11 +45,11 @@
         {% endif %}
       {% endfor %}
     {% endif %}
-    {% if request.path == '/collections/all' %}
-      <script>
-        window.location.href = '{{ routes.root_url }}';
-      </script>
-    {% endif %}
+    {% comment %}     {% if request.path == '/collections/all' %}
+                  <script>
+                    window.location.href = '{{ routes.root_url }}';
+                  </script>
+            {% endif %} {% endcomment %}
     {% if request.path == '/pages/faq' %}
       {% assign services = shop.metaobjects['app--6007307--sanity-documents-services'].values %}
       {% for service in services %}
@@ -359,7 +359,7 @@ body {
 }
     {% endstyle %}
 
-    {% if request.path != '/' or request.path != '/pages/home' %}
+    {% if request.path != '/' %}
       {% style %}
         main section:last-child,
         main > div:last-child {

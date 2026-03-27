@@ -9,8 +9,7 @@
 </script>
 
 <div class="tinkiu-own-story tinkiu-full-width">
-  {% render 'tinkiu-section-header'
-    , title: o.title %}
+
   <div class="tinkiu-own-story__content">
     <div class="tinkiu-portable-text">
       {% render 'portable-text'
@@ -19,9 +18,14 @@
   </div>
   <div class="tinkiu-own-story__gallery">
     <div class="tinkiu-own-story__gallery__images">
-      {% for image in o.gallery.value %}
-        {% render 'tinkiu-media'
-          , data: image.image %}
+      {% for media in o.gallery.value %}
+        {% if media._type == 'shopifyImage' %}
+          {% render 'tinkiu-media'
+            , data: media.image %}
+        {% elsif media._type == 'shopifyVideo' %}
+          {% render 'tinkiu-media'
+            , data: media.video %}
+        {% endif %}
       {% endfor %}
     </div>
     <p>{{ o.galleryCaption.value }}</p>
@@ -30,6 +34,12 @@
     {% render 'tinkiu-vimeo'
       , vimeo_url: o.vimeoLink %}
     <p>{{ o.vimeoCaption.value }}</p>
+  </div>
+  <div class="tinkiu-own-story__additional-writeup">
+    <div class="tinkiu-portable-text">
+      {% render 'portable-text'
+        , portableText: o.additionalWriteup.value %}
+    </div>
   </div>
   <div class="tinkiu-own-story__images">
     {% for image in o.additionalPhotos.value %}

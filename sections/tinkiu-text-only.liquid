@@ -1,7 +1,24 @@
+{% assign slug = request.path | remove: '/pages/' %}
+
+{% for o in shop.metaobjects['app--6007307--sanity-documents-textOnly'].values -%}
+  {% if o.slug.value == slug %}
+    {% assign textOnly = o %}
+  {% endif %}
+{% endfor %}
+
+
 <div class="tinkiu-text-only tinkiu-full-width">
   {% render 'tinkiu-section-header'
-    , title: page.title %}
+    , title: textOnly.title.value %}
   <div class="tinkiu-portable-text">
-    {{ page.content }}
+    {% render 'portable-text'
+      , portableText: textOnly.content.value %}
   </div>
+  {% assign cta = textOnly.cta.value %}
+  {% if cta.buttonLabel != blank %}
+    {% render 'tinkiu-cta-button'
+      , linkButton: cta
+      , label: cta.buttonLabel
+      , link: cta.link %}
+  {% endif %}
 </div>

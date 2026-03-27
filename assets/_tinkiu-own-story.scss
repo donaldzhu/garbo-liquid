@@ -14,13 +14,15 @@
     width: var(--full-width);
     flex-wrap: wrap;
 
-    img {
+    img,
+    video {
       --column-count: 3;
       $size: calc(
         (var(--full-width) - var(--column-gap) * (var(--column-count) - 1)) /
           var(--column-count)
       );
-      @include square($size);
+      width: $size;
+      aspect-ratio: 9/16;
 
       border-radius: var(--media-border-radius);
       @include mobile {
@@ -50,5 +52,16 @@
   .tinkiu-own-story__gallery {
     @include flex($column: true);
     gap: var(--small-section-media-spacing);
+  }
+
+  .tinkiu-section-header {
+    width: 100%;
+    &:not(:first-child) {
+      margin-top: var(--inner-section-spacing);
+    }
+  }
+
+  .tinkiu-own-story__additional-writeup {
+    margin-top: var(--small-section-media-spacing);
   }
 }

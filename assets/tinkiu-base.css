@@ -14,13 +14,13 @@
   height: 100dvh;
   min-height: max(50vw, 500px);
   flex-direction: column;
-  max-height: min(110vw, 1500px);
+  max-height: min(200vw, 2500px);
   flex: none;
   position: relative;
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-homepage__intro {
-    max-height: min(135dvw, 1500px);
+    max-height: min(135dvw, 2500px);
   }
 }
 .tinkiu-homepage__intro .tinkiu-logo {
@@ -46,14 +46,14 @@
   height: 100dvh;
   min-height: max(50vw, 500px);
   flex-direction: row;
-  max-height: min(110vw, 1500px);
+  max-height: min(200vw, 2500px);
   position: absolute;
   top: 0;
   right: 0;
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-homepage__intro-image-container--animated, .tinkiu-homepage__intro-image-container--static {
-    max-height: min(135dvw, 1500px);
+    max-height: min(135dvw, 2500px);
   }
 }
 .tinkiu-homepage__intro-image-container--animated {
@@ -155,7 +155,7 @@
 }
 .tinkiu-homepage h2 {
   font-size: var(--section-header);
-  line-height: 1.15;
+  line-height: 1.2;
   max-width: var(--text-max-width);
 }
 .tinkiu-homepage p {
@@ -219,7 +219,7 @@
 .tinkiu-homepage h2,
 .tinkiu-blurb h2 {
   font-size: var(--section-header);
-  line-height: 1.15;
+  line-height: 1.2;
   max-width: var(--text-max-width);
   text-align: center;
 }
@@ -243,11 +243,11 @@
 }
 .tinkiu-homepage__feature img,
 .tinkiu-homepage__feature video {
-  width: var(--full-width);
+  width: var(--full-width) !important;
   border-radius: var(--media-border-radius);
 }
 .tinkiu-homepage__feature .tinkiu-dot {
-  margin-top: calc(var(--dot-margin-bottom) + var(--section-header) * 0.075);
+  margin-top: calc(var(--dot-margin-bottom) + var(--section-header) * 0.1);
 }
 
 @media (max-width: calc(480px - 1px)) {
@@ -387,13 +387,17 @@
   height: 100dvh;
   min-height: max(50vw, 500px);
   flex-direction: column;
-  max-height: min(110vw, 1500px);
+  max-height: min(200vw, 2500px);
+  height: fit-content;
+  min-height: 100dvh;
   flex: none;
   gap: var(--inner-section-spacing);
+  box-sizing: border-box;
+  padding: var(--large-section-gap) 0;
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-homepage__newsletter {
-    max-height: min(135dvw, 1500px);
+    max-height: min(135dvw, 2500px);
   }
 }
 @media (max-width: calc(1024px - 1px)) {
@@ -446,7 +450,7 @@
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-homepage__footer {
-    max-height: min(135dvw, 1500px);
+    max-height: min(135dvw, 2500px);
   }
 }
 @media (max-width: calc(1024px - 1px)) {
@@ -590,7 +594,7 @@
 }
 @media (max-width: calc(1024px - 1px)) and (max-width: calc(1024px - 1px)) {
   .tinkiu-header .tinkiu-header__mobile-popup {
-    max-height: min(135dvw, 1500px);
+    max-height: min(135dvw, 2500px);
   }
 }
 @media (max-width: calc(1024px - 1px)) {
@@ -860,7 +864,7 @@
 }
 .tinkiu-section-header h1 {
   font-size: var(--section-header);
-  line-height: 1.15;
+  line-height: 1.2;
   max-width: var(--text-max-width);
   text-align: center;
 }
@@ -872,7 +876,7 @@
 }
 .tinkiu-section-header h3 {
   font-size: var(--subsection-header);
-  line-height: 1.15;
+  line-height: 1.2;
   max-width: var(--text-max-width);
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -947,7 +951,7 @@ main section.shopify-section.section, main section.shopify-section.section > div
 }
 .tinkiu-list-item h3 {
   font-size: var(--subsection-header);
-  line-height: 1.15;
+  line-height: 1.2;
   max-width: var(--text-max-width);
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -1064,7 +1068,7 @@ variant-selects.tinkiu-product-variant-picker fieldset {
 variant-selects.tinkiu-product-variant-picker fieldset legend.form__label {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -1124,7 +1128,7 @@ div.tinkiu-product-details {
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: var(--inner-column-gap);
-  margin-top: var(--large-inner-section-gap);
+  margin-top: var(--large-section-gap);
   width: var(--side-info-width);
   margin-top: var(--inner-section-spacing);
   margin-bottom: var(--product-details-gap);
@@ -1142,7 +1146,7 @@ div.tinkiu-product-details p {
   margin: 0;
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
 }
 div.tinkiu-product-details > div {
@@ -1156,7 +1160,7 @@ div.tinkiu-product-details > div {
 div.tinkiu-product-details > div p:first-child {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -1168,13 +1172,13 @@ div.tinkiu-product-details > div p:first-child ~ p {
 div.tinkiu-product-details p {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
 }
 div.tinkiu-product-details p:first-child {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -1264,7 +1268,7 @@ div.tinkiu-product-details p:first-child ~ p {
 .tinkiu-product-app label.tcustomizer-field__heading {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -1565,7 +1569,7 @@ slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.
 }
 .tinkiu-product-section h2 {
   font-size: var(--section-header);
-  line-height: 1.15;
+  line-height: 1.2;
   max-width: var(--text-max-width);
   margin-bottom: var(--section-media-spacing);
 }
@@ -1701,7 +1705,7 @@ div.tinkiu-main-collection-product-grid.gradient aside.facets-wrapper {
 .tinkiu-facets-container.facets-container .mobile-facets__list li label * {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
 }
 .tinkiu-facets-container.facets-container .mobile-facets__list li .facet-checkbox .facet-checkbox__text-label:hover,
@@ -1793,7 +1797,7 @@ div.tinkiu-main-collection-product-grid.gradient aside.facets-wrapper {
   text-transform: uppercase;
   font-family: "Dazzed", sans-serif;
   margin-bottom: 0;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 .tinkiu-facets-container.facets-container facet-filters-form form .active-facets-vertical-filter facet-remove.active-facets__button-wrapper {
   color: #c9c9c9;
@@ -1895,7 +1899,7 @@ details.facets__disclosure-vertical[open] summary {
   padding: var(--small-gap) 0;
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -1977,7 +1981,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
 details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul li label * {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
 }
 details.tinkiu-facet-details:not([open]) .parent-display.facets__display-vertical fieldset ul li .facet-checkbox .facet-checkbox__text-label:hover,
@@ -2060,7 +2064,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   font-size: var(--ui-small);
   text-transform: uppercase;
   letter-spacing: 0;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 .tinkiu-product-grid-container .tinkiu-facets-container-sort .facet-filters__field h2 {
   margin-right: var(--inner-column-gap);
@@ -2130,7 +2134,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   font-size: var(--ui-small);
   text-transform: uppercase;
   letter-spacing: 0;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 .tinkiu-facets-container .mobile-facets__summary h2 {
   margin-right: var(--inner-column-gap);
@@ -2177,7 +2181,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   font-family: "Dazzed", sans-serif;
   margin-top: 0;
   margin-bottom: calc(var(--small-space-y) - 0.25rem);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 .tinkiu-product-insert--small .tinkiu-product-insert__images img {
   width: calc(
@@ -2309,7 +2313,7 @@ slider-component.tinkiu-product-media-carousel li modal-opener .product__media.m
 #MainContent .cl-upload--label {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -2468,7 +2472,7 @@ product-info.tinkiu-product .product__title {
 product-info.tinkiu-product .product__title > h1 {
   text-transform: uppercase;
   margin: 0;
-  line-height: 1.15;
+  line-height: 1.2;
   font-size: var(--subsection-header);
   max-width: var(--side-info-width);
 }
@@ -2478,7 +2482,7 @@ product-info.tinkiu-product .tinkiu-price-container {
 product-info.tinkiu-product .tinkiu-product-description {
   width: var(--side-info-width);
   max-width: var(--text-max-width);
-  margin-top: var(--inner-section-spacing);
+  margin: 0 0 var(--large-section-gap);
 }
 product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-product .tinkiu-product-description p {
   font-size: var(--small-copy);
@@ -2490,7 +2494,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 }
 
 .tinkiu-pagination-wrapper.pagination-wrapper {
-  padding-top: var(--large-inner-section-gap);
+  padding-top: var(--large-section-gap);
   margin: 0;
 }
 .tinkiu-pagination-wrapper.pagination-wrapper ul li {
@@ -2560,10 +2564,10 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 }
 .tinkiu-story__preview__content h3 {
   margin: 0;
-  margin-top: var(--large-inner-section-gap);
+  margin-top: var(--large-section-gap);
   font-size: var(--subsection-header);
   text-transform: uppercase;
-  line-height: 1.15;
+  line-height: 1.2;
   max-width: var(--side-info-width);
 }
 .tinkiu-story__preview__content h3:hover {
@@ -2590,7 +2594,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: var(--inner-column-gap);
-  margin-top: var(--large-inner-section-gap);
+  margin-top: var(--large-section-gap);
   width: var(--side-info-width);
 }
 .tinkiu-story__preview__content .tinkiu-story__preview__details > div {
@@ -2606,7 +2610,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   margin: 0;
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
 }
 .tinkiu-story__preview__content .tinkiu-story__preview__details > div {
@@ -2620,7 +2624,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-story__preview__content .tinkiu-story__preview__details > div p:first-child {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -2637,7 +2641,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-story__preview__content .tinkiu-story__preview__description {
   width: var(--side-info-width);
   max-width: var(--text-max-width);
-  margin-top: var(--inner-section-spacing);
+  margin: 0 0 var(--large-section-gap);
   text-align: left;
   margin: var(--section-media-spacing) 0;
 }
@@ -2719,7 +2723,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-story .tinkiu-story__description {
   width: var(--side-info-width);
   max-width: var(--text-max-width);
-  margin-top: var(--inner-section-spacing);
+  margin: 0 0 var(--large-section-gap);
   width: calc(
     calc(
     (var(--full-width) - (12 - 1) * var(--column-gap)) /
@@ -2747,7 +2751,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: var(--inner-column-gap);
-  margin-top: var(--large-inner-section-gap);
+  margin-top: var(--large-section-gap);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2774,7 +2778,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   margin: 0;
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
 }
 .tinkiu-story .tinkiu-story__details > div {
@@ -2788,7 +2792,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-story .tinkiu-story__details > div p:first-child {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -2800,7 +2804,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-story .tinkiu-story__details .tinkiu-story__description {
   width: var(--side-info-width);
   max-width: var(--text-max-width);
-  margin-top: var(--inner-section-spacing);
+  margin: 0 0 var(--large-section-gap);
   width: 100%;
   margin-top: inherit;
 }
@@ -2938,14 +2942,16 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   width: var(--full-width);
   flex-wrap: wrap;
 }
-.tinkiu-own-story .tinkiu-own-story__gallery__images img {
+.tinkiu-own-story .tinkiu-own-story__gallery__images img,
+.tinkiu-own-story .tinkiu-own-story__gallery__images video {
   --column-count: 3;
   width: calc((var(--full-width) - var(--column-gap) * (var(--column-count) - 1)) / var(--column-count));
-  height: calc((var(--full-width) - var(--column-gap) * (var(--column-count) - 1)) / var(--column-count));
+  aspect-ratio: 9/16;
   border-radius: var(--media-border-radius);
 }
 @media (max-width: calc(1024px - 1px)) {
-  .tinkiu-own-story .tinkiu-own-story__gallery__images img {
+  .tinkiu-own-story .tinkiu-own-story__gallery__images img,
+.tinkiu-own-story .tinkiu-own-story__gallery__images video {
     --column-count: 2;
   }
 }
@@ -2970,6 +2976,15 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   flex-direction: column;
   gap: var(--small-section-media-spacing);
 }
+.tinkiu-own-story .tinkiu-section-header {
+  width: 100%;
+}
+.tinkiu-own-story .tinkiu-section-header:not(:first-child) {
+  margin-top: var(--inner-section-spacing);
+}
+.tinkiu-own-story .tinkiu-own-story__additional-writeup {
+  margin-top: var(--small-section-media-spacing);
+}
 
 .tinkiu-socials-embed {
   display: flex;
@@ -2979,7 +2994,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 }
 .tinkiu-socials-embed h2 {
   font-size: var(--section-header);
-  line-height: 1.15;
+  line-height: 1.2;
   max-width: var(--text-max-width);
   margin-bottom: var(--section-media-spacing);
 }
@@ -3073,19 +3088,19 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: var(--inner-column-gap);
-  margin-top: var(--large-inner-section-gap);
+  margin-top: var(--large-section-gap);
   display: flex;
   gap: var(--inner-column-gap);
   width: var(--inset-width);
   max-width: var(--inset-width);
-  margin: var(--large-inner-section-gap) 0;
+  margin: var(--large-section-gap) 0;
   flex-wrap: wrap;
 }
 .tinkiu-contact .tinkiu-contact__contact-items p {
   margin: 0;
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
 }
 .tinkiu-contact .tinkiu-contact__contact-items > div {
@@ -3099,7 +3114,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-contact .tinkiu-contact__contact-items > div p:first-child {
   font-family: "Dazzed", sans-serif;
   font-size: var(--small-copy);
-  line-height: 1.15;
+  line-height: 1.2;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
@@ -3360,7 +3375,7 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-main-list-collections ul.collection-list.grid h3 {
   padding-top: var(--small-space-y);
   font-size: var(--subsection-header);
-  line-height: 1.15;
+  line-height: 1.2;
   max-width: var(--text-max-width);
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -3382,8 +3397,34 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
 .tinkiu-text-only h6 {
   font-family: "Dazzed", sans-serif;
   font-weight: bold;
-  margin-top: var(--inner-section-spacing);
+  margin-top: var(--section-media-spacing);
   margin-bottom: calc(-1 * var(--inner-column-gap));
+}
+.tinkiu-text-only h4 {
+  font-size: var(--large-copy);
+}
+
+.portable-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--small-section-media-spacing) 0;
+  font-size: var(--medium-copy);
+}
+.portable-table-container .portable-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.portable-table-container .portable-table th,
+.portable-table-container .portable-table td {
+  padding: 0.65em 1em;
+  text-align: left;
+  border: 1px solid #c9c9c9;
+  vertical-align: top;
+}
+.portable-table-container .portable-table th {
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 section.shopify-pc__banner__dialog #shopify-pc__banner__body-title,
@@ -3524,16 +3565,6 @@ a, a:-webkit-any-link, a:visited {
 @media (min-width: 1280px) {
   :root {
     --product-details-gap: 3rem;
-  }
-}
-@media (max-width: 1279px) {
-  :root {
-    --large-inner-section-gap: 7.5rem;
-  }
-}
-@media (min-width: 1280px) {
-  :root {
-    --large-inner-section-gap: 12rem;
   }
 }
 @media (max-width: 1279px) {
@@ -4266,7 +4297,7 @@ body h6 {
 body p {
   font-family: "Dazzed", sans-serif;
   font-size: var(--large-copy);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 body input.field__input, body input.field__input:focus, body input.field__input:not(:placeholder-shown),
 body textarea.text-area,
