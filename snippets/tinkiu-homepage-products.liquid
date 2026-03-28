@@ -2,12 +2,22 @@
   <div class="tinkiu-homepage__products">
     {% render 'tinkiu-dot' %}
     <div class="tinkiu-homepage__products-container">
-      {% for data in data.product %}
-        {% render 'tinkiu-homepage-product'
-          , category: data.category
-          , product: data.product
-          , isLast: forloop.last %}
-      {% endfor %}
+      <div class="tinkiu-homepage__products-container__labels">
+        {% for data in data.product %}
+          <div class="tinkiu-list-item">
+            {% render 'tinkiu-homepage-large-list'
+              , text: data.category
+              , isProduct: true %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="tinkiu-homepage__products-container__products">
+        {% for data in data.product %}
+          {% render 'tinkiu-homepage-product'
+            , category: data.category
+            , product: data.product %}
+        {% endfor %}
+      </div>
     </div>
     {% render 'tinkiu-cta-button'
       , linkButton: data.link %}

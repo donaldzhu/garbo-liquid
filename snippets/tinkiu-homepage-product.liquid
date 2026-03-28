@@ -3,9 +3,9 @@
 %}
 
 <div class="tinkiu-homepage__product tinkiu-list-item">
-  {% render 'tinkiu-homepage-large-list'
-    , text: category
-    , isLast: isLast %}
+  {% comment %}  {% render 'tinkiu-homepage-large-list'
+        , text: category
+      , isProduct: true %} {% endcomment %}
   {% render 'tinkiu-product-insert'
     , id: id %}
 </div>

@@ -1,5 +1,5 @@
 <h3 class="tinkiu-homepage__list-header">
-  {% if isLast %}&
+  {% if isLast and isProduct != true %}&
   {% endif %}
-  {{ text }}{% if isLast != true and isMobile != true %},{% endif %}
+  {{ text }}{% if isLast != true and isMobile != true and isProduct != true %},{% endif %}
 </h3>
