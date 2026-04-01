@@ -2,13 +2,6 @@
 @use "typography" as *;
 
 .tinkiu-own-story {
-  @include flex(
-    $justify: flex-start,
-    $full-screen: true,
-    $column: true,
-    $section-gapped: true
-  );
-
   .tinkiu-own-story__gallery__images {
     @include flex($gapped: true);
     width: var(--full-width);
@@ -52,13 +45,6 @@
   .tinkiu-own-story__gallery {
     @include flex($column: true);
     gap: var(--small-section-media-spacing);
-  }
-
-  .tinkiu-section-header {
-    width: 100%;
-    &:not(:first-child) {
-      margin-top: var(--inner-section-spacing);
-    }
   }
 
   .tinkiu-own-story__additional-writeup {

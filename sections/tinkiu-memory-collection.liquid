@@ -1,0 +1,22 @@
+{% assign stories = shop.metaobjects['app--6007307--sanity-documents-memoryCollection'].values %}
+{% for story in stories %}
+  {% assign o = story %}
+{% endfor %}
+
+<div class="tinkiu-rich-content-container tinkiu-memory-collection tinkiu-full-width">
+  <div class="tinkiu-memory-collection__content">
+    <div class="tinkiu-portable-text">
+      {% render 'portable-text'
+        , portableText: o.content.value %}
+    </div>
+  </div>
+  <div class="tinkiu-memory-collection__gallery__images">
+    {% for imageWithCaption in o.gallery.value %}
+      <div>
+        {% render 'tinkiu-media'
+          , data: imageWithCaption.image %}
+        <p>{{ imageWithCaption.caption }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>

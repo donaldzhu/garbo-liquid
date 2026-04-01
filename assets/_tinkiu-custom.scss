@@ -1,8 +1,7 @@
-@use 'sizes' as *;
-@use 'layouts' as *;
-@use 'typography' as *;
-@use 'colors' as *;
-
+@use "sizes" as *;
+@use "layouts" as *;
+@use "typography" as *;
+@use "colors" as *;
 
 .tinkiu-dot {
   @include square(var(--dot-size));
@@ -40,7 +39,6 @@
     margin-bottom: var(--header-gap);
   }
 
-
   h4 {
     font-size: var(--medium-copy);
     text-align: center;
@@ -64,19 +62,15 @@ main {
 
   div.gradient {
     background-color: $ash;
-
   }
 
   section.shopify-section.section {
-
     &,
-    &>div,
+    & > div,
     & .gradient {
       background-color: $ash;
     }
   }
-
-
 }
 
 .tinkiu-list-item {
@@ -118,7 +112,6 @@ main {
   }
 }
 
-
 .tinkiu-quantity-input {
   margin: 0;
 
@@ -131,7 +124,6 @@ main {
     color: black;
     border-radius: 50px;
     background-color: $ash;
-
 
     &::after {
       box-shadow: none;
@@ -162,4 +154,20 @@ img.tinkiu-media {
 video.tinkiu-media {
   object-fit: cover;
   aspect-ratio: 16 / 9;
+}
+
+.tinkiu-rich-content-container {
+  @include flex(
+    $justify: flex-start,
+    $full-screen: true,
+    $column: true,
+    $section-gapped: true
+  );
+
+  .tinkiu-section-header {
+    width: 100%;
+    &:not(:first-child) {
+      margin-top: var(--inner-section-spacing);
+    }
+  }
 }

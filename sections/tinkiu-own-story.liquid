@@ -3,13 +3,7 @@
   {% assign o = story %}
 {% endfor %}
 
-
-<script>
-  console.log({{ o | json }})
-</script>
-
-<div class="tinkiu-own-story tinkiu-full-width">
-
+<div class="tinkiu-own-story tinkiu-rich-content-container tinkiu-full-width">
   <div class="tinkiu-own-story__content">
     <div class="tinkiu-portable-text">
       {% render 'portable-text'

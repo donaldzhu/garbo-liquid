@@ -3,9 +3,12 @@
   assign url = data.url | default: url
   assign alt = data.meta.alt | default: alt
   assign control = control | default: false
+  assign hyperlink = hyperlink | default: hyperlink
 %}
 
-
+{% if hyperlink %}
+  <a href="{{ hyperlink }}">
+{% endif %}
 {% if type == 'image' %}
   <img
     src="{{ url }}"
@@ -22,4 +25,7 @@
     muted
     loop
     playsinline></video>
+{% endif %}
+{% if hyperlink %}
+  </a>
 {% endif %}

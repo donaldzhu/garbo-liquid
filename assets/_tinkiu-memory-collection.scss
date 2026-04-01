@@ -1,0 +1,18 @@
+@use "layouts" as *;
+@use "typography" as *;
+
+.tinkiu-memory-collection {
+  .tinkiu-memory-collection__gallery__images {
+    @include split(3);
+    width: var(--full-width);
+    flex-wrap: wrap;
+
+    img.tinkiu-media {
+      height: auto;
+    }
+
+    @include mobile {
+      @include split(1);
+    }
+  }
+}
