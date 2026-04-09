@@ -2,9 +2,13 @@
   "sections": {
     "content": {
       "type": "tinkiu-memory-collection"
+    },
+    "product-grid": {
+      "type": "tinkiu-main-collection-product-grid"
     }
   },
   "order": [
-    "content"
+    "content",
+    "product-grid"
   ]
 }

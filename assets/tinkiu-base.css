@@ -1,8 +1,9 @@
 @charset "UTF-8";
 :root {
-  --ui-small: 1.2rem;
-  --small-copy-label: 1.3rem;
+  --ui-small: 1.15rem;
+  --small-copy-label: 1.25rem;
   --small-space-y: 1.5rem;
+  --thin-space-y: 0.8rem;
   --hair-space-y: 0.5rem;
   --button-padding: 1.5rem 2.25rem;
   --button-radius: 3rem;
@@ -2189,7 +2190,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   justify-content: flex-start;
 }
 .tinkiu-product-insert .tinkiu-product-insert__details:not(:first-child) {
-  margin-top: var(--small-space-y);
+  margin-top: var(--thin-space-y);
 }
 .tinkiu-product-insert .tinkiu-product-insert__details--sold-out .tinkiu-product-insert__details__title,
 .tinkiu-product-insert .tinkiu-product-insert__details--sold-out p {
@@ -2213,7 +2214,7 @@ details.facets__disclosure-vertical[open] .facets__display-vertical fieldset ul 
   font-size: var(--medium-copy);
   font-family: "Dazzed", sans-serif;
   margin-top: 0;
-  margin-bottom: calc(var(--small-space-y) - 0.25rem);
+  margin-bottom: 0.1em;
   line-height: 1.2;
 }
 .tinkiu-product-insert--small .tinkiu-product-insert__images img {
@@ -3005,6 +3006,9 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   margin-top: var(--small-section-media-spacing);
 }
 
+.tinkiu-memory-collection {
+  padding-bottom: var(--inner-section-spacing);
+}
 .tinkiu-memory-collection .tinkiu-memory-collection__gallery__images {
   display: flex;
   gap: var(--column-gap);
@@ -3520,7 +3524,7 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 1535px) {
   :root {
-    --extra-large-copy: 1.85rem;
+    --extra-large-copy: 1.8rem;
   }
 }
 @media (min-width: 1536px) {
@@ -3530,47 +3534,47 @@ a, a:-webkit-any-link, a:visited {
 }
 @media (max-width: 479px) {
   :root {
-    --large-copy: 1.45rem;
+    --large-copy: 1.3rem;
   }
 }
 @media (min-width: 480px) and (max-width: 1535px) {
   :root {
-    --large-copy: 1.65rem;
+    --large-copy: 1.45rem;
   }
 }
 @media (min-width: 1536px) {
   :root {
-    --large-copy: 1.65rem;
+    --large-copy: 1.45rem;
   }
 }
 @media (max-width: 1279px) {
   :root {
-    --medium-copy: 1.3rem;
+    --medium-copy: 1.25rem;
   }
 }
 @media (min-width: 1280px) {
   :root {
-    --medium-copy: 1.3rem;
+    --medium-copy: 1.25rem;
   }
 }
 @media (max-width: 1279px) {
+  :root {
+    --small-copy: 1.15rem;
+  }
+}
+@media (min-width: 1280px) {
   :root {
     --small-copy: 1.2rem;
   }
 }
-@media (min-width: 1280px) {
-  :root {
-    --small-copy: 1.25rem;
-  }
-}
 @media (max-width: 1279px) {
   :root {
-    --header-font-size: 1.2rem;
+    --header-font-size: 1.15rem;
   }
 }
 @media (min-width: 1280px) {
   :root {
-    --header-font-size: 1.3rem;
+    --header-font-size: 1.25rem;
   }
 }
 @media (max-width: 479px) {

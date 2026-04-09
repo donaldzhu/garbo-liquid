@@ -2,6 +2,8 @@
 @use "typography" as *;
 
 .tinkiu-memory-collection {
+  padding-bottom: var(--inner-section-spacing);
+
   .tinkiu-memory-collection__gallery__images {
     @include split(3);
     width: var(--full-width);
