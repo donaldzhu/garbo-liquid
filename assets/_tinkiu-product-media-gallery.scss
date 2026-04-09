@@ -27,7 +27,6 @@ slider-component.tinkiu-product-media-gallery {
   }
 
   li.product__media-item.grid__item.slider__slide {
-    aspect-ratio: 4/5;
     flex: none;
 
     .product__media-icon.motion-reduce {
@@ -35,7 +34,8 @@ slider-component.tinkiu-product-media-gallery {
     }
 
     @include and-children {
-      aspect-ratio: 4/5;
+      @include flex;
+      aspect-ratio: 7/8;
       object-fit: cover;
       height: 100%;
       width: 100%;

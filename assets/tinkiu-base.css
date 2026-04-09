@@ -1501,7 +1501,6 @@ slider-component.tinkiu-product-media-gallery ul.product__media-list {
   gap: var(--small-gap);
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide {
-  aspect-ratio: 4/5;
   flex: none;
 }
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide .product__media-icon.motion-reduce {
@@ -1510,7 +1509,11 @@ slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide .product-media-container,
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide .product__modal-opener.product__modal-opener--image,
 slider-component.tinkiu-product-media-gallery li.product__media-item.grid__item.slider__slide .product__media.media {
-  aspect-ratio: 4/5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  aspect-ratio: 7/8;
   object-fit: cover;
   height: 100%;
   width: 100%;
