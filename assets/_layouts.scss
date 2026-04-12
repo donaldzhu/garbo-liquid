@@ -223,9 +223,10 @@
 }
 
 @mixin description {
-  width: var(--side-info-width);
+  /* width: var(--side-info-width); */
+  width: 100%;
   max-width: var(--text-max-width);
-  margin: 0 0 var(--large-section-gap);
+  margin: 0 0 var(--inner-section-spacing);
 
   &,
   & p {

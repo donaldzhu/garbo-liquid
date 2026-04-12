@@ -7,6 +7,7 @@
 @forward "tinkiu-product-variant-picker";
 @forward "tinkiu-product-details";
 @forward "tinkiu-buy-buttons";
+@forward "tinkiu-product-tcustomizer";
 @forward "tinkiu-product-media-gallery";
 @forward "tinkiu-product-media-modal";
 @forward "tinkiu-product-list";
@@ -20,7 +21,6 @@
 product-info.tinkiu-product {
   @include flex($column: true);
   background-color: $ash;
-  $width: calc(var(--full-width) / 2 - var(--column-gap) / 2);
 
   .page-width {
     @include flex($full-width: true, $no-space: true, $justify: center);
@@ -32,43 +32,23 @@ product-info.tinkiu-product {
   }
 
   .grid__item.product__media-wrapper {
-    width: $width;
-    flex: none;
+    width: var(--product-image-width);
+    --max-width: calc((100vh - var(--large-section-gap)) / 5 * 4);
+    max-width: var(--max-width);
 
     @include mobile {
-      width: var(--product-image-width);
-    }
-
-    media-gallery {
-      @include desktop {
-        display: flex;
-        justify-content: flex-end;
-      }
-    }
-
-    slider-component {
-      --max-width: calc((92.5vh - var(--large-section-gap)) / 5 * 4);
-      max-width: var(--max-width);
-
-      @include mobile {
-        --max-width: calc((80vh - var(--large-section-gap)) / 5 * 4);
-      }
+      --max-width: calc((80vh - var(--large-section-gap)) / 5 * 4);
     }
   }
 
   .product__info-wrapper {
     padding: 0;
-    width: $width;
-    flex: none;
+    width: var(--side-info-width);
     position: sticky;
     top: var(--main-padding-top);
 
     section {
       margin-bottom: 0;
-    }
-
-    @include mobile {
-      width: 100%;
     }
   }
 
