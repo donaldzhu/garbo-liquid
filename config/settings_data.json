@@ -166,7 +166,7 @@
           "subtotal_element": "navidium",
           "click_triggers": "#cart-icon-bubble",
           "store_checkout_button": "#checkout-button",
-          "custom_css": "button#nvd-with-checkout-btn {\n    border-radius: 30px !important;\n}"
+          "custom_css": "button#nvd-with-checkout-btn {\n    border-radius: 30px !important;\n}\ndiv#nvd-standard-widget-container {\n    min-width: 100%;\n    padding: 0 !important;\n}"
         }
       }
     },
