@@ -12,7 +12,13 @@ a {
 
   &,
   &:-webkit-any-link,
-  &:visited {
+  &:visited,
+  &:hover,
+  &:active,
+  &:link,
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
     color: inherit;
   }
 }

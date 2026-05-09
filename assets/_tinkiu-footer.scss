@@ -15,6 +15,9 @@
     flex-wrap: wrap;
 
     .tinkiu-footer__links__column--social {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       gap: var(--footer-icon-spacing);
 
       @include mobile {

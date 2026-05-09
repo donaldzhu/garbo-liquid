@@ -8,7 +8,16 @@
     function animate() {
       stickyContainer.classList.add('sticky');
       wrapper.style.position = 'relative';
-      wrapper.style.setProperty('--top', `calc(${Array.from(stickyContainer.children).reduce((acc, elem) => acc + elem.getBoundingClientRect().height + parseFloat(getComputedStyle(elem).getPropertyValue('margin-top')) + parseFloat(getComputedStyle(elem).getPropertyValue('margin-bottom')), 0)}px - 105vh)`);
+      const totalHeight = Array.from(stickyContainer.children).reduce((acc, elem) => {
+        const style = window.getComputedStyle(elem);
+        const height = elem.getBoundingClientRect().height;
+        const marginTop = parseFloat(style.marginTop) || 0;
+        const marginBottom = parseFloat(style.marginBottom) || 0;
+
+        return acc + height + marginTop + marginBottom;
+      }, 0);
+
+      wrapper.style.setProperty('--top', `calc(${Math.round(totalHeight)}px - 105dvh)`);
       requestAnimationFrame(animate);
     }
     animate();

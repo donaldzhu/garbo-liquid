@@ -23,6 +23,13 @@
     font-size: var(--header-font-size);
   }
 
+  a {
+    &,
+    &:visited {
+      color: black;
+    }
+  }
+
   a.active {
     @include underline;
     text-underline-offset: 0.3em;

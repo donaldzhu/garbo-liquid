@@ -510,6 +510,9 @@
   gap: var(--header-gap);
   font-size: var(--header-font-size);
 }
+.tinkiu-header a, .tinkiu-header a:visited {
+  color: black;
+}
 .tinkiu-header a.active {
   text-decoration: underline;
   text-decoration-thickness: 0.05em;
@@ -661,6 +664,9 @@
   flex-wrap: wrap;
 }
 .tinkiu-footer .tinkiu-footer__links .tinkiu-footer__links__column--social {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   gap: var(--footer-icon-spacing);
 }
 @media (max-width: calc(1024px - 1px)) {
@@ -1272,6 +1278,9 @@ div.tinkiu-product-details p:first-child ~ p {
 .product__info-wrapper div.tinkiu-buy-buttons button[type=submit]:disabled,
 .product__info-wrapper div.tinkiu-buy-buttons button.shopify-payment-button__button:disabled {
   pointer-events: none;
+}
+.product__info-wrapper div.tinkiu-buy-buttons button {
+  height: fit-content;
 }
 .product__info-wrapper div.tinkiu-buy-buttons button.shopify-payment-button__button {
   background-color: #DF2726;
@@ -3306,8 +3315,16 @@ section.shopify-pc__banner__dialog button {
 .tinkiu-password-main img,
 .tinkiu-password-main .shopify-section {
   width: 100dvw;
-  height: 100dvh;
   background-color: black;
+}
+
+.tinkiu-password-main,
+.tinkiu-password-main .shopify-section {
+  height: 100dvh;
+}
+
+.tinkiu-password-main img {
+  height: 100lvh;
 }
 
 .tinkiu-password-main > div {
@@ -3467,7 +3484,7 @@ ul {
 a {
   text-decoration: none;
 }
-a, a:-webkit-any-link, a:visited {
+a, a:-webkit-any-link, a:visited, a:hover, a:active, a:link, a:focus, a:focus-visible, a:focus-within {
   color: inherit;
 }
 

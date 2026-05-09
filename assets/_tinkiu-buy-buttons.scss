@@ -37,6 +37,10 @@
     margin: 0;
   }
 
+  button {
+    height: fit-content;
+  }
+
   button.shopify-payment-button__button {
     @include button-active;
   }
