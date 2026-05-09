@@ -402,7 +402,7 @@
   margin-top: var(--small-space-y);
 }
 
-.tinkiu-homepage__newsletter {
+.tinkiu-homepage-newsletter {
   width: 100dvw;
   height: 100dvh;
   min-height: max(50vw, 500px);
@@ -414,50 +414,26 @@
   gap: var(--inner-section-spacing);
   box-sizing: border-box;
   padding: var(--large-section-gap) 0;
-  /*
-  @include mobile {
-    margin-top: 10dvh;
-    margin-bottom: 10dvh;
-  } */
 }
 @media (max-width: calc(1024px - 1px)) {
-  .tinkiu-homepage__newsletter {
+  .tinkiu-homepage-newsletter {
     max-height: min(135dvw, 2500px);
   }
 }
-.tinkiu-homepage__newsletter img {
+.tinkiu-homepage-newsletter img {
   height: var(--homepage-newsletter-image-height);
 }
-.tinkiu-homepage__newsletter .tinkiu-homepage__newsletter__content {
+.tinkiu-homepage-newsletter .tinkiu-homepage-newsletter__content {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.tinkiu-homepage__newsletter .tinkiu-dot {
+.tinkiu-homepage-newsletter .tinkiu-dot {
   margin-top: 0;
 }
-.tinkiu-homepage__newsletter .tinkiu-homepage__newsletter__form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-}
-.tinkiu-homepage__newsletter h2 {
+.tinkiu-homepage-newsletter h2 {
   margin-bottom: var(--section-media-spacing);
-}
-.tinkiu-homepage__newsletter input, .tinkiu-homepage__newsletter input:focus, .tinkiu-homepage__newsletter input:not(:placeholder-shown) {
-  width: min(var(--newsletter-max-width), var(--full-width));
-  padding: var(--input-padding) 0;
-  background-color: inherit;
-  height: 2.5em;
-}
-.tinkiu-homepage__newsletter label {
-  bottom: var(--input-padding);
-}
-.tinkiu-homepage__newsletter .tinkiu-cta-button {
-  margin-top: var(--form-button-margin-top);
 }
 
 .tinkiu-homepage__footer {
@@ -655,6 +631,13 @@
 
 .tinkiu-logo {
   height: var(--header-logo-height);
+}
+
+.tinkiu-password-header {
+  background-color: transparent;
+}
+.tinkiu-password-header ul {
+  opacity: 0;
 }
 
 .tinkiu-footer {
@@ -3317,6 +3300,161 @@ section.shopify-pc__banner__dialog #shopify-pc__banner__body-title,
 section.shopify-pc__banner__dialog span,
 section.shopify-pc__banner__dialog button {
   font-size: var(--large-copy);
+}
+
+.tinkiu-password-main,
+.tinkiu-password-main img,
+.tinkiu-password-main .shopify-section {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: black;
+}
+
+.tinkiu-password-main > div {
+  overflow: hidden;
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tinkiu-password-main img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.tinkiu-password-main__form-container {
+  width: var(--text-max-width);
+}
+
+.tinkiu-password-main__form h2,
+.tinkiu-password-main__form p {
+  color: white;
+  text-align: center;
+}
+.tinkiu-password-main__form h2 {
+  font-size: var(--section-header);
+  line-height: 1.2;
+  max-width: var(--text-max-width);
+}
+.tinkiu-password-main__form .tinkiu-password-main__form__description {
+  margin: var(--inner-column-gap) 0;
+}
+.tinkiu-password-main__form form {
+  padding-top: var(--inner-column-gap);
+}
+.tinkiu-password-main__form form .tinkiu-newsletter__field {
+  position: relative;
+  width: 100%;
+}
+.tinkiu-password-main__form form .tinkiu-newsletter__field input {
+  width: 100%;
+}
+.tinkiu-password-main__form form .tinkiu-newsletter__field input, .tinkiu-password-main__form form .tinkiu-newsletter__field input:focus, .tinkiu-password-main__form form .tinkiu-newsletter__field input:not(:placeholder-shown) {
+  border-color: white;
+  color: white;
+}
+.tinkiu-password-main__form form .tinkiu-newsletter__field label {
+  color: white;
+}
+.tinkiu-password-main__form form .tinkiu-cta-button {
+  color: white;
+  background-color: #DF2726;
+}
+.tinkiu-password-main__form .tinkiu-password-modal {
+  position: fixed;
+  bottom: var(--page-margin-y);
+  left: 0;
+  width: 100dvw;
+  /*     transform: translateX(-50%); */
+}
+.tinkiu-password-main__form .tinkiu-password-modal .modal__content {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: black;
+}
+.tinkiu-password-main__form .tinkiu-password-modal .password-modal__content {
+  color: black;
+}
+.tinkiu-password-main__form .tinkiu-password-modal .password-modal__content svg * {
+  fill: white;
+}
+.tinkiu-password-main__form .tinkiu-password-modal .password-modal__content h2 {
+  padding-bottom: var(--inner-column-gap);
+}
+.tinkiu-password-main__form .tinkiu-password-modal summary:focus-visible,
+.tinkiu-password-main__form .tinkiu-password-modal .tinkiu-password-button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.tinkiu-password-main__form .tinkiu-password-modal .tinkiu-password-button {
+  font-size: var(--small-copy);
+  text-decoration: underline;
+  color: #a4a4a4;
+  text-align: center;
+  padding-top: var(--detail-label-margin);
+}
+.tinkiu-password-main__form .tinkiu-password-modal .tinkiu-password-form {
+  width: var(--text-max-width);
+}
+.tinkiu-password-main__form .tinkiu-password-modal .tinkiu-password-form * {
+  color: white;
+}
+.tinkiu-password-main__form .tinkiu-password-modal .password-field {
+  flex: none;
+}
+.tinkiu-password-main__form .tinkiu-password-modal input, .tinkiu-password-main__form .tinkiu-password-modal input:focus, .tinkiu-password-main__form .tinkiu-password-modal input:not(:placeholder-shown) {
+  border-color: white;
+}
+.tinkiu-password-main__form .tinkiu-password-modal button.modal__close-button {
+  top: 1rem;
+  right: 1rem;
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-password-main__form .tinkiu-password-modal button.modal__close-button {
+    top: 0.45rem;
+    right: 0.75rem;
+  }
+}
+
+.tinkiu-newsletter__form,
+.tinkiu-password-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.tinkiu-newsletter__form input, .tinkiu-newsletter__form input:focus, .tinkiu-newsletter__form input:not(:placeholder-shown),
+.tinkiu-password-form input,
+.tinkiu-password-form input:focus,
+.tinkiu-password-form input:not(:placeholder-shown) {
+  width: min(var(--newsletter-max-width), var(--full-width));
+  padding: var(--input-padding) 0;
+  background-color: inherit;
+  height: fit-content;
+  line-height: 1.2;
+  font-size: var(--small-copy-label);
+  font-family: "Dazzed", sans-serif;
+}
+.tinkiu-newsletter__form label,
+.tinkiu-password-form label {
+  bottom: var(--input-padding);
+}
+.tinkiu-newsletter__form .tinkiu-cta-button,
+.tinkiu-password-form .tinkiu-cta-button {
+  margin-top: var(--form-button-margin-top);
 }
 
 ul {

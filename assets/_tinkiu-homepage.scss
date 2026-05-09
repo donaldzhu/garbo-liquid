@@ -212,7 +212,7 @@
   }
 }
 
-.tinkiu-homepage__newsletter {
+.tinkiu-homepage-newsletter {
   @include fullscreen-max-height;
   height: fit-content;
   min-height: 100dvh;
@@ -220,17 +220,12 @@
   gap: var(--inner-section-spacing);
   box-sizing: border-box;
   padding: var(--large-section-gap) 0;
-  /*
-  @include mobile {
-    margin-top: 10dvh;
-    margin-bottom: 10dvh;
-  } */
 
   img {
     height: var(--homepage-newsletter-image-height);
   }
 
-  .tinkiu-homepage__newsletter__content {
+  .tinkiu-homepage-newsletter__content {
     @include flex($column: true);
   }
 
@@ -238,33 +233,8 @@
     margin-top: 0;
   }
 
-  .tinkiu-homepage__newsletter__form {
-    @include flex($column: true);
-    position: relative;
-  }
-
   h2 {
     margin-bottom: var(--section-media-spacing);
-  }
-
-  // TODO: success
-  input {
-    &,
-    &:focus,
-    &:not(:placeholder-shown) {
-      width: min(var(--newsletter-max-width), var(--full-width));
-      padding: var(--input-padding) 0;
-      background-color: inherit;
-      height: 2.5em;
-    }
-  }
-
-  label {
-    bottom: var(--input-padding);
-  }
-
-  .tinkiu-cta-button {
-    margin-top: var(--form-button-margin-top);
   }
 }
 

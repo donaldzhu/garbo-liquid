@@ -121,3 +121,10 @@
 .tinkiu-logo {
   height: var(--header-logo-height);
 }
+
+.tinkiu-password-header {
+  background-color: transparent;
+  ul {
+    opacity: 0;
+  }
+}

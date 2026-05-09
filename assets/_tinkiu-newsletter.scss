@@ -1,0 +1,32 @@
+@use "layouts" as *;
+@use "typography" as *;
+
+.tinkiu-newsletter__form,
+.tinkiu-password-form {
+  @include flex($column: true);
+  position: relative;
+
+  input {
+    &,
+    &:focus,
+    &:not(:placeholder-shown) {
+      width: min(var(--newsletter-max-width), var(--full-width));
+      padding: var(--input-padding) 0;
+      background-color: inherit;
+
+      height: fit-content;
+      line-height: 1.2;
+
+      font-size: var(--small-copy-label);
+      font-family: $font-family-body;
+    }
+  }
+
+  label {
+    bottom: var(--input-padding);
+  }
+
+  .tinkiu-cta-button {
+    margin-top: var(--form-button-margin-top);
+  }
+}
