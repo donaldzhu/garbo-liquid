@@ -3323,10 +3323,6 @@ section.shopify-pc__banner__dialog button {
   height: 100dvh;
 }
 
-.tinkiu-password-main img {
-  height: 100lvh;
-}
-
 .tinkiu-password-main > div {
   overflow: hidden;
   width: 100dvw;
@@ -3342,12 +3338,13 @@ section.shopify-pc__banner__dialog button {
 
 .tinkiu-password-main img {
   object-fit: cover;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   opacity: 0.65;
   pointer-events: none;
   z-index: -1;
+  height: 100lvh;
 }
 
 .tinkiu-password-main__form-container {
