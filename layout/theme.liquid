@@ -11,7 +11,7 @@
       rel="icon"
       type="image/png"
       href="{{ 'favicon.png' | asset_url }}">
-
+    <meta name="google-site-verification" content="q4HKfOzlglQ7XTm-Bi4JF18KoJQL5Z6Xm5DCfbA1a-4" />
 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link
@@ -46,10 +46,10 @@
       {% endfor %}
     {% endif %}
     {% comment %}     {% if request.path == '/collections/all' %}
-                  <script>
-                    window.location.href = '{{ routes.root_url }}';
-                  </script>
-            {% endif %} {% endcomment %}
+                        <script>
+                          window.location.href = '{{ routes.root_url }}';
+                        </script>
+                {% endif %} {% endcomment %}
     {% if request.path == '/pages/faq' %}
       {% assign services = shop.metaobjects['app--6007307--sanity-documents-services'].values %}
       {% for service in services %}
