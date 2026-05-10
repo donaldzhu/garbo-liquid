@@ -46,10 +46,10 @@
       {% endfor %}
     {% endif %}
     {% comment %}     {% if request.path == '/collections/all' %}
-                        <script>
-                          window.location.href = '{{ routes.root_url }}';
-                        </script>
-                {% endif %} {% endcomment %}
+                                    <script>
+                                      window.location.href = '{{ routes.root_url }}';
+                                    </script>
+                        {% endif %} {% endcomment %}
     {% if request.path == '/pages/faq' %}
       {% assign services = shop.metaobjects['app--6007307--sanity-documents-services'].values %}
       {% for service in services %}
