@@ -5,6 +5,8 @@
   document.addEventListener('DOMContentLoaded', function() {
     const stickyContainer = document.querySelector('.tinkiu-homepage__sticky-container');
     const wrapper = document.querySelector('.tinkiu-homepage');
+
+    let logged = false
     function animate() {
       stickyContainer.classList.add('sticky');
       wrapper.style.position = 'relative';
@@ -13,11 +15,15 @@
         const height = elem.getBoundingClientRect().height;
         const marginTop = parseFloat(style.marginTop) || 0;
         const marginBottom = parseFloat(style.marginBottom) || 0;
+        if (!logged) {
+          console.log(elem, height,  marginTop, marginBottom);
+        }
 
         return acc + height + marginTop + marginBottom;
       }, 0);
+      logged = true;
 
-      wrapper.style.setProperty('--top', `calc(${Math.round(totalHeight)}px - 105dvh)`);
+      wrapper.style.setProperty('--top', `calc(${Math.round(totalHeight)}px - 100dvh)`);
       requestAnimationFrame(animate);
     }
     animate();
