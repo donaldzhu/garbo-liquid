@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "logo_width": 90,
@@ -137,14 +146,6 @@
         "disabled": false,
         "settings": {}
       },
-      "14257673941758180001": {
-        "type": "shopify://apps/navidium-protection/blocks/claim-page/0127ebe0-a248-4215-97ad-f7db763bd6c8",
-        "disabled": false,
-        "settings": {
-          "page_url": "shipping-insurance-claim-page",
-          "custom_css": ""
-        }
-      },
       "2699851813924348007": {
         "type": "shopify://apps/navidium-protection/blocks/navidium-protection-consent/0127ebe0-a248-4215-97ad-f7db763bd6c8",
         "disabled": false,
@@ -158,6 +159,14 @@
           "click_triggers": "#cart-icon-bubble",
           "store_checkout_button": "#checkout-button",
           "custom_css": "button#nvd-with-checkout-btn {\n    border-radius: 30px !important;\n}\ndiv#nvd-standard-widget-container {\n    min-width: 100%;\n    padding: 0 !important;\n}"
+        }
+      },
+      "14257673941758180001": {
+        "type": "shopify://apps/navidium-protection/blocks/claim-page/0127ebe0-a248-4215-97ad-f7db763bd6c8",
+        "disabled": false,
+        "settings": {
+          "page_url": "shipping-insurance-claim-page",
+          "custom_css": ""
         }
       }
     },
