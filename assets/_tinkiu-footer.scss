@@ -22,6 +22,10 @@
 
       @include mobile {
         gap: calc(var(--footer-icon-spacing) / 2);
+        justify-self: flex-end;
+        position: absolute;
+        right: 0;
+        top: auto;
       }
     }
 
@@ -41,7 +45,8 @@
         }
 
         @include mobile {
-          flex-direction: column;
+          gap: 0;
+          flex-direction: column-reverse;
         }
       }
 
@@ -77,7 +82,6 @@
 
     .tinkiu-footer__links__column--left {
       @include flex($flex-start: true);
-      gap: var(--column-gap);
 
       .tinkiu-footer__links__column--left__select {
         position: relative;
@@ -114,6 +118,11 @@
     .tinkiu-footer__links__column--popup-menu {
       position: relative;
       display: inline-block;
+    }
+
+    .tinkiu-footer__links__column--left,
+    .tinkiu-footer__links__nav {
+      gap: var(--column-gap);
     }
 
     button {
