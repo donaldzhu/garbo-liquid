@@ -1149,6 +1149,13 @@ variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill
 variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill legend.form__label {
   margin-bottom: var(--hair-space-y);
 }
+variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill legend.form__label a {
+  text-decoration: underline;
+  font-weight: normal;
+  text-transform: none;
+  padding-left: var(--detail-label-margin);
+  color: #a4a4a4;
+}
 
 div.tinkiu-product-details {
   display: flex;

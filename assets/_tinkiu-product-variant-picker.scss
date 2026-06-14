@@ -67,6 +67,14 @@ variant-selects.tinkiu-product-variant-picker {
 
         legend.form__label {
           margin-bottom: var(--hair-space-y);
+
+          a {
+            text-decoration: underline;
+            font-weight: normal;
+            text-transform: none;
+            padding-left: var(--detail-label-margin);
+            color: $dark-gray;
+          }
         }
       }
     }
