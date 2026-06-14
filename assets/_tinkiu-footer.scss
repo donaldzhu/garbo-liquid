@@ -122,7 +122,7 @@
 
     .tinkiu-footer__links__column--left,
     .tinkiu-footer__links__nav {
-      gap: var(--column-gap);
+      gap: var(--section-media-spacing);
     }
 
     button {
@@ -137,7 +137,9 @@
       }
 
       @include mobile {
-        display: none;
+        &.tinkiu-footer__links__column--popup-menu__trigger {
+          display: none;
+        }
       }
     }
 
@@ -152,9 +154,9 @@
       width: max-content;
       z-index: 999;
 
-      margin-bottom: var(--column-gap);
+      margin-bottom: var(--section-media-spacing);
       li:last-child {
-        padding-top: var(--column-gap);
+        padding-top: var(--section-media-spacing);
         @include mobile {
           display: none;
         }

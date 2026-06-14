@@ -785,7 +785,7 @@
 }
 .tinkiu-footer .tinkiu-footer__links .tinkiu-footer__links__column--left,
 .tinkiu-footer .tinkiu-footer__links .tinkiu-footer__links__nav {
-  gap: var(--column-gap);
+  gap: var(--section-media-spacing);
 }
 .tinkiu-footer .tinkiu-footer__links button {
   color: white;
@@ -798,7 +798,7 @@
   background-color: transparent;
 }
 @media (max-width: calc(1024px - 1px)) {
-  .tinkiu-footer .tinkiu-footer__links button {
+  .tinkiu-footer .tinkiu-footer__links button.tinkiu-footer__links__column--popup-menu__trigger {
     display: none;
   }
 }
@@ -806,7 +806,7 @@
   list-style: none;
   width: max-content;
   z-index: 999;
-  margin-bottom: var(--column-gap);
+  margin-bottom: var(--section-media-spacing);
 }
 @media (min-width: 1024px) {
   .tinkiu-footer .tinkiu-footer__links .tinkiu-footer__links__column--popup-menu__dropdown {
@@ -817,7 +817,7 @@
   }
 }
 .tinkiu-footer .tinkiu-footer__links .tinkiu-footer__links__column--popup-menu__dropdown li:last-child {
-  padding-top: var(--column-gap);
+  padding-top: var(--section-media-spacing);
 }
 @media (max-width: calc(1024px - 1px)) {
   .tinkiu-footer .tinkiu-footer__links .tinkiu-footer__links__column--popup-menu__dropdown li:last-child {
@@ -3451,7 +3451,8 @@ section.shopify-pc__banner__dialog button {
 }
 
 .tinkiu-newsletter__form,
-.tinkiu-password-form {
+.tinkiu-password-form,
+.tinkiu-newsletter__form--footer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3461,22 +3462,71 @@ section.shopify-pc__banner__dialog button {
 .tinkiu-newsletter__form input, .tinkiu-newsletter__form input:focus, .tinkiu-newsletter__form input:not(:placeholder-shown),
 .tinkiu-password-form input,
 .tinkiu-password-form input:focus,
-.tinkiu-password-form input:not(:placeholder-shown) {
+.tinkiu-password-form input:not(:placeholder-shown),
+.tinkiu-newsletter__form--footer input,
+.tinkiu-newsletter__form--footer input:focus,
+.tinkiu-newsletter__form--footer input:not(:placeholder-shown) {
   width: min(var(--newsletter-max-width), var(--full-width));
-  padding: var(--input-padding) 0;
   background-color: inherit;
   height: fit-content;
   line-height: 1.2;
   font-size: var(--small-copy-label);
   font-family: "Dazzed", sans-serif;
 }
+.tinkiu-newsletter__form .tinkiu-cta-button,
+.tinkiu-password-form .tinkiu-cta-button,
+.tinkiu-newsletter__form--footer .tinkiu-cta-button {
+  margin-top: var(--form-button-margin-top);
+}
+
+.tinkiu-newsletter__form input, .tinkiu-newsletter__form input:focus, .tinkiu-newsletter__form input:not(:placeholder-shown),
+.tinkiu-password-form input,
+.tinkiu-password-form input:focus,
+.tinkiu-password-form input:not(:placeholder-shown) {
+  padding: var(--input-padding) 0;
+}
 .tinkiu-newsletter__form label,
 .tinkiu-password-form label {
   bottom: var(--input-padding);
 }
-.tinkiu-newsletter__form .tinkiu-cta-button,
-.tinkiu-password-form .tinkiu-cta-button {
-  margin-top: var(--form-button-margin-top);
+
+.tinkiu-newsletter__form--footer {
+  flex-direction: row;
+  gap: var(--hair-space-y);
+}
+.tinkiu-newsletter__form--footer label,
+.tinkiu-newsletter__form--footer input {
+  color: white !important;
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-newsletter__form--footer {
+    width: 100%;
+    /* flex-direction: column;
+    align-items: flex-start;
+    gap: var(--column-gap); */
+  }
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-newsletter__form--footer .tinkiu-newsletter__field {
+    width: 100%;
+  }
+}
+.tinkiu-newsletter__form--footer input, .tinkiu-newsletter__form--footer input:focus, .tinkiu-newsletter__form--footer input:not(:placeholder-shown) {
+  border-color: white !important;
+  padding: 0 0 var(--hair-space-y) 0;
+  margin: 0;
+  width: 240px;
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-newsletter__form--footer input, .tinkiu-newsletter__form--footer input:focus, .tinkiu-newsletter__form--footer input:not(:placeholder-shown) {
+    width: 100%;
+  }
+}
+.tinkiu-newsletter__form--footer label {
+  top: 0;
+}
+.tinkiu-newsletter__form--footer button {
+  margin: 0;
 }
 
 ul {
