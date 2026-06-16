@@ -3,11 +3,28 @@
 @use "typography" as *;
 @use "layouts" as *;
 
+$announcement-height: 3rem;
+.tinkiu-header__announcement {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include flex($align: center, $justify: center);
+  background-color: $red;
+  z-index: 999;
+  height: $announcement-height;
+  opacity: 0;
+  p {
+    color: white;
+    font-size: var(--small-copy);
+  }
+}
+
 .tinkiu-header {
   @include flex($full-screen: true, $align: center, $justify: space-between);
   padding: var(--header-margin-y) var(--page-margin-x);
   position: fixed;
-  top: 0;
+  top: $announcement-height;
   text-transform: uppercase;
   background-color: $ash;
   z-index: 999;

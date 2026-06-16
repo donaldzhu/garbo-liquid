@@ -74,13 +74,16 @@
   });
 </script>
 
+<div class="tinkiu-header__announcement">
+  <p>Free shipping to the US and Canada</p>
+</div>
 <header class="{% if request.path == '/' or request.path == '/pages/home' %}tinkiu-homepage-header{% endif %} tinkiu-header">
   <button class="tinkiu-header__hamburger">
     <span class="tinkiu-header__hamburger__icon">
       {{ 'tinkiu-menu-icon.svg' | inline_asset_content }}
     </span>
     <span class="tinkiu-header__close__icon">
-      {{ 'tinkiu-close-icon.svg' | inline_asset_content }}
+    {{ 'tinkiu-close-icon.svg' | inline_asset_content }}
     </span>
   </button>
   <a class="tinkiu-header__cart-mobile" href="{{ routes.cart_url }}">

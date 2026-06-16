@@ -488,6 +488,25 @@
   }
 }
 
+.tinkiu-header__announcement {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #DF2726;
+  z-index: 999;
+  height: 3rem;
+  opacity: 0;
+}
+.tinkiu-header__announcement p {
+  color: white;
+  font-size: var(--small-copy);
+}
+
 .tinkiu-header {
   display: flex;
   align-items: center;
@@ -496,7 +515,7 @@
   width: 100vw;
   padding: var(--header-margin-y) var(--page-margin-x);
   position: fixed;
-  top: 0;
+  top: 3rem;
   text-transform: uppercase;
   background-color: #FAFAFA;
   z-index: 999;
