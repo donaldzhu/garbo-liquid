@@ -69,6 +69,8 @@
             endif
             if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
               assign quantity_rule_soldout = true
+            else
+              assign quantity_rule_soldout = false
             endif
           -%}
           <button
@@ -90,7 +92,7 @@
             </span>
             {%- render 'loading-spinner' -%}
           </button>
-          {% if product.selected_or_first_available_variant.available == true and quantity_rule_soldout != true and product.selected_or_first_available_variant != null and show_dynamic_checkout == true %}
+          {% if product.selected_or_first_available_variant.available == true and quantity_rule_soldout == false and show_dynamic_checkout == true %}
             {{ form | payment_button }}
           {% endif %}
         </div>
