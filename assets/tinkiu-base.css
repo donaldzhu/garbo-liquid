@@ -1322,6 +1322,9 @@ div.tinkiu-product-details p:first-child ~ p {
   background-color: #DF2726;
   color: #FAFAFA;
 }
+.product__info-wrapper div.tinkiu-buy-buttons shopify-accelerated-checkout[disabled] {
+  display: none;
+}
 .product__info-wrapper div.tinkiu-buy-buttons button:disabled {
   display: none;
 }

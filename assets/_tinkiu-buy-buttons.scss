@@ -45,6 +45,10 @@
     @include button-active;
   }
 
+  shopify-accelerated-checkout[disabled] {
+    display: none;
+  }
+
   button:disabled {
     display: none;
   }
