@@ -46,9 +46,28 @@
   }
 
   shopify-buy-it-now-button:disabled {
-    button.shopify-payment-button__button {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+    display: none;
+  }
+
+  button.product-form__submit:disabled {
+    display: none;
+  }
+
+  .restock-rocket-button-container {
+    width: 100% !important;
+    max-width: none !important;
+    height: fit-content !important;
+  }
+
+  .restock-rocket-button {
+    @include cta-button;
+    font-size: var(--ui-small) !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    min-height: calc(4.5rem + var(--buttons-border-width) * 2) !important;
+    margin: 0 !important;
+    padding: var(--button-padding) !important;
+    border-radius: var(--button-radius) !important;
+    width: 100% !important;
   }
 }
