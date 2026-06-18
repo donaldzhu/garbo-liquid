@@ -74,7 +74,7 @@
   });
 </script>
 
-<div class="tinkiu-header__announcement">
+<div class="{% if request.path == '/' or request.path == '/pages/home' %}tinkiu-homepage-header__announcement{% endif %} tinkiu-header__announcement">
   <p>Free shipping to the US and Canada</p>
 </div>
 <header class="{% if request.path == '/' or request.path == '/pages/home' %}tinkiu-homepage-header{% endif %} tinkiu-header">

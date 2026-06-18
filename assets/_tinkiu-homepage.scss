@@ -72,6 +72,11 @@
   }
 }
 
+.tinkiu-homepage-header__announcement {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .tinkiu-blurb {
   @include flex($column: true);
 }

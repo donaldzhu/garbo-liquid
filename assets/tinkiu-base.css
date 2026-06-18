@@ -210,6 +210,11 @@
   pointer-events: none;
 }
 
+.tinkiu-homepage-header__announcement {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .tinkiu-blurb {
   display: flex;
   align-items: center;
@@ -500,7 +505,6 @@
   background-color: #DF2726;
   z-index: 999;
   height: 3rem;
-  opacity: 0;
 }
 .tinkiu-header__announcement p {
   color: white;
