@@ -146,9 +146,17 @@
         "disabled": false,
         "settings": {}
       },
+      "14257673941758180001": {
+        "type": "shopify://apps/navidium-protection/blocks/claim-page/0127ebe0-a248-4215-97ad-f7db763bd6c8",
+        "disabled": false,
+        "settings": {
+          "page_url": "shipping-insurance-claim-page",
+          "custom_css": ""
+        }
+      },
       "2699851813924348007": {
         "type": "shopify://apps/navidium-protection/blocks/navidium-protection-consent/0127ebe0-a248-4215-97ad-f7db763bd6c8",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "show_landing_popup": false,
           "show_reminder_popup": false,
@@ -161,13 +169,10 @@
           "custom_css": "button#nvd-with-checkout-btn {\n    border-radius: 30px !important;\n}\ndiv#nvd-standard-widget-container {\n    min-width: 100%;\n    padding: 0 !important;\n}"
         }
       },
-      "14257673941758180001": {
-        "type": "shopify://apps/navidium-protection/blocks/claim-page/0127ebe0-a248-4215-97ad-f7db763bd6c8",
+      "8764476057892802672": {
+        "type": "shopify://apps/stoq/blocks/main/4bb73be2-b7c2-4870-949f-c528145452a3",
         "disabled": false,
-        "settings": {
-          "page_url": "shipping-insurance-claim-page",
-          "custom_css": ""
-        }
+        "settings": {}
       }
     },
     "color_schemes": {
