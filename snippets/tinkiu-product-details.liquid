@@ -8,10 +8,10 @@
 
 
 <div class="tinkiu-product-details {% if genders == '' %}tinkiu-product-details--no-gender{% endif %}">
-  <div class="tinkiu-product-detail">
-    <p>CATEGORY</p>
-    <p>{{ product.category }}</p>
-  </div>
+  {% comment %}   <div class="tinkiu-product-detail">
+        <p>CATEGORY</p>
+        <p>{{ product.category }}</p>
+    </div> {% endcomment %}
   {% if genders != '' %}
     <div class="tinkiu-product-detail">
       <p>GENDER</p>
