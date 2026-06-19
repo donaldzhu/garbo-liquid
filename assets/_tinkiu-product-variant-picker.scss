@@ -60,6 +60,7 @@ variant-selects.tinkiu-product-variant-picker {
           &:checked.disabled + label {
             color: $gray;
             border-color: $gray;
+            text-decoration: none;
           }
         }
 

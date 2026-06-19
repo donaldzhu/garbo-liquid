@@ -1166,6 +1166,7 @@ variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill
 variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill input[type=radio].disabled + label, variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill input[type=radio]:checked.disabled + label {
   color: #c9c9c9;
   border-color: #c9c9c9;
+  text-decoration: none;
 }
 variant-selects.tinkiu-product-variant-picker fieldset.product-form__input--pill legend.form__label {
   margin-bottom: var(--hair-space-y);
@@ -1354,6 +1355,7 @@ div.tinkiu-product-details p:first-child ~ p {
   letter-spacing: 0 !important;
   text-transform: uppercase !important;
   min-height: calc(4.5rem + var(--buttons-border-width) * 2) !important;
+  line-height: calc(1 + 0.2 / var(--font-body-scale)) !important;
   margin: 0 !important;
   padding: var(--button-padding) !important;
   border-radius: var(--button-radius) !important;

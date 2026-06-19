@@ -92,9 +92,14 @@
             </span>
             {%- render 'loading-spinner' -%}
           </button>
-          {% if product.selected_or_first_available_variant.available == true and quantity_rule_soldout == false and show_dynamic_checkout == true %}
-            {{ form | payment_button }}
-          {% endif %}
+
+          {%- if show_dynamic_checkout -%}
+            <div id="PaymentButton-{{ section_id }}">
+              {%- if product.selected_or_first_available_variant.available == true and quantity_rule_soldout == false -%}
+                {{ form | payment_button }}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
         </div>
       {%- endform -%}
     </product-form>
