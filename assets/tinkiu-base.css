@@ -3383,6 +3383,31 @@ product-info.tinkiu-product .tinkiu-product-description, product-info.tinkiu-pro
   white-space: nowrap;
 }
 
+.portable-text-image-row {
+  display: flex;
+  gap: var(--inner-column-gap);
+  align-items: stretch;
+}
+.portable-text-image-row:not(:first-child) {
+  margin-top: var(--small-section-media-spacing);
+}
+.portable-text-image-row__item {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+}
+.portable-text-image-row__item > a {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+.portable-text-image-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 section.shopify-pc__banner__dialog #shopify-pc__banner__body-title,
 section.shopify-pc__banner__dialog span,
 section.shopify-pc__banner__dialog button {

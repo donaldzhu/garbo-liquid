@@ -23,6 +23,8 @@
         render 'tinkiu-media' with block.video as data, control: true
       when "shopifyImage"
         render 'tinkiu-media' with block.image as data
+      when "imageRow"
+        render 'portable-text-image-row' with block.images as data
       when "socialsEmbed"
         echo block.embedCode
       when "table"

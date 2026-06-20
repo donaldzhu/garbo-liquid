@@ -1,0 +1,7 @@
+<div class="portable-text-image-row">
+  {% for imageData in data %}
+    <div class="portable-text-image-row__item">
+      {% render 'tinkiu-media' with imageData.image as data %}
+    </div>
+  {% endfor %}
+</div>
