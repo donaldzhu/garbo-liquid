@@ -47,7 +47,27 @@
     gap: var(--small-section-media-spacing);
   }
 
+  .tinkiu-own-story__gallery {
+    padding-top: var(--small-section-media-spacing);
+  }
+
   .tinkiu-own-story__additional-writeup {
     margin-top: var(--small-section-media-spacing);
+  }
+}
+
+.tinkiu-own-story__founder {
+  @include flex($column: true);
+  img {
+    width: var(--homepage-ethos-image-size-short) !important;
+    height: var(--homepage-ethos-image-size-long) !important;
+    object-fit: cover;
+    border-radius: var(--homepage-ethos-image-size-short);
+    margin-bottom: var(--founder-image-margin);
+  }
+
+  p.tinkiu-homepage__founder__name {
+    margin-bottom: 0;
+    margin-top: var(--small-space-y);
   }
 }

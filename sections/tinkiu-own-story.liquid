@@ -10,6 +10,16 @@
         , portableText: o.storyContent.value %}
     </div>
   </div>
+  <div class="tinkiu-own-story__founder">
+    {% render 'tinkiu-section-header'
+      , title: o.founderTitle %}
+    {% render 'tinkiu-media'
+      , data: o.founderPhoto.value.image %}
+    <div class="tinkiu-portable-text">
+      {% render 'portable-text'
+        , portableText: o.founderDescription.value %}
+    </div>
+  </div>
   <div class="tinkiu-own-story__gallery">
     <div class="tinkiu-own-story__gallery__images">
       {% for media in o.gallery.value %}
@@ -42,6 +52,7 @@
     {% endfor %}
     <p>{{ o.additionalPhotosCaption.value }}</p>
   </div>
+
 </div>
 
 {% schema %}

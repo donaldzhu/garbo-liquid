@@ -206,7 +206,7 @@ $size-maps: (
     ),
   inset-width: (
     xs: min(full-width(), column-width(8, full-width($l))),
-    l: column-width(8),
+    l: column-width(7),
   ),
   list-width: (
     xs: column-width(4, full-width($l)),
