@@ -4006,7 +4006,7 @@ a, a:-webkit-any-link, a:visited, a:hover, a:active, a:link, a:focus, a:focus-vi
 }
 @media (max-width: 1023px) {
   :root {
-    --inset-width: min(100vw - var(--page-margin-x) * 2, 
+    --inset-width: min(100vw - var(--page-margin-x) * 2,
       calc(
       (calc(1024px - var(--page-margin-x) * 2) - (12 - 1) * var(--column-gap)) /
         12
