@@ -10,9 +10,9 @@
       <span class="tinkiu-product-insert__details__sold-out">(Sold Out)</span>
     {% endif %}
   </h4>
-  {% if disable_description != true %}
+ {% comment %}  {% if disable_description != true %}
     <p class="tinkiu-product-insert__description">{{ product.metafields['app--6007307--sanity-fields'].shortDescription }}</p>
-  {% endif %}
+  {% endif %} {% endcomment %}
   {% render 'price'
     , product: product %}
 </div>

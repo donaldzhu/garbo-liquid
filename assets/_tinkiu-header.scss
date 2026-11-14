@@ -4,6 +4,7 @@
 @use "layouts" as *;
 
 $announcement-height: 3rem;
+
 .tinkiu-header__announcement {
   position: fixed;
   top: 0;
@@ -17,6 +18,10 @@ $announcement-height: 3rem;
   p {
     color: white;
     font-size: var(--small-copy);
+  }
+
+  a {
+    text-decoration: underline;
   }
 }
 
@@ -41,6 +46,7 @@ $announcement-height: 3rem;
   }
 
   a {
+
     &,
     &:visited {
       color: black;
@@ -67,6 +73,7 @@ $announcement-height: 3rem;
   }
 
   @include mobile {
+
     .tinkiu-header__hamburger,
     .tinkiu-header__cart-mobile {
       padding: 0;
@@ -118,12 +125,10 @@ $announcement-height: 3rem;
       }
 
       ul {
-        @include flex(
-          $full-width: true,
+        @include flex($full-width: true,
           $section-gapped: true,
           $flex-start: true,
-          $column: true
-        );
+          $column: true);
 
         li,
         a {
@@ -136,7 +141,7 @@ $announcement-height: 3rem;
       }
     }
 
-    > ul {
+    >ul {
       display: none;
     }
   }
@@ -148,6 +153,7 @@ $announcement-height: 3rem;
 
 .tinkiu-password-header {
   background-color: transparent;
+
   ul {
     opacity: 0;
   }

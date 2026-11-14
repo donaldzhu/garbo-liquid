@@ -75,7 +75,7 @@
 </script>
 
 <div class="{% if request.path == '/' or request.path == '/pages/home' %}tinkiu-homepage-header__announcement{% endif %} tinkiu-header__announcement">
-  <p>Free U.S. shipping and free Canada shipping above $100</p>
+  <p>{{ data.bannerText }}{%if data.bannerLink != blank %}&nbsp;<a href="{{ data.bannerLink }}">{{ data.bannerLinkText }}</a>{% endif %}</p>
 </div>
 <header class="{% if request.path == '/' or request.path == '/pages/home' %}tinkiu-homepage-header{% endif %} tinkiu-header">
   <button class="tinkiu-header__hamburger">
