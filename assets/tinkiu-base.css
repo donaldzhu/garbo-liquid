@@ -516,6 +516,8 @@
   background-color: #DF2726;
   z-index: 999;
   height: 3rem;
+  padding: var(--small-space-y);
+  text-align: center;
 }
 .tinkiu-header__announcement p {
   color: white;
@@ -523,6 +525,11 @@
 }
 .tinkiu-header__announcement a {
   text-decoration: underline;
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-header__announcement {
+    height: 5rem;
+  }
 }
 
 .tinkiu-header {
@@ -537,6 +544,11 @@
   text-transform: uppercase;
   background-color: #FAFAFA;
   z-index: 999;
+}
+@media (max-width: calc(1024px - 1px)) {
+  .tinkiu-header {
+    top: 5rem;
+  }
 }
 .tinkiu-header div {
   position: absolute;

@@ -3,7 +3,8 @@
 @use "typography" as *;
 @use "layouts" as *;
 
-$announcement-height: 3rem;
+$announcement-height-desktop: 3rem;
+$announcement-height-mobile: 5rem;
 
 .tinkiu-header__announcement {
   position: fixed;
@@ -13,7 +14,9 @@ $announcement-height: 3rem;
   @include flex($align: center, $justify: center);
   background-color: $red;
   z-index: 999;
-  height: $announcement-height;
+  height: $announcement-height-desktop;
+  padding: var(--small-space-y);
+  text-align: center;
 
   p {
     color: white;
@@ -23,16 +26,24 @@ $announcement-height: 3rem;
   a {
     text-decoration: underline;
   }
+
+  @include mobile {
+    height: $announcement-height-mobile;
+  }
 }
 
 .tinkiu-header {
   @include flex($full-screen: true, $align: center, $justify: space-between);
   padding: var(--header-margin-y) var(--page-margin-x);
   position: fixed;
-  top: $announcement-height;
+  top: $announcement-height-desktop;
   text-transform: uppercase;
   background-color: $ash;
   z-index: 999;
+
+  @include mobile {
+    top: $announcement-height-mobile;
+  }
 
   div {
     position: absolute;
